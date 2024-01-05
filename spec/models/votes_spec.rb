@@ -4,7 +4,7 @@ RSpec.describe Vote, type: :model do
   
   describe "relationships" do
     it { should belong_to(:user) }
-    it { should belong_to(:rounds) }
+    it { should belong_to(:round) }
   end
 
   # describe "validations" do
