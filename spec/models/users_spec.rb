@@ -5,6 +5,8 @@ RSpec.describe User, type: :model do
   describe "relationships" do
     it { should have_many(:votes) }
     it { should have_many(:user_games) }
+    it { should have_many(:games).through(:user_games) }
+    it { should have_many(:rounds).through(:games) }
   end
 
   # describe "validations" do
