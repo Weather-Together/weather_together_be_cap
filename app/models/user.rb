@@ -5,6 +5,11 @@ class User < ApplicationRecord
   has_many :rounds, through: :games
 
   before_create :generate_verification_token
+  
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :password, presence: true, length: { minimum: 6 }
+
 
   def generate_verification_token
     self.verification_token = SecureRandom.urlsafe_base64
