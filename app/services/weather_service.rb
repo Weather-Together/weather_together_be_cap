@@ -13,6 +13,10 @@ class WeatherService
 
   def get_details(lat, lon, date)
     response = conn.get("history.json?key=#{Rails.application.credentials.weather_api[:key]}&q=#{lat},#{lon}&dt=#{date}")
-    JSON.parse(response.body, symbolize_names: true)
+    hash = JSON.parse(response.body, symbolize_names: true)
+    { 
+      location: hash[:location],
+      weather_data: hash[:forecast][:forecastday].first[:day]
+     }
   end
 end
