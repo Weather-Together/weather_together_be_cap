@@ -1,0 +1,4 @@
+<h1>Verify your account</h1>
+<p>Click the following link to verify your account:</p>
+<%= link_to 'Verify Account', "localhost:3000/users/#{@user.id}?token=#{@verification_token}" 
+# Change to real url
