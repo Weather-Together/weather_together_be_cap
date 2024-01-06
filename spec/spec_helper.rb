@@ -47,8 +47,8 @@ def test_data
      :daily_chance_of_snow=>100,
      :condition=>{:text=>"Moderate or heavy snow showers", :icon=>"//cdn.weatherapi.com/weather/64x64/day/371.png", :code=>1258},
      :uv=>1.0}}
-  @user1 = User.create(username: "username1", email: "user1@gmail.com", password: "password1"
-  @user2 = User.create(username: "username2", email: "user2@gmail.com", password: "password2"
+  @user1 = User.create(username: "username1", email: "user1@gmail.com", password: "password1")
+  @user2 = User.create(username: "username2", email: "user2@gmail.com", password: "password2")
 
   @game1 = Game.create(type: 0, length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, results: nil)
 
