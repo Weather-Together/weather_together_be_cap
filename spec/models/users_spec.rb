@@ -9,9 +9,11 @@ RSpec.describe User, type: :model do
     it { should have_many(:rounds).through(:games) }
   end
 
-  # describe "validations" do
-  #   it { should validate_presence_of(:title) }
-  #   it { should validate_presence_of(:runtime) }
+  describe "validations" do
+    it { should validate_presence_of(:username) }
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:verified) }
 
-  # end
+  end
 end

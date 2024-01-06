@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_05_055619) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_06_005457) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,7 +20,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_05_055619) do
     t.integer "length_in_days"
     t.integer "guess_lead_time"
     t.integer "player_cap"
-    t.integer "status"
+    t.integer "status", default: 0
     t.string "results"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,11 +28,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_05_055619) do
 
   create_table "rounds", force: :cascade do |t|
     t.bigint "game_id", null: false
-    t.integer "status"
-    t.integer "type"
+    t.integer "status", default: 0
+    t.integer "type", default: 0
     t.string "target_weather_stats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "close_date"
     t.index ["game_id"], name: "index_rounds_on_game_id"
   end
 
@@ -47,7 +49,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_05_055619) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.boolean "verified", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -57,8 +59,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_05_055619) do
   create_table "votes", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "round_id", null: false
-    t.integer "status"
-    t.integer "type"
+    t.integer "status", default: 0
+    t.integer "type", default: 0
     t.string "target_weather_stats"
     t.string "lat"
     t.string "lon"
