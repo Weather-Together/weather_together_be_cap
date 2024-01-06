@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_06_005457) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_06_180456) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
-    t.integer "type"
+    t.integer "game_type"
     t.integer "length_in_days"
     t.integer "guess_lead_time"
     t.integer "player_cap"
@@ -28,7 +28,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_06_005457) do
   create_table "rounds", force: :cascade do |t|
     t.bigint "game_id", null: false
     t.integer "status", default: 0
-    t.integer "type", default: 0
     t.string "target_weather_stats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,7 +57,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_06_005457) do
     t.bigint "user_id", null: false
     t.bigint "round_id", null: false
     t.integer "status", default: 0
-    t.integer "type", default: 0
     t.string "target_weather_stats"
     t.string "lat"
     t.string "lon"

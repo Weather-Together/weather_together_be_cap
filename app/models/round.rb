@@ -24,7 +24,7 @@ class Round < ApplicationRecord
   end
 
   def find_close_date
-    (Date.today + game.guess_lead_time).to_s
+    (Date.today + game.guess_lead_time + 1).to_s
   end
 
   def generate_target_data
