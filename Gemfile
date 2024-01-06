@@ -40,12 +40,15 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "rspec-rails"
   gem "simplecov"
-  gem "webmock"
-  gem "vcr"
   gem "factory_bot_rails"
   gem "faker"
   gem "pry"
   gem "shoulda-matchers"
+end
+
+group :test do
+  gem "webmock"
+  gem "vcr"
 end
 
 group :development do
