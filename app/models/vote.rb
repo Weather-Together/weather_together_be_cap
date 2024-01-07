@@ -1,4 +1,7 @@
 class Vote < ApplicationRecord
+  before_save do
+    self.target_weather_stats = round.target_weather_stats
+  end
   belongs_to :user
   belongs_to :round
 
