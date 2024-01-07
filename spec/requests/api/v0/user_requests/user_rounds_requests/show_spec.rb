@@ -4,22 +4,21 @@ RSpec.describe "User Rounds Show" do
   before :each do
     load_test_data
   end
+  
+  it "Get request for /users/:user_id/rounds/:round_id (info: round name(date), target weather data, voted (true false), vote content)" do
+    get "/api/v0/users/#{@user1.id}/rounds/#{@round1.id}"
 
-  it "" do
-    # get "/api/v1/users/#{@user1.id}/campaigns/#{@round1.id}"
+    expect(response).to be_successful
+    puts "Response Status: #{response.status}"
+    json_response = JSON.parse(response.body)
+    #binding.pry
+    expect(json_response['data']['id']).to eq(@round1.id.to_s)
+    expect(json_response['data']['type']).to eq('round')
 
-    # expect(response).to be_successful
+    expect(json_response['data']['attributes']['game_id']).to eq(@round1.game.id)
+    expect(json_response['data']['attributes']['status']).to eq("open")
+    expect(json_response['data']['attributes']['target_weather_stats']).to eq(nil)
+    expect(json_response['data']['attributes']['close_date']).to eq(@round1.close_date)
 
-    # json_response = JSON.parse(response.body)
-
-    # expect(json_response['data']['id']).to eq(@npc1.id.to_s)
-    # expect(json_response['data']['type']).to eq('npc')
-
-    # expect(json_response['data']['attributes']['name']).to eq(@npc1.name)
-    # expect(json_response['data']['attributes']['description']).to eq(@npc1.description)
-    # expect(json_response['data']['attributes']['gender']).to eq(@npc1.gender)
-    # expect(json_response['data']['attributes']['race']).to eq(@npc1.race)
-    # expect(json_response['data']['attributes']['klass']).to eq(@npc1.klass)
-    # expect(json_response['data']['attributes']['attitude']).to eq(@npc1.attitude)
   end
 end

@@ -1,10 +1,12 @@
 class RoundSerializer
   include JSONAPI::Serializer
+
   attributes  :close_date,
               :number_of_votes,
               :target_weather_stats,
-              :status
-  belongs_to :game
+              :status,
+              :game_id
+  #belongs_to :game
   has_many :votes
   has_many :users
 
