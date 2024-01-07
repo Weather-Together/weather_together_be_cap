@@ -7,8 +7,8 @@ class RoundSerializer
               :status,
               :game_id
   #belongs_to :game
-  has_many :votes
-  has_many :users
+  # has_many :votes
+  # has_many :users
 
   attribute :number_of_votes do |round|
     round.votes.count
