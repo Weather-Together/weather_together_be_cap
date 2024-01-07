@@ -1,7 +1,6 @@
 class Api::V0::Rounds::VotesController < ApplicationController
 
   def create
-    require 'pry'; binding.pry
     #check round open
     vote = Vote.create(lat: params[:lat], 
                 lon: params[:lon], 
