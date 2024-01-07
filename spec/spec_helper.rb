@@ -49,8 +49,9 @@ def test_data
      :uv=>1.0}}
   @user1 = User.create(username: "username1", email: "user1@gmail.com", password: "password1")
   @user2 = User.create(username: "username2", email: "user2@gmail.com", password: "password2")
-
-  @game1 = Game.create(type: 0, length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, results: nil)
+  @user3 = User.create(username: "username3", email: "user3@gmail.com", password: "password3")
+  
+  @game1 = Game.create(game_type: 0, length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, results: nil)
 
   UserGame.create(user_id: @user1.id, game_id: @game1.id)
   UserGame.create(user_id: @user2.id, game_id: @game1.id)
