@@ -32,6 +32,7 @@ class Api::V0::UsersController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       if @user.verified
+        render json: UserSerializer.new(@user)
         # Log the user in
       else
         # Show a message telling the user to verify their email
