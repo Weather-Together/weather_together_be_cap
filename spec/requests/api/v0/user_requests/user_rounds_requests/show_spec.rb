@@ -9,7 +9,7 @@ RSpec.describe "User Rounds Show" do
     get "/api/v0/users/#{@user1.id}/rounds/#{@round1.id}"
 
     expect(response).to be_successful
-    puts "Response Status: #{response.status}"
+    
     json_response = JSON.parse(response.body)
     #binding.pry
     expect(json_response['data']['id']).to eq(@round1.id.to_s)

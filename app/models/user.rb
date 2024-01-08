@@ -18,4 +18,11 @@ class User < ApplicationRecord
     self.verification_token = SecureRandom.urlsafe_base64
   end
 
+  def previous_public_rounds
+    @recent_rounds = rounds
+                          .order(created_at: :desc)
+                          .limit(3)
+                          .includes(:votes)
+  end
+
 end
