@@ -5,4 +5,8 @@ class Game < ApplicationRecord
 
   enum status: { open: 0, closed: 1 }
   enum game_type: { community: 0, custom: 1 }
+
+  def self.current_community_round
+    Game.find_by(game_type: 0).rounds.last
+  end
 end
