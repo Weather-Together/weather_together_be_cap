@@ -12,6 +12,6 @@ RSpec.describe "User Recent Rounds" do
     
     json_response = JSON.parse(response.body)
     binding.pry
-    expect(json_response['data'].length).to eq(3)
+    expect(json_response['data'].length).to eq(10)
   end
 end
