@@ -11,6 +11,12 @@ end
 namespace :populate_database do
   desc "Ensure that the database has any information"
   task :seed => :environment do
+    Vote.destroy_all
+    UserGame.destroy_all
+    Round.destroy_all
+    Game.destroy_all
+    User.destroy_all
+
     date = Date.yesterday.strftime('%F')
     lat1 = "-15.74"
     lon1 = "-54.34"
