@@ -28,7 +28,7 @@ class Round < ApplicationRecord
   end
 
   def generate_target_data
-    lat = rand(-180.000...180.000)
+    lat = rand(-90.000...90.000)
     lon = rand(-180.000...180.000)
     wf = WeatherFacade.new
     wf.weather_data(lat, lon)

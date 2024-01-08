@@ -17,8 +17,10 @@ class Api::V0::Users::RoundsController < ApplicationController
   end
 
   def round_params
-    params.require(:round).permit(:game_id, :status, :target_weather_stats, :close_date)
+    params.require(:round).permit(:game_id)
   end
+
+
 end
 
 

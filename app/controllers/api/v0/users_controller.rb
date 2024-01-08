@@ -7,6 +7,7 @@ class Api::V0::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       UserMailer.verification_email(@user).deliver_now
+      render json: UserSerializer.new(@user)
       redirect_to(verification_sent_path)
     else
       render json: @user.errors, status: :unprocessable_entity

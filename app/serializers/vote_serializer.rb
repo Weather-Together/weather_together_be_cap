@@ -5,7 +5,7 @@ class VoteSerializer
               :lon,
               :weather_stats,
               :score,
-              :status
-  belongs_to :round
+              :status,
+              :round
 
 end
