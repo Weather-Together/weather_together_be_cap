@@ -70,11 +70,10 @@
 
 
 ### Built With
-
-* Ruby on Rails
-* HTML
-* JavaScript
-* postgresql
+* [![Ruby on Rails][Rails-shield]][Rails-url]
+* [![HTML][HTML-shield]][HTML-url]
+* [![JavaScript][JavaScript-shield]][JavaScript-url]
+* [![PostgreSQL][PostgreSQL-shield]][PostgreSQL-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -222,6 +221,14 @@ Kevin Zolman [![LinkedIn][linkedin-shield]][linkedin-url-kz]
 [product-screenshot]: images/screenshot.png
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
+[Rails-shield]: https://img.shields.io/badge/Ruby%20on%20Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white
+[Rails-url]: https://rubyonrails.org/
+[HTML-shield]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[HTML-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
+[JavaScript-shield]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[PostgreSQL-shield]: https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white
+[PostgreSQL-url]: https://www.postgresql.org/
 [gem-saasc-rails]: https://img.shields.io/badge/sassc--rails?style=flat-square&label=saasc-rails
 [gem-saasc-rails-url]: https://github.com/sass/sassc-rails
 [gem-faraday-rails]: https://img.shields.io/badge/faraday--rails?style=flat-square
