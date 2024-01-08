@@ -17,8 +17,8 @@ Rails.application.routes.draw do
 #   end
 
   get 'api/v0/rounds/:id/votes', to: 'api/v0/rounds/votes#index'
+  get 'api/v0/users/:user_id/rounds/current_community_round', to: 'api/v0/users/rounds#current_community_round'
   post 'api/v0/users/:user_id/rounds/:round_id/votes/new', to: 'api/v0/rounds/votes#create'
-  post 'api/v0/users/:user_id/rounds/:round_id/current_community_round', to: 'api/v0/users/rounds#current_community_round'
   
   get 'api/v0/users/:id/verify_account/:token', to: 'api/v0/users#verify_account', as: :verify_account
   post 'api/v0/users/:id/login', to: 'api/v0/users#login', as: :login
