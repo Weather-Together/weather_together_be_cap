@@ -71,7 +71,10 @@
 
 ### Built With
 
-* ADD TOOLS HERE
+* Ruby on Rails
+* HTML
+* JavaScript
+* postgresql
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -180,11 +183,21 @@ Project Link: [https://github.com/Weather-Together/weather_together_be](https://
 
 ## Contributors
 
-[![LinkedIn][linkedin-shield]][linkedin-url-mk] Michael Kuhlmeier
-[![LinkedIn][linkedin-shield]][linkedin-url-bk] Blaine Kennedy
-[![LinkedIn][linkedin-shield]][linkedin-url-jo] John O'leary
-[![LinkedIn][linkedin-shield]][linkedin-url-st] Sam Tran
-[![LinkedIn][linkedin-shield]][linkedin-url-kz] Kevin Zolman
+Michael Kuhlmeier [![LinkedIn][linkedin-shield]][linkedin-url-mk] 
+
+
+Blaine Kennedy [![LinkedIn][linkedin-shield]][linkedin-url-bk] 
+
+
+John O'leary [![LinkedIn][linkedin-shield]][linkedin-url-jo] 
+
+
+Sam Tran [![LinkedIn][linkedin-shield]][linkedin-url-st] 
+
+
+Kevin Zolman [![LinkedIn][linkedin-shield]][linkedin-url-kz] 
+
+
 
 
 
