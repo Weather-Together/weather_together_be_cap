@@ -40,6 +40,12 @@ class Api::V0::UsersController < ApplicationController
     end
   end
 
+  def recent_rounds
+    @user = User.find(params[:user_id])
+    rounds = @user.previous_public_rounds
+    render json: RoundSerializer.new(rounds)
+  end
+
   private
 
   def user_params
