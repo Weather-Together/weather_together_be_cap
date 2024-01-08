@@ -1,6 +1,7 @@
 class Round < ApplicationRecord
   before_save do
     self.close_date = self.find_close_date
+    self.process_date = self.find_process_date
   end
 
   belongs_to :game
@@ -16,14 +17,25 @@ class Round < ApplicationRecord
       Round.create(target_weather_stats: target_data, game_id: game.id)
       closing_round = game.rounds.find_by(close_date: Date.today.to_s)
       closing_round.close_round
+      processing_round = game.rounds.find_by(process_date: Date.today.to_s)
+      processing_round.process_round
     end
   end
 
   def close_round
+    update(status: 1)
+  end
+
+  def process_round
     votes.each { |vote| vote.process }
+    update(status: 2)
   end
 
   def find_close_date
+    (Date.today + 1).to_s
+  end
+
+  def find_process_date
     (Date.today + game.guess_lead_time + 1).to_s
   end
 

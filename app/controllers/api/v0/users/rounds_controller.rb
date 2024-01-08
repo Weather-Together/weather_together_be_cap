@@ -20,6 +20,7 @@ class Api::V0::Users::RoundsController < ApplicationController
     params.require(:round).permit(:game_id)
   end
 
+  
 
 end
 
