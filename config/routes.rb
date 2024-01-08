@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   # API routes
   namespace :api do
     namespace :v0 do
-      resources :users, only: [:new, :create] do
+      resources :users, only: [:new, :create, :index] do
         resources :rounds, only: [:show], controller: 'users/rounds'
         get 'recent_rounds', to: 'users#recent_rounds'
       end
