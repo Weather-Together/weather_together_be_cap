@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
 #     end
 #   end
+  
+  get "api/v0/rounds/recent_rounds", to: 'api/v0/rounds#recent_rounds'
+  get 'api/v0/rounds/current_community_round', to: 'api/v0/rounds#current_community_round'
 
   get 'api/v0/rounds/:id/votes', to: 'api/v0/rounds/votes#index'
   get 'api/v0/users/:user_id/rounds/current_community_round', to: 'api/v0/users/rounds#current_community_round'

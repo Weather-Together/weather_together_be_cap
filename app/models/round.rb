@@ -1,7 +1,11 @@
 class Round < ApplicationRecord
   before_save do
-    self.close_date = self.find_close_date
-    self.process_date = self.find_process_date
+    unless self.close_date
+      self.close_date = self.find_close_date
+    end
+    unless self.process_date
+      self.process_date = self.find_process_date
+    end
   end
 
   belongs_to :game
