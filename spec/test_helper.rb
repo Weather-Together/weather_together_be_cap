@@ -42,10 +42,11 @@ def load_test_data
     @game1 = Game.create!(length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, game_type: 0, results: nil)
   
   # Rounds
-    @round1 = Round.create!(game_id: @game1.id, target_weather_stats: @data)
-    @round2 = Round.create!(game_id: @game1.id, target_weather_stats: @data)
-    @round3 = Round.create!(game_id: @game1.id, target_weather_stats: @data)
-
+    @round4 = Round.create!(game_id: @game1.id, target_weather_stats: @data, game_type: 1)
+    @round1 = Round.create!(game_id: @game1.id, target_weather_stats: @data, game_type: 0)
+    @round2 = Round.create!(game_id: @game1.id, target_weather_stats: @data, game_type: 0)
+    @round3 = Round.create!(game_id: @game1.id, target_weather_stats: @data, game_type: 0)
+  
   # Votes
     @vote1 = Vote.create!(user_id: @user1.id, round_id: @round1.id, lat: lat1, lon: lon1, target_weather_stats: "data")
     @vote2 = Vote.create!(user_id: @user2.id, round_id: @round1.id, lat: lat2, lon: lon2, target_weather_stats: "data")

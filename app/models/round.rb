@@ -2,6 +2,7 @@ class Round < ApplicationRecord
   before_save do
     self.close_date = self.find_close_date
     self.process_date = self.find_process_date
+    self.game_type = self.game.game_type
   end
 
   belongs_to :game
@@ -9,6 +10,7 @@ class Round < ApplicationRecord
   has_many :users, through: :votes
 
   enum status: { open: 0, closed: 1, processed: 2 }
+  enum game_type: { community: 0, custom: 1 }
 
   def self.turnover
     target_data = generate_target_data
