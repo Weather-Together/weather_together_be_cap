@@ -20,6 +20,7 @@ class User < ApplicationRecord
 
   def previous_public_rounds
     @recent_rounds = rounds
+                          .where(game_type: 0)
                           .order(created_at: :desc)
                           .limit(3)
                           .includes(:votes)
