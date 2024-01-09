@@ -63,8 +63,10 @@ data16 = wf.weather_data(lat16, lon16, date)
 
 @game1 = Game.create!(length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, game_type: 0, results: nil)
 
-UserGame.create!(user_id: @user1.id, game_id: @game1.id)
-UserGame.create!(user_id: @user2.id, game_id: @game1.id)
+User.all.each do |user|
+  UserGame.create!(user_id: user.id, game_id: @game1.id)
+end
+
 
 @round = Round.create!(game_id: @game1.id, target_weather_stats: data11)
 @round.update(close_date: (Date.today-4).to_s, process_date: (Date.today-1).to_s)
@@ -78,10 +80,7 @@ UserGame.create!(user_id: @user2.id, game_id: @game1.id)
 @round5.update(close_date: (Date.today).to_s, process_date: (Date.today+3).to_s)
 @round6 = Round.create!(game_id: @game1.id, target_weather_stats: data16)
 
-
-rounds = [@round, @round2, @round3, @round4, @round5, @round6]
-
-rounds.each do |round|
+Round.all.each do |round|
   Vote.create!(user_id: @user1.id, round_id: round.id, lat: lat1, lon: lon1, target_weather_stats: round.target_weather_stats)
   Vote.create!(user_id: @user2.id, round_id: round.id, lat: lat2, lon: lon2, target_weather_stats: round.target_weather_stats)
   Vote.create!(user_id: @user3.id, round_id: round.id, lat: lat3, lon: lon3, target_weather_stats: round.target_weather_stats)
