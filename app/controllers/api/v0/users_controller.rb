@@ -8,7 +8,6 @@ class Api::V0::UsersController < ApplicationController
   end
 
   def create
-    require 'pry'; binding.pry
     @user = User.new(user_params)
     if @user.save!
       UserMailer.with(user: @user).verification_email.deliver_now

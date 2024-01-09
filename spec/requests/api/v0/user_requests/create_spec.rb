@@ -14,6 +14,5 @@ RSpec.describe "User Recent Rounds" do
     post "/api/v0/users", params: new_user.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
     expect(response).to be_successful
     expect(response.status).to eq(200)
-    require 'pry'; binding.pry
   end
 end
