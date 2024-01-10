@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v0 do
 
-      resources :rounds, only: [:show] do
+      resources :rounds, only: [:show, :index] do
         get 'results', on: :member, to: 'rounds#show', as: 'round_results'
       end
 

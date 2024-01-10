@@ -1,4 +1,4 @@
-class RoundSerializer
+class BulkroundSerializer
   include JSONAPI::Serializer
 
   attributes  :close_date,
@@ -15,19 +15,19 @@ class RoundSerializer
     round.votes.count
   end
 
-  attribute :votes do |round|
-    round.votes.map do |vote|
-      {
-        vote_id: vote.id,
-        user_id: vote.user_id,
-        round_id: vote.round_id,
-        status: vote.status,
-        target_weather_stats: vote.target_weather_stats,
-        latitude: vote.lat,
-        longitude: vote.lon,
-        weather_stats: vote.weather_stats,
-        score: vote.score
-      }
-    end
-  end
+  # attribute :votes do |round|
+  #   round.votes.map do |vote|
+  #     {
+  #       vote_id: vote.id,
+  #       user_id: vote.user_id,
+  #       round_id: vote.round_id,
+  #       status: vote.status,
+  #       target_weather_stats: vote.target_weather_stats,
+  #       latitude: vote.lat,
+  #       longitude: vote.lon,
+  #       weather_stats: vote.weather_stats,
+  #       score: vote.score
+  #     }
+  #   end
+  # end
 end
