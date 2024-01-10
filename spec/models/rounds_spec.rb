@@ -33,6 +33,13 @@ RSpec.describe Round, type: :model do
       @round1.close_round
       expect(@round1.reload.status).to eq("closed")
     end
+
+    it "can process_round" do
+      @round1.close_round
+      expect(@round1.reload.status).to eq("closed")
+      @round1.process_round
+      expect(@round1.reload.status).to eq("processed")
+    end
   end
 
 
