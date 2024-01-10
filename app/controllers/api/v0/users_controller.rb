@@ -30,7 +30,7 @@ class Api::V0::UsersController < ApplicationController
   def verify_account
     @user = User.find_by(id: params[:id], verification_token: params[:token])
     if @user
-      @user.update(verified: 1, verification_token: nil)
+      @user.update!(verified: 1, verification_token: nil)
       render json: { "message": "Successfully verified user"}, status: :accepted
     else
       render json: ErrorSerializer.new(ErrorMessage.new("Email does not match verification token", 422)), status: :unprocessable_entity

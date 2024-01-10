@@ -11,7 +11,6 @@ class User < ApplicationRecord
   
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :password, presence: true, length: { minimum: 6 }
 
   enum verified: { unverified: 0, verified: 1, oauth: 2 }
 
