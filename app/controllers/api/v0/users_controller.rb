@@ -33,7 +33,7 @@ class Api::V0::UsersController < ApplicationController
       @user.update!(verified: 1, verification_token: nil)
       render json: { "message": "Successfully verified user"}, status: :accepted
     else
-      render json: ErrorSerializer.new(ErrorMessage.new("Email does not match verification token", 422)), status: :unprocessable_entity
+      render json: ErrorSerializer.new(ErrorMessage.new("Email does not match verification token", 422)).error_json, status: :unprocessable_entity
     end
   end
 
@@ -42,14 +42,14 @@ class Api::V0::UsersController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       if @user.unverified?
-        render json: ErrorSerializer.new(ErrorMessage.new("User must verify email", 401)), status: :unauthorized
+        render json: ErrorSerializer.new(ErrorMessage.new("User must verify email", 401)).error_json, status: :unauthorized
       elsif @user.oauth?
-        render json: ErrorSerializer.new(ErrorMessage.new("User must sign in through Google OAuth", 401)), status: :unauthorized
+        render json: ErrorSerializer.new(ErrorMessage.new("User must sign in through Google OAuth", 401)).error_json, status: :unauthorized
       else
         render json: UserSerializer.new(@user)
       end
     else
-      render json: ErrorSerializer.new(ErrorMessage.new("Email and/or password are incorrect", 404)), status: :not_found
+      render json: ErrorSerializer.new(ErrorMessage.new("Email and/or password are incorrect", 404)).error_json, status: :not_found
     end
   end
 
