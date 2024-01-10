@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Rounds Show" do
+RSpec.describe "Rounds inex" do
   before :each do
     load_test_data
   end
