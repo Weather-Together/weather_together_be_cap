@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get 'api/v0/users/:id/verify_account/:token', to: 'api/v0/users#verify_account', as: :verify_account
   post 'api/v0/users/login', to: 'api/v0/users#login', as: :login
   get 'api/v0/verification_sent', to: 'api/v0/users#verification_sent', as: :verification_sent
-  post 'api/v0/users/:email', to: 'api/v0/users#find_or_create'
+  post 'api/v0/users/oauth_login', to: 'api/v0/users#find_or_create'
 
 
 

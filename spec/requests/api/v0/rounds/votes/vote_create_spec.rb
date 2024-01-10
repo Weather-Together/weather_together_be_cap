@@ -7,7 +7,6 @@ describe "Vote API" do
     new_vote = {
       "lat": "#{@lat2}",
       "lon": "#{@lon2}",
-      "credit_accepted": false
     }
 
     post "/api/v0/users/#{@user3.id}/rounds/#{@round1.id}/votes/new", params: new_vote.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }

@@ -7,9 +7,5 @@ RSpec.describe Vote, type: :model do
     it { should belong_to(:round) }
   end
 
-  # describe "validations" do
-  #   it { should validate_presence_of(:title) }
-  #   it { should validate_presence_of(:runtime) }
-
-  # end
+  
 end
