@@ -3,6 +3,10 @@ class Api::V0::UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    render json: UserSerializer.new(User.all)
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
