@@ -4,7 +4,7 @@ RSpec.describe 'API call', :vcr do
     xit 'gets weather data for a location', :vcr do
       load_location_coordinates
       ws = WeatherService.new
-      data = ws.get_details(@lat1, @lon1, @date)
+      data = JSON.parse(ws.get_details(@lat1, @lon1, @date), symbolize_names: true)
 
       expect(data).to be_a(Hash)
       expect(data[:location]).to be_a(Hash)
@@ -33,7 +33,7 @@ RSpec.describe 'API call', :vcr do
     xit 'gets weather data for a second location', :vcr do
       load_location_coordinates
       ws = WeatherService.new
-      data = ws.get_details(@lat2, @lon2, @date)
+      data = JSON.parse(ws.get_details(@lat2, @lon2, @date), symbolize_names: true)
 
       expect(data).to be_a(Hash)
       expect(data[:location]).to be_a(Hash)

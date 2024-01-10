@@ -5,6 +5,10 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+[![Build Status](https://img.shields.io/github/workflow/status/Weather-Together/weather_together_be/main/main)](https://github.com/Weather-Together/weather_together_be/actions)
+
+
+[![Code Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://example.com/coverage-report)
 
 
 
@@ -78,11 +82,19 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Gems
-
-* [![saasc-rails][gem-saasc-rails]][gem-saasc-rails-url]
-* [![faraday-rails][gem-faraday-rails]][gem-faraday-rails-url]
-* [![figaro-rails][gem-figaro-rails]][gem-figaro-rails-url]
-* [![jsonapi-serializer-rails][gem-jsonapi-serializer-rails]][gem-jsonapi-serializer-rails-url]
+* [![debug][gem-debug]][gem-debug-url]
+* [![rspec-rails][gem-rspec-rails]][gem-rspec-rails-url]
+* [![simplecov][gem-simplecov]][gem-simplecov-url]
+* [![factory_bot_rails][gem-factory_bot_rails]][gem-factory_bot_rails-url]
+* [![faker][gem-faker]][gem-faker-url]
+* [![pry][gem-pry]][gem-pry-url]
+* [![shoulda-matchers][gem-shoulda-matchers]][gem-shoulda-matchers-url]
+* [![faraday][gem-faraday]][gem-faraday-url]
+* [![figaro][gem-figaro]][gem-figaro-url]
+* [![jsonapi-serializer][gem-jsonapi-serializer]][gem-jsonapi-serializer-url]
+* [![capybara][gem-capybara]][gem-capybara-url]
+* [![webmock][gem-webmock]][gem-webmock-url]
+* [![vcr][gem-vcr]][gem-vcr-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -98,6 +110,7 @@ UPDATE WITH ANY OR REMOVE
 ### Installation
 
 1. Get a free Weather API Key at [https://www.weatherapi.com/](https://www.weatherapi.com/)
+
 2. Clone the repo
    ```sh
    git clone https://github.com/Weather-Together/weather_together_be.git
@@ -229,11 +242,42 @@ Kevin Zolman [![LinkedIn][linkedin-shield]][linkedin-url-kz]
 [JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [PostgreSQL-shield]: https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white
 [PostgreSQL-url]: https://www.postgresql.org/
-[gem-saasc-rails]: https://img.shields.io/badge/sassc--rails?style=flat-square&label=saasc-rails
-[gem-saasc-rails-url]: https://github.com/sass/sassc-rails
-[gem-faraday-rails]: https://img.shields.io/badge/faraday--rails?style=flat-square
-[gem-faraday-rails-url]: https://lostisland.github.io/faraday/#/
-[gem-figaro-rails]: https://img.shields.io/badge/figaro--rails?style=flat-square
-[gem-figaro-rails-url]: https://github.com/laserlemon/figaro
-[gem-jsonapi-serializer-rails]: https://img.shields.io/badge/jsonapiserializer--rails?style=flat-square&label=jsonapi-serializer
-[gem-jsonapi-serializer-rails-url]: https://github.com/jsonapi-serializer/jsonapi-serializer
+
+[gem-debug]: https://img.shields.io/badge/debug-1.9.1-brightgreen?style=flat-square
+[gem-debug-url]: https://rubygems.org/gems/debug
+
+[gem-rspec-rails]: https://img.shields.io/badge/rspec--rails-6.1.0-green?style=flat-square
+[gem-rspec-rails-url]: https://github.com/rspec/rspec-rails
+
+[gem-simplecov]: https://img.shields.io/badge/simplecov-0.22.0-yellow?style=flat-square
+[gem-simplecov-url]: https://github.com/simplecov-ruby/simplecov
+
+[gem-factory_bot_rails]: https://img.shields.io/badge/factory_bot_rails-6.4.0-success?style=flat-square
+[gem-factory_bot_rails-url]: https://github.com/thoughtbot/factory_bot_rails
+
+[gem-faker]: https://img.shields.io/badge/faker-3.2.2-red?style=flat-square
+[gem-faker-url]: https://github.com/faker-ruby/faker
+
+[gem-pry]: https://img.shields.io/badge/pry-0.14.2-yellow?style=flat-square
+[gem-pry-url]: https://github.com/pry/pry
+
+[gem-shoulda-matchers]: https://img.shields.io/badge/shoulda--matchers-6.0.0-orange?style=flat-square
+[gem-shoulda-matchers-url]: https://github.com/thoughtbot/shoulda-matchers
+
+[gem-faraday]: https://img.shields.io/badge/faraday-2.8.1-yellowgreen?style=flat-square
+[gem-faraday-url]: https://github.com/lostisland/faraday
+
+[gem-figaro]: https://img.shields.io/badge/figaro-1.2.0-critical?style=flat-square
+[gem-figaro-url]: https://github.com/laserlemon/figaro
+
+[gem-jsonapi-serializer]: https://img.shields.io/badge/jsonapi--serializer-2.2.0-blue?style=flat-square
+[gem-jsonapi-serializer-url]: https://github.com/jsonapi-serializer/jsonapi-serializer
+
+[gem-capybara]: https://img.shields.io/badge/capybara-3.39.2-brightgreen?style=flat-square
+[gem-capybara-url]: https://github.com/teamcapybara/capybara
+
+[gem-webmock]: https://img.shields.io/badge/webmock-3.19.1-yellowgreen?style=flat-square
+[gem-webmock-url]: https://github.com/bblimke/webmock
+
+[gem-vcr]: https://img.shields.io/badge/vcr-6.2.0-orange?style=flat-square
+[gem-vcr-url]: https://github.com/vcr/vcr
