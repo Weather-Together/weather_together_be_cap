@@ -13,4 +13,9 @@ class Api::V0::RoundsController < ApplicationController
     round = Round.all.find(params[:id])
     render json: RoundSerializer.new(round)
   end
+
+  def index
+    rounds = Round.all
+    render json: BulkroundSerializer.new(rounds)
+  end
 end
