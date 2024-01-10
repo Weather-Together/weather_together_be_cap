@@ -9,7 +9,7 @@ describe "Vote API" do
       "lon": "#{@lon2}",
     }
 
-    post "/api/v0/users/#{@user3.id}/rounds/#{@round1.id}/votes/new", params: new_vote.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    post "/api/v0/users/#{@user3.id}/rounds/#{@round.id}/votes/new", params: new_vote.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
     expect(response).to be_successful
     expect(response.status).to eq(200)
 

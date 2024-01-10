@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 10 Jan 2024 06:33:13 GMT
+      - Wed, 10 Jan 2024 06:53:46 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -29,7 +29,7 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Server:
-      - BunnyCDN-IL1-1070
+      - BunnyCDN-IL1-718
       Cdn-Pullzone:
       - '93447'
       Cdn-Uid:
@@ -45,7 +45,7 @@ http_interactions:
       X-Weatherapi-Qpm-Left:
       - '4999845'
       X-Varnish:
-      - '623673518'
+      - '637305588'
       Cdn-Proxyver:
       - '1.04'
       Cdn-Requestpullsuccess:
@@ -53,19 +53,19 @@ http_interactions:
       Cdn-Requestpullcode:
       - '200'
       Cdn-Cachedat:
-      - 01/10/2024 06:33:13
+      - 01/10/2024 06:53:46
       Cdn-Edgestorageid:
       - '845'
       Cdn-Status:
       - '200'
       Cdn-Requestid:
-      - 0b9aeadd875760a35e86f647e4c62ba4
+      - 3568ff2d3922778a18ce420e57014b2e
       Cdn-Cache:
       - EXPIRED
     body:
       encoding: ASCII-8BIT
-      string: '{"location":{"name":"Alto Coite","region":"Mato Grosso","country":"Brazil","lat":-15.74,"lon":-54.34,"tz_id":"America/Cuiaba","localtime_epoch":1704868359,"localtime":"2024-01-10
-        2:32"},"forecast":{"forecastday":[{"date":"2024-01-09","date_epoch":1704758400,"day":{"maxtemp_c":31.7,"maxtemp_f":89.1,"mintemp_c":20.3,"mintemp_f":68.6,"avgtemp_c":25.2,"avgtemp_f":77.3,"maxwind_mph":6.9,"maxwind_kph":11.2,"totalprecip_mm":3.29,"totalprecip_in":0.13,"totalsnow_cm":0.0,"avgvis_km":7.4,"avgvis_miles":4.0,"avghumidity":80,"daily_will_it_rain":1,"daily_chance_of_rain":100,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Light
+      string: '{"location":{"name":"Alto Coite","region":"Mato Grosso","country":"Brazil","lat":-15.74,"lon":-54.34,"tz_id":"America/Cuiaba","localtime_epoch":1704869592,"localtime":"2024-01-10
+        2:53"},"forecast":{"forecastday":[{"date":"2024-01-09","date_epoch":1704758400,"day":{"maxtemp_c":31.7,"maxtemp_f":89.1,"mintemp_c":20.3,"mintemp_f":68.6,"avgtemp_c":25.2,"avgtemp_f":77.3,"maxwind_mph":6.9,"maxwind_kph":11.2,"totalprecip_mm":3.29,"totalprecip_in":0.13,"totalsnow_cm":0.0,"avgvis_km":7.4,"avgvis_miles":4.0,"avghumidity":80,"daily_will_it_rain":1,"daily_chance_of_rain":100,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Light
         rain shower","icon":"//cdn.weatherapi.com/weather/64x64/day/353.png","code":1240},"uv":10.0},"astro":{"sunrise":"05:14
         AM","sunset":"06:14 PM","moonrise":"03:03 AM","moonset":"04:43 PM","moon_phase":"Waning
         Crescent","moon_illumination":8},"hour":[{"time_epoch":1704772800,"time":"2024-01-09
@@ -105,5 +105,5 @@ http_interactions:
         rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":5.4,"wind_kph":8.6,"wind_degree":26,"wind_dir":"NNE","pressure_mb":1011.0,"pressure_in":29.86,"precip_mm":0.46,"precip_in":0.02,"snow_cm":0.0,"humidity":91,"cloud":82,"feelslike_c":25.2,"feelslike_f":77.3,"windchill_c":22.9,"windchill_f":73.2,"heatindex_c":25.2,"heatindex_f":77.3,"dewpoint_c":21.4,"dewpoint_f":70.5,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":9.0,"vis_miles":5.0,"gust_mph":11.3,"gust_kph":18.1,"uv":1.0},{"time_epoch":1704855600,"time":"2024-01-09
         23:00","temp_c":22.4,"temp_f":72.4,"is_day":0,"condition":{"text":"Patchy
         rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":5.8,"wind_kph":9.4,"wind_degree":27,"wind_dir":"NNE","pressure_mb":1012.0,"pressure_in":29.87,"precip_mm":0.31,"precip_in":0.01,"snow_cm":0.0,"humidity":92,"cloud":74,"feelslike_c":24.8,"feelslike_f":76.7,"windchill_c":22.4,"windchill_f":72.4,"heatindex_c":24.8,"heatindex_f":76.7,"dewpoint_c":21.1,"dewpoint_f":70.0,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":9.0,"vis_miles":5.0,"gust_mph":12.0,"gust_kph":19.3,"uv":1.0}]}]}}'
-  recorded_at: Wed, 10 Jan 2024 06:33:13 GMT
+  recorded_at: Wed, 10 Jan 2024 06:53:46 GMT
 recorded_with: VCR 6.2.0

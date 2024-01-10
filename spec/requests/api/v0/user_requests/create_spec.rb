@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "User Recent Rounds" do
-  it "goes to post request" do
+  it "goes to post request", :vcr do
     test_data
     load_location_coordinates
     new_user = {
