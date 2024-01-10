@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :password, presence: true, length: { minimum: 6 }
 
+  enum verified: { unverified: 0, verified: 1, oauth: 2 }
 
   def generate_verification_token
     self.verification_token = SecureRandom.urlsafe_base64

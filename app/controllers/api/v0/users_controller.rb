@@ -18,21 +18,22 @@ class Api::V0::UsersController < ApplicationController
   end
 
   def find_or_create
-    @user = User.find_or_create_by(email: params[:email])
-    @user.update(verified: true)
+    @user = User.find_or_create_by(email: params[:email], 
+                                   username: email_to_username(params[:email]), 
+                                   password: "AccThruOAuth1", 
+                                   confirm_password: "AccThruOAuth1", 
+                                   verified: 2, 
+                                   verification_token: nil)
     render json: UserSerializer.new(@user)
   end
 
   def verify_account
     @user = User.find_by(id: params[:id], verification_token: params[:token])
-
     if @user
-      @user.update(verified: true, verification_token: nil)
-      flash[:success] = 'Account verified successfully.'
-      redirect_to dashboard_path # Adjust the path as needed
+      @user.update(verified: 1, verification_token: nil)
+      render json: { "message": "Successfully verified user"}, status: :accepted
     else
-      flash[:error] = 'Invalid verification link.'
-      redirect_to root_path # Adjust the path as needed
+      render json: ErrorSerializer.new(ErrorMessage.new("Email does not match verification token", 422)), status: :unprocessable_entity
     end
   end
 
@@ -40,14 +41,15 @@ class Api::V0::UsersController < ApplicationController
     @user = User.find_by(email: params[:email])
 
     if @user && @user.authenticate(params[:password])
-      if @user.verified
-        render json: UserSerializer.new(@user)
-        # Log the user in
+      if @user.unverified?
+        render json: ErrorSerializer.new(ErrorMessage.new("User must verify email", 401)), status: :unauthorized
+      elsif @user.oauth?
+        render json: ErrorSerializer.new(ErrorMessage.new("User must sign in through Google OAuth", 401)), status: :unauthorized
       else
-        # Show a message telling the user to verify their email
+        render json: UserSerializer.new(@user)
       end
     else
-      # Show an error message
+      render json: ErrorSerializer.new(ErrorMessage.new("Email and/or password are incorrect", 404)), status: :not_found
     end
   end
 
@@ -61,5 +63,9 @@ class Api::V0::UsersController < ApplicationController
 
   def user_params
     params.permit(:username, :email, :password, :password_confirmation)
+  end
+
+  def email_to_username(email)
+    email.split("@")[0]
   end
 end
