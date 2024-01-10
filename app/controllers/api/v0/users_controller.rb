@@ -49,7 +49,7 @@ class Api::V0::UsersController < ApplicationController
         render json: UserSerializer.new(@user)
       end
     else
-      render json: ErrorSerializer.new(ErrorMessage.new("Email and/or password are incorrect", 404)).error_json, status: :not_found
+      render json: ErrorSerializer.new(ErrorMessage.new("Email and/or password are incorrect", 401)).error_json, status: :unauthorized
     end
   end
 
