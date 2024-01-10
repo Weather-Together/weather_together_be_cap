@@ -18,5 +18,25 @@ RSpec.describe Vote, type: :model do
       expect(score>0).to be true
     end
   end
+
+  describe "process" do
+    it "can update vote", :vcr do
+      test_data
+      vote = Vote.all.first
+      vote_id = vote.id
+      expect(vote.weather_stats).to be nil
+      expect(vote.score).to be nil
+      expect(vote.unprocessed?).to be true
+      expect(vote.processed?).to be false
+      vote.process
+
+      vote = Vote.find(vote_id)
+      expect(vote.unprocessed?).to be false
+      expect(vote.processed?).to be true
+      expect(vote.weather_stats).to be_a(String)
+      expect(JSON.parse(vote.weather_stats, symbolize_names: true)).to be_a(Hash)
+      expect(vote.score>0).to be true
+    end
+  end
   
 end
