@@ -45,10 +45,14 @@ class Round < ApplicationRecord
     (Date.today + game.guess_lead_time + 1).to_s
   end
 
-  def generate_target_data
-    lat = rand(-90.000...90.000)
-    lon = rand(-180.000...180.000)
+  def self.generate_target_data
     wf = WeatherFacade.new
-    wf.weather_data(lat, lon)
+    data = {:error=>{:code=>1006, :message=>"No matching location found."}}.to_json
+    while JSON.parse(data, symbolize_names: true)[:error]
+      lat = rand(-90.000...90.000)
+      lon = rand(-180.000...180.000)
+      data = wf.weather_data(lat, lon, Date.yesterday.strftime('%F'))
+    end
+    data
   end
 end

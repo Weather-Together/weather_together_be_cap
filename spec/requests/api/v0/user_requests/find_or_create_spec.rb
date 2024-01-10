@@ -6,7 +6,7 @@ RSpec.describe "User find_or_create" do
       "email": "test@gmail.com",
     }
 
-    post "/api/v0/users/oauth", params: new_acct.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    post "/api/v0/users/oauth_login", params: new_acct.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
     expect(response.status).to eq(200)
     message = JSON.parse(response.body, symbolize_names: true)[:data]
@@ -19,12 +19,12 @@ RSpec.describe "User find_or_create" do
       "email": "test@gmail.com",
     }
 
-    post "/api/v0/users/oauth", params: new_acct.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    post "/api/v0/users/oauth_login", params: new_acct.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
     
     message = JSON.parse(response.body, symbolize_names: true)[:data]
     user_id = message[:id]
 
-    post "/api/v0/users/oauth", params: new_acct.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    post "/api/v0/users/oauth_login", params: new_acct.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
     
     expect(response.status).to eq(200)
     message = JSON.parse(response.body, symbolize_names: true)[:data]
