@@ -33,7 +33,7 @@ RSpec.describe Round, type: :model do
       @round1.close_round
       expect(@round1.reload.status).to eq("closed")
     end
-
+  end
 
 
   describe "generate_target_data" do
