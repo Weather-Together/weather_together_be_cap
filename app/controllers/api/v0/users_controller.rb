@@ -9,13 +9,18 @@ class Api::V0::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      UserMailer.verification_email(@user).deliver_now
+    if @user.save!
+      UserMailer.with(user: @user).verification_email.deliver_now
       render json: UserSerializer.new(@user)
-      redirect_to(verification_sent_path)
     else
       render json: @user.errors, status: :unprocessable_entity
     end
+  end
+
+  def find_or_create
+    @user = User.find_or_create_by(email: params[:email])
+    @user.update(verified: true)
+    render json: UserSerializer.new(@user)
   end
 
   def verify_account
@@ -55,6 +60,6 @@ class Api::V0::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.permit(:username, :email, :password, :password_confirmation)
   end
 end
