@@ -28,7 +28,7 @@ RSpec.describe Round, type: :model do
       expect(@round1.reload.status).to eq("closed")
     end
 
-    xit "can close_round" do
+    it "can close_round" do
       expect(@round1.status).to eq("open")
       @round1.close_round
       expect(@round1.reload.status).to eq("closed")
