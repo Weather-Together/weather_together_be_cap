@@ -9,9 +9,17 @@ class Vote < ApplicationRecord
   
   def process
     unless self.score
-      weather_data = WeatherFacade.new.weather_data(lat, lon, Date.yesterday.strftime('%F'))
-      new_score = calculate_score(weather_data)
-      update(status: :processed, score: new_score, weather_stats: weather_data)
+      wf = WeatherFacade.new
+      new_lat = lat
+      new_lon = lon
+      data = {:error=>{:code=>1006, :message=>"No matching location found."}}.to_json
+      while JSON.parse(data, symbolize_names: true)[:error]
+        data = wf.weather_data(new_lat, new_lon, Date.yesterday.strftime('%F'))
+        new_lat = rand(-90.000...90.000)
+        new_lon = rand(-180.000...180.000)
+      end
+      new_score = calculate_score(data)
+      update(status: :processed, score: new_score, weather_stats: data)
     end
   end
 
