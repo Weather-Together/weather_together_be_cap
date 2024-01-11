@@ -8,9 +8,11 @@ class Vote < ApplicationRecord
   enum status: { unprocessed: 0, processed: 1 }
   
   def process
-    weather_data = WeatherFacade.new.weather_data(lat, lon, Date.yesterday.strftime('%F'))
-    score = calculate_score(weather_data)
-    update(status: :processed, score: score, weather_stats: weather_data)
+    unless self.score
+      weather_data = WeatherFacade.new.weather_data(lat, lon, Date.yesterday.strftime('%F'))
+      new_score = calculate_score(weather_data)
+      update(status: :processed, score: new_score, weather_stats: weather_data)
+    end
   end
 
   def calculate_score(weather_data)
