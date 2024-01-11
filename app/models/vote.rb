@@ -10,7 +10,7 @@ class Vote < ApplicationRecord
   def process
     weather_data = WeatherFacade.new.weather_data(lat, lon, Date.yesterday.strftime('%F'))
     score = calculate_score(weather_data)
-    update(status: :processed, score: score, weather_stats: weather_data, status: 1)
+    update(status: :processed, score: score, weather_stats: weather_data)
   end
 
   def calculate_score(weather_data)

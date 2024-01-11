@@ -15,8 +15,6 @@ class Api::V0::Rounds::VotesController < ApplicationController
                       lon: params[:lon], 
                       user_id: params[:user_id],
                       round_id: params[:round_id])
-        # vote = Vote.find_by( user_id: params[:user_id], #whyyyyyyyy do I neeeeed thiiiiiis
-        #                      round_id: params[:round_id])
         render json: VoteSerializer.new(vote), status: :ok
       else
         vote = Vote.create( lat: params[:lat], 
