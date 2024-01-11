@@ -7,7 +7,8 @@ class VoteSerializer
               :score,
               :status,
               :round_id,
-              :user_id
+              :user_id,
+              :username
 
   attribute :round_id do |vote|
     vote.round.id
@@ -15,5 +16,8 @@ class VoteSerializer
 
   attribute :user_id do |vote|
     vote.user.id
+  end
+  attribute :username do |vote|
+    vote.user.username
   end
 end
