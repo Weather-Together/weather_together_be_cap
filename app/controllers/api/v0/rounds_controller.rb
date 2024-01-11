@@ -10,7 +10,7 @@ class Api::V0::RoundsController < ApplicationController
   end
 
   def show
-    round = Round.all.find(params[:id])
+    round = Round.find(params[:id])
     render json: RoundSerializer.new(round)
   end
 
