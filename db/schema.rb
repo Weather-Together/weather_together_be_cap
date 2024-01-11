@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_10_073208) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_11_200956) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_10_073208) do
     t.string "process_date"
     t.integer "game_type"
     t.index ["game_id"], name: "index_rounds_on_game_id"
+  end
+
+  create_table "turnovers", force: :cascade do |t|
+    t.string "successful_turnover_date"
+    t.boolean "success", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_games", force: :cascade do |t|

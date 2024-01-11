@@ -29,6 +29,10 @@ class Round < ApplicationRecord
       processing_round = game.rounds.find_by(process_date: Date.today.to_s)
       processing_round.process_round if processing_round
     end
+    turnover = Turnover.find_by(successful_turnover_date: Date.today.to_s)
+    unless turnover
+      Turnover.create
+    end
   end
 
   def close_round
