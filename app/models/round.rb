@@ -20,11 +20,14 @@ class Round < ApplicationRecord
     target_data = generate_target_data
     ongoing_games = Game.where(status: 0)
     ongoing_games.each do |game|
-      Round.create(target_weather_stats: target_data, game_id: game.id)
+      round = Round.find_by(close_date: (Date.today+1).to_s, game_id: game.id)
+      unless round  
+        Round.create(target_weather_stats: target_data, game_id: game.id)
+      end
       closing_round = game.rounds.find_by(close_date: Date.today.to_s)
-      closing_round.close_round
+      closing_round.close_round if closing_round
       processing_round = game.rounds.find_by(process_date: Date.today.to_s)
-      processing_round.process_round
+      processing_round.process_round if processing_round
     end
   end
 
