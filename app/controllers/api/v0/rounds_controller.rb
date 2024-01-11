@@ -8,4 +8,14 @@ class Api::V0::RoundsController < ApplicationController
     current_round = Game.current_community_round
     render json: RoundSerializer.new(current_round)
   end
+
+  def show
+    round = Round.all.find(params[:id])
+    render json: RoundSerializer.new(round)
+  end
+
+  def index
+    rounds = Round.all
+    render json: BulkroundSerializer.new(rounds)
+  end
 end

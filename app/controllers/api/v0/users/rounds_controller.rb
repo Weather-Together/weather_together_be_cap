@@ -5,8 +5,6 @@ class Api::V0::Users::RoundsController < ApplicationController
     if @user
       round = @user.rounds.find(params[:id])
       render json: RoundSerializer.new(round)
-    else
-      
     end
   end
 
