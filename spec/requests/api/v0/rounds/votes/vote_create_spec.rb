@@ -15,6 +15,7 @@ describe "Vote API" do
 
 
     vote = JSON.parse(response.body, symbolize_names: true)[:data]
+    require 'pry'; binding.pry
 
     vote_attributes = vote[:attributes]
 

@@ -6,6 +6,15 @@ class VoteSerializer
               :weather_stats,
               :score,
               :status,
-              :round
+              :round_id,
+              :user_id
 
+
+  attribute :round_id do |vote|
+    vote.round.id
+  end
+
+  attribute :user_id do |vote|
+    vote.user.id
+  end
 end
