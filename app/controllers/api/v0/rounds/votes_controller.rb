@@ -28,7 +28,22 @@ class Api::V0::Rounds::VotesController < ApplicationController
     end
   end
 
-  # def index
-  #   render json: VoteSerializer.new(Round.find(params[:id].votes))
-  # end
+  def index
+    render json: VoteSerializer.new(Round.find(params[:id]).votes)
+  end
+
+
+  def results
+    if params[:id]
+      begin
+        round = round.find(params[:id])
+      rescue ActiveRecord::RecordNotFound => exception
+        render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).error_json, status: :not_found
+      end
+    else
+      round = Round.where(status: :processed).last
+    end
+    require 'pry'; binding.pry
+    render json: VoteSerializer.new(round.votes.order(score: :asc))
+  end
 end

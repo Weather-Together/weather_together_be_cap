@@ -92,3 +92,13 @@ Round.all.each do |round|
   Vote.create!(user_id: @user9.id, round_id: round.id, lat: lat9, lon: lon9, target_weather_stats: round.target_weather_stats)
   Vote.create!(user_id: @user10.id, round_id: round.id, lat: lat10, lon: lon10, target_weather_stats: round.target_weather_stats)
 end
+
+
+@round.close_round
+@round2.close_round
+@round3.close_round
+@round4.close_round
+@round5.close_round
+
+@round.process_round
+@round2.process_round
