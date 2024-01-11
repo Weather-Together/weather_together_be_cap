@@ -9,7 +9,6 @@ class VoteSerializer
               :round_id,
               :user_id
 
-
   attribute :round_id do |vote|
     vote.round.id
   end
