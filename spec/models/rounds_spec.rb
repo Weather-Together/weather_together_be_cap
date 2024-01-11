@@ -19,19 +19,26 @@ RSpec.describe Round, type: :model do
 
   describe "methods" do
     before(:each) do
-      load_test_data
+      test_data
     end
 
     xit "can turnover" do
-      expect(@round1.status).to eq("open")
+      expect(@round.status).to eq("open")
       @round1.close_round
-      expect(@round1.reload.status).to eq("closed")
+      expect(@round.reload.status).to eq("closed")
     end
 
-    it "can close_round" do
-      expect(@round1.status).to eq("open")
-      @round1.close_round
-      expect(@round1.reload.status).to eq("closed")
+    it "can close_round", :vcr do
+      expect(@round.status).to eq("open")
+      @round.close_round
+      expect(@round.reload.status).to eq("closed")
+    end
+
+    it "can process_round", :vcr do
+      @round.close_round
+      expect(@round.reload.status).to eq("closed")
+      @round.process_round
+      expect(@round.reload.status).to eq("processed")
     end
   end
 

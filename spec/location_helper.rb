@@ -62,8 +62,8 @@ def load_location_coordinates
   @lon15 = "-159.53"
 
   #Ialibu, Papua New Guinea
-  @lat15 = "-6.32"
-  @lon15 = "143.96"
+  @lat16 = "-6.32"
+  @lon16 = "143.96"
 
 
 

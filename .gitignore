@@ -33,4 +33,9 @@
 /config/master.key
 /config/credentials.yml.enc
 
+
+/spec/fixtures/*
+
+
+
 /coverage
