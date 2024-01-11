@@ -1,6 +1,6 @@
 class Api::V0::RoundsController < ApplicationController
   def recent_rounds
-    rounds = Round.order(created_at: :desc).limit(3)
+    rounds = Round.order(created_at: :desc).limit(4)
     render json: RoundSerializer.new(rounds)
   end
 
@@ -18,4 +18,5 @@ class Api::V0::RoundsController < ApplicationController
     rounds = Round.all
     render json: BulkroundSerializer.new(rounds)
   end
+
 end
