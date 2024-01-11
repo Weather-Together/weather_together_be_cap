@@ -43,7 +43,6 @@ class Api::V0::Rounds::VotesController < ApplicationController
     else
       round = Round.where(status: :processed).last
     end
-    require 'pry'; binding.pry
     render json: VoteSerializer.new(round.votes.order(score: :asc))
   end
 end

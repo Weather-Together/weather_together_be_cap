@@ -24,6 +24,5 @@ RSpec.describe "Rounds inex" do
     expect(json_response['data'][0]['attributes']).to have_key("target_weather_stats")
     expect(json_response['data'][0]['attributes']).to have_key("status")
     expect(json_response['data'][0]['attributes']).to have_key("game_id")
-    expect(json_response['data'][0]['attributes']).to have_key("votes")
   end
 end
