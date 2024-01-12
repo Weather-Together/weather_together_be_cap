@@ -5,10 +5,12 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![Build Status](https://img.shields.io/github/workflow/status/Weather-Together/weather_together_be/main/main)](https://github.com/Weather-Together/weather_together_be/actions)
 
 
-[![Code Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://example.com/coverage-report)
+[![Weather Together](https://img.shields.io/badge/Weather%20Together-Visit%20Website-blue?style=for-the-badge)](https://weather-together.onrender.com/)
+
+
+
 
 
 
@@ -16,13 +18,15 @@
 <br />
 <div align="center">
   <a href="https://github.com/Weather-Together/weather_together_be">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo_480.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Weather Together</h3>
 
   <p align="center">
-    project_description
+    Weather Together is a game app where a daily set of weather data is displayed to the user (player) from a randomly selected location in the world. Each day the player guesses a location where they think this weather data was collected through an interactive map selector. They are able to keep track of prior guesses as well as track their progress on a leaderboard.
+
+The goal of this app is to provide public education and increase awareness of general global climate trends in a fun and interactive manner.
     <br />
     <a href="https://github.com/Weather-Together/weather_together_be"><strong>Explore the docs »</strong></a>
     <br />
@@ -58,7 +62,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#contributers">Contributers</a></li>
+    <li><a href="#contributors">Contributors</a></li>
   </ol>
 </details>
 
@@ -67,11 +71,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](FINAL URL LATER)
+<img src="images/Map_WT.png" alt="Map" width="400" height="200">
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+[![Weather Together](https://img.shields.io/badge/Weather%20Together-Visit%20Website-blue?style=for-the-badge)](https://weather-together.onrender.com/)
 
 ### Built With
 * [![Ruby on Rails][Rails-shield]][Rails-url]
@@ -103,7 +105,7 @@
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### Database 
 
 UPDATE WITH ANY OR REMOVE
 
@@ -120,11 +122,11 @@ UPDATE WITH ANY OR REMOVE
    ```sh
    EDITOR="code --wait" rails credentials:edit
    ```
-  In editor pop up
-  ```ruby
-  weather_api:
-    key: <YOUR API KEY>
-  ```
+    In editor pop up
+    ```ruby
+    weather_api:
+      key: <YOUR API KEY>
+    ```
 4. Gem Bundle
    ```sh
     bundle
@@ -141,9 +143,6 @@ UPDATE WITH ANY OR REMOVE
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Weather Together is a game app where a daily set of weather data is displayed to the user (player) from a randomly selected location in the world. Each day the player guesses a location where they think this weather data was collected through an interactive map selector. They are able to keep track of prior guesses as well as track their progress on a leaderboard.
-
-The goal of this app is to provide public education and increase awareness of general global climate trends in a fun and interactive manner.
 
 This portion of the app handles the backend functionality of the game:
 * Creates new user from input recieved from frontend and creates mailer with token to be passed to frontend for account activation.
@@ -158,17 +157,17 @@ This portion of the app handles the backend functionality of the game:
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Database Schema
-- [ ] New User Creation, Mailbox
-    - [ ] Generate Token
-    - [ ] Generate Verification Email to be Used by Frontend
-- [ ] Cron Job and Rake Task
-- [ ] API Consumption
-    - [ ] Weather Data
-    - [ ] Endpoints to be Consumed by Frontend
-- [ ] Statistics
-    - [ ] Game Results (r^2)
-    - [ ] Daily Leaderboard
+- [X] Database Schema
+- [X] New User Creation, Mailbox
+    - [X] Generate Token
+    - [X] Generate Verification Email to be Used by Frontend
+- [X] Cron Job and Rake Task
+- [X] API Consumption
+    - [X] Weather Data
+    - [X] Endpoints to be Consumed by Frontend
+- [X] Statistics
+    - [X] Game Results (r^2)
+    - [X] Daily Leaderboard
 - [ ] Action Cable 
 - [ ] Addition of Private Games
 
@@ -180,10 +179,165 @@ See the [open issues](https://github.com/Weather-Together/weather_together_be/is
 
 
 
+## API Endpoints
+
+### Health Check Route
+* **GET /up**
+  - Controller: Rails::HealthController#show (named route: rails_health_check)
+  - Example Request:
+    ```
+    curl -X GET https://weather-together-be.onrender.com/up
+    ```
+  - Example Response:
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <body style="background-color: green"></body>
+    </html>
+    ```
+
+### Recent Rounds
+* **GET /api/v0/rounds/recent_rounds**
+  - Controller: Api::V0::RoundsController#recent_rounds
+  - Example Request:
+    ```
+    curl -X GET https://weather-together-be.onrender.com/api/v0/rounds/recent_rounds
+    ```
+  - Example Response:
+    ```json
+    {
+    "data": [
+        {
+            "id": "92",
+            "type": "round",
+            "attributes": {
+                "close_date": "2024-01-13",
+                "number_of_votes": 12,
+                "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
+                "status": "open",
+                "game_id": 18,
+                "votes": [
+                    {
+                        "vote_id": 900,
+                        "user_id": 222,
+                        "round_id": 92,
+                        "status": "unprocessed",
+                        "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
+                        "latitude": "12.745354201417783",
+                        "longitude": "15.68749978648961",
+                        "weather_stats": null,
+                        "score": null
+                    }
+                ]
+            }
+        }]
+    }
+    ```
+
+### Current Community Round
+* **GET /api/v0/rounds/current_community_round**
+  - Controller: Api::V0::RoundsController#current_community_round
+  - Example Request:
+    ```
+    curl -X GET https://weather-together-be.onrender.com/api/v0/rounds/current_community_round
+    ```
+  - Example Response:
+    ```json
+    {
+    "data": {
+        "id": "92",
+        "type": "round",
+        "attributes": {
+            "close_date": "2024-01-13",
+            "number_of_votes": 12,
+            "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
+            "status": "open",
+            "game_id": 18,
+            "votes": [
+                {
+                    "vote_id": 900,
+                    "user_id": 222,
+                    "round_id": 92,
+                    "status": "unprocessed",
+                    "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
+                    "latitude": "12.745354201417783",
+                    "longitude": "15.68749978648961",
+                    "weather_stats": null,
+                    "score": null
+                         },
+                          ...
+                ]
+            }
+        }]
+    }
+    ```
+
+### Votes for a Round
+* **GET /api/v0/rounds/:id/votes**
+  - Controller: Api::V0::Rounds::VotesController#index
+  - Example Request:
+    ```
+    curl -X GET https://weather-together-be.onrender.com/api/v0/rounds/1/votes
+    ```
+  - Example Response:
+    ```json
+    {
+    "data": [
+        {
+            "id": "900",
+            "type": "vote",
+            "attributes": {
+                "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
+                "lat": "12.745354201417783",
+                "lon": "15.68749978648961",
+                "weather_stats": null,
+                "score": null,
+                "status": "unprocessed",
+                "round_id": 92,
+                "user_id": 222,
+                "username": "HelpfulPug"
+            }
+        }
+    ]
+    }
+    ```
+
+### New Vote for a Round
+* **POST /api/v0/users/:user_id/rounds/:round_id/votes/new**
+  - Controller: Api::V0::Rounds::VotesController#create
+  - Example Request:
+    ```
+    curl -X POST https://weather-together-be.onrender.com/api/v0/users/221/rounds/92/votes/new -d '"lat": 46.8, "lon": 10.3'
+    ```
+  - Example Response:
+    ```json
+    {
+    "data": {
+        "id": "901",
+        "type": "vote",
+        "attributes": {
+            "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
+            "lat": "46.8",
+            "lon": "10.3",
+            "weather_stats": null,
+            "score": null,
+            "status": "unprocessed",
+            "round_id": 92,
+            "user_id": 221,
+            "username": "OutstandingMammoth"
+                         }
+             }
+    }
+    ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
 <!-- CONTACT -->
 ## Contact
 
-Organization: Weather Together - UPDATE WITH FUTURE EMAIL
+Organization: Weather Together - WeatherTogether2308@gmail.com
 
 Organization Link: [https://github.com/Weather-Together](https://github.com/Weather-Together)
 
@@ -195,19 +349,31 @@ Project Link: [https://github.com/Weather-Together/weather_together_be](https://
 
 ## Contributors
 
-Michael Kuhlmeier [![LinkedIn][linkedin-shield]][linkedin-url-mk] 
+Michael Kuhlmeier 
+ 
+[![LinkedIn][linkedin-shield]][linkedin-url-mk]
+[![GitHub][github-shield-mk]][github-url-mk]
+
+Blaine Kennedy 
+
+[![LinkedIn][linkedin-shield]][linkedin-url-bk] 
+[![GitHub][github-shield-bk]][github-url-bk]
 
 
-Blaine Kennedy [![LinkedIn][linkedin-shield]][linkedin-url-bk] 
+John O'Leary 
+
+[![LinkedIn][linkedin-shield]][linkedin-url-jo] 
+[![GitHub][github-shield-jo]][github-url-jo]
+
+ Sam Tran 
+ 
+ [![LinkedIn][linkedin-shield]][linkedin-url-st]
+ [![GitHub][github-shield-st]][github-url-st]
 
 
-John O'leary [![LinkedIn][linkedin-shield]][linkedin-url-jo] 
+Kevin Zolman 
 
-
-Sam Tran [![LinkedIn][linkedin-shield]][linkedin-url-st] 
-
-
-Kevin Zolman [![LinkedIn][linkedin-shield]][linkedin-url-kz] 
+[![LinkedIn][linkedin-shield]][linkedin-url-kz][![GitHub][github-shield-kz]][github-url-kz]
 
 
 
@@ -281,3 +447,19 @@ Kevin Zolman [![LinkedIn][linkedin-shield]][linkedin-url-kz]
 
 [gem-vcr]: https://img.shields.io/badge/vcr-6.2.0-orange?style=flat-square
 [gem-vcr-url]: https://github.com/vcr/vcr
+
+
+[github-shield-mk]: https://img.shields.io/badge/GitHub-mbkuhl-success?style=for-the-badge&logo=github
+[github-url-mk]: https://github.com/mbkuhl
+
+[github-shield-jo]: https://img.shields.io/badge/GitHub-Captainlearyo-success?style=for-the-badge&logo=github
+[github-url-jo]: https://github.com/Captainlearyo
+
+[github-shield-st]: https://img.shields.io/badge/GitHub-Sykogst-success?style=for-the-badge&logo=github
+[github-url-st]: https://github.com/Sykogst
+
+[github-shield-kz]: https://img.shields.io/badge/GitHub-zkevkev-success?style=for-the-badge&logo=github
+[github-url-kz]: https://github.com/zkevkev
+
+[github-shield-bk]: https://img.shields.io/badge/GitHub-bkchilidawg-success?style=for-the-badge&logo=github
+[github-url-bk]: https://github.com/bkchilidawg
