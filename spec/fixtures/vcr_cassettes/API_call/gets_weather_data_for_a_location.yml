@@ -127,7 +127,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 12 Jan 2024 17:36:04 GMT
+      - Fri, 12 Jan 2024 20:32:41 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -137,7 +137,7 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Server:
-      - BunnyCDN-IL1-845
+      - BunnyCDN-IL1-718
       Cdn-Pullzone:
       - '93447'
       Cdn-Uid:
@@ -151,9 +151,9 @@ http_interactions:
       Via:
       - 1.1 varnish (Varnish/6.0)
       X-Weatherapi-Qpm-Left:
-      - '4999492'
+      - '4999448'
       X-Varnish:
-      - '708051865'
+      - '619709291'
       Cdn-Proxyver:
       - '1.04'
       Cdn-Requestpullsuccess:
@@ -161,19 +161,19 @@ http_interactions:
       Cdn-Requestpullcode:
       - '200'
       Cdn-Cachedat:
-      - 01/12/2024 17:34:34
+      - 01/12/2024 20:32:30
       Cdn-Edgestorageid:
       - '871'
       Cdn-Status:
       - '200'
       Cdn-Requestid:
-      - e722290354ff9322a83a794f523145f1
+      - 212a58959f798c25bd919c86a4fae065
       Cdn-Cache:
       - HIT
     body:
       encoding: ASCII-8BIT
-      string: '{"location":{"name":"Alto Coite","region":"Mato Grosso","country":"Brazil","lat":-15.74,"lon":-54.34,"tz_id":"America/Cuiaba","localtime_epoch":1705080838,"localtime":"2024-01-12
-        13:33"},"forecast":{"forecastday":[{"date":"2024-01-11","date_epoch":1704931200,"day":{"maxtemp_c":26.0,"maxtemp_f":78.8,"mintemp_c":20.6,"mintemp_f":69.1,"avgtemp_c":22.8,"avgtemp_f":73.0,"maxwind_mph":11.4,"maxwind_kph":18.4,"totalprecip_mm":5.65,"totalprecip_in":0.22,"totalsnow_cm":0.0,"avgvis_km":7.7,"avgvis_miles":4.0,"avghumidity":92,"daily_will_it_rain":1,"daily_chance_of_rain":100,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Light
+      string: '{"location":{"name":"Alto Coite","region":"Mato Grosso","country":"Brazil","lat":-15.74,"lon":-54.34,"tz_id":"America/Cuiaba","localtime_epoch":1705091514,"localtime":"2024-01-12
+        16:31"},"forecast":{"forecastday":[{"date":"2024-01-11","date_epoch":1704931200,"day":{"maxtemp_c":26.0,"maxtemp_f":78.8,"mintemp_c":20.6,"mintemp_f":69.1,"avgtemp_c":22.8,"avgtemp_f":73.0,"maxwind_mph":11.4,"maxwind_kph":18.4,"totalprecip_mm":5.65,"totalprecip_in":0.22,"totalsnow_cm":0.0,"avgvis_km":7.7,"avgvis_miles":4.0,"avghumidity":92,"daily_will_it_rain":1,"daily_chance_of_rain":100,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Light
         rain shower","icon":"//cdn.weatherapi.com/weather/64x64/day/353.png","code":1240},"uv":9.0},"astro":{"sunrise":"05:16
         AM","sunset":"06:15 PM","moonrise":"05:09 AM","moonset":"06:46 PM","moon_phase":"New
         Moon","moon_illumination":1},"hour":[{"time_epoch":1704945600,"time":"2024-01-11
@@ -217,5 +217,5 @@ http_interactions:
         21:00","temp_c":21.3,"temp_f":70.3,"is_day":0,"condition":{"text":"Cloudy","icon":"//cdn.weatherapi.com/weather/64x64/night/119.png","code":1006},"wind_mph":5.4,"wind_kph":8.6,"wind_degree":353,"wind_dir":"N","pressure_mb":1013.0,"pressure_in":29.92,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":93,"cloud":67,"feelslike_c":21.3,"feelslike_f":70.3,"windchill_c":21.3,"windchill_f":70.3,"heatindex_c":24.2,"heatindex_f":75.6,"dewpoint_c":20.1,"dewpoint_f":68.2,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":7.9,"gust_kph":12.8,"uv":1.0},{"time_epoch":1705024800,"time":"2024-01-11
         22:00","temp_c":20.9,"temp_f":69.6,"is_day":0,"condition":{"text":"Mist","icon":"//cdn.weatherapi.com/weather/64x64/night/143.png","code":1030},"wind_mph":4.9,"wind_kph":7.9,"wind_degree":5,"wind_dir":"N","pressure_mb":1013.0,"pressure_in":29.93,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":94,"cloud":67,"feelslike_c":20.9,"feelslike_f":69.6,"windchill_c":20.9,"windchill_f":69.6,"heatindex_c":20.9,"heatindex_f":69.6,"dewpoint_c":20.0,"dewpoint_f":67.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":7.4,"gust_kph":11.9,"uv":1.0},{"time_epoch":1705028400,"time":"2024-01-11
         23:00","temp_c":20.6,"temp_f":69.1,"is_day":0,"condition":{"text":"Mist","icon":"//cdn.weatherapi.com/weather/64x64/night/143.png","code":1030},"wind_mph":4.5,"wind_kph":7.2,"wind_degree":6,"wind_dir":"N","pressure_mb":1014.0,"pressure_in":29.94,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":96,"cloud":65,"feelslike_c":20.6,"feelslike_f":69.0,"windchill_c":20.6,"windchill_f":69.0,"heatindex_c":20.6,"heatindex_f":69.0,"dewpoint_c":19.9,"dewpoint_f":67.7,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":6.9,"gust_kph":11.1,"uv":1.0}]}]}}'
-  recorded_at: Fri, 12 Jan 2024 17:36:04 GMT
+  recorded_at: Fri, 12 Jan 2024 20:32:41 GMT
 recorded_with: VCR 6.2.0

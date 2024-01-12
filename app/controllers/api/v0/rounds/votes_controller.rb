@@ -36,7 +36,7 @@ class Api::V0::Rounds::VotesController < ApplicationController
   def results
     if params[:id]
       begin
-        round = round.find(params[:id])
+        round = Round.find(params[:id])
       rescue ActiveRecord::RecordNotFound => exception
         render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).error_json, status: :not_found
       end
