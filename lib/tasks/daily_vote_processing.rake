@@ -1,10 +1,14 @@
 namespace :daily_vote_processing do
   desc "Starts a new round, and calculates results of the previous round"
   task :run => :environment do
-    #Starts the new round
-    #Closes and Calculates score for each round ending today
     Round.turnover
+  end
+end
 
+namespace :testing123 do
+  desc "Starts a new round, and calculates results of the previous round"
+  task :hello_worldzz => :environment do
+    p "Hello world!!!"
   end
 end
 
@@ -102,5 +106,13 @@ namespace :populate_database do
       Vote.create!(user_id: @user10.id, round_id: round.id, lat: lat10, lon: lon10, target_weather_stats: round.target_weather_stats)
     end
   
+    @round.close_round
+    @round2.close_round
+    @round3.close_round
+    @round4.close_round
+    @round5.close_round
+
+    @round.process_round
+    @round2.process_round
   end
 end

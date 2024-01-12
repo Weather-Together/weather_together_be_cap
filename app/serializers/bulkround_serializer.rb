@@ -6,7 +6,7 @@ class BulkroundSerializer
               :target_weather_stats,
               :status,
               :game_id,
-              :votes
+              :number_of_votes
   #belongs_to :game
   # has_many :votes
   # has_many :users

@@ -7,6 +7,6 @@ class Game < ApplicationRecord
   enum game_type: { community: 0, custom: 1 }
 
   def self.current_community_round
-    Game.find_by(game_type: 0).rounds.last
+    Game.find_by(game_type: 0).rounds.order(close_date: :desc).first
   end
 end

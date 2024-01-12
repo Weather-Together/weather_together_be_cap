@@ -26,4 +26,8 @@ class User < ApplicationRecord
                           .includes(:votes)
   end
 
+  def self.username_generator
+    "#{Faker::Adjective.positive.capitalize}#{Faker::Creature::Animal.name.capitalize}"
+  end
+
 end

@@ -41,7 +41,6 @@ group :development, :test do
   gem "rspec-rails"
   gem "simplecov"
   gem "factory_bot_rails"
-  gem "faker"
   gem "pry"
   gem "shoulda-matchers"
 end
@@ -60,3 +59,4 @@ gem "faraday"
 gem "figaro"
 gem "jsonapi-serializer"
 gem 'capybara'
+gem 'faker'

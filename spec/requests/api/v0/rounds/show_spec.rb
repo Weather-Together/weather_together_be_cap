@@ -6,7 +6,7 @@ RSpec.describe "Rounds Show" do
   end
   
   it "Get request for /rounds/:round_id/results" do
-    get "/api/v0/rounds/#{@round1.id}/results"
+    get "/api/v0/rounds/#{@round1.id}"
 
     expect(response).to be_successful
     

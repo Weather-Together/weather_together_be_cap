@@ -37,6 +37,57 @@ RSpec.describe Vote, type: :model do
       expect(JSON.parse(vote.weather_stats, symbolize_names: true)).to be_a(Hash)
       expect(vote.score>0).to be true
     end
+
+    #this test makes several API calls and cannot use VCR. Only enable if specifically troubleshooting this test
+    xit "will choose a random location if an ocean location is chosen" do
+      VCR.turn_off!
+      WebMock.allow_net_connect!
+
+      date = Date.yesterday.strftime('%F')
+      lat1 = "-43.5596"
+      lon1 = "-5.9504"
+      lat11 = "62.04"
+      lon11 = "129.74"
+
+      wf = WeatherFacade.new
+      data11 = wf.weather_data(lat11, lon11, date)
+      
+      @user1 = User.create!(username: "username1", email: "user1@gmail.com", password: "password1")
+      @game1 = Game.create!(length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, game_type: 0, results: nil)
+      
+      User.all.each do |user|
+        UserGame.create!(user_id: user.id, game_id: @game1.id)
+      end
+      
+      
+      @round = Round.create!(game_id: @game1.id, target_weather_stats: data11)
+      @round.update(close_date: (Date.today-4).to_s, process_date: (Date.today-1).to_s)
+
+      
+      Round.all.each do |round|
+        Vote.create!(user_id: @user1.id, round_id: round.id, lat: lat1, lon: lon1)
+      end
+      vote = Vote.all.first
+      vote_id = vote.id
+      expect(vote.weather_stats).to be nil
+      expect(vote.score).to be nil
+      expect(vote.unprocessed?).to be true
+      expect(vote.processed?).to be false
+      vote.process
+
+      vote = Vote.find(vote_id)
+      expect(vote.unprocessed?).to be false
+      expect(vote.processed?).to be true
+      expect(vote.weather_stats).to be_a(String)
+      weather_data = JSON.parse(vote.weather_stats, symbolize_names: true)
+      expect(weather_data).to be_a(Hash)
+      expect(weather_data[:location][:lat]).to_not eq(lat1)
+      expect(weather_data[:location][:lon]).to_not eq(lon1)
+     expect(vote.score>0).to be true
+
+      VCR.turn_on!
+      WebMock.disable_net_connect!
+    end
   end
   
 end

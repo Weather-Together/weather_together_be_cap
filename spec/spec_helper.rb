@@ -90,16 +90,16 @@ end
 @round6 = Round.create!(game_id: @game1.id, target_weather_stats: data16)
 
 Round.all.each do |round|
-  Vote.create!(user_id: @user1.id, round_id: round.id, lat: lat1, lon: lon1, target_weather_stats: round.target_weather_stats)
-  Vote.create!(user_id: @user2.id, round_id: round.id, lat: lat2, lon: lon2, target_weather_stats: round.target_weather_stats)
-  Vote.create!(user_id: @user3.id, round_id: round.id, lat: lat3, lon: lon3, target_weather_stats: round.target_weather_stats)
-  Vote.create!(user_id: @user4.id, round_id: round.id, lat: lat4, lon: lon4, target_weather_stats: round.target_weather_stats)
-  Vote.create!(user_id: @user5.id, round_id: round.id, lat: lat5, lon: lon5, target_weather_stats: round.target_weather_stats)
-  Vote.create!(user_id: @user6.id, round_id: round.id, lat: lat6, lon: lon6, target_weather_stats: round.target_weather_stats)
-  Vote.create!(user_id: @user7.id, round_id: round.id, lat: lat7, lon: lon7, target_weather_stats: round.target_weather_stats)
-  Vote.create!(user_id: @user8.id, round_id: round.id, lat: lat8, lon: lon8, target_weather_stats: round.target_weather_stats)
-  Vote.create!(user_id: @user9.id, round_id: round.id, lat: lat9, lon: lon9, target_weather_stats: round.target_weather_stats)
-  Vote.create!(user_id: @user10.id, round_id: round.id, lat: lat10, lon: lon10, target_weather_stats: round.target_weather_stats)
+  Vote.create!(user_id: @user1.id, round_id: round.id, lat: lat1, lon: lon1)
+  Vote.create!(user_id: @user2.id, round_id: round.id, lat: lat2, lon: lon2)
+  Vote.create!(user_id: @user3.id, round_id: round.id, lat: lat3, lon: lon3)
+  Vote.create!(user_id: @user4.id, round_id: round.id, lat: lat4, lon: lon4)
+  Vote.create!(user_id: @user5.id, round_id: round.id, lat: lat5, lon: lon5)
+  Vote.create!(user_id: @user6.id, round_id: round.id, lat: lat6, lon: lon6)
+  Vote.create!(user_id: @user7.id, round_id: round.id, lat: lat7, lon: lon7)
+  Vote.create!(user_id: @user8.id, round_id: round.id, lat: lat8, lon: lon8)
+  Vote.create!(user_id: @user9.id, round_id: round.id, lat: lat9, lon: lon9)
+  Vote.create!(user_id: @user10.id, round_id: round.id, lat: lat10, lon: lon10)
 end
   # @data = {:location=>
   #   {:name=>"Fraser",
