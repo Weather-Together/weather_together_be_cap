@@ -16,7 +16,7 @@ class Api::V0::RoundsController < ApplicationController
 
   def index
     rounds = Round.all
-    render json: BulkroundSerializer.new(rounds)
+    render json: BulkroundSerializer.new(rounds.order(close_date: :desc))
   end
 
 end
