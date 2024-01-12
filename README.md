@@ -107,7 +107,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Database 
 
-UPDATE WITH ANY OR REMOVE
+<img src="images/schema.png"  width="300" height="800">
 
 ### Installation
 
