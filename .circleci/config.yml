@@ -1,4 +1,8 @@
 version: 2.1 # use CircleCI 2.1
+executors:
+  default:
+    docker:
+      - image: cimg/base:2021.10
 orbs:
   node: circleci/node@5.0.0 # Needed for javascript runtime
 jobs: # a collection of steps
