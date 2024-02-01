@@ -21,7 +21,6 @@ class WeatherService
         location: hash[:location],
         weather_data: hash[:forecast][:forecastday].first[:day]
       }.to_json)
-      require 'pry'; binding.pry
     end
   end
 end
