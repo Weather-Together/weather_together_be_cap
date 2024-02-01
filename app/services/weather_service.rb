@@ -17,10 +17,11 @@ class WeatherService
     if hash[:error]
       hash.to_json
     else
-      JSON.parse({ 
+      parsed = JSON.parse({ 
         location: hash[:location],
         weather_data: hash[:forecast][:forecastday].first[:day]
       }.to_json)
+      require 'pry'; binding.pry
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_11_200956) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_01_193618) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,6 +74,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_11_200956) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "score"
+    t.string "location_name"
+    t.string "region"
+    t.string "country"
+    t.float "maxtemp_f"
+    t.float "mintemp_f"
+    t.float "avgtemp_f"
+    t.float "maxwind_mph"
+    t.float "totalprecip_in"
+    t.float "avgvis_miles"
+    t.integer "avghumidity"
+    t.integer "daily_will_it_rain"
+    t.integer "daily_chance_of_rain"
+    t.integer "daily_will_it_snow"
+    t.integer "daily_chance_of_snow"
     t.index ["round_id"], name: "index_votes_on_round_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
