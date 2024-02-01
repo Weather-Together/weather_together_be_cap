@@ -17,10 +17,10 @@ class WeatherService
     if hash[:error]
       hash.to_json
     else
-      { 
+      JSON.parse({ 
         location: hash[:location],
         weather_data: hash[:forecast][:forecastday].first[:day]
-      }.to_json
+      }.to_json)
     end
   end
 end
