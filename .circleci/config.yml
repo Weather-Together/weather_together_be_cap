@@ -53,8 +53,7 @@ jobs: # a collection of steps
           # The following steps install Flyctl and deploy the app
           # Your CircleCI project must have a FLY_ACCESS_TOKEN environment variable
           # in order for CircleCI to authenticate and deploy this app.
-          command: |
-            curl -X GET "https://api.render.com/deploy/srv-cme3mt8l5elc73csk8v0?key=nMHgmyoZ0qU"
+          command: curl -X GET "https://api.render.com/deploy/srv-cme3mt8l5elc73csk8v0?key=nMHgmyoZ0qU"
 workflows:
   build-test-deploy:
     jobs:
