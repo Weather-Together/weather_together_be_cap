@@ -15,7 +15,7 @@ jobs: # a collection of steps
       - image: circleci/postgres:11 # database image
         environment: # environment variables for database, it is kind of obvious but it is important that they match with your test config in database.yml
           POSTGRES_USER: postgres
-          POSTGRES_DB: mod_4_randomizer_test
+          POSTGRES_DB: weather_together_be_test
           POSTGRES_HOST_AUTH_METHOD: trust
     steps: # a collection of executable commands
       - checkout # special step to check out source code to working directory
@@ -45,23 +45,18 @@ jobs: # a collection of steps
       - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: test_results
       # See https://circleci.com/docs/2.0/deployment-integrations/ for example deploy configs
-  deploy:
-    steps:
-        - checkout
-        - run:
-            name: Deploy app to Render
-            # The following steps install Flyctl and deploy the app
-            # Your CircleCI project must have a FLY_ACCESS_TOKEN environment variable
-            # in order for CircleCI to authenticate and deploy this app.
-            command: |
-              curl -X GET "https://api.render.com/deploy/srv-cme3mt8l5elc73csk8v0?key=nMHgmyoZ0qU"
 workflows:
   build-test-deploy:
     jobs:
       - build-and-test
-      - deploy:
+      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
           requires:
             - build-and-test
+          post-steps:
+            - run:
+                name: Deploy to render
+                command: curl -X GET "https://api.render.com/deploy/srv-cme3mt8l5elc73csk8v0?key=nMHgmyoZ0qU"
           filters:
             branches:
-              only: main
+              only:
+                - main
