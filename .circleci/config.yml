@@ -62,7 +62,7 @@ jobs: # a collection of steps
 workflows:
   build-test-deploy:
     jobs:
-        - build-and-test
+      - build-and-test
           filters:
             branches:
               only: main
