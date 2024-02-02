@@ -1269,4 +1269,605 @@ http_interactions:
         shower","icon":"//cdn.weatherapi.com/weather/64x64/night/353.png","code":1240},"wind_mph":0.9,"wind_kph":1.4,"wind_degree":334,"wind_dir":"NNW","pressure_mb":1014.0,"pressure_in":29.94,"precip_mm":0.57,"precip_in":0.02,"snow_cm":0.0,"humidity":99,"cloud":97,"feelslike_c":12.3,"feelslike_f":54.1,"windchill_c":12.3,"windchill_f":54.1,"heatindex_c":12.3,"heatindex_f":54.1,"dewpoint_c":12.1,"dewpoint_f":53.8,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":1.9,"gust_kph":3.0,"uv":1.0},{"time_epoch":1704978000,"time":"2024-01-11
         23:00","temp_c":12.2,"temp_f":54.0,"is_day":0,"condition":{"text":"Light drizzle","icon":"//cdn.weatherapi.com/weather/64x64/night/266.png","code":1153},"wind_mph":1.3,"wind_kph":2.2,"wind_degree":333,"wind_dir":"NNW","pressure_mb":1014.0,"pressure_in":29.94,"precip_mm":0.51,"precip_in":0.02,"snow_cm":0.0,"humidity":99,"cloud":93,"feelslike_c":12.2,"feelslike_f":54.0,"windchill_c":12.2,"windchill_f":54.0,"heatindex_c":12.2,"heatindex_f":54.0,"dewpoint_c":12.0,"dewpoint_f":53.6,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":2.8,"gust_kph":4.5,"uv":1.0}]}]}}'
   recorded_at: Fri, 12 Jan 2024 20:32:40 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/history.json?dt=2024-02-01&key=<WEATHER_API_KEY>&q=62.04,129.74
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 02 Feb 2024 01:07:55 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-1068
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=180
+      X-Weatherapi-Qpm-Left:
+      - '999782'
+      X-Varnish:
+      - '93816269'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 02/02/2024 01:07:36
+      Cdn-Edgestorageid:
+      - '894'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 8bb99e52252072927a3a43fde25b4ef7
+      Cdn-Cache:
+      - HIT
+      X-Cache:
+      - MISS from 3
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 varnish (Varnish/6.0), 1.1 3 (squid)
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJsb2NhdGlvbiI6eyJuYW1lIjoi0K/QutGD0YLRgdC6IiwicmVnaW9uIjoiU2FraGEiLCJjb3VudHJ5IjoiUnVzc2lhIiwibGF0Ijo2Mi4wNCwibG9uIjoxMjkuNzQsInR6X2lkIjoiQXNpYS9ZYWt1dHNrIiwibG9jYWx0aW1lX2Vwb2NoIjoxNzA2ODM2MDAzLCJsb2NhbHRpbWUiOiIyMDI0LTAyLTAyIDEwOjA2In0sImZvcmVjYXN0Ijp7ImZvcmVjYXN0ZGF5IjpbeyJkYXRlIjoiMjAyNC0wMi0wMSIsImRhdGVfZXBvY2giOjE3MDY3NDU2MDAsImRheSI6eyJtYXh0ZW1wX2MiOi0yNi42LCJtYXh0ZW1wX2YiOi0xNS45LCJtaW50ZW1wX2MiOi0zMy41LCJtaW50ZW1wX2YiOi0yOC4zLCJhdmd0ZW1wX2MiOi0zMC42LCJhdmd0ZW1wX2YiOi0yMy4xLCJtYXh3aW5kX21waCI6NC43LCJtYXh3aW5kX2twaCI6Ny42LCJ0b3RhbHByZWNpcF9tbSI6MC4wLCJ0b3RhbHByZWNpcF9pbiI6MC4wLCJ0b3RhbHNub3dfY20iOjAuMCwiYXZndmlzX2ttIjo0LjMsImF2Z3Zpc19taWxlcyI6Mi4wLCJhdmdodW1pZGl0eSI6OTUsImRhaWx5X3dpbGxfaXRfcmFpbiI6MCwiZGFpbHlfY2hhbmNlX29mX3JhaW4iOjAsImRhaWx5X3dpbGxfaXRfc25vdyI6MCwiZGFpbHlfY2hhbmNlX29mX3Nub3ciOjAsImNvbmRpdGlvbiI6eyJ0ZXh0IjoiTWlzdCIsImljb24iOiIvL2Nkbi53ZWF0aGVyYXBpLmNvbS93ZWF0aGVyLzY0eDY0L2RheS8xNDMucG5nIiwiY29kZSI6MTAzMH0sInV2IjoxLjB9LCJhc3RybyI6eyJzdW5yaXNlIjoiMDg6NDkgQU0iLCJzdW5zZXQiOiIwNDoyMCBQTSIsIm1vb25yaXNlIjoiTm8gbW9vbnJpc2UiLCJtb29uc2V0IjoiMDk6NDkgQU0iLCJtb29uX3BoYXNlIjoiV2FuaW5nIEdpYmJvdXMiLCJtb29uX2lsbHVtaW5hdGlvbiI6Njl9LCJob3VyIjpbeyJ0aW1lX2Vwb2NoIjoxNzA2NzEzMjAwLCJ0aW1lIjoiMjAyNC0wMi0wMSAwMDowMCIsInRlbXBfYyI6LTMxLjQsInRlbXBfZiI6LTI0LjQsImlzX2RheSI6MCwiY29uZGl0aW9uIjp7InRleHQiOiJNaXN0IiwiaWNvbiI6Ii8vY2RuLndlYXRoZXJhcGkuY29tL3dlYXRoZXIvNjR4NjQvbmlnaHQvMTQzLnBuZyIsImNvZGUiOjEwMzB9LCJ3aW5kX21waCI6Mi43LCJ3aW5kX2twaCI6NC4zLCJ3aW5kX2RlZ3JlZSI6MjczLCJ3aW5kX2RpciI6IlciLCJwcmVzc3VyZV9tYiI6MTAzMi4wLCJwcmVzc3VyZV9pbiI6MzAuNDgsInByZWNpcF9tbSI6MC4wLCJwcmVjaXBfaW4iOjAuMCwic25vd19jbSI6MC4wLCJodW1pZGl0eSI6OTUsImNsb3VkIjoxMDAsImZlZWxzbGlrZV9jIjotMzYuNCwiZmVlbHNsaWtlX2YiOi0zMy42LCJ3aW5kY2hpbGxfYyI6LTM2LjQsIndpbmRjaGlsbF9mIjotMzMuNiwiaGVhdGluZGV4X2MiOi0zMS40LCJoZWF0aW5kZXhfZiI6LTI0LjQsImRld3BvaW50X2MiOi0zMS45LCJkZXdwb2ludF9mIjotMjUuNCwid2lsbF9pdF9yYWluIjowLCJjaGFuY2Vfb2ZfcmFpbiI6MCwid2lsbF9pdF9zbm93IjowLCJjaGFuY2Vfb2Zfc25vdyI6MCwidmlzX2ttIjoyLjAsInZpc19taWxlcyI6MS4wLCJndXN0X21waCI6NC42LCJndXN0X2twaCI6Ny41LCJ1diI6MS4wfSx7InRpbWVfZXBvY2giOjE3MDY3MTY4MDAsInRpbWUiOiIyMDI0LTAyLTAxIDAxOjAwIiwidGVtcF9jIjotMzAuNSwidGVtcF9mIjotMjIuOSwiaXNfZGF5IjowLCJjb25kaXRpb24iOnsidGV4dCI6Ik1pc3QiLCJpY29uIjoiLy9jZG4ud2VhdGhlcmFwaS5jb20vd2VhdGhlci82NHg2NC9uaWdodC8xNDMucG5nIiwiY29kZSI6MTAzMH0sIndpbmRfbXBoIjozLjEsIndpbmRfa3BoIjo1LjAsIndpbmRfZGVncmVlIjoyNzIsIndpbmRfZGlyIjoiVyIsInByZXNzdXJlX21iIjoxMDMyLjAsInByZXNzdXJlX2luIjozMC40NywicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5NCwiY2xvdWQiOjk1LCJmZWVsc2xpa2VfYyI6LTM2LjIsImZlZWxzbGlrZV9mIjotMzMuMiwid2luZGNoaWxsX2MiOi0zNi4yLCJ3aW5kY2hpbGxfZiI6LTMzLjIsImhlYXRpbmRleF9jIjotMzAuNSwiaGVhdGluZGV4X2YiOi0yMi45LCJkZXdwb2ludF9jIjotMzEuMSwiZGV3cG9pbnRfZiI6LTI0LjAsIndpbGxfaXRfcmFpbiI6MCwiY2hhbmNlX29mX3JhaW4iOjAsIndpbGxfaXRfc25vdyI6MCwiY2hhbmNlX29mX3Nub3ciOjAsInZpc19rbSI6Mi4wLCJ2aXNfbWlsZXMiOjEuMCwiZ3VzdF9tcGgiOjUuMiwiZ3VzdF9rcGgiOjguMywidXYiOjEuMH0seyJ0aW1lX2Vwb2NoIjoxNzA2NzIwNDAwLCJ0aW1lIjoiMjAyNC0wMi0wMSAwMjowMCIsInRlbXBfYyI6LTI5LjYsInRlbXBfZiI6LTIxLjIsImlzX2RheSI6MCwiY29uZGl0aW9uIjp7InRleHQiOiJDbG91ZHkiLCJpY29uIjoiLy9jZG4ud2VhdGhlcmFwaS5jb20vd2VhdGhlci82NHg2NC9uaWdodC8xMTkucG5nIiwiY29kZSI6MTAwNn0sIndpbmRfbXBoIjozLjYsIndpbmRfa3BoIjo1LjgsIndpbmRfZGVncmVlIjoyNzgsIndpbmRfZGlyIjoiVyIsInByZXNzdXJlX21iIjoxMDMyLjAsInByZXNzdXJlX2luIjozMC40NiwicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5MiwiY2xvdWQiOjg3LCJmZWVsc2xpa2VfYyI6LTM1LjgsImZlZWxzbGlrZV9mIjotMzIuNSwid2luZGNoaWxsX2MiOi0zNS44LCJ3aW5kY2hpbGxfZiI6LTMyLjUsImhlYXRpbmRleF9jIjotMjkuNiwiaGVhdGluZGV4X2YiOi0yMS4yLCJkZXdwb2ludF9jIjotMzAuNCwiZGV3cG9pbnRfZiI6LTIyLjcsIndpbGxfaXRfcmFpbiI6MCwiY2hhbmNlX29mX3JhaW4iOjAsIndpbGxfaXRfc25vdyI6MCwiY2hhbmNlX29mX3Nub3ciOjAsInZpc19rbSI6MTAuMCwidmlzX21pbGVzIjo2LjAsImd1c3RfbXBoIjo1LjYsImd1c3Rfa3BoIjo5LjEsInV2IjoxLjB9LHsidGltZV9lcG9jaCI6MTcwNjcyNDAwMCwidGltZSI6IjIwMjQtMDItMDEgMDM6MDAiLCJ0ZW1wX2MiOi0yOS42LCJ0ZW1wX2YiOi0yMS4zLCJpc19kYXkiOjAsImNvbmRpdGlvbiI6eyJ0ZXh0IjoiT3ZlcmNhc3QiLCJpY29uIjoiLy9jZG4ud2VhdGhlcmFwaS5jb20vd2VhdGhlci82NHg2NC9uaWdodC8xMjIucG5nIiwiY29kZSI6MTAwOX0sIndpbmRfbXBoIjozLjgsIndpbmRfa3BoIjo2LjEsIndpbmRfZGVncmVlIjoyNzgsIndpbmRfZGlyIjoiVyIsInByZXNzdXJlX21iIjoxMDMxLjAsInByZXNzdXJlX2luIjozMC40NSwicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5MywiY2xvdWQiOjEwMCwiZmVlbHNsaWtlX2MiOi0zNi4yLCJmZWVsc2xpa2VfZiI6LTMzLjEsIndpbmRjaGlsbF9jIjotMzYuMiwid2luZGNoaWxsX2YiOi0zMy4xLCJoZWF0aW5kZXhfYyI6LTI5LjYsImhlYXRpbmRleF9mIjotMjEuMywiZGV3cG9pbnRfYyI6LTMwLjQsImRld3BvaW50X2YiOi0yMi43LCJ3aWxsX2l0X3JhaW4iOjAsImNoYW5jZV9vZl9yYWluIjowLCJ3aWxsX2l0X3Nub3ciOjAsImNoYW5jZV9vZl9zbm93IjowLCJ2aXNfa20iOjEwLjAsInZpc19taWxlcyI6Ni4wLCJndXN0X21waCI6Ni40LCJndXN0X2twaCI6MTAuMywidXYiOjEuMH0seyJ0aW1lX2Vwb2NoIjoxNzA2NzI3NjAwLCJ0aW1lIjoiMjAyNC0wMi0wMSAwNDowMCIsInRlbXBfYyI6LTMwLjAsInRlbXBfZiI6LTIyLjAsImlzX2RheSI6MCwiY29uZGl0aW9uIjp7InRleHQiOiJDbG91ZHkiLCJpY29uIjoiLy9jZG4ud2VhdGhlcmFwaS5jb20vd2VhdGhlci82NHg2NC9uaWdodC8xMTkucG5nIiwiY29kZSI6MTAwNn0sIndpbmRfbXBoIjo0LjAsIndpbmRfa3BoIjo2LjUsIndpbmRfZGVncmVlIjoyNzEsIndpbmRfZGlyIjoiVyIsInByZXNzdXJlX21iIjoxMDMxLjAsInByZXNzdXJlX2luIjozMC40NSwicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5MywiY2xvdWQiOjc2LCJmZWVsc2xpa2VfYyI6LTM2LjksImZlZWxzbGlrZV9mIjotMzQuNSwid2luZGNoaWxsX2MiOi0zNi45LCJ3aW5kY2hpbGxfZiI6LTM0LjUsImhlYXRpbmRleF9jIjotMzAuMCwiaGVhdGluZGV4X2YiOi0yMi4wLCJkZXdwb2ludF9jIjotMzAuOCwiZGV3cG9pbnRfZiI6LTIzLjQsIndpbGxfaXRfcmFpbiI6MCwiY2hhbmNlX29mX3JhaW4iOjAsIndpbGxfaXRfc25vdyI6MCwiY2hhbmNlX29mX3Nub3ciOjAsInZpc19rbSI6MTAuMCwidmlzX21pbGVzIjo2LjAsImd1c3RfbXBoIjo3LjUsImd1c3Rfa3BoIjoxMi4wLCJ1diI6MS4wfSx7InRpbWVfZXBvY2giOjE3MDY3MzEyMDAsInRpbWUiOiIyMDI0LTAyLTAxIDA1OjAwIiwidGVtcF9jIjotMzEuMiwidGVtcF9mIjotMjQuMSwiaXNfZGF5IjowLCJjb25kaXRpb24iOnsidGV4dCI6Ik1pc3QiLCJpY29uIjoiLy9jZG4ud2VhdGhlcmFwaS5jb20vd2VhdGhlci82NHg2NC9uaWdodC8xNDMucG5nIiwiY29kZSI6MTAzMH0sIndpbmRfbXBoIjozLjgsIndpbmRfa3BoIjo2LjEsIndpbmRfZGVncmVlIjoyNzUsIndpbmRfZGlyIjoiVyIsInByZXNzdXJlX21iIjoxMDMxLjAsInByZXNzdXJlX2luIjozMC40NSwicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5NSwiY2xvdWQiOjY3LCJmZWVsc2xpa2VfYyI6LTM4LjAsImZlZWxzbGlrZV9mIjotMzYuNCwid2luZGNoaWxsX2MiOi0zOC4wLCJ3aW5kY2hpbGxfZiI6LTM2LjQsImhlYXRpbmRleF9jIjotMzEuMiwiaGVhdGluZGV4X2YiOi0yNC4xLCJkZXdwb2ludF9jIjotMzEuOCwiZGV3cG9pbnRfZiI6LTI1LjIsIndpbGxfaXRfcmFpbiI6MCwiY2hhbmNlX29mX3JhaW4iOjAsIndpbGxfaXRfc25vdyI6MCwiY2hhbmNlX29mX3Nub3ciOjAsInZpc19rbSI6Mi4wLCJ2aXNfbWlsZXMiOjEuMCwiZ3VzdF9tcGgiOjguMCwiZ3VzdF9rcGgiOjEyLjksInV2IjoxLjB9LHsidGltZV9lcG9jaCI6MTcwNjczNDgwMCwidGltZSI6IjIwMjQtMDItMDEgMDY6MDAiLCJ0ZW1wX2MiOi0zMi4xLCJ0ZW1wX2YiOi0yNS43LCJpc19kYXkiOjAsImNvbmRpdGlvbiI6eyJ0ZXh0IjoiTWlzdCIsImljb24iOiIvL2Nkbi53ZWF0aGVyYXBpLmNvbS93ZWF0aGVyLzY0eDY0L25pZ2h0LzE0My5wbmciLCJjb2RlIjoxMDMwfSwid2luZF9tcGgiOjQuMywid2luZF9rcGgiOjYuOCwid2luZF9kZWdyZWUiOjI3OSwid2luZF9kaXIiOiJXIiwicHJlc3N1cmVfbWIiOjEwMzEuMCwicHJlc3N1cmVfaW4iOjMwLjQ1LCJwcmVjaXBfbW0iOjAuMCwicHJlY2lwX2luIjowLjAsInNub3dfY20iOjAuMCwiaHVtaWRpdHkiOjk1LCJjbG91ZCI6NjQsImZlZWxzbGlrZV9jIjotMzkuNiwiZmVlbHNsaWtlX2YiOi0zOS4yLCJ3aW5kY2hpbGxfYyI6LTM5LjYsIndpbmRjaGlsbF9mIjotMzkuMiwiaGVhdGluZGV4X2MiOi0zMi4xLCJoZWF0aW5kZXhfZiI6LTI1LjcsImRld3BvaW50X2MiOi0zMi42LCJkZXdwb2ludF9mIjotMjYuNywid2lsbF9pdF9yYWluIjowLCJjaGFuY2Vfb2ZfcmFpbiI6MCwid2lsbF9pdF9zbm93IjowLCJjaGFuY2Vfb2Zfc25vdyI6MCwidmlzX2ttIjoyLjAsInZpc19taWxlcyI6MS4wLCJndXN0X21waCI6OC45LCJndXN0X2twaCI6MTQuNCwidXYiOjEuMH0seyJ0aW1lX2Vwb2NoIjoxNzA2NzM4NDAwLCJ0aW1lIjoiMjAyNC0wMi0wMSAwNzowMCIsInRlbXBfYyI6LTMyLjcsInRlbXBfZiI6LTI2LjksImlzX2RheSI6MCwiY29uZGl0aW9uIjp7InRleHQiOiJNaXN0IiwiaWNvbiI6Ii8vY2RuLndlYXRoZXJhcGkuY29tL3dlYXRoZXIvNjR4NjQvbmlnaHQvMTQzLnBuZyIsImNvZGUiOjEwMzB9LCJ3aW5kX21waCI6My44LCJ3aW5kX2twaCI6Ni4xLCJ3aW5kX2RlZ3JlZSI6Mjc1LCJ3aW5kX2RpciI6IlciLCJwcmVzc3VyZV9tYiI6MTAzMS4wLCJwcmVzc3VyZV9pbiI6MzAuNDYsInByZWNpcF9tbSI6MC4wLCJwcmVjaXBfaW4iOjAuMCwic25vd19jbSI6MC4wLCJodW1pZGl0eSI6OTYsImNsb3VkIjo2OCwiZmVlbHNsaWtlX2MiOi0zOS43LCJmZWVsc2xpa2VfZiI6LTM5LjUsIndpbmRjaGlsbF9jIjotMzkuNywid2luZGNoaWxsX2YiOi0zOS41LCJoZWF0aW5kZXhfYyI6LTMyLjcsImhlYXRpbmRleF9mIjotMjYuOSwiZGV3cG9pbnRfYyI6LTMzLjIsImRld3BvaW50X2YiOi0yNy43LCJ3aWxsX2l0X3JhaW4iOjAsImNoYW5jZV9vZl9yYWluIjowLCJ3aWxsX2l0X3Nub3ciOjAsImNoYW5jZV9vZl9zbm93IjowLCJ2aXNfa20iOjIuMCwidmlzX21pbGVzIjoxLjAsImd1c3RfbXBoIjo4LjAsImd1c3Rfa3BoIjoxMi45LCJ1diI6MS4wfSx7InRpbWVfZXBvY2giOjE3MDY3NDIwMDAsInRpbWUiOiIyMDI0LTAyLTAxIDA4OjAwIiwidGVtcF9jIjotMzMuMywidGVtcF9mIjotMjcuOSwiaXNfZGF5IjowLCJjb25kaXRpb24iOnsidGV4dCI6Ik1pc3QiLCJpY29uIjoiLy9jZG4ud2VhdGhlcmFwaS5jb20vd2VhdGhlci82NHg2NC9uaWdodC8xNDMucG5nIiwiY29kZSI6MTAzMH0sIndpbmRfbXBoIjozLjQsIndpbmRfa3BoIjo1LjQsIndpbmRfZGVncmVlIjoyNzMsIndpbmRfZGlyIjoiVyIsInByZXNzdXJlX21iIjoxMDMyLjAsInByZXNzdXJlX2luIjozMC40NywicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5NiwiY2xvdWQiOjY2LCJmZWVsc2xpa2VfYyI6LTM5LjcsImZlZWxzbGlrZV9mIjotMzkuNSwid2luZGNoaWxsX2MiOi0zOS43LCJ3aW5kY2hpbGxfZiI6LTM5LjUsImhlYXRpbmRleF9jIjotMzMuMywiaGVhdGluZGV4X2YiOi0yNy45LCJkZXdwb2ludF9jIjotMzMuNiwiZGV3cG9pbnRfZiI6LTI4LjYsIndpbGxfaXRfcmFpbiI6MCwiY2hhbmNlX29mX3JhaW4iOjAsIndpbGxfaXRfc25vdyI6MCwiY2hhbmNlX29mX3Nub3ciOjAsInZpc19rbSI6Mi4wLCJ2aXNfbWlsZXMiOjEuMCwiZ3VzdF9tcGgiOjcuMCwiZ3VzdF9rcGgiOjExLjMsInV2IjoxLjB9LHsidGltZV9lcG9jaCI6MTcwNjc0NTYwMCwidGltZSI6IjIwMjQtMDItMDEgMDk6MDAiLCJ0ZW1wX2MiOi0zMy41LCJ0ZW1wX2YiOi0yOC4zLCJpc19kYXkiOjEsImNvbmRpdGlvbiI6eyJ0ZXh0IjoiTWlzdCIsImljb24iOiIvL2Nkbi53ZWF0aGVyYXBpLmNvbS93ZWF0aGVyLzY0eDY0L2RheS8xNDMucG5nIiwiY29kZSI6MTAzMH0sIndpbmRfbXBoIjozLjYsIndpbmRfa3BoIjo1LjgsIndpbmRfZGVncmVlIjoyNzAsIndpbmRfZGlyIjoiVyIsInByZXNzdXJlX21iIjoxMDMyLjAsInByZXNzdXJlX2luIjozMC40NywicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5NywiY2xvdWQiOjYwLCJmZWVsc2xpa2VfYyI6LTQwLjMsImZlZWxzbGlrZV9mIjotNDAuNiwid2luZGNoaWxsX2MiOi00MC4zLCJ3aW5kY2hpbGxfZiI6LTQwLjYsImhlYXRpbmRleF9jIjotMzMuNSwiaGVhdGluZGV4X2YiOi0yOC4zLCJkZXdwb2ludF9jIjotMzMuOCwiZGV3cG9pbnRfZiI6LTI4LjksIndpbGxfaXRfcmFpbiI6MCwiY2hhbmNlX29mX3JhaW4iOjAsIndpbGxfaXRfc25vdyI6MCwiY2hhbmNlX29mX3Nub3ciOjAsInZpc19rbSI6Mi4wLCJ2aXNfbWlsZXMiOjEuMCwiZ3VzdF9tcGgiOjcuNSwiZ3VzdF9rcGgiOjEyLjEsInV2IjoxLjB9LHsidGltZV9lcG9jaCI6MTcwNjc0OTIwMCwidGltZSI6IjIwMjQtMDItMDEgMTA6MDAiLCJ0ZW1wX2MiOi0zMi40LCJ0ZW1wX2YiOi0yNi4yLCJpc19kYXkiOjEsImNvbmRpdGlvbiI6eyJ0ZXh0IjoiTWlzdCIsImljb24iOiIvL2Nkbi53ZWF0aGVyYXBpLmNvbS93ZWF0aGVyLzY0eDY0L2RheS8xNDMucG5nIiwiY29kZSI6MTAzMH0sIndpbmRfbXBoIjozLjYsIndpbmRfa3BoIjo1LjgsIndpbmRfZGVncmVlIjoyNjUsIndpbmRfZGlyIjoiVyIsInByZXNzdXJlX21iIjoxMDMyLjAsInByZXNzdXJlX2luIjozMC40NywicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5NiwiY2xvdWQiOjczLCJmZWVsc2xpa2VfYyI6LTM5LjAsImZlZWxzbGlrZV9mIjotMzguMiwid2luZGNoaWxsX2MiOi0zOS4wLCJ3aW5kY2hpbGxfZiI6LTM4LjIsImhlYXRpbmRleF9jIjotMzIuNCwiaGVhdGluZGV4X2YiOi0yNi4yLCJkZXdwb2ludF9jIjotMzIuOCwiZGV3cG9pbnRfZiI6LTI3LjAsIndpbGxfaXRfcmFpbiI6MCwiY2hhbmNlX29mX3JhaW4iOjAsIndpbGxfaXRfc25vdyI6MCwiY2hhbmNlX29mX3Nub3ciOjAsInZpc19rbSI6Mi4wLCJ2aXNfbWlsZXMiOjEuMCwiZ3VzdF9tcGgiOjcuNSwiZ3VzdF9rcGgiOjEyLjEsInV2IjoxLjB9LHsidGltZV9lcG9jaCI6MTcwNjc1MjgwMCwidGltZSI6IjIwMjQtMDItMDEgMTE6MDAiLCJ0ZW1wX2MiOi0yOS45LCJ0ZW1wX2YiOi0yMS44LCJpc19kYXkiOjEsImNvbmRpdGlvbiI6eyJ0ZXh0IjoiQ2xvdWR5IiwiaWNvbiI6Ii8vY2RuLndlYXRoZXJhcGkuY29tL3dlYXRoZXIvNjR4NjQvZGF5LzExOS5wbmciLCJjb2RlIjoxMDA2fSwid2luZF9tcGgiOjQuMywid2luZF9rcGgiOjYuOCwid2luZF9kZWdyZWUiOjI4MCwid2luZF9kaXIiOiJXIiwicHJlc3N1cmVfbWIiOjEwMzIuMCwicHJlc3N1cmVfaW4iOjMwLjQ3LCJwcmVjaXBfbW0iOjAuMCwicHJlY2lwX2luIjowLjAsInNub3dfY20iOjAuMCwiaHVtaWRpdHkiOjkzLCJjbG91ZCI6NjksImZlZWxzbGlrZV9jIjotMzcuMCwiZmVlbHNsaWtlX2YiOi0zNC42LCJ3aW5kY2hpbGxfYyI6LTM3LjAsIndpbmRjaGlsbF9mIjotMzQuNiwiaGVhdGluZGV4X2MiOi0yOS45LCJoZWF0aW5kZXhfZiI6LTIxLjcsImRld3BvaW50X2MiOi0zMC43LCJkZXdwb2ludF9mIjotMjMuMiwid2lsbF9pdF9yYWluIjowLCJjaGFuY2Vfb2ZfcmFpbiI6MCwid2lsbF9pdF9zbm93IjowLCJjaGFuY2Vfb2Zfc25vdyI6MCwidmlzX2ttIjoxMC4wLCJ2aXNfbWlsZXMiOjYuMCwiZ3VzdF9tcGgiOjcuNSwiZ3VzdF9rcGgiOjEyLjAsInV2IjoxLjB9LHsidGltZV9lcG9jaCI6MTcwNjc1NjQwMCwidGltZSI6IjIwMjQtMDItMDEgMTI6MDAiLCJ0ZW1wX2MiOi0yOC4zLCJ0ZW1wX2YiOi0xOS4wLCJpc19kYXkiOjEsImNvbmRpdGlvbiI6eyJ0ZXh0IjoiQ2xvdWR5IiwiaWNvbiI6Ii8vY2RuLndlYXRoZXJhcGkuY29tL3dlYXRoZXIvNjR4NjQvZGF5LzExOS5wbmciLCJjb2RlIjoxMDA2fSwid2luZF9tcGgiOjQuMCwid2luZF9rcGgiOjYuNSwid2luZF9kZWdyZWUiOjI4Mywid2luZF9kaXIiOiJXTlciLCJwcmVzc3VyZV9tYiI6MTAzMi4wLCJwcmVzc3VyZV9pbiI6MzAuNDcsInByZWNpcF9tbSI6MC4wLCJwcmVjaXBfaW4iOjAuMCwic25vd19jbSI6MC4wLCJodW1pZGl0eSI6OTAsImNsb3VkIjo3NywiZmVlbHNsaWtlX2MiOi0zNS4wLCJmZWVsc2xpa2VfZiI6LTMwLjksIndpbmRjaGlsbF9jIjotMzUuMCwid2luZGNoaWxsX2YiOi0zMC45LCJoZWF0aW5kZXhfYyI6LTI4LjMsImhlYXRpbmRleF9mIjotMTkuMCwiZGV3cG9pbnRfYyI6LTI5LjUsImRld3BvaW50X2YiOi0yMS4wLCJ3aWxsX2l0X3JhaW4iOjAsImNoYW5jZV9vZl9yYWluIjowLCJ3aWxsX2l0X3Nub3ciOjAsImNoYW5jZV9vZl9zbm93IjowLCJ2aXNfa20iOjEwLjAsInZpc19taWxlcyI6Ni4wLCJndXN0X21waCI6Ni40LCJndXN0X2twaCI6MTAuNCwidXYiOjEuMH0seyJ0aW1lX2Vwb2NoIjoxNzA2NzYwMDAwLCJ0aW1lIjoiMjAyNC0wMi0wMSAxMzowMCIsInRlbXBfYyI6LTI3LjIsInRlbXBfZiI6LTE2LjksImlzX2RheSI6MSwiY29uZGl0aW9uIjp7InRleHQiOiJQYXJ0bHkgY2xvdWR5IiwiaWNvbiI6Ii8vY2RuLndlYXRoZXJhcGkuY29tL3dlYXRoZXIvNjR4NjQvZGF5LzExNi5wbmciLCJjb2RlIjoxMDAzfSwid2luZF9tcGgiOjMuOCwid2luZF9rcGgiOjYuMSwid2luZF9kZWdyZWUiOjI3Miwid2luZF9kaXIiOiJXIiwicHJlc3N1cmVfbWIiOjEwMzIuMCwicHJlc3N1cmVfaW4iOjMwLjQ2LCJwcmVjaXBfbW0iOjAuMCwicHJlY2lwX2luIjowLjAsInNub3dfY20iOjAuMCwiaHVtaWRpdHkiOjg5LCJjbG91ZCI6NDYsImZlZWxzbGlrZV9jIjotMzMuNCwiZmVlbHNsaWtlX2YiOi0yOC4wLCJ3aW5kY2hpbGxfYyI6LTMzLjQsIndpbmRjaGlsbF9mIjotMjguMCwiaGVhdGluZGV4X2MiOi0yNy4yLCJoZWF0aW5kZXhfZiI6LTE2LjksImRld3BvaW50X2MiOi0yOC41LCJkZXdwb2ludF9mIjotMTkuMiwid2lsbF9pdF9yYWluIjowLCJjaGFuY2Vfb2ZfcmFpbiI6MCwid2lsbF9pdF9zbm93IjowLCJjaGFuY2Vfb2Zfc25vdyI6MCwidmlzX2ttIjoxMC4wLCJ2aXNfbWlsZXMiOjYuMCwiZ3VzdF9tcGgiOjYuMCwiZ3VzdF9rcGgiOjkuNiwidXYiOjIuMH0seyJ0aW1lX2Vwb2NoIjoxNzA2NzYzNjAwLCJ0aW1lIjoiMjAyNC0wMi0wMSAxNDowMCIsInRlbXBfYyI6LTI2LjYsInRlbXBfZiI6LTE1LjksImlzX2RheSI6MSwiY29uZGl0aW9uIjp7InRleHQiOiJQYXJ0bHkgY2xvdWR5IiwiaWNvbiI6Ii8vY2RuLndlYXRoZXJhcGkuY29tL3dlYXRoZXIvNjR4NjQvZGF5LzExNi5wbmciLCJjb2RlIjoxMDAzfSwid2luZF9tcGgiOjQuMCwid2luZF9rcGgiOjYuNSwid2luZF9kZWdyZWUiOjI3MCwid2luZF9kaXIiOiJXIiwicHJlc3N1cmVfbWIiOjEwMzEuMCwicHJlc3N1cmVfaW4iOjMwLjQ2LCJwcmVjaXBfbW0iOjAuMCwicHJlY2lwX2luIjowLjAsInNub3dfY20iOjAuMCwiaHVtaWRpdHkiOjkwLCJjbG91ZCI6MzQsImZlZWxzbGlrZV9jIjotMzMuMCwiZmVlbHNsaWtlX2YiOi0yNy40LCJ3aW5kY2hpbGxfYyI6LTMzLjAsIndpbmRjaGlsbF9mIjotMjcuNCwiaGVhdGluZGV4X2MiOi0yNi42LCJoZWF0aW5kZXhfZiI6LTE1LjksImRld3BvaW50X2MiOi0yNy43LCJkZXdwb2ludF9mIjotMTcuOSwid2lsbF9pdF9yYWluIjowLCJjaGFuY2Vfb2ZfcmFpbiI6MCwid2lsbF9pdF9zbm93IjowLCJjaGFuY2Vfb2Zfc25vdyI6MCwidmlzX2ttIjoxMC4wLCJ2aXNfbWlsZXMiOjYuMCwiZ3VzdF9tcGgiOjYuNiwiZ3VzdF9rcGgiOjEwLjcsInV2IjoyLjB9LHsidGltZV9lcG9jaCI6MTcwNjc2NzIwMCwidGltZSI6IjIwMjQtMDItMDEgMTU6MDAiLCJ0ZW1wX2MiOi0yNy4yLCJ0ZW1wX2YiOi0xNi45LCJpc19kYXkiOjEsImNvbmRpdGlvbiI6eyJ0ZXh0IjoiUGFydGx5IGNsb3VkeSIsImljb24iOiIvL2Nkbi53ZWF0aGVyYXBpLmNvbS93ZWF0aGVyLzY0eDY0L2RheS8xMTYucG5nIiwiY29kZSI6MTAwM30sIndpbmRfbXBoIjozLjgsIndpbmRfa3BoIjo2LjEsIndpbmRfZGVncmVlIjoyNjEsIndpbmRfZGlyIjoiVyIsInByZXNzdXJlX21iIjoxMDMxLjAsInByZXNzdXJlX2luIjozMC40NSwicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5MywiY2xvdWQiOjMxLCJmZWVsc2xpa2VfYyI6LTMzLjQsImZlZWxzbGlrZV9mIjotMjguMCwid2luZGNoaWxsX2MiOi0zMy40LCJ3aW5kY2hpbGxfZiI6LTI4LjAsImhlYXRpbmRleF9jIjotMjcuMiwiaGVhdGluZGV4X2YiOi0xNi45LCJkZXdwb2ludF9jIjotMjguMCwiZGV3cG9pbnRfZiI6LTE4LjQsIndpbGxfaXRfcmFpbiI6MCwiY2hhbmNlX29mX3JhaW4iOjAsIndpbGxfaXRfc25vdyI6MCwiY2hhbmNlX29mX3Nub3ciOjAsInZpc19rbSI6MTAuMCwidmlzX21pbGVzIjo2LjAsImd1c3RfbXBoIjo3LjMsImd1c3Rfa3BoIjoxMS44LCJ1diI6Mi4wfSx7InRpbWVfZXBvY2giOjE3MDY3NzA4MDAsInRpbWUiOiIyMDI0LTAyLTAxIDE2OjAwIiwidGVtcF9jIjotMjkuMSwidGVtcF9mIjotMjAuNCwiaXNfZGF5IjoxLCJjb25kaXRpb24iOnsidGV4dCI6Ik1pc3QiLCJpY29uIjoiLy9jZG4ud2VhdGhlcmFwaS5jb20vd2VhdGhlci82NHg2NC9kYXkvMTQzLnBuZyIsImNvZGUiOjEwMzB9LCJ3aW5kX21waCI6NC4wLCJ3aW5kX2twaCI6Ni41LCJ3aW5kX2RlZ3JlZSI6MjU4LCJ3aW5kX2RpciI6IldTVyIsInByZXNzdXJlX21iIjoxMDMyLjAsInByZXNzdXJlX2luIjozMC40NiwicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5NSwiY2xvdWQiOjMwLCJmZWVsc2xpa2VfYyI6LTM1LjksImZlZWxzbGlrZV9mIjotMzIuNSwid2luZGNoaWxsX2MiOi0zNS45LCJ3aW5kY2hpbGxfZiI6LTMyLjUsImhlYXRpbmRleF9jIjotMjkuMSwiaGVhdGluZGV4X2YiOi0yMC40LCJkZXdwb2ludF9jIjotMjkuNiwiZGV3cG9pbnRfZiI6LTIxLjQsIndpbGxfaXRfcmFpbiI6MCwiY2hhbmNlX29mX3JhaW4iOjAsIndpbGxfaXRfc25vdyI6MCwiY2hhbmNlX29mX3Nub3ciOjAsInZpc19rbSI6Mi4wLCJ2aXNfbWlsZXMiOjEuMCwiZ3VzdF9tcGgiOjguNSwiZ3VzdF9rcGgiOjEzLjYsInV2IjoxLjB9LHsidGltZV9lcG9jaCI6MTcwNjc3NDQwMCwidGltZSI6IjIwMjQtMDItMDEgMTc6MDAiLCJ0ZW1wX2MiOi0zMC42LCJ0ZW1wX2YiOi0yMy4xLCJpc19kYXkiOjAsImNvbmRpdGlvbiI6eyJ0ZXh0IjoiTWlzdCIsImljb24iOiIvL2Nkbi53ZWF0aGVyYXBpLmNvbS93ZWF0aGVyLzY0eDY0L25pZ2h0LzE0My5wbmciLCJjb2RlIjoxMDMwfSwid2luZF9tcGgiOjQuNSwid2luZF9rcGgiOjcuMiwid2luZF9kZWdyZWUiOjI1OSwid2luZF9kaXIiOiJXIiwicHJlc3N1cmVfbWIiOjEwMzIuMCwicHJlc3N1cmVfaW4iOjMwLjQ4LCJwcmVjaXBfbW0iOjAuMCwicHJlY2lwX2luIjowLjAsInNub3dfY20iOjAuMCwiaHVtaWRpdHkiOjk2LCJjbG91ZCI6MjYsImZlZWxzbGlrZV9jIjotMzguMiwiZmVlbHNsaWtlX2YiOi0zNi43LCJ3aW5kY2hpbGxfYyI6LTM4LjIsIndpbmRjaGlsbF9mIjotMzYuNywiaGVhdGluZGV4X2MiOi0zMC42LCJoZWF0aW5kZXhfZiI6LTIzLjEsImRld3BvaW50X2MiOi0zMS4wLCJkZXdwb2ludF9mIjotMjMuOCwid2lsbF9pdF9yYWluIjowLCJjaGFuY2Vfb2ZfcmFpbiI6MCwid2lsbF9pdF9zbm93IjowLCJjaGFuY2Vfb2Zfc25vdyI6MCwidmlzX2ttIjoyLjAsInZpc19taWxlcyI6MS4wLCJndXN0X21waCI6OS40LCJndXN0X2twaCI6MTUuMSwidXYiOjEuMH0seyJ0aW1lX2Vwb2NoIjoxNzA2Nzc4MDAwLCJ0aW1lIjoiMjAyNC0wMi0wMSAxODowMCIsInRlbXBfYyI6LTMxLjEsInRlbXBfZiI6LTIzLjksImlzX2RheSI6MCwiY29uZGl0aW9uIjp7InRleHQiOiJNaXN0IiwiaWNvbiI6Ii8vY2RuLndlYXRoZXJhcGkuY29tL3dlYXRoZXIvNjR4NjQvbmlnaHQvMTQzLnBuZyIsImNvZGUiOjEwMzB9LCJ3aW5kX21waCI6NC43LCJ3aW5kX2twaCI6Ny42LCJ3aW5kX2RlZ3JlZSI6MjY2LCJ3aW5kX2RpciI6IlciLCJwcmVzc3VyZV9tYiI6MTAzMi4wLCJwcmVzc3VyZV9pbiI6MzAuNDksInByZWNpcF9tbSI6MC4wLCJwcmVjaXBfaW4iOjAuMCwic25vd19jbSI6MC4wLCJodW1pZGl0eSI6OTcsImNsb3VkIjoyNCwiZmVlbHNsaWtlX2MiOi0zOC45LCJmZWVsc2xpa2VfZiI6LTM4LjEsIndpbmRjaGlsbF9jIjotMzguOSwid2luZGNoaWxsX2YiOi0zOC4xLCJoZWF0aW5kZXhfYyI6LTMxLjEsImhlYXRpbmRleF9mIjotMjMuOSwiZGV3cG9pbnRfYyI6LTMxLjQsImRld3BvaW50X2YiOi0yNC41LCJ3aWxsX2l0X3JhaW4iOjAsImNoYW5jZV9vZl9yYWluIjowLCJ3aWxsX2l0X3Nub3ciOjAsImNoYW5jZV9vZl9zbm93IjowLCJ2aXNfa20iOjIuMCwidmlzX21pbGVzIjoxLjAsImd1c3RfbXBoIjo5LjksImd1c3Rfa3BoIjoxNS45LCJ1diI6MS4wfSx7InRpbWVfZXBvY2giOjE3MDY3ODE2MDAsInRpbWUiOiIyMDI0LTAyLTAxIDE5OjAwIiwidGVtcF9jIjotMzAuOSwidGVtcF9mIjotMjMuNywiaXNfZGF5IjowLCJjb25kaXRpb24iOnsidGV4dCI6IkZyZWV6aW5nIGZvZyIsImljb24iOiIvL2Nkbi53ZWF0aGVyYXBpLmNvbS93ZWF0aGVyLzY0eDY0L25pZ2h0LzI2MC5wbmciLCJjb2RlIjoxMTQ3fSwid2luZF9tcGgiOjQuNSwid2luZF9rcGgiOjcuMiwid2luZF9kZWdyZWUiOjI3Mywid2luZF9kaXIiOiJXIiwicHJlc3N1cmVfbWIiOjEwMzIuMCwicHJlc3N1cmVfaW4iOjMwLjQ5LCJwcmVjaXBfbW0iOjAuMCwicHJlY2lwX2luIjowLjAsInNub3dfY20iOjAuMCwiaHVtaWRpdHkiOjk3LCJjbG91ZCI6MjYsImZlZWxzbGlrZV9jIjotMzguNSwiZmVlbHNsaWtlX2YiOi0zNy4zLCJ3aW5kY2hpbGxfYyI6LTM4LjUsIndpbmRjaGlsbF9mIjotMzcuMywiaGVhdGluZGV4X2MiOi0zMC45LCJoZWF0aW5kZXhfZiI6LTIzLjcsImRld3BvaW50X2MiOi0zMS4yLCJkZXdwb2ludF9mIjotMjQuMiwid2lsbF9pdF9yYWluIjowLCJjaGFuY2Vfb2ZfcmFpbiI6MCwid2lsbF9pdF9zbm93IjowLCJjaGFuY2Vfb2Zfc25vdyI6MCwidmlzX2ttIjowLjAsInZpc19taWxlcyI6MC4wLCJndXN0X21waCI6OS40LCJndXN0X2twaCI6MTUuMSwidXYiOjEuMH0seyJ0aW1lX2Vwb2NoIjoxNzA2Nzg1MjAwLCJ0aW1lIjoiMjAyNC0wMi0wMSAyMDowMCIsInRlbXBfYyI6LTMxLjAsInRlbXBfZiI6LTIzLjgsImlzX2RheSI6MCwiY29uZGl0aW9uIjp7InRleHQiOiJGcmVlemluZyBmb2ciLCJpY29uIjoiLy9jZG4ud2VhdGhlcmFwaS5jb20vd2VhdGhlci82NHg2NC9uaWdodC8yNjAucG5nIiwiY29kZSI6MTE0N30sIndpbmRfbXBoIjo0LjMsIndpbmRfa3BoIjo2LjgsIndpbmRfZGVncmVlIjoyNzAsIndpbmRfZGlyIjoiVyIsInByZXNzdXJlX21iIjoxMDMyLjAsInByZXNzdXJlX2luIjozMC40OCwicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5OCwiY2xvdWQiOjMwLCJmZWVsc2xpa2VfYyI6LTM4LjMsImZlZWxzbGlrZV9mIjotMzcuMCwid2luZGNoaWxsX2MiOi0zOC4zLCJ3aW5kY2hpbGxfZiI6LTM3LjAsImhlYXRpbmRleF9jIjotMzEuMCwiaGVhdGluZGV4X2YiOi0yMy44LCJkZXdwb2ludF9jIjotMzEuMywiZGV3cG9pbnRfZiI6LTI0LjMsIndpbGxfaXRfcmFpbiI6MCwiY2hhbmNlX29mX3JhaW4iOjAsIndpbGxfaXRfc25vdyI6MCwiY2hhbmNlX29mX3Nub3ciOjAsInZpc19rbSI6MC4wLCJ2aXNfbWlsZXMiOjAuMCwiZ3VzdF9tcGgiOjguOSwiZ3VzdF9rcGgiOjE0LjQsInV2IjoxLjB9LHsidGltZV9lcG9jaCI6MTcwNjc4ODgwMCwidGltZSI6IjIwMjQtMDItMDEgMjE6MDAiLCJ0ZW1wX2MiOi0zMS42LCJ0ZW1wX2YiOi0yNC45LCJpc19kYXkiOjAsImNvbmRpdGlvbiI6eyJ0ZXh0IjoiRnJlZXppbmcgZm9nIiwiaWNvbiI6Ii8vY2RuLndlYXRoZXJhcGkuY29tL3dlYXRoZXIvNjR4NjQvbmlnaHQvMjYwLnBuZyIsImNvZGUiOjExNDd9LCJ3aW5kX21waCI6NC41LCJ3aW5kX2twaCI6Ny4yLCJ3aW5kX2RlZ3JlZSI6MjU4LCJ3aW5kX2RpciI6IldTVyIsInByZXNzdXJlX21iIjoxMDMyLjAsInByZXNzdXJlX2luIjozMC40OCwicHJlY2lwX21tIjowLjAsInByZWNpcF9pbiI6MC4wLCJzbm93X2NtIjowLjAsImh1bWlkaXR5Ijo5OCwiY2xvdWQiOjI3LCJmZWVsc2xpa2VfYyI6LTM5LjMsImZlZWxzbGlrZV9mIjotMzguNywid2luZGNoaWxsX2MiOi0zOS4zLCJ3aW5kY2hpbGxfZiI6LTM4LjcsImhlYXRpbmRleF9jIjotMzEuNiwiaGVhdGluZGV4X2YiOi0yNC45LCJkZXdwb2ludF9jIjotMzEuOCwiZGV3cG9pbnRfZiI6LTI1LjIsIndpbGxfaXRfcmFpbiI6MCwiY2hhbmNlX29mX3JhaW4iOjAsIndpbGxfaXRfc25vdyI6MCwiY2hhbmNlX29mX3Nub3ciOjAsInZpc19rbSI6MC4wLCJ2aXNfbWlsZXMiOjAuMCwiZ3VzdF9tcGgiOjkuNCwiZ3VzdF9rcGgiOjE1LjEsInV2IjoxLjB9LHsidGltZV9lcG9jaCI6MTcwNjc5MjQwMCwidGltZSI6IjIwMjQtMDItMDEgMjI6MDAiLCJ0ZW1wX2MiOi0zMi4yLCJ0ZW1wX2YiOi0yNi4wLCJpc19kYXkiOjAsImNvbmRpdGlvbiI6eyJ0ZXh0IjoiRnJlZXppbmcgZm9nIiwiaWNvbiI6Ii8vY2RuLndlYXRoZXJhcGkuY29tL3dlYXRoZXIvNjR4NjQvbmlnaHQvMjYwLnBuZyIsImNvZGUiOjExNDd9LCJ3aW5kX21waCI6NC4zLCJ3aW5kX2twaCI6Ni44LCJ3aW5kX2RlZ3JlZSI6MjYwLCJ3aW5kX2RpciI6IlciLCJwcmVzc3VyZV9tYiI6MTAzMi4wLCJwcmVzc3VyZV9pbiI6MzAuNDksInByZWNpcF9tbSI6MC4wLCJwcmVjaXBfaW4iOjAuMCwic25vd19jbSI6MC4wLCJodW1pZGl0eSI6OTgsImNsb3VkIjoyOCwiZmVlbHNsaWtlX2MiOi0zOS44LCJmZWVsc2xpa2VfZiI6LTM5LjYsIndpbmRjaGlsbF9jIjotMzkuOCwid2luZGNoaWxsX2YiOi0zOS42LCJoZWF0aW5kZXhfYyI6LTMyLjIsImhlYXRpbmRleF9mIjotMjYuMCwiZGV3cG9pbnRfYyI6LTMyLjQsImRld3BvaW50X2YiOi0yNi4zLCJ3aWxsX2l0X3JhaW4iOjAsImNoYW5jZV9vZl9yYWluIjowLCJ3aWxsX2l0X3Nub3ciOjAsImNoYW5jZV9vZl9zbm93IjowLCJ2aXNfa20iOjAuMCwidmlzX21pbGVzIjowLjAsImd1c3RfbXBoIjo4LjksImd1c3Rfa3BoIjoxNC40LCJ1diI6MS4wfSx7InRpbWVfZXBvY2giOjE3MDY3OTYwMDAsInRpbWUiOiIyMDI0LTAyLTAxIDIzOjAwIiwidGVtcF9jIjotMzIuNywidGVtcF9mIjotMjYuOSwiaXNfZGF5IjowLCJjb25kaXRpb24iOnsidGV4dCI6IkZyZWV6aW5nIGZvZyIsImljb24iOiIvL2Nkbi53ZWF0aGVyYXBpLmNvbS93ZWF0aGVyLzY0eDY0L25pZ2h0LzI2MC5wbmciLCJjb2RlIjoxMTQ3fSwid2luZF9tcGgiOjQuNSwid2luZF9rcGgiOjcuMiwid2luZF9kZWdyZWUiOjI1Niwid2luZF9kaXIiOiJXU1ciLCJwcmVzc3VyZV9tYiI6MTAzMi4wLCJwcmVzc3VyZV9pbiI6MzAuNDksInByZWNpcF9tbSI6MC4wLCJwcmVjaXBfaW4iOjAuMCwic25vd19jbSI6MC4wLCJodW1pZGl0eSI6OTgsImNsb3VkIjoyNywiZmVlbHNsaWtlX2MiOi00MC42LCJmZWVsc2xpa2VfZiI6LTQxLjAsIndpbmRjaGlsbF9jIjotNDAuNiwid2luZGNoaWxsX2YiOi00MS4wLCJoZWF0aW5kZXhfYyI6LTMyLjcsImhlYXRpbmRleF9mIjotMjYuOSwiZGV3cG9pbnRfYyI6LTMyLjksImRld3BvaW50X2YiOi0yNy4yLCJ3aWxsX2l0X3JhaW4iOjAsImNoYW5jZV9vZl9yYWluIjowLCJ3aWxsX2l0X3Nub3ciOjAsImNoYW5jZV9vZl9zbm93IjowLCJ2aXNfa20iOjAuMCwidmlzX21pbGVzIjowLjAsImd1c3RfbXBoIjo5LjQsImd1c3Rfa3BoIjoxNS4xLCJ1diI6MS4wfV19XX19
+  recorded_at: Fri, 02 Feb 2024 01:07:55 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/history.json?dt=2024-02-01&key=<WEATHER_API_KEY>&q=78.22,15.63
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 02 Feb 2024 01:07:55 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-1068
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=180
+      X-Weatherapi-Qpm-Left:
+      - '999782'
+      X-Varnish:
+      - '736757446'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 02/02/2024 01:07:38
+      Cdn-Edgestorageid:
+      - '940'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 5fd10b78b7c6e6e54ee69665267751c4
+      Cdn-Cache:
+      - HIT
+      X-Cache:
+      - MISS from 3
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 varnish (Varnish/6.0), 1.1 3 (squid)
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Longyearbyen (Svalbard)","region":"Sogn og Fjordane","country":"Norway","lat":78.22,"lon":15.63,"tz_id":"Arctic/Longyearbyen","localtime_epoch":1706836004,"localtime":"2024-02-02
+        2:06"},"forecast":{"forecastday":[{"date":"2024-02-01","date_epoch":1706745600,"day":{"maxtemp_c":-10.1,"maxtemp_f":13.8,"mintemp_c":-16.9,"mintemp_f":1.5,"avgtemp_c":-14.1,"avgtemp_f":6.6,"maxwind_mph":4.0,"maxwind_kph":6.5,"totalprecip_mm":0.62,"totalprecip_in":0.02,"totalsnow_cm":0.45,"avgvis_km":7.3,"avgvis_miles":4.0,"avghumidity":95,"daily_will_it_rain":0,"daily_chance_of_rain":0,"daily_will_it_snow":1,"daily_chance_of_snow":100,"condition":{"text":"Light
+        snow","icon":"//cdn.weatherapi.com/weather/64x64/day/326.png","code":1213},"uv":1.0},"astro":{"sunrise":"12:00
+        AM","sunset":"12:00 AM","moonrise":"01:19 AM","moonset":"07:08 AM","moon_phase":"Waning
+        Gibbous","moon_illumination":69},"hour":[{"time_epoch":1706742000,"time":"2024-02-01
+        00:00","temp_c":-10.1,"temp_f":13.8,"is_day":0,"condition":{"text":"Light
+        snow showers","icon":"//cdn.weatherapi.com/weather/64x64/night/368.png","code":1255},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":337,"wind_dir":"NNW","pressure_mb":965.0,"pressure_in":28.51,"precip_mm":0.04,"precip_in":0.0,"snow_cm":0.03,"humidity":92,"cloud":100,"feelslike_c":-12.6,"feelslike_f":9.3,"windchill_c":-12.6,"windchill_f":9.3,"heatindex_c":-10.1,"heatindex_f":13.8,"dewpoint_c":-11.1,"dewpoint_f":12.0,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.0,"gust_kph":6.5,"uv":1.0},{"time_epoch":1706745600,"time":"2024-02-01
+        01:00","temp_c":-10.4,"temp_f":13.2,"is_day":0,"condition":{"text":"Light
+        snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":2.5,"wind_kph":4.0,"wind_degree":5,"wind_dir":"N","pressure_mb":966.0,"pressure_in":28.52,"precip_mm":0.04,"precip_in":0.0,"snow_cm":0.03,"humidity":92,"cloud":100,"feelslike_c":-12.7,"feelslike_f":9.2,"windchill_c":-12.7,"windchill_f":9.2,"heatindex_c":-10.4,"heatindex_f":13.2,"dewpoint_c":-11.4,"dewpoint_f":11.4,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.8,"gust_kph":6.0,"uv":1.0},{"time_epoch":1706749200,"time":"2024-02-01
+        02:00","temp_c":-11.0,"temp_f":12.2,"is_day":0,"condition":{"text":"Light
+        snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":1.6,"wind_kph":2.5,"wind_degree":20,"wind_dir":"NNE","pressure_mb":966.0,"pressure_in":28.52,"precip_mm":0.02,"precip_in":0.0,"snow_cm":0.02,"humidity":92,"cloud":100,"feelslike_c":-11.0,"feelslike_f":12.2,"windchill_c":-11.0,"windchill_f":12.2,"heatindex_c":-11.0,"heatindex_f":12.2,"dewpoint_c":-12.0,"dewpoint_f":10.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.6,"gust_kph":4.1,"uv":1.0},{"time_epoch":1706752800,"time":"2024-02-01
+        03:00","temp_c":-11.9,"temp_f":10.6,"is_day":0,"condition":{"text":"Light
+        snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":0.7,"wind_kph":1.1,"wind_degree":32,"wind_dir":"NNE","pressure_mb":966.0,"pressure_in":28.53,"precip_mm":0.03,"precip_in":0.0,"snow_cm":0.02,"humidity":93,"cloud":100,"feelslike_c":-11.9,"feelslike_f":10.6,"windchill_c":-11.9,"windchill_f":10.6,"heatindex_c":-11.9,"heatindex_f":10.6,"dewpoint_c":-12.8,"dewpoint_f":8.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":1.2,"gust_kph":1.9,"uv":1.0},{"time_epoch":1706756400,"time":"2024-02-01
+        04:00","temp_c":-12.5,"temp_f":9.6,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":0.4,"wind_kph":0.7,"wind_degree":96,"wind_dir":"E","pressure_mb":966.0,"pressure_in":28.54,"precip_mm":0.04,"precip_in":0.0,"snow_cm":0.03,"humidity":93,"cloud":100,"feelslike_c":-12.5,"feelslike_f":9.6,"windchill_c":-12.5,"windchill_f":9.6,"heatindex_c":-12.5,"heatindex_f":9.6,"dewpoint_c":-13.4,"dewpoint_f":8.0,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":0.9,"gust_kph":1.4,"uv":1.0},{"time_epoch":1706760000,"time":"2024-02-01
+        05:00","temp_c":-12.7,"temp_f":9.2,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":0.9,"wind_kph":1.4,"wind_degree":79,"wind_dir":"E","pressure_mb":967.0,"pressure_in":28.55,"precip_mm":0.02,"precip_in":0.0,"snow_cm":0.02,"humidity":93,"cloud":100,"feelslike_c":-12.7,"feelslike_f":9.2,"windchill_c":-12.7,"windchill_f":9.2,"heatindex_c":-12.7,"heatindex_f":9.2,"dewpoint_c":-13.6,"dewpoint_f":7.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":1.7,"gust_kph":2.7,"uv":1.0},{"time_epoch":1706763600,"time":"2024-02-01
+        06:00","temp_c":-12.9,"temp_f":8.8,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":1.8,"wind_kph":2.9,"wind_degree":120,"wind_dir":"ESE","pressure_mb":967.0,"pressure_in":28.56,"precip_mm":0.03,"precip_in":0.0,"snow_cm":0.02,"humidity":93,"cloud":100,"feelslike_c":-12.9,"feelslike_f":8.8,"windchill_c":-12.9,"windchill_f":8.8,"heatindex_c":-12.9,"heatindex_f":8.8,"dewpoint_c":-13.7,"dewpoint_f":7.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.4,"gust_kph":5.5,"uv":1.0},{"time_epoch":1706767200,"time":"2024-02-01
+        07:00","temp_c":-13.4,"temp_f":7.9,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":2.2,"wind_kph":3.6,"wind_degree":131,"wind_dir":"SE","pressure_mb":968.0,"pressure_in":28.58,"precip_mm":0.02,"precip_in":0.0,"snow_cm":0.01,"humidity":94,"cloud":100,"feelslike_c":-15.7,"feelslike_f":3.8,"windchill_c":-15.7,"windchill_f":3.8,"heatindex_c":-13.4,"heatindex_f":7.9,"dewpoint_c":-14.1,"dewpoint_f":6.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.4,"gust_kph":7.1,"uv":1.0},{"time_epoch":1706770800,"time":"2024-02-01
+        08:00","temp_c":-13.6,"temp_f":7.5,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":1.8,"wind_kph":2.9,"wind_degree":135,"wind_dir":"SE","pressure_mb":969.0,"pressure_in":28.6,"precip_mm":0.02,"precip_in":0.0,"snow_cm":0.01,"humidity":95,"cloud":100,"feelslike_c":-13.6,"feelslike_f":7.5,"windchill_c":-13.6,"windchill_f":7.5,"heatindex_c":-13.6,"heatindex_f":7.5,"dewpoint_c":-14.3,"dewpoint_f":6.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.5,"gust_kph":5.7,"uv":1.0},{"time_epoch":1706774400,"time":"2024-02-01
+        09:00","temp_c":-14.2,"temp_f":6.4,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":0.9,"wind_kph":1.4,"wind_degree":118,"wind_dir":"ESE","pressure_mb":970.0,"pressure_in":28.63,"precip_mm":0.04,"precip_in":0.0,"snow_cm":0.03,"humidity":96,"cloud":100,"feelslike_c":-14.2,"feelslike_f":6.4,"windchill_c":-14.2,"windchill_f":6.4,"heatindex_c":-14.2,"heatindex_f":6.4,"dewpoint_c":-14.8,"dewpoint_f":5.5,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":1.8,"gust_kph":2.9,"uv":1.0},{"time_epoch":1706778000,"time":"2024-02-01
+        10:00","temp_c":-14.7,"temp_f":5.5,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":3.1,"wind_kph":5.0,"wind_degree":25,"wind_dir":"NNE","pressure_mb":970.0,"pressure_in":28.63,"precip_mm":0.05,"precip_in":0.0,"snow_cm":0.04,"humidity":97,"cloud":100,"feelslike_c":-18.3,"feelslike_f":-1.0,"windchill_c":-18.3,"windchill_f":-1.0,"heatindex_c":-14.7,"heatindex_f":5.5,"dewpoint_c":-15.1,"dewpoint_f":4.7,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":6.5,"gust_kph":10.4,"uv":1.0},{"time_epoch":1706781600,"time":"2024-02-01
+        11:00","temp_c":-14.8,"temp_f":5.4,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":3.8,"wind_kph":6.1,"wind_degree":44,"wind_dir":"NE","pressure_mb":970.0,"pressure_in":28.63,"precip_mm":0.07,"precip_in":0.0,"snow_cm":0.06,"humidity":96,"cloud":100,"feelslike_c":-19.1,"feelslike_f":-2.3,"windchill_c":-19.1,"windchill_f":-2.3,"heatindex_c":-14.8,"heatindex_f":5.4,"dewpoint_c":-15.2,"dewpoint_f":4.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":7.6,"gust_kph":12.3,"uv":1.0},{"time_epoch":1706785200,"time":"2024-02-01
+        12:00","temp_c":-14.5,"temp_f":5.9,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":2.9,"wind_kph":4.7,"wind_degree":48,"wind_dir":"NE","pressure_mb":970.0,"pressure_in":28.64,"precip_mm":0.02,"precip_in":0.0,"snow_cm":0.02,"humidity":95,"cloud":100,"feelslike_c":-17.8,"feelslike_f":-0.1,"windchill_c":-17.8,"windchill_f":-0.1,"heatindex_c":-14.5,"heatindex_f":5.9,"dewpoint_c":-15.1,"dewpoint_f":4.8,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.6,"gust_kph":9.0,"uv":1.0},{"time_epoch":1706788800,"time":"2024-02-01
+        13:00","temp_c":-14.8,"temp_f":5.4,"is_day":0,"condition":{"text":"Mist","icon":"//cdn.weatherapi.com/weather/64x64/night/143.png","code":1030},"wind_mph":2.5,"wind_kph":4.0,"wind_degree":56,"wind_dir":"ENE","pressure_mb":970.0,"pressure_in":28.65,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":95,"cloud":95,"feelslike_c":-17.5,"feelslike_f":0.4,"windchill_c":-17.5,"windchill_f":0.4,"heatindex_c":-14.8,"heatindex_f":5.4,"dewpoint_c":-15.4,"dewpoint_f":4.3,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":4.9,"gust_kph":7.8,"uv":1.0},{"time_epoch":1706792400,"time":"2024-02-01
+        14:00","temp_c":-15.5,"temp_f":4.1,"is_day":0,"condition":{"text":"Mist","icon":"//cdn.weatherapi.com/weather/64x64/night/143.png","code":1030},"wind_mph":1.6,"wind_kph":2.5,"wind_degree":74,"wind_dir":"ENE","pressure_mb":971.0,"pressure_in":28.66,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":95,"cloud":100,"feelslike_c":-15.5,"feelslike_f":4.1,"windchill_c":-15.5,"windchill_f":4.1,"heatindex_c":-15.5,"heatindex_f":4.1,"dewpoint_c":-16.1,"dewpoint_f":3.1,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":3.3,"gust_kph":5.3,"uv":1.0},{"time_epoch":1706796000,"time":"2024-02-01
+        15:00","temp_c":-15.7,"temp_f":3.7,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":2.0,"wind_kph":3.2,"wind_degree":13,"wind_dir":"NNE","pressure_mb":971.0,"pressure_in":28.67,"precip_mm":0.03,"precip_in":0.0,"snow_cm":0.03,"humidity":97,"cloud":100,"feelslike_c":-17.9,"feelslike_f":-0.2,"windchill_c":-17.9,"windchill_f":-0.2,"heatindex_c":-15.7,"heatindex_f":3.7,"dewpoint_c":-16.2,"dewpoint_f":2.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.2,"gust_kph":6.7,"uv":1.0},{"time_epoch":1706799600,"time":"2024-02-01
+        16:00","temp_c":-15.3,"temp_f":4.5,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":4.0,"wind_kph":6.5,"wind_degree":17,"wind_dir":"NNE","pressure_mb":971.0,"pressure_in":28.67,"precip_mm":0.05,"precip_in":0.0,"snow_cm":0.04,"humidity":97,"cloud":100,"feelslike_c":-19.9,"feelslike_f":-3.8,"windchill_c":-19.9,"windchill_f":-3.8,"heatindex_c":-15.3,"heatindex_f":4.5,"dewpoint_c":-15.7,"dewpoint_f":3.8,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":7.7,"gust_kph":12.4,"uv":1.0},{"time_epoch":1706803200,"time":"2024-02-01
+        17:00","temp_c":-15.0,"temp_f":5.0,"is_day":0,"condition":{"text":"Light snow","icon":"//cdn.weatherapi.com/weather/64x64/night/326.png","code":1213},"wind_mph":3.8,"wind_kph":6.1,"wind_degree":26,"wind_dir":"NNE","pressure_mb":971.0,"pressure_in":28.68,"precip_mm":0.03,"precip_in":0.0,"snow_cm":0.02,"humidity":96,"cloud":100,"feelslike_c":-19.4,"feelslike_f":-2.9,"windchill_c":-19.4,"windchill_f":-2.9,"heatindex_c":-15.0,"heatindex_f":5.0,"dewpoint_c":-15.5,"dewpoint_f":4.1,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":7.0,"gust_kph":11.2,"uv":1.0},{"time_epoch":1706806800,"time":"2024-02-01
+        18:00","temp_c":-15.0,"temp_f":5.1,"is_day":0,"condition":{"text":"Mist","icon":"//cdn.weatherapi.com/weather/64x64/night/143.png","code":1030},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":31,"wind_dir":"NNE","pressure_mb":971.0,"pressure_in":28.68,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":95,"cloud":100,"feelslike_c":-18.0,"feelslike_f":-0.5,"windchill_c":-18.0,"windchill_f":-0.5,"heatindex_c":-15.0,"heatindex_f":5.1,"dewpoint_c":-15.5,"dewpoint_f":4.0,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":4.9,"gust_kph":7.8,"uv":1.0},{"time_epoch":1706810400,"time":"2024-02-01
+        19:00","temp_c":-15.4,"temp_f":4.3,"is_day":0,"condition":{"text":"Mist","icon":"//cdn.weatherapi.com/weather/64x64/night/143.png","code":1030},"wind_mph":2.5,"wind_kph":4.0,"wind_degree":9,"wind_dir":"N","pressure_mb":971.0,"pressure_in":28.68,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":95,"cloud":100,"feelslike_c":-18.2,"feelslike_f":-0.8,"windchill_c":-18.2,"windchill_f":-0.8,"heatindex_c":-15.4,"heatindex_f":4.3,"dewpoint_c":-16.0,"dewpoint_f":3.3,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":4.7,"gust_kph":7.6,"uv":1.0},{"time_epoch":1706814000,"time":"2024-02-01
+        20:00","temp_c":-15.8,"temp_f":3.6,"is_day":0,"condition":{"text":"Mist","icon":"//cdn.weatherapi.com/weather/64x64/night/143.png","code":1030},"wind_mph":3.1,"wind_kph":5.0,"wind_degree":0,"wind_dir":"N","pressure_mb":971.0,"pressure_in":28.68,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":96,"cloud":100,"feelslike_c":-19.5,"feelslike_f":-3.1,"windchill_c":-19.5,"windchill_f":-3.1,"heatindex_c":-15.8,"heatindex_f":3.6,"dewpoint_c":-16.2,"dewpoint_f":2.8,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":6.2,"gust_kph":9.9,"uv":1.0},{"time_epoch":1706817600,"time":"2024-02-01
+        21:00","temp_c":-15.7,"temp_f":3.8,"is_day":0,"condition":{"text":"Mist","icon":"//cdn.weatherapi.com/weather/64x64/night/143.png","code":1030},"wind_mph":2.9,"wind_kph":4.7,"wind_degree":2,"wind_dir":"N","pressure_mb":971.0,"pressure_in":28.67,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":96,"cloud":100,"feelslike_c":-19.1,"feelslike_f":-2.4,"windchill_c":-19.1,"windchill_f":-2.4,"heatindex_c":-15.7,"heatindex_f":3.8,"dewpoint_c":-16.2,"dewpoint_f":2.8,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":5.5,"gust_kph":8.8,"uv":1.0},{"time_epoch":1706821200,"time":"2024-02-01
+        22:00","temp_c":-16.3,"temp_f":2.7,"is_day":0,"condition":{"text":"Mist","icon":"//cdn.weatherapi.com/weather/64x64/night/143.png","code":1030},"wind_mph":1.8,"wind_kph":2.9,"wind_degree":12,"wind_dir":"NNE","pressure_mb":971.0,"pressure_in":28.66,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":95,"cloud":94,"feelslike_c":-16.3,"feelslike_f":2.7,"windchill_c":-16.3,"windchill_f":2.7,"heatindex_c":-16.3,"heatindex_f":2.7,"dewpoint_c":-16.8,"dewpoint_f":1.7,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":3.7,"gust_kph":5.9,"uv":1.0},{"time_epoch":1706824800,"time":"2024-02-01
+        23:00","temp_c":-16.9,"temp_f":1.5,"is_day":0,"condition":{"text":"Mist","icon":"//cdn.weatherapi.com/weather/64x64/night/143.png","code":1030},"wind_mph":1.8,"wind_kph":2.9,"wind_degree":344,"wind_dir":"NNW","pressure_mb":970.0,"pressure_in":28.66,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":95,"cloud":92,"feelslike_c":-17.0,"feelslike_f":1.5,"windchill_c":-17.0,"windchill_f":1.5,"heatindex_c":-17.0,"heatindex_f":1.5,"dewpoint_c":-17.5,"dewpoint_f":0.5,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":3.8,"gust_kph":6.0,"uv":1.0}]}]}}'
+  recorded_at: Fri, 02 Feb 2024 01:07:56 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/history.json?dt=2024-02-01&key=<WEATHER_API_KEY>&q=27.99,86.93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 02 Feb 2024 01:07:56 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-1068
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=180
+      X-Weatherapi-Qpm-Left:
+      - '999782'
+      X-Varnish:
+      - '1015513300'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 02/02/2024 01:07:39
+      Cdn-Edgestorageid:
+      - '1069'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 5cc6ade59f104f4dc1fe54d19d00f05f
+      Cdn-Cache:
+      - HIT
+      X-Cache:
+      - MISS from 3
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 varnish (Varnish/6.0), 1.1 3 (squid)
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Lobuche","region":"","country":"Nepal","lat":27.99,"lon":86.93,"tz_id":"Asia/Kathmandu","localtime_epoch":1706836006,"localtime":"2024-02-02
+        6:51"},"forecast":{"forecastday":[{"date":"2024-02-01","date_epoch":1706745600,"day":{"maxtemp_c":-17.8,"maxtemp_f":-0.0,"mintemp_c":-26.5,"mintemp_f":-15.7,"avgtemp_c":-23.3,"avgtemp_f":-10.0,"maxwind_mph":11.2,"maxwind_kph":18.0,"totalprecip_mm":0.33,"totalprecip_in":0.01,"totalsnow_cm":0.12,"avgvis_km":9.7,"avgvis_miles":6.0,"avghumidity":60,"daily_will_it_rain":0,"daily_chance_of_rain":0,"daily_will_it_snow":1,"daily_chance_of_snow":100,"condition":{"text":"Moderate
+        or heavy snow with thunder","icon":"//cdn.weatherapi.com/weather/64x64/day/395.png","code":1282},"uv":1.0},"astro":{"sunrise":"06:45
+        AM","sunset":"05:37 PM","moonrise":"11:22 PM","moonset":"10:14 AM","moon_phase":"Waning
+        Gibbous","moon_illumination":69},"hour":[{"time_epoch":1706724900,"time":"2024-02-01
+        00:00","temp_c":-25.4,"temp_f":-13.7,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":8.1,"wind_kph":13.0,"wind_degree":248,"wind_dir":"WSW","pressure_mb":1029.0,"pressure_in":30.4,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":34,"cloud":0,"feelslike_c":-35.0,"feelslike_f":-30.9,"windchill_c":-35.0,"windchill_f":-30.9,"heatindex_c":-25.4,"heatindex_f":-13.7,"dewpoint_c":-36.4,"dewpoint_f":-33.6,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":16.9,"gust_kph":27.2,"uv":1.0},{"time_epoch":1706728500,"time":"2024-02-01
+        01:00","temp_c":-25.7,"temp_f":-14.3,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":8.1,"wind_kph":13.0,"wind_degree":251,"wind_dir":"WSW","pressure_mb":1030.0,"pressure_in":30.41,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":36,"cloud":0,"feelslike_c":-35.4,"feelslike_f":-31.7,"windchill_c":-35.4,"windchill_f":-31.7,"heatindex_c":-25.7,"heatindex_f":-14.3,"dewpoint_c":-36.2,"dewpoint_f":-33.1,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":16.9,"gust_kph":27.2,"uv":1.0},{"time_epoch":1706732100,"time":"2024-02-01
+        02:00","temp_c":-26.0,"temp_f":-14.7,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":8.3,"wind_kph":13.3,"wind_degree":252,"wind_dir":"WSW","pressure_mb":1029.0,"pressure_in":30.4,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":37,"cloud":0,"feelslike_c":-35.8,"feelslike_f":-32.4,"windchill_c":-35.8,"windchill_f":-32.4,"heatindex_c":-26.0,"heatindex_f":-14.7,"dewpoint_c":-36.3,"dewpoint_f":-33.3,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":17.4,"gust_kph":28.0,"uv":1.0},{"time_epoch":1706735700,"time":"2024-02-01
+        03:00","temp_c":-26.3,"temp_f":-15.3,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":7.8,"wind_kph":12.6,"wind_degree":257,"wind_dir":"WSW","pressure_mb":1030.0,"pressure_in":30.41,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":37,"cloud":0,"feelslike_c":-35.9,"feelslike_f":-32.6,"windchill_c":-35.9,"windchill_f":-32.6,"heatindex_c":-26.3,"heatindex_f":-15.3,"dewpoint_c":-36.5,"dewpoint_f":-33.7,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":16.4,"gust_kph":26.5,"uv":1.0},{"time_epoch":1706739300,"time":"2024-02-01
+        04:00","temp_c":-26.5,"temp_f":-15.7,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":7.8,"wind_kph":12.6,"wind_degree":258,"wind_dir":"WSW","pressure_mb":1030.0,"pressure_in":30.43,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":39,"cloud":0,"feelslike_c":-36.1,"feelslike_f":-33.0,"windchill_c":-36.1,"windchill_f":-33.0,"heatindex_c":-26.5,"heatindex_f":-15.6,"dewpoint_c":-36.2,"dewpoint_f":-33.1,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":16.4,"gust_kph":26.5,"uv":1.0},{"time_epoch":1706742900,"time":"2024-02-01
+        05:00","temp_c":-26.5,"temp_f":-15.7,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":7.8,"wind_kph":12.6,"wind_degree":262,"wind_dir":"W","pressure_mb":1031.0,"pressure_in":30.46,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":43,"cloud":0,"feelslike_c":-36.2,"feelslike_f":-33.1,"windchill_c":-36.2,"windchill_f":-33.1,"heatindex_c":-26.5,"heatindex_f":-15.7,"dewpoint_c":-35.2,"dewpoint_f":-31.4,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":16.4,"gust_kph":26.5,"uv":1.0},{"time_epoch":1706746500,"time":"2024-02-01
+        06:00","temp_c":-26.3,"temp_f":-15.3,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":8.1,"wind_kph":13.0,"wind_degree":261,"wind_dir":"W","pressure_mb":1032.0,"pressure_in":30.46,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":39,"cloud":0,"feelslike_c":-36.0,"feelslike_f":-32.9,"windchill_c":-36.0,"windchill_f":-32.9,"heatindex_c":-26.3,"heatindex_f":-15.3,"dewpoint_c":-36.1,"dewpoint_f":-33.0,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":16.9,"gust_kph":27.2,"uv":1.0},{"time_epoch":1706750100,"time":"2024-02-01
+        07:00","temp_c":-24.4,"temp_f":-11.9,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":8.3,"wind_kph":13.3,"wind_degree":253,"wind_dir":"WSW","pressure_mb":1029.0,"pressure_in":30.38,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":39,"cloud":0,"feelslike_c":-33.9,"feelslike_f":-29.0,"windchill_c":-33.9,"windchill_f":-29.0,"heatindex_c":-24.4,"heatindex_f":-11.9,"dewpoint_c":-34.3,"dewpoint_f":-29.7,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":17.4,"gust_kph":28.0,"uv":2.0},{"time_epoch":1706753700,"time":"2024-02-01
+        08:00","temp_c":-21.5,"temp_f":-6.6,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":8.9,"wind_kph":14.4,"wind_degree":247,"wind_dir":"WSW","pressure_mb":1023.0,"pressure_in":30.21,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":47,"cloud":0,"feelslike_c":-30.7,"feelslike_f":-23.2,"windchill_c":-30.7,"windchill_f":-23.2,"heatindex_c":-21.5,"heatindex_f":-6.6,"dewpoint_c":-29.7,"dewpoint_f":-21.5,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":18.8,"gust_kph":30.2,"uv":2.0},{"time_epoch":1706757300,"time":"2024-02-01
+        09:00","temp_c":-19.5,"temp_f":-3.0,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":9.2,"wind_kph":14.8,"wind_degree":238,"wind_dir":"WSW","pressure_mb":1021.0,"pressure_in":30.14,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":54,"cloud":2,"feelslike_c":-28.4,"feelslike_f":-19.0,"windchill_c":-28.4,"windchill_f":-19.0,"heatindex_c":-19.5,"heatindex_f":-3.0,"dewpoint_c":-26.3,"dewpoint_f":-15.4,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":14.7,"gust_kph":23.7,"uv":2.0},{"time_epoch":1706760900,"time":"2024-02-01
+        10:00","temp_c":-18.4,"temp_f":-1.2,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":9.6,"wind_kph":15.5,"wind_degree":233,"wind_dir":"SW","pressure_mb":1019.0,"pressure_in":30.1,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":55,"cloud":2,"feelslike_c":-27.3,"feelslike_f":-17.1,"windchill_c":-27.3,"windchill_f":-17.1,"heatindex_c":-18.4,"heatindex_f":-1.2,"dewpoint_c":-25.2,"dewpoint_f":-13.3,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":12.4,"gust_kph":19.9,"uv":2.0},{"time_epoch":1706764500,"time":"2024-02-01
+        11:00","temp_c":-17.9,"temp_f":-0.2,"is_day":1,"condition":{"text":"Light
+        freezing rain","icon":"//cdn.weatherapi.com/weather/64x64/day/311.png","code":1198},"wind_mph":10.1,"wind_kph":16.2,"wind_degree":227,"wind_dir":"SW","pressure_mb":1018.0,"pressure_in":30.06,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":56,"cloud":70,"feelslike_c":-26.8,"feelslike_f":-16.3,"windchill_c":-26.8,"windchill_f":-16.3,"heatindex_c":-17.9,"heatindex_f":-0.2,"dewpoint_c":-24.5,"dewpoint_f":-12.1,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":11.6,"gust_kph":18.6,"uv":1.0},{"time_epoch":1706768100,"time":"2024-02-01
+        12:00","temp_c":-17.8,"temp_f":-0.0,"is_day":1,"condition":{"text":"Patchy
+        snow possible","icon":"//cdn.weatherapi.com/weather/64x64/day/179.png","code":1066},"wind_mph":11.2,"wind_kph":18.0,"wind_degree":225,"wind_dir":"SW","pressure_mb":1017.0,"pressure_in":30.03,"precip_mm":0.02,"precip_in":0.0,"snow_cm":0.0,"humidity":63,"cloud":81,"feelslike_c":-27.2,"feelslike_f":-16.9,"windchill_c":-27.2,"windchill_f":-16.9,"heatindex_c":-17.8,"heatindex_f":-0.0,"dewpoint_c":-23.0,"dewpoint_f":-9.5,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":9.0,"vis_miles":5.0,"gust_mph":12.9,"gust_kph":20.7,"uv":1.0},{"time_epoch":1706771700,"time":"2024-02-01
+        13:00","temp_c":-18.2,"temp_f":-0.8,"is_day":1,"condition":{"text":"Patchy
+        snow possible","icon":"//cdn.weatherapi.com/weather/64x64/day/179.png","code":1066},"wind_mph":11.2,"wind_kph":18.0,"wind_degree":222,"wind_dir":"SW","pressure_mb":1016.0,"pressure_in":30.01,"precip_mm":0.05,"precip_in":0.0,"snow_cm":0.0,"humidity":77,"cloud":82,"feelslike_c":-27.7,"feelslike_f":-17.9,"windchill_c":-27.7,"windchill_f":-17.9,"heatindex_c":-18.2,"heatindex_f":-0.8,"dewpoint_c":-21.3,"dewpoint_f":-6.3,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":9.0,"vis_miles":5.0,"gust_mph":12.9,"gust_kph":20.7,"uv":1.0},{"time_epoch":1706775300,"time":"2024-02-01
+        14:00","temp_c":-18.7,"temp_f":-1.6,"is_day":1,"condition":{"text":"Moderate
+        or heavy snow with thunder","icon":"//cdn.weatherapi.com/weather/64x64/day/395.png","code":1282},"wind_mph":11.0,"wind_kph":17.6,"wind_degree":222,"wind_dir":"SW","pressure_mb":1016.0,"pressure_in":30.01,"precip_mm":0.08,"precip_in":0.0,"snow_cm":0.06,"humidity":87,"cloud":53,"feelslike_c":-28.2,"feelslike_f":-18.7,"windchill_c":-28.2,"windchill_f":-18.7,"heatindex_c":-18.7,"heatindex_f":-1.6,"dewpoint_c":-20.3,"dewpoint_f":-4.5,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":5.0,"vis_miles":3.0,"gust_mph":13.2,"gust_kph":21.2,"uv":1.0},{"time_epoch":1706778900,"time":"2024-02-01
+        15:00","temp_c":-20.1,"temp_f":-4.1,"is_day":1,"condition":{"text":"Patchy
+        light snow with thunder","icon":"//cdn.weatherapi.com/weather/64x64/day/392.png","code":1279},"wind_mph":10.5,"wind_kph":16.9,"wind_degree":227,"wind_dir":"SW","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.07,"precip_in":0.0,"snow_cm":0.0,"humidity":93,"cloud":59,"feelslike_c":-29.7,"feelslike_f":-21.5,"windchill_c":-29.7,"windchill_f":-21.5,"heatindex_c":-20.1,"heatindex_f":-4.1,"dewpoint_c":-20.9,"dewpoint_f":-5.6,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":15.7,"gust_kph":25.2,"uv":1.0},{"time_epoch":1706782500,"time":"2024-02-01
+        16:00","temp_c":-22.7,"temp_f":-8.8,"is_day":1,"condition":{"text":"Light
+        snow showers","icon":"//cdn.weatherapi.com/weather/64x64/day/368.png","code":1255},"wind_mph":9.8,"wind_kph":15.8,"wind_degree":233,"wind_dir":"SW","pressure_mb":1024.0,"pressure_in":30.23,"precip_mm":0.04,"precip_in":0.0,"snow_cm":0.04,"humidity":97,"cloud":95,"feelslike_c":-32.7,"feelslike_f":-26.8,"windchill_c":-32.7,"windchill_f":-26.8,"heatindex_c":-22.7,"heatindex_f":-8.8,"dewpoint_c":-23.0,"dewpoint_f":-9.4,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":20.7,"gust_kph":33.3,"uv":1.0},{"time_epoch":1706786100,"time":"2024-02-01
+        17:00","temp_c":-25.2,"temp_f":-13.3,"is_day":1,"condition":{"text":"Light
+        snow showers","icon":"//cdn.weatherapi.com/weather/64x64/day/368.png","code":1255},"wind_mph":8.5,"wind_kph":13.7,"wind_degree":246,"wind_dir":"WSW","pressure_mb":1029.0,"pressure_in":30.38,"precip_mm":0.03,"precip_in":0.0,"snow_cm":0.02,"humidity":96,"cloud":69,"feelslike_c":-35.0,"feelslike_f":-30.9,"windchill_c":-35.0,"windchill_f":-30.9,"heatindex_c":-25.2,"heatindex_f":-13.3,"dewpoint_c":-25.6,"dewpoint_f":-14.1,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":1,"chance_of_snow":100,"vis_km":10.0,"vis_miles":6.0,"gust_mph":17.9,"gust_kph":28.7,"uv":1.0},{"time_epoch":1706789700,"time":"2024-02-01
+        18:00","temp_c":-24.8,"temp_f":-12.6,"is_day":0,"condition":{"text":"Light
+        freezing rain","icon":"//cdn.weatherapi.com/weather/64x64/night/311.png","code":1198},"wind_mph":8.5,"wind_kph":13.7,"wind_degree":249,"wind_dir":"WSW","pressure_mb":1029.0,"pressure_in":30.37,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":78,"cloud":79,"feelslike_c":-34.5,"feelslike_f":-30.1,"windchill_c":-34.5,"windchill_f":-30.1,"heatindex_c":-24.8,"heatindex_f":-12.6,"dewpoint_c":-27.5,"dewpoint_f":-17.5,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":17.9,"gust_kph":28.7,"uv":1.0},{"time_epoch":1706793300,"time":"2024-02-01
+        19:00","temp_c":-25.4,"temp_f":-13.7,"is_day":0,"condition":{"text":"Light
+        freezing rain","icon":"//cdn.weatherapi.com/weather/64x64/night/311.png","code":1198},"wind_mph":8.1,"wind_kph":13.0,"wind_degree":256,"wind_dir":"WSW","pressure_mb":1030.0,"pressure_in":30.42,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":61,"cloud":81,"feelslike_c":-35.0,"feelslike_f":-30.9,"windchill_c":-35.0,"windchill_f":-30.9,"heatindex_c":-25.4,"heatindex_f":-13.7,"dewpoint_c":-30.6,"dewpoint_f":-23.1,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":16.9,"gust_kph":27.2,"uv":1.0},{"time_epoch":1706796900,"time":"2024-02-01
+        20:00","temp_c":-25.8,"temp_f":-14.5,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":7.6,"wind_kph":12.2,"wind_degree":255,"wind_dir":"WSW","pressure_mb":1031.0,"pressure_in":30.46,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":56,"cloud":3,"feelslike_c":-35.2,"feelslike_f":-31.3,"windchill_c":-35.2,"windchill_f":-31.3,"heatindex_c":-25.8,"heatindex_f":-14.5,"dewpoint_c":-32.0,"dewpoint_f":-25.6,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":16.0,"gust_kph":25.7,"uv":1.0},{"time_epoch":1706800500,"time":"2024-02-01
+        21:00","temp_c":-25.9,"temp_f":-14.5,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":7.6,"wind_kph":12.2,"wind_degree":266,"wind_dir":"W","pressure_mb":1032.0,"pressure_in":30.47,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":68,"cloud":6,"feelslike_c":-35.2,"feelslike_f":-31.4,"windchill_c":-35.2,"windchill_f":-31.4,"heatindex_c":-25.9,"heatindex_f":-14.5,"dewpoint_c":-30.0,"dewpoint_f":-22.0,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":16.0,"gust_kph":25.7,"uv":1.0},{"time_epoch":1706804100,"time":"2024-02-01
+        22:00","temp_c":-25.6,"temp_f":-14.1,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":7.2,"wind_kph":11.5,"wind_degree":263,"wind_dir":"W","pressure_mb":1030.0,"pressure_in":30.43,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":69,"cloud":6,"feelslike_c":-34.6,"feelslike_f":-30.3,"windchill_c":-34.6,"windchill_f":-30.3,"heatindex_c":-25.6,"heatindex_f":-14.1,"dewpoint_c":-29.6,"dewpoint_f":-21.3,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":15.0,"gust_kph":24.2,"uv":1.0},{"time_epoch":1706807700,"time":"2024-02-01
+        23:00","temp_c":-25.7,"temp_f":-14.3,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":7.6,"wind_kph":12.2,"wind_degree":260,"wind_dir":"W","pressure_mb":1030.0,"pressure_in":30.43,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":76,"cloud":9,"feelslike_c":-35.1,"feelslike_f":-31.1,"windchill_c":-35.1,"windchill_f":-31.1,"heatindex_c":-25.7,"heatindex_f":-14.3,"dewpoint_c":-28.7,"dewpoint_f":-19.6,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":16.0,"gust_kph":25.7,"uv":1.0}]}]}}'
+  recorded_at: Fri, 02 Feb 2024 01:07:56 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/history.json?dt=2024-02-01&key=<WEATHER_API_KEY>&q=14.24,40.92
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 02 Feb 2024 01:07:57 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-1068
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=180
+      X-Weatherapi-Qpm-Left:
+      - '999782'
+      X-Varnish:
+      - '941690195'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 02/02/2024 01:07:40
+      Cdn-Edgestorageid:
+      - '1067'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - db0e75bbf1b651276dc23825b536c935
+      Cdn-Cache:
+      - HIT
+      X-Cache:
+      - MISS from 3
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 varnish (Varnish/6.0), 1.1 3 (squid)
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Gadmaita","region":"","country":"Eritrea","lat":14.24,"lon":40.92,"tz_id":"Africa/Asmara","localtime_epoch":1706836007,"localtime":"2024-02-02
+        4:06"},"forecast":{"forecastday":[{"date":"2024-02-01","date_epoch":1706745600,"day":{"maxtemp_c":20.8,"maxtemp_f":69.4,"mintemp_c":12.9,"mintemp_f":55.2,"avgtemp_c":16.2,"avgtemp_f":61.2,"maxwind_mph":8.3,"maxwind_kph":13.3,"totalprecip_mm":0.1,"totalprecip_in":0.0,"totalsnow_cm":0.0,"avgvis_km":10.0,"avgvis_miles":6.0,"avghumidity":61,"daily_will_it_rain":1,"daily_chance_of_rain":100,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"uv":5.0},"astro":{"sunrise":"06:44
+        AM","sunset":"06:15 PM","moonrise":"11:34 PM","moonset":"10:48 AM","moon_phase":"Waning
+        Gibbous","moon_illumination":69},"hour":[{"time_epoch":1706734800,"time":"2024-02-01
+        00:00","temp_c":15.3,"temp_f":59.5,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":1.6,"wind_kph":2.5,"wind_degree":198,"wind_dir":"SSW","pressure_mb":1019.0,"pressure_in":30.09,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":68,"cloud":9,"feelslike_c":15.3,"feelslike_f":59.5,"windchill_c":15.3,"windchill_f":59.5,"heatindex_c":15.3,"heatindex_f":59.5,"dewpoint_c":9.5,"dewpoint_f":49.1,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.3,"gust_kph":3.7,"uv":1.0},{"time_epoch":1706738400,"time":"2024-02-01
+        01:00","temp_c":14.8,"temp_f":58.6,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":197,"wind_dir":"SSW","pressure_mb":1019.0,"pressure_in":30.08,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":71,"cloud":10,"feelslike_c":15.3,"feelslike_f":59.6,"windchill_c":15.3,"windchill_f":59.6,"heatindex_c":14.8,"heatindex_f":58.6,"dewpoint_c":9.5,"dewpoint_f":49.1,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.1,"gust_kph":6.6,"uv":1.0},{"time_epoch":1706742000,"time":"2024-02-01
+        02:00","temp_c":14.3,"temp_f":57.8,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.0,"wind_kph":3.2,"wind_degree":239,"wind_dir":"WSW","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":73,"cloud":11,"feelslike_c":15.2,"feelslike_f":59.3,"windchill_c":15.2,"windchill_f":59.3,"heatindex_c":14.3,"heatindex_f":57.8,"dewpoint_c":9.6,"dewpoint_f":49.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.1,"gust_kph":5.0,"uv":1.0},{"time_epoch":1706745600,"time":"2024-02-01
+        03:00","temp_c":13.9,"temp_f":57.0,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":1.3,"wind_kph":2.2,"wind_degree":245,"wind_dir":"WSW","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":75,"cloud":14,"feelslike_c":13.9,"feelslike_f":57.0,"windchill_c":13.9,"windchill_f":57.0,"heatindex_c":13.9,"heatindex_f":57.0,"dewpoint_c":9.6,"dewpoint_f":49.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.1,"gust_kph":3.3,"uv":1.0},{"time_epoch":1706749200,"time":"2024-02-01
+        04:00","temp_c":13.7,"temp_f":56.6,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":1.3,"wind_kph":2.2,"wind_degree":321,"wind_dir":"NW","pressure_mb":1018.0,"pressure_in":30.06,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":76,"cloud":15,"feelslike_c":13.7,"feelslike_f":56.6,"windchill_c":13.7,"windchill_f":56.6,"heatindex_c":13.7,"heatindex_f":56.6,"dewpoint_c":9.5,"dewpoint_f":49.1,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.1,"gust_kph":3.3,"uv":1.0},{"time_epoch":1706752800,"time":"2024-02-01
+        05:00","temp_c":13.3,"temp_f":55.9,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":1.8,"wind_kph":2.9,"wind_degree":295,"wind_dir":"WNW","pressure_mb":1019.0,"pressure_in":30.08,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":77,"cloud":14,"feelslike_c":13.3,"feelslike_f":55.9,"windchill_c":13.3,"windchill_f":55.9,"heatindex_c":13.3,"heatindex_f":55.9,"dewpoint_c":9.4,"dewpoint_f":48.8,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.8,"gust_kph":4.6,"uv":1.0},{"time_epoch":1706756400,"time":"2024-02-01
+        06:00","temp_c":13.0,"temp_f":55.4,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":1.6,"wind_kph":2.5,"wind_degree":261,"wind_dir":"W","pressure_mb":1019.0,"pressure_in":30.1,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":78,"cloud":13,"feelslike_c":13.0,"feelslike_f":55.4,"windchill_c":13.0,"windchill_f":55.4,"heatindex_c":13.0,"heatindex_f":55.4,"dewpoint_c":9.2,"dewpoint_f":48.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.6,"gust_kph":4.1,"uv":1.0},{"time_epoch":1706760000,"time":"2024-02-01
+        07:00","temp_c":12.9,"temp_f":55.2,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":2.0,"wind_kph":3.2,"wind_degree":205,"wind_dir":"SSW","pressure_mb":1020.0,"pressure_in":30.11,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":77,"cloud":12,"feelslike_c":13.6,"feelslike_f":56.4,"windchill_c":13.6,"windchill_f":56.4,"heatindex_c":12.9,"heatindex_f":55.2,"dewpoint_c":9.1,"dewpoint_f":48.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.3,"gust_kph":5.3,"uv":4.0},{"time_epoch":1706763600,"time":"2024-02-01
+        08:00","temp_c":14.0,"temp_f":57.3,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":0.4,"wind_kph":0.7,"wind_degree":222,"wind_dir":"SW","pressure_mb":1020.0,"pressure_in":30.11,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":70,"cloud":10,"feelslike_c":14.1,"feelslike_f":57.3,"windchill_c":14.1,"windchill_f":57.3,"heatindex_c":14.1,"heatindex_f":57.3,"dewpoint_c":8.8,"dewpoint_f":47.8,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":0.6,"gust_kph":0.9,"uv":4.0},{"time_epoch":1706767200,"time":"2024-02-01
+        09:00","temp_c":15.5,"temp_f":59.9,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":0.7,"wind_kph":1.1,"wind_degree":10,"wind_dir":"N","pressure_mb":1020.0,"pressure_in":30.11,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":61,"cloud":7,"feelslike_c":15.5,"feelslike_f":59.9,"windchill_c":15.5,"windchill_f":59.9,"heatindex_c":15.5,"heatindex_f":59.9,"dewpoint_c":8.1,"dewpoint_f":46.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":0.8,"gust_kph":1.3,"uv":5.0},{"time_epoch":1706770800,"time":"2024-02-01
+        10:00","temp_c":17.2,"temp_f":63.0,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":0.4,"wind_kph":0.7,"wind_degree":218,"wind_dir":"SW","pressure_mb":1019.0,"pressure_in":30.09,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":53,"cloud":9,"feelslike_c":17.2,"feelslike_f":63.0,"windchill_c":17.2,"windchill_f":63.0,"heatindex_c":17.2,"heatindex_f":63.0,"dewpoint_c":7.5,"dewpoint_f":45.5,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":0.5,"gust_kph":0.8,"uv":5.0},{"time_epoch":1706774400,"time":"2024-02-01
+        11:00","temp_c":18.7,"temp_f":65.6,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":1.3,"wind_kph":2.2,"wind_degree":259,"wind_dir":"W","pressure_mb":1018.0,"pressure_in":30.06,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":47,"cloud":8,"feelslike_c":18.7,"feelslike_f":65.6,"windchill_c":18.7,"windchill_f":65.6,"heatindex_c":18.7,"heatindex_f":65.6,"dewpoint_c":7.1,"dewpoint_f":44.8,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":1.5,"gust_kph":2.5,"uv":5.0},{"time_epoch":1706778000,"time":"2024-02-01
+        12:00","temp_c":20.0,"temp_f":68.0,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":287,"wind_dir":"WNW","pressure_mb":1017.0,"pressure_in":30.02,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":43,"cloud":81,"feelslike_c":20.0,"feelslike_f":67.9,"windchill_c":20.0,"windchill_f":67.9,"heatindex_c":20.0,"heatindex_f":67.9,"dewpoint_c":6.9,"dewpoint_f":44.5,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.1,"gust_kph":5.0,"uv":4.0},{"time_epoch":1706781600,"time":"2024-02-01
+        13:00","temp_c":20.8,"temp_f":69.4,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":4.3,"wind_kph":6.8,"wind_degree":294,"wind_dir":"WNW","pressure_mb":1015.0,"pressure_in":29.98,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":41,"cloud":6,"feelslike_c":20.8,"feelslike_f":69.4,"windchill_c":20.8,"windchill_f":69.4,"heatindex_c":20.8,"heatindex_f":69.4,"dewpoint_c":7.0,"dewpoint_f":44.7,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.9,"gust_kph":7.9,"uv":6.0},{"time_epoch":1706785200,"time":"2024-02-01
+        14:00","temp_c":20.4,"temp_f":68.7,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":4.0,"wind_kph":6.5,"wind_degree":327,"wind_dir":"NNW","pressure_mb":1015.0,"pressure_in":29.96,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":42,"cloud":86,"feelslike_c":20.4,"feelslike_f":68.7,"windchill_c":20.4,"windchill_f":68.7,"heatindex_c":20.4,"heatindex_f":68.7,"dewpoint_c":7.1,"dewpoint_f":44.9,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.6,"gust_kph":7.5,"uv":5.0},{"time_epoch":1706788800,"time":"2024-02-01
+        15:00","temp_c":19.5,"temp_f":67.1,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":3.6,"wind_kph":5.8,"wind_degree":0,"wind_dir":"N","pressure_mb":1014.0,"pressure_in":29.95,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":48,"cloud":72,"feelslike_c":19.5,"feelslike_f":67.1,"windchill_c":19.5,"windchill_f":67.1,"heatindex_c":19.5,"heatindex_f":67.1,"dewpoint_c":8.3,"dewpoint_f":46.9,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.1,"gust_kph":6.6,"uv":4.0},{"time_epoch":1706792400,"time":"2024-02-01
+        16:00","temp_c":19.5,"temp_f":67.0,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":4.0,"wind_kph":6.5,"wind_degree":345,"wind_dir":"NNW","pressure_mb":1014.0,"pressure_in":29.94,"precip_mm":0.02,"precip_in":0.0,"snow_cm":0.0,"humidity":49,"cloud":75,"feelslike_c":19.5,"feelslike_f":67.0,"windchill_c":19.5,"windchill_f":67.0,"heatindex_c":19.5,"heatindex_f":67.0,"dewpoint_c":8.6,"dewpoint_f":47.4,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.6,"gust_kph":7.5,"uv":4.0},{"time_epoch":1706796000,"time":"2024-02-01
+        17:00","temp_c":18.2,"temp_f":64.8,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":5.1,"wind_kph":8.3,"wind_degree":5,"wind_dir":"N","pressure_mb":1015.0,"pressure_in":29.96,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":55,"cloud":4,"feelslike_c":18.2,"feelslike_f":64.8,"windchill_c":18.2,"windchill_f":64.8,"heatindex_c":18.2,"heatindex_f":64.8,"dewpoint_c":9.1,"dewpoint_f":48.4,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":6.0,"gust_kph":9.6,"uv":5.0},{"time_epoch":1706799600,"time":"2024-02-01
+        18:00","temp_c":17.3,"temp_f":63.1,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":4.0,"wind_kph":6.5,"wind_degree":357,"wind_dir":"N","pressure_mb":1016.0,"pressure_in":29.99,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":59,"cloud":76,"feelslike_c":17.3,"feelslike_f":63.1,"windchill_c":17.3,"windchill_f":63.1,"heatindex_c":17.3,"heatindex_f":63.1,"dewpoint_c":9.2,"dewpoint_f":48.6,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.0,"gust_kph":8.1,"uv":4.0},{"time_epoch":1706803200,"time":"2024-02-01
+        19:00","temp_c":17.3,"temp_f":63.1,"is_day":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":8.3,"wind_kph":13.3,"wind_degree":327,"wind_dir":"NNW","pressure_mb":1016.0,"pressure_in":30.01,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":50,"cloud":87,"feelslike_c":17.3,"feelslike_f":63.1,"windchill_c":17.3,"windchill_f":63.1,"heatindex_c":17.3,"heatindex_f":63.1,"dewpoint_c":6.8,"dewpoint_f":44.2,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":10.0,"gust_kph":16.2,"uv":1.0},{"time_epoch":1706806800,"time":"2024-02-01
+        20:00","temp_c":16.2,"temp_f":61.2,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":6.9,"wind_kph":11.2,"wind_degree":334,"wind_dir":"NNW","pressure_mb":1017.0,"pressure_in":30.04,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":53,"cloud":7,"feelslike_c":16.2,"feelslike_f":61.2,"windchill_c":16.2,"windchill_f":61.2,"heatindex_c":16.2,"heatindex_f":61.2,"dewpoint_c":6.6,"dewpoint_f":43.9,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":8.5,"gust_kph":13.6,"uv":1.0},{"time_epoch":1706810400,"time":"2024-02-01
+        21:00","temp_c":15.1,"temp_f":59.2,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":3.1,"wind_kph":5.0,"wind_degree":16,"wind_dir":"NNE","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":62,"cloud":10,"feelslike_c":15.1,"feelslike_f":59.2,"windchill_c":15.1,"windchill_f":59.2,"heatindex_c":15.1,"heatindex_f":59.2,"dewpoint_c":7.9,"dewpoint_f":46.2,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.2,"gust_kph":6.7,"uv":1.0},{"time_epoch":1706814000,"time":"2024-02-01
+        22:00","temp_c":14.5,"temp_f":58.1,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":65,"wind_dir":"ENE","pressure_mb":1019.0,"pressure_in":30.08,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":67,"cloud":10,"feelslike_c":15.1,"feelslike_f":59.1,"windchill_c":15.1,"windchill_f":59.1,"heatindex_c":14.5,"heatindex_f":58.2,"dewpoint_c":8.6,"dewpoint_f":47.4,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.7,"gust_kph":5.9,"uv":1.0},{"time_epoch":1706817600,"time":"2024-02-01
+        23:00","temp_c":13.9,"temp_f":56.9,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.5,"wind_kph":4.0,"wind_degree":73,"wind_dir":"ENE","pressure_mb":1019.0,"pressure_in":30.09,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":72,"cloud":10,"feelslike_c":14.4,"feelslike_f":57.9,"windchill_c":14.4,"windchill_f":57.9,"heatindex_c":13.9,"heatindex_f":56.9,"dewpoint_c":8.9,"dewpoint_f":48.0,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.4,"gust_kph":5.5,"uv":1.0}]}]}}'
+  recorded_at: Fri, 02 Feb 2024 01:07:57 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/history.json?dt=2024-02-01&key=<WEATHER_API_KEY>&q=22.10,-159.53
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 02 Feb 2024 01:07:57 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-1068
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=180
+      X-Weatherapi-Qpm-Left:
+      - '999782'
+      X-Varnish:
+      - '352061519'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 02/02/2024 01:07:41
+      Cdn-Edgestorageid:
+      - '1029'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - eb4cc70e093e3de8caa0ee4b05de8dc7
+      Cdn-Cache:
+      - HIT
+      X-Cache:
+      - MISS from 3
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 varnish (Varnish/6.0), 1.1 3 (squid)
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Hanalei Homesteads","region":"Hawaii","country":"United
+        States of America","lat":22.1,"lon":-159.53,"tz_id":"Pacific/Honolulu","localtime_epoch":1706836008,"localtime":"2024-02-01
+        15:06"},"forecast":{"forecastday":[{"date":"2024-02-01","date_epoch":1706745600,"day":{"maxtemp_c":22.9,"maxtemp_f":73.2,"mintemp_c":19.9,"mintemp_f":67.8,"avgtemp_c":21.5,"avgtemp_f":70.7,"maxwind_mph":10.3,"maxwind_kph":16.6,"totalprecip_mm":0.74,"totalprecip_in":0.03,"totalsnow_cm":0.0,"avgvis_km":9.9,"avgvis_miles":6.0,"avghumidity":74,"daily_will_it_rain":1,"daily_chance_of_rain":100,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"uv":5.0},"astro":{"sunrise":"07:17
+        AM","sunset":"06:27 PM","moonrise":"No moonrise","moonset":"11:22 AM","moon_phase":"Waning
+        Gibbous","moon_illumination":69},"hour":[{"time_epoch":1706781600,"time":"2024-02-01
+        00:00","temp_c":21.1,"temp_f":70.0,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":3.8,"wind_kph":6.1,"wind_degree":319,"wind_dir":"NW","pressure_mb":1017.0,"pressure_in":30.03,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":77,"cloud":8,"feelslike_c":21.1,"feelslike_f":70.0,"windchill_c":21.1,"windchill_f":70.0,"heatindex_c":24.3,"heatindex_f":75.8,"dewpoint_c":17.0,"dewpoint_f":62.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.7,"gust_kph":9.3,"uv":1.0},{"time_epoch":1706785200,"time":"2024-02-01
+        01:00","temp_c":20.9,"temp_f":69.6,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":3.6,"wind_kph":5.8,"wind_degree":317,"wind_dir":"NW","pressure_mb":1017.0,"pressure_in":30.02,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":78,"cloud":12,"feelslike_c":20.9,"feelslike_f":69.6,"windchill_c":20.9,"windchill_f":69.6,"heatindex_c":20.9,"heatindex_f":69.6,"dewpoint_c":16.8,"dewpoint_f":62.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.5,"gust_kph":8.8,"uv":1.0},{"time_epoch":1706788800,"time":"2024-02-01
+        02:00","temp_c":20.6,"temp_f":69.2,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.9,"wind_kph":4.7,"wind_degree":305,"wind_dir":"NW","pressure_mb":1016.0,"pressure_in":30.01,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":78,"cloud":11,"feelslike_c":20.6,"feelslike_f":69.2,"windchill_c":20.6,"windchill_f":69.2,"heatindex_c":20.6,"heatindex_f":69.2,"dewpoint_c":16.6,"dewpoint_f":61.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.5,"gust_kph":7.2,"uv":1.0},{"time_epoch":1706792400,"time":"2024-02-01
+        03:00","temp_c":20.4,"temp_f":68.7,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.5,"wind_kph":4.0,"wind_degree":293,"wind_dir":"WNW","pressure_mb":1016.0,"pressure_in":29.99,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":77,"cloud":8,"feelslike_c":20.4,"feelslike_f":68.7,"windchill_c":20.4,"windchill_f":68.7,"heatindex_c":20.4,"heatindex_f":68.7,"dewpoint_c":16.4,"dewpoint_f":61.4,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.8,"gust_kph":6.1,"uv":1.0},{"time_epoch":1706796000,"time":"2024-02-01
+        04:00","temp_c":20.2,"temp_f":68.4,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":295,"wind_dir":"WNW","pressure_mb":1015.0,"pressure_in":29.99,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":77,"cloud":7,"feelslike_c":20.2,"feelslike_f":68.4,"windchill_c":20.2,"windchill_f":68.4,"heatindex_c":20.2,"heatindex_f":68.4,"dewpoint_c":16.1,"dewpoint_f":61.1,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.2,"gust_kph":6.7,"uv":1.0},{"time_epoch":1706799600,"time":"2024-02-01
+        05:00","temp_c":20.1,"temp_f":68.1,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":3.1,"wind_kph":5.0,"wind_degree":304,"wind_dir":"NW","pressure_mb":1015.0,"pressure_in":29.99,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":77,"cloud":5,"feelslike_c":20.1,"feelslike_f":68.1,"windchill_c":20.1,"windchill_f":68.1,"heatindex_c":20.1,"heatindex_f":68.1,"dewpoint_c":15.9,"dewpoint_f":60.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.0,"gust_kph":8.0,"uv":1.0},{"time_epoch":1706803200,"time":"2024-02-01
+        06:00","temp_c":19.9,"temp_f":67.9,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":295,"wind_dir":"WNW","pressure_mb":1016.0,"pressure_in":30.0,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":76,"cloud":9,"feelslike_c":19.9,"feelslike_f":67.9,"windchill_c":19.9,"windchill_f":67.9,"heatindex_c":19.9,"heatindex_f":67.9,"dewpoint_c":15.6,"dewpoint_f":60.0,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.3,"gust_kph":7.0,"uv":1.0},{"time_epoch":1706806800,"time":"2024-02-01
+        07:00","temp_c":19.9,"temp_f":67.8,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.9,"wind_kph":4.7,"wind_degree":288,"wind_dir":"WNW","pressure_mb":1017.0,"pressure_in":30.03,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":75,"cloud":5,"feelslike_c":19.9,"feelslike_f":67.9,"windchill_c":19.9,"windchill_f":67.9,"heatindex_c":19.9,"heatindex_f":67.9,"dewpoint_c":15.5,"dewpoint_f":59.8,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.7,"gust_kph":7.5,"uv":1.0},{"time_epoch":1706810400,"time":"2024-02-01
+        08:00","temp_c":20.6,"temp_f":69.2,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":281,"wind_dir":"WNW","pressure_mb":1018.0,"pressure_in":30.05,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":74,"cloud":15,"feelslike_c":20.6,"feelslike_f":69.2,"windchill_c":20.6,"windchill_f":69.2,"heatindex_c":20.6,"heatindex_f":69.2,"dewpoint_c":15.8,"dewpoint_f":60.4,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.8,"gust_kph":6.1,"uv":6.0},{"time_epoch":1706814000,"time":"2024-02-01
+        09:00","temp_c":21.6,"temp_f":70.8,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":2.0,"wind_kph":3.2,"wind_degree":238,"wind_dir":"WSW","pressure_mb":1018.0,"pressure_in":30.06,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":70,"cloud":9,"feelslike_c":21.6,"feelslike_f":70.8,"windchill_c":21.6,"windchill_f":70.8,"heatindex_c":24.5,"heatindex_f":76.0,"dewpoint_c":15.9,"dewpoint_f":60.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.5,"gust_kph":4.0,"uv":6.0},{"time_epoch":1706817600,"time":"2024-02-01
+        10:00","temp_c":22.3,"temp_f":72.1,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":1.8,"wind_kph":2.9,"wind_degree":180,"wind_dir":"S","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":68,"cloud":9,"feelslike_c":24.7,"feelslike_f":76.4,"windchill_c":22.3,"windchill_f":72.1,"heatindex_c":24.7,"heatindex_f":76.4,"dewpoint_c":16.0,"dewpoint_f":60.8,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.1,"gust_kph":3.3,"uv":6.0},{"time_epoch":1706821200,"time":"2024-02-01
+        11:00","temp_c":22.7,"temp_f":72.8,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":139,"wind_dir":"SE","pressure_mb":1018.0,"pressure_in":30.06,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":68,"cloud":10,"feelslike_c":24.8,"feelslike_f":76.7,"windchill_c":22.7,"windchill_f":72.8,"heatindex_c":24.8,"heatindex_f":76.7,"dewpoint_c":16.4,"dewpoint_f":61.5,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.1,"gust_kph":5.0,"uv":6.0},{"time_epoch":1706824800,"time":"2024-02-01
+        12:00","temp_c":22.8,"temp_f":73.0,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":3.8,"wind_kph":6.1,"wind_degree":134,"wind_dir":"SE","pressure_mb":1018.0,"pressure_in":30.05,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":70,"cloud":11,"feelslike_c":24.9,"feelslike_f":76.8,"windchill_c":22.8,"windchill_f":73.0,"heatindex_c":24.9,"heatindex_f":76.8,"dewpoint_c":17.1,"dewpoint_f":62.8,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.4,"gust_kph":7.1,"uv":6.0},{"time_epoch":1706828400,"time":"2024-02-01
+        13:00","temp_c":22.9,"temp_f":73.2,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":2.9,"wind_kph":4.7,"wind_degree":139,"wind_dir":"SE","pressure_mb":1017.0,"pressure_in":30.03,"precip_mm":0.02,"precip_in":0.0,"snow_cm":0.0,"humidity":71,"cloud":76,"feelslike_c":24.9,"feelslike_f":76.9,"windchill_c":22.9,"windchill_f":73.2,"heatindex_c":24.9,"heatindex_f":76.9,"dewpoint_c":17.3,"dewpoint_f":63.1,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.4,"gust_kph":5.4,"uv":5.0},{"time_epoch":1706832000,"time":"2024-02-01
+        14:00","temp_c":22.9,"temp_f":73.2,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":1.3,"wind_kph":2.2,"wind_degree":161,"wind_dir":"SSE","pressure_mb":1016.0,"pressure_in":30.01,"precip_mm":0.04,"precip_in":0.0,"snow_cm":0.0,"humidity":69,"cloud":88,"feelslike_c":24.9,"feelslike_f":76.9,"windchill_c":22.9,"windchill_f":73.2,"heatindex_c":24.9,"heatindex_f":76.9,"dewpoint_c":17.0,"dewpoint_f":62.6,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":1.5,"gust_kph":2.5,"uv":5.0},{"time_epoch":1706835600,"time":"2024-02-01
+        15:00","temp_c":22.8,"temp_f":73.1,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":0.0,"wind_kph":0.0,"wind_degree":154,"wind_dir":"SSE","pressure_mb":1016.0,"pressure_in":29.99,"precip_mm":0.05,"precip_in":0.0,"snow_cm":0.0,"humidity":69,"cloud":79,"feelslike_c":24.9,"feelslike_f":76.8,"windchill_c":22.8,"windchill_f":73.1,"heatindex_c":24.9,"heatindex_f":76.8,"dewpoint_c":17.0,"dewpoint_f":62.5,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":0.0,"gust_kph":0.0,"uv":5.0},{"time_epoch":1706839200,"time":"2024-02-01
+        16:00","temp_c":22.7,"temp_f":72.8,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":1.6,"wind_kph":2.5,"wind_degree":324,"wind_dir":"NW","pressure_mb":1015.0,"pressure_in":29.99,"precip_mm":0.03,"precip_in":0.0,"snow_cm":0.0,"humidity":70,"cloud":81,"feelslike_c":24.8,"feelslike_f":76.7,"windchill_c":22.7,"windchill_f":72.8,"heatindex_c":24.8,"heatindex_f":76.7,"dewpoint_c":16.9,"dewpoint_f":62.4,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":1.8,"gust_kph":3.0,"uv":5.0},{"time_epoch":1706842800,"time":"2024-02-01
+        17:00","temp_c":22.6,"temp_f":72.7,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":2.9,"wind_kph":4.7,"wind_degree":333,"wind_dir":"NNW","pressure_mb":1016.0,"pressure_in":29.99,"precip_mm":0.02,"precip_in":0.0,"snow_cm":0.0,"humidity":70,"cloud":79,"feelslike_c":24.8,"feelslike_f":76.7,"windchill_c":22.6,"windchill_f":72.7,"heatindex_c":24.8,"heatindex_f":76.7,"dewpoint_c":17.0,"dewpoint_f":62.5,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.5,"gust_kph":5.7,"uv":5.0},{"time_epoch":1706846400,"time":"2024-02-01
+        18:00","temp_c":22.4,"temp_f":72.3,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":4.0,"wind_kph":6.5,"wind_degree":333,"wind_dir":"NNW","pressure_mb":1016.0,"pressure_in":30.01,"precip_mm":0.16,"precip_in":0.01,"snow_cm":0.0,"humidity":73,"cloud":86,"feelslike_c":24.7,"feelslike_f":76.4,"windchill_c":22.4,"windchill_f":72.3,"heatindex_c":24.7,"heatindex_f":76.4,"dewpoint_c":17.2,"dewpoint_f":63.0,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":9.0,"vis_miles":5.0,"gust_mph":5.1,"gust_kph":8.2,"uv":5.0},{"time_epoch":1706850000,"time":"2024-02-01
+        19:00","temp_c":21.8,"temp_f":71.3,"is_day":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":5.8,"wind_kph":9.4,"wind_degree":343,"wind_dir":"NNW","pressure_mb":1017.0,"pressure_in":30.03,"precip_mm":0.2,"precip_in":0.01,"snow_cm":0.0,"humidity":76,"cloud":79,"feelslike_c":21.8,"feelslike_f":71.3,"windchill_c":21.8,"windchill_f":71.3,"heatindex_c":24.5,"heatindex_f":76.1,"dewpoint_c":17.5,"dewpoint_f":63.5,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":9.0,"vis_miles":5.0,"gust_mph":7.8,"gust_kph":12.6,"uv":1.0},{"time_epoch":1706853600,"time":"2024-02-01
+        20:00","temp_c":21.6,"temp_f":70.9,"is_day":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":8.3,"wind_kph":13.3,"wind_degree":350,"wind_dir":"N","pressure_mb":1018.0,"pressure_in":30.05,"precip_mm":0.04,"precip_in":0.0,"snow_cm":0.0,"humidity":79,"cloud":78,"feelslike_c":21.6,"feelslike_f":70.9,"windchill_c":21.6,"windchill_f":70.9,"heatindex_c":24.4,"heatindex_f":75.9,"dewpoint_c":17.7,"dewpoint_f":63.9,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":11.0,"gust_kph":17.6,"uv":1.0},{"time_epoch":1706857200,"time":"2024-02-01
+        21:00","temp_c":21.3,"temp_f":70.4,"is_day":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":8.9,"wind_kph":14.4,"wind_degree":344,"wind_dir":"NNW","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.06,"precip_in":0.0,"snow_cm":0.0,"humidity":80,"cloud":83,"feelslike_c":21.3,"feelslike_f":70.4,"windchill_c":21.3,"windchill_f":70.4,"heatindex_c":24.3,"heatindex_f":75.8,"dewpoint_c":17.7,"dewpoint_f":63.9,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":12.1,"gust_kph":19.5,"uv":1.0},{"time_epoch":1706860800,"time":"2024-02-01
+        22:00","temp_c":21.0,"temp_f":69.8,"is_day":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":9.8,"wind_kph":15.8,"wind_degree":340,"wind_dir":"NNW","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.09,"precip_in":0.0,"snow_cm":0.0,"humidity":81,"cloud":85,"feelslike_c":21.0,"feelslike_f":69.8,"windchill_c":21.0,"windchill_f":69.8,"heatindex_c":24.3,"heatindex_f":75.7,"dewpoint_c":17.6,"dewpoint_f":63.6,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":13.6,"gust_kph":21.8,"uv":1.0},{"time_epoch":1706864400,"time":"2024-02-01
+        23:00","temp_c":20.8,"temp_f":69.4,"is_day":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":10.3,"wind_kph":16.6,"wind_degree":341,"wind_dir":"NNW","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.04,"precip_in":0.0,"snow_cm":0.0,"humidity":81,"cloud":73,"feelslike_c":20.8,"feelslike_f":69.4,"windchill_c":20.8,"windchill_f":69.4,"heatindex_c":20.8,"heatindex_f":69.4,"dewpoint_c":17.4,"dewpoint_f":63.3,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":14.3,"gust_kph":23.0,"uv":1.0}]}]}}'
+  recorded_at: Fri, 02 Feb 2024 01:07:58 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/history.json?dt=2024-02-01&key=<WEATHER_API_KEY>&q=-6.32,143.96
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 02 Feb 2024 01:07:58 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-1068
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=180
+      X-Weatherapi-Qpm-Left:
+      - '999782'
+      X-Varnish:
+      - '50272258'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 02/02/2024 01:07:42
+      Cdn-Edgestorageid:
+      - '871'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 444f25101b405efb9bf8911f6629c693
+      Cdn-Cache:
+      - HIT
+      X-Cache:
+      - MISS from 3
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 varnish (Varnish/6.0), 1.1 3 (squid)
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Ialibu","region":"Southern Highlands","country":"Papua
+        New Guinea","lat":-6.32,"lon":143.96,"tz_id":"Pacific/Port_Moresby","localtime_epoch":1706836009,"localtime":"2024-02-02
+        11:06"},"forecast":{"forecastday":[{"date":"2024-02-01","date_epoch":1706745600,"day":{"maxtemp_c":20.9,"maxtemp_f":69.7,"mintemp_c":12.5,"mintemp_f":54.5,"avgtemp_c":15.7,"avgtemp_f":60.3,"maxwind_mph":3.4,"maxwind_kph":5.4,"totalprecip_mm":6.26,"totalprecip_in":0.25,"totalsnow_cm":0.0,"avgvis_km":8.4,"avgvis_miles":5.0,"avghumidity":91,"daily_will_it_rain":1,"daily_chance_of_rain":100,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Light
+        rain shower","icon":"//cdn.weatherapi.com/weather/64x64/day/353.png","code":1240},"uv":8.0},"astro":{"sunrise":"06:26
+        AM","sunset":"06:49 PM","moonrise":"11:11 PM","moonset":"10:58 AM","moon_phase":"Waning
+        Gibbous","moon_illumination":69},"hour":[{"time_epoch":1706709600,"time":"2024-02-01
+        00:00","temp_c":13.6,"temp_f":56.5,"is_day":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":3.1,"wind_kph":5.0,"wind_degree":20,"wind_dir":"NNE","pressure_mb":1018.0,"pressure_in":30.06,"precip_mm":0.08,"precip_in":0.0,"snow_cm":0.0,"humidity":93,"cloud":70,"feelslike_c":13.9,"feelslike_f":56.9,"windchill_c":13.9,"windchill_f":56.9,"heatindex_c":13.6,"heatindex_f":56.5,"dewpoint_c":12.5,"dewpoint_f":54.6,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":6.2,"gust_kph":10.0,"uv":1.0},{"time_epoch":1706713200,"time":"2024-02-01
+        01:00","temp_c":14.1,"temp_f":57.4,"is_day":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":3.1,"wind_kph":5.0,"wind_degree":21,"wind_dir":"NNE","pressure_mb":1017.0,"pressure_in":30.03,"precip_mm":0.03,"precip_in":0.0,"snow_cm":0.0,"humidity":92,"cloud":74,"feelslike_c":14.4,"feelslike_f":58.0,"windchill_c":14.4,"windchill_f":58.0,"heatindex_c":14.1,"heatindex_f":57.4,"dewpoint_c":12.8,"dewpoint_f":55.0,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.7,"gust_kph":9.1,"uv":1.0},{"time_epoch":1706716800,"time":"2024-02-01
+        02:00","temp_c":14.1,"temp_f":57.3,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.9,"wind_kph":4.7,"wind_degree":15,"wind_dir":"NNE","pressure_mb":1016.0,"pressure_in":30.01,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":92,"cloud":25,"feelslike_c":14.4,"feelslike_f":58.0,"windchill_c":14.4,"windchill_f":58.0,"heatindex_c":14.1,"heatindex_f":57.3,"dewpoint_c":12.7,"dewpoint_f":54.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.3,"gust_kph":8.5,"uv":1.0},{"time_epoch":1706720400,"time":"2024-02-01
+        03:00","temp_c":13.6,"temp_f":56.4,"is_day":0,"condition":{"text":"Partly
+        cloudy","icon":"//cdn.weatherapi.com/weather/64x64/night/116.png","code":1003},"wind_mph":3.1,"wind_kph":5.0,"wind_degree":16,"wind_dir":"NNE","pressure_mb":1016.0,"pressure_in":30.0,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":93,"cloud":28,"feelslike_c":13.8,"feelslike_f":56.8,"windchill_c":13.8,"windchill_f":56.8,"heatindex_c":13.6,"heatindex_f":56.4,"dewpoint_c":12.4,"dewpoint_f":54.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":6.0,"gust_kph":9.7,"uv":1.0},{"time_epoch":1706724000,"time":"2024-02-01
+        04:00","temp_c":13.4,"temp_f":56.1,"is_day":0,"condition":{"text":"Partly
+        cloudy","icon":"//cdn.weatherapi.com/weather/64x64/night/116.png","code":1003},"wind_mph":3.4,"wind_kph":5.4,"wind_degree":19,"wind_dir":"NNE","pressure_mb":1016.0,"pressure_in":30.0,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":93,"cloud":28,"feelslike_c":13.5,"feelslike_f":56.3,"windchill_c":13.5,"windchill_f":56.3,"heatindex_c":13.4,"heatindex_f":56.1,"dewpoint_c":12.3,"dewpoint_f":54.1,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":6.5,"gust_kph":10.5,"uv":1.0},{"time_epoch":1706727600,"time":"2024-02-01
+        05:00","temp_c":12.9,"temp_f":55.2,"is_day":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":3.4,"wind_kph":5.4,"wind_degree":17,"wind_dir":"NNE","pressure_mb":1016.0,"pressure_in":30.02,"precip_mm":0.07,"precip_in":0.0,"snow_cm":0.0,"humidity":93,"cloud":84,"feelslike_c":12.9,"feelslike_f":55.3,"windchill_c":12.9,"windchill_f":55.3,"heatindex_c":12.9,"heatindex_f":55.2,"dewpoint_c":11.7,"dewpoint_f":53.1,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":6.9,"gust_kph":11.1,"uv":1.0},{"time_epoch":1706731200,"time":"2024-02-01
+        06:00","temp_c":12.5,"temp_f":54.5,"is_day":0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":3.1,"wind_kph":5.0,"wind_degree":18,"wind_dir":"NNE","pressure_mb":1017.0,"pressure_in":30.04,"precip_mm":0.05,"precip_in":0.0,"snow_cm":0.0,"humidity":93,"cloud":74,"feelslike_c":12.6,"feelslike_f":54.7,"windchill_c":12.6,"windchill_f":54.7,"heatindex_c":12.5,"heatindex_f":54.5,"dewpoint_c":11.4,"dewpoint_f":52.4,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":6.6,"gust_kph":10.6,"uv":1.0},{"time_epoch":1706734800,"time":"2024-02-01
+        07:00","temp_c":13.7,"temp_f":56.7,"is_day":1,"condition":{"text":"Light drizzle","icon":"//cdn.weatherapi.com/weather/64x64/day/266.png","code":1153},"wind_mph":2.9,"wind_kph":4.7,"wind_degree":11,"wind_dir":"NNE","pressure_mb":1018.0,"pressure_in":30.05,"precip_mm":0.29,"precip_in":0.01,"snow_cm":0.0,"humidity":92,"cloud":100,"feelslike_c":14.1,"feelslike_f":57.3,"windchill_c":14.1,"windchill_f":57.3,"heatindex_c":13.7,"heatindex_f":56.7,"dewpoint_c":12.5,"dewpoint_f":54.5,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":5.1,"gust_kph":8.1,"uv":6.0},{"time_epoch":1706738400,"time":"2024-02-01
+        08:00","temp_c":13.9,"temp_f":57.0,"is_day":1,"condition":{"text":"Patchy
+        light drizzle","icon":"//cdn.weatherapi.com/weather/64x64/day/263.png","code":1150},"wind_mph":3.1,"wind_kph":5.0,"wind_degree":10,"wind_dir":"N","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.46,"precip_in":0.02,"snow_cm":0.0,"humidity":94,"cloud":64,"feelslike_c":14.2,"feelslike_f":57.5,"windchill_c":14.2,"windchill_f":57.5,"heatindex_c":13.9,"heatindex_f":57.1,"dewpoint_c":13.0,"dewpoint_f":55.4,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":5.0,"vis_miles":3.0,"gust_mph":5.2,"gust_kph":8.4,"uv":6.0},{"time_epoch":1706742000,"time":"2024-02-01
+        09:00","temp_c":14.0,"temp_f":57.2,"is_day":1,"condition":{"text":"Patchy
+        light drizzle","icon":"//cdn.weatherapi.com/weather/64x64/day/263.png","code":1150},"wind_mph":3.4,"wind_kph":5.4,"wind_degree":21,"wind_dir":"NNE","pressure_mb":1018.0,"pressure_in":30.07,"precip_mm":0.25,"precip_in":0.01,"snow_cm":0.0,"humidity":96,"cloud":70,"feelslike_c":14.2,"feelslike_f":57.5,"windchill_c":14.2,"windchill_f":57.5,"heatindex_c":14.0,"heatindex_f":57.2,"dewpoint_c":13.3,"dewpoint_f":56.0,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":5.0,"vis_miles":3.0,"gust_mph":5.8,"gust_kph":9.3,"uv":6.0},{"time_epoch":1706745600,"time":"2024-02-01
+        10:00","temp_c":14.2,"temp_f":57.6,"is_day":1,"condition":{"text":"Mist","icon":"//cdn.weatherapi.com/weather/64x64/day/143.png","code":1030},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":23,"wind_dir":"NNE","pressure_mb":1018.0,"pressure_in":30.06,"precip_mm":0.14,"precip_in":0.01,"snow_cm":0.0,"humidity":95,"cloud":55,"feelslike_c":14.7,"feelslike_f":58.4,"windchill_c":14.7,"windchill_f":58.4,"heatindex_c":14.2,"heatindex_f":57.6,"dewpoint_c":13.4,"dewpoint_f":56.2,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":2.0,"vis_miles":1.0,"gust_mph":4.9,"gust_kph":7.8,"uv":6.0},{"time_epoch":1706749200,"time":"2024-02-01
+        11:00","temp_c":16.4,"temp_f":61.5,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":2.2,"wind_kph":3.6,"wind_degree":14,"wind_dir":"NNE","pressure_mb":1017.0,"pressure_in":30.03,"precip_mm":0.04,"precip_in":0.0,"snow_cm":0.0,"humidity":92,"cloud":70,"feelslike_c":16.4,"feelslike_f":61.5,"windchill_c":16.4,"windchill_f":61.5,"heatindex_c":16.4,"heatindex_f":61.5,"dewpoint_c":15.1,"dewpoint_f":59.2,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.0,"gust_kph":4.9,"uv":7.0},{"time_epoch":1706752800,"time":"2024-02-01
+        12:00","temp_c":18.2,"temp_f":64.7,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":1.1,"wind_kph":1.8,"wind_degree":333,"wind_dir":"NNW","pressure_mb":1016.0,"pressure_in":30.0,"precip_mm":0.03,"precip_in":0.0,"snow_cm":0.0,"humidity":85,"cloud":89,"feelslike_c":18.2,"feelslike_f":64.7,"windchill_c":18.2,"windchill_f":64.7,"heatindex_c":18.2,"heatindex_f":64.7,"dewpoint_c":15.6,"dewpoint_f":60.1,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":1.3,"gust_kph":2.1,"uv":7.0},{"time_epoch":1706756400,"time":"2024-02-01
+        13:00","temp_c":19.6,"temp_f":67.3,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":1.6,"wind_kph":2.5,"wind_degree":273,"wind_dir":"W","pressure_mb":1015.0,"pressure_in":29.96,"precip_mm":0.1,"precip_in":0.0,"snow_cm":0.0,"humidity":77,"cloud":73,"feelslike_c":19.6,"feelslike_f":67.3,"windchill_c":19.6,"windchill_f":67.3,"heatindex_c":19.6,"heatindex_f":67.3,"dewpoint_c":15.5,"dewpoint_f":59.9,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":1.8,"gust_kph":2.9,"uv":7.0},{"time_epoch":1706760000,"time":"2024-02-01
+        14:00","temp_c":20.9,"temp_f":69.7,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":2.2,"wind_kph":3.6,"wind_degree":270,"wind_dir":"W","pressure_mb":1013.0,"pressure_in":29.92,"precip_mm":0.27,"precip_in":0.01,"snow_cm":0.0,"humidity":70,"cloud":71,"feelslike_c":20.9,"feelslike_f":69.7,"windchill_c":20.9,"windchill_f":69.7,"heatindex_c":20.9,"heatindex_f":69.7,"dewpoint_c":15.2,"dewpoint_f":59.3,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":9.0,"vis_miles":5.0,"gust_mph":2.6,"gust_kph":4.2,"uv":8.0},{"time_epoch":1706763600,"time":"2024-02-01
+        15:00","temp_c":20.4,"temp_f":68.7,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":257,"wind_dir":"WSW","pressure_mb":1012.0,"pressure_in":29.89,"precip_mm":0.57,"precip_in":0.02,"snow_cm":0.0,"humidity":76,"cloud":83,"feelslike_c":20.4,"feelslike_f":68.7,"windchill_c":20.4,"windchill_f":68.7,"heatindex_c":20.4,"heatindex_f":68.7,"dewpoint_c":16.0,"dewpoint_f":60.7,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":9.0,"vis_miles":5.0,"gust_mph":3.4,"gust_kph":5.4,"uv":8.0},{"time_epoch":1706767200,"time":"2024-02-01
+        16:00","temp_c":19.7,"temp_f":67.4,"is_day":1,"condition":{"text":"Light rain
+        shower","icon":"//cdn.weatherapi.com/weather/64x64/day/353.png","code":1240},"wind_mph":2.7,"wind_kph":4.3,"wind_degree":252,"wind_dir":"WSW","pressure_mb":1012.0,"pressure_in":29.89,"precip_mm":0.86,"precip_in":0.03,"snow_cm":0.0,"humidity":83,"cloud":87,"feelslike_c":19.7,"feelslike_f":67.4,"windchill_c":19.7,"windchill_f":67.4,"heatindex_c":19.7,"heatindex_f":67.4,"dewpoint_c":16.8,"dewpoint_f":62.3,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.8,"gust_kph":6.1,"uv":7.0},{"time_epoch":1706770800,"time":"2024-02-01
+        17:00","temp_c":18.8,"temp_f":65.8,"is_day":1,"condition":{"text":"Light rain
+        shower","icon":"//cdn.weatherapi.com/weather/64x64/day/353.png","code":1240},"wind_mph":1.6,"wind_kph":2.5,"wind_degree":256,"wind_dir":"WSW","pressure_mb":1013.0,"pressure_in":29.9,"precip_mm":0.59,"precip_in":0.02,"snow_cm":0.0,"humidity":90,"cloud":60,"feelslike_c":18.8,"feelslike_f":65.8,"windchill_c":18.8,"windchill_f":65.8,"heatindex_c":18.8,"heatindex_f":65.8,"dewpoint_c":17.1,"dewpoint_f":62.8,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":2.0,"gust_kph":3.2,"uv":7.0},{"time_epoch":1706774400,"time":"2024-02-01
+        18:00","temp_c":18.3,"temp_f":65.0,"is_day":1,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":1.1,"wind_kph":1.8,"wind_degree":226,"wind_dir":"SW","pressure_mb":1013.0,"pressure_in":29.92,"precip_mm":0.5,"precip_in":0.02,"snow_cm":0.0,"humidity":93,"cloud":82,"feelslike_c":18.3,"feelslike_f":65.0,"windchill_c":18.3,"windchill_f":65.0,"heatindex_c":18.3,"heatindex_f":65.0,"dewpoint_c":17.2,"dewpoint_f":63.0,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":9.0,"vis_miles":5.0,"gust_mph":1.5,"gust_kph":2.5,"uv":7.0},{"time_epoch":1706778000,"time":"2024-02-01
+        19:00","temp_c":16.0,"temp_f":60.8,"is_day":0,"condition":{"text":"Light rain
+        shower","icon":"//cdn.weatherapi.com/weather/64x64/night/353.png","code":1240},"wind_mph":0.2,"wind_kph":0.4,"wind_degree":308,"wind_dir":"NW","pressure_mb":1014.0,"pressure_in":29.96,"precip_mm":0.73,"precip_in":0.03,"snow_cm":0.0,"humidity":97,"cloud":54,"feelslike_c":16.0,"feelslike_f":60.8,"windchill_c":16.0,"windchill_f":60.8,"heatindex_c":16.0,"heatindex_f":60.8,"dewpoint_c":15.5,"dewpoint_f":59.9,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":0.4,"gust_kph":0.6,"uv":1.0},{"time_epoch":1706781600,"time":"2024-02-01
+        20:00","temp_c":15.3,"temp_f":59.5,"is_day":0,"condition":{"text":"Light rain
+        shower","icon":"//cdn.weatherapi.com/weather/64x64/night/353.png","code":1240},"wind_mph":1.8,"wind_kph":2.9,"wind_degree":345,"wind_dir":"NNW","pressure_mb":1015.0,"pressure_in":29.99,"precip_mm":0.46,"precip_in":0.02,"snow_cm":0.0,"humidity":97,"cloud":63,"feelslike_c":15.3,"feelslike_f":59.5,"windchill_c":15.3,"windchill_f":59.5,"heatindex_c":15.3,"heatindex_f":59.5,"dewpoint_c":14.8,"dewpoint_f":58.7,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.3,"gust_kph":5.3,"uv":1.0},{"time_epoch":1706785200,"time":"2024-02-01
+        21:00","temp_c":14.6,"temp_f":58.4,"is_day":0,"condition":{"text":"Light rain
+        shower","icon":"//cdn.weatherapi.com/weather/64x64/night/353.png","code":1240},"wind_mph":1.8,"wind_kph":2.9,"wind_degree":349,"wind_dir":"N","pressure_mb":1017.0,"pressure_in":30.02,"precip_mm":0.27,"precip_in":0.01,"snow_cm":0.0,"humidity":97,"cloud":64,"feelslike_c":14.6,"feelslike_f":58.4,"windchill_c":14.6,"windchill_f":58.4,"heatindex_c":14.6,"heatindex_f":58.4,"dewpoint_c":14.2,"dewpoint_f":57.6,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.3,"gust_kph":5.3,"uv":1.0},{"time_epoch":1706788800,"time":"2024-02-01
+        22:00","temp_c":14.6,"temp_f":58.3,"is_day":0,"condition":{"text":"Fog","icon":"//cdn.weatherapi.com/weather/64x64/night/248.png","code":1135},"wind_mph":2.5,"wind_kph":4.0,"wind_degree":355,"wind_dir":"N","pressure_mb":1017.0,"pressure_in":30.03,"precip_mm":0.01,"precip_in":0.0,"snow_cm":0.0,"humidity":98,"cloud":100,"feelslike_c":15.3,"feelslike_f":59.5,"windchill_c":15.3,"windchill_f":59.5,"heatindex_c":14.6,"heatindex_f":58.3,"dewpoint_c":14.3,"dewpoint_f":57.7,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":0.0,"vis_miles":0.0,"gust_mph":4.2,"gust_kph":6.8,"uv":1.0},{"time_epoch":1706792400,"time":"2024-02-01
+        23:00","temp_c":14.3,"temp_f":57.7,"is_day":0,"condition":{"text":"Light rain
+        shower","icon":"//cdn.weatherapi.com/weather/64x64/night/353.png","code":1240},"wind_mph":2.9,"wind_kph":4.7,"wind_degree":5,"wind_dir":"N","pressure_mb":1017.0,"pressure_in":30.04,"precip_mm":0.47,"precip_in":0.02,"snow_cm":0.0,"humidity":98,"cloud":75,"feelslike_c":14.7,"feelslike_f":58.4,"windchill_c":14.7,"windchill_f":58.4,"heatindex_c":14.3,"heatindex_f":57.7,"dewpoint_c":14.0,"dewpoint_f":57.1,"will_it_rain":1,"chance_of_rain":100,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":5.1,"gust_kph":8.1,"uv":1.0}]}]}}'
+  recorded_at: Fri, 02 Feb 2024 01:07:59 GMT
 recorded_with: VCR 6.2.0
