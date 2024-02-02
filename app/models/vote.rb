@@ -12,8 +12,8 @@ class Vote < ApplicationRecord
       wf = WeatherFacade.new
       new_lat = lat
       new_lon = lon
-      data = {:error=>{:code=>1006, :message=>"No matching location found."}}.to_json
-      while JSON.parse(data, symbolize_names: true)[:error]
+      data = {:error=>{:code=>1006, :message=>"No matching location found."}}
+      while data[:error]
         data = wf.weather_data(new_lat, new_lon, Date.yesterday.strftime('%F'))
         new_lat = rand(-90.000...90.000)
         new_lon = rand(-180.000...180.000)
