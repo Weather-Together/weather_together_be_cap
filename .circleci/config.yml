@@ -61,11 +61,11 @@ jobs: # a collection of steps
             command: curl -X GET "https://api.render.com/deploy/srv-cme3mt8l5elc73csk8v0?key=nMHgmyoZ0qU"
 workflows:
   build-test-deploy:
-    filters:
-      branches:
-        only: main
     jobs:
-      - build-and-test
+      - build-and-test:
+          filters:
+            branches:
+              only: main
       - deploy:
           requires:
             - build-and-test
