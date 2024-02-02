@@ -6,7 +6,7 @@
 * **GET api/v0/users/create**
  - Controller: Api::V0::UsersController#create
  - Example Request:
-  ```
+  ```json
   curl -X POST https://weather-together-be.onrender.com/users
 	-d {
       "email": “new@gmail.com",
@@ -17,7 +17,7 @@
 	^ must create unique user
   ```
  - Example Response:
-  ```html
+  ```json
   {
     "data": {
       "id": "229",
@@ -38,7 +38,7 @@
   curl -X GET https://weather-together-be.onrender.com/verify_account
   ```
  - Example Responses:
-  ```html
+  ```json
   	{
 	 "message": "Successfully verified user"
 	}
@@ -57,7 +57,7 @@
   curl -X GET https://weather-together-be.onrender.com/api/v0/users/login -d ‘”email”: “new@email.com” , “password”: “New1!!”’
   ```
  - Example Response:
-  ```html
+  ```json
   {
       "data": {
           "id": "240",
@@ -175,9 +175,9 @@
     curl -X GET https://weather-together-be.onrender.com/api/v0/rounds/most_recent_competitive/votes
     ```
   - Example Response:
-    ```json
-   {
-  "data": {
+    ```json  
+    {
+    "data": {
       "id": "92",
       "type": "round",
       "attributes": {
@@ -202,7 +202,7 @@
               ]
           }
       }]
-  }
+    }
     ```
 
  ### 8. Private Game Index
@@ -214,7 +214,7 @@
     ```
   - Example Response:
     ```json
-   {
+    {
     "data":[
        {
         "id": "92",

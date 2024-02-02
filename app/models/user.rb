@@ -30,4 +30,104 @@ class User < ApplicationRecord
     "#{Faker::Adjective.positive.capitalize}#{Faker::Creature::Animal.name.capitalize}"
   end
 
+    #STATS FOR DAILY GAMES
+  def daily_game_count
+    games.where(game_type: :daily).count
+  end
+
+  def average_score_in_daily_games
+    daily_rounds = rounds.where(game_type: :daily, status: :processed)
+    daily_rounds.average(:score)
+  end
+
+  def date_and_score_of_highest_daily_score
+    highest_score_round = rounds.where(game_type: :daily, status: :processed).order(score: :desc).first
+
+    if highest_score_round
+      { date: highest_score_round.created_at.to_date, score: highest_score_round.score }
+    else
+      { date: nil, score: nil }
+    end
+  end
+
+  def grade_book_daily_round
+    daily_rounds = rounds.where(game_type: :daily, status: :processed)
+
+    score_ranges = {
+      '0.00-500.00' => (0.00..500.00),
+      '500.01-1000.00' => (500.01..1000.00),
+      '1000.01-2000.00' => (1000.01..2000.00),
+      '2000.01-5000.00' => (2000.01..5000.00),
+      '5000.01+' => (5000.01..Float::INFINITY)
+     }
+
+    result = {}
+
+    score_ranges.each do |range_label, range|
+      result[range_label] = daily_rounds.where(score: range).count
+    end
+
+    result
+  end
+
+  #STATS FOR COPETITIVE GAMES 
+  
+
+  def self.top_5_competitive_users
+    top_5_users = User.joins(rounds: :game)
+                      .where('rounds.game_type = ? AND rounds.status = ? AND rounds.process_date IS NOT NULL', Game.game_types[:competitive], Game.statuses[:processed])
+                      .group('users.id')
+                      .order('AVG(rounds.score) ASC')
+                      .limit(5)
+                      .pluck(:username, 'AVG(rounds.score) AS average_score')
+    top_5_users
+  end
+
+
+  def user_competitive_rank
+    subquery = rounds
+                .joins(:game)
+                .where(games: { game_type: :competitive, status: :processed })
+                .group('users.id')
+                .select('users.id', 'AVG(rounds.score) as average_score')
+                .to_sql
+
+    competitive_rounds = User
+                        .joins("INNER JOIN (#{subquery}) AS user_scores ON users.id = user_scores.id")
+                        .where('average_score > ?', rounds.average(:score))
+                        .count
+
+    competitive_rounds + 1
+  end
+
+
+
+
+  def competitive_game_count
+    games.where(game_type: :competitive).count
+  end
+
+  def average_score_in_competitive_games
+    competitive_rounds = rounds.where(game_type: :competitive, status: :processed)
+    competitive_rounds.average(:score)
+  end
+
+  def top_three_competitive_rounds_by_score
+    competitive_rounds = rounds.where(game_type: :competitive, status: :processed).order(score: :desc).limit(3)
+  end
+
+  def last_three_competitive_games_rank
+    competitive_rounds = rounds.where(game_type: :competitive, status: :processed).order(date: :desc).limit(3)
+  end
+
+  def top_three_finishes_competitive
+    competitive_rounds = rounds
+                        .where(game_type: :competitive, status: :processed)
+                        .order(score: :desc)
+                        .limit(3)
+  end
+
+
+
+
 end
