@@ -7,6 +7,7 @@ class GameSerializer
               :player_cap,
               :status,
               :start_date,
+              :close_date,
               :users
 
   attribute :users do |game|
