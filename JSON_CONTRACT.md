@@ -338,6 +338,7 @@
             "player_cap": 18,
             "status": 0,
             "start_date": "2024-02-02",
+            "close_date": "2024-06-30",
             "users": [
                           {
                   "id": "240",

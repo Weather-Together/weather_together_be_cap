@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_11_200956) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_02_044730) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
-    t.integer "game_type"
+    t.integer "game_type", default: 1
     t.integer "length_in_days"
     t.integer "guess_lead_time"
     t.integer "player_cap"
@@ -23,6 +23,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_11_200956) do
     t.string "results"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "start_date"
+    t.string "close_date"
+    t.string "name"
   end
 
   create_table "rounds", force: :cascade do |t|
@@ -49,6 +52,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_11_200956) do
     t.bigint "game_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "invitation", default: 0
     t.index ["game_id"], name: "index_user_games_on_game_id"
     t.index ["user_id"], name: "index_user_games_on_user_id"
   end
