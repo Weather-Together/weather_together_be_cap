@@ -1,6 +1,7 @@
 class GameSerializer
   include JSONAPI::Serializer
   attributes  :game_type,
+              :name,
               :length_in_days,
               :guess_lead_time,
               :player_cap,
