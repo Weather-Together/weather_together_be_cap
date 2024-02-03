@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
   #private/custom games
   post 'api/v0/users/:id/games', to: 'api/v0/users/games#create'
+  get 'api/v0/users/:id/games/:game_id', to: 'api/v0/users/games#show'
   patch 'api/v0/users/:id/games/:game_id', to: 'api/v0/users/games#invite_rsvp'
 
 
