@@ -563,7 +563,7 @@
       }
   }
   ```
-### 16. To Daily Round from Login
+### 16. Edit Account
 * **PATCH api/v0/users/:id**
  - Controller: Api::V0::UsersController#show
  - Example Request:
@@ -583,6 +583,19 @@
    		 }
 	}
   ```
+
+       ### 17. Accept/Decline Invitation for Private Game
+* **PATCH /api/v0/users/:user_id/games/:game_id**
+  - Controller: Api::V0::Users::GamesController#create
+  - Example Request:
+    ```
+    curl -X PATCH https://weather-together-be.onrender.com/api/v0/users/221/games/92 -d '"rsvp": "accept"
+    ```
+  - Example Response:
+    
+    Status Code 200 : Successfully accepted or declined
+    Status Code 422 : User has not been invited to game
+    Status Code 404 : User or game not found
 
 
 ### Recent Rounds
