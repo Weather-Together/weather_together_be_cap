@@ -86,20 +86,31 @@
         "attributes": {
             "close_date": "2024-01-13",
             "number_of_votes": 12,
-            "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
             "status": "open",
             "game_id": 18,
+            "location_name": "Ialibu",
+            "region": "Southern Highlands",
+            "country": "Papua New Guinea",
+            "maxtemp_f": 72.0,
+            "mintemp_f": 58.6,
+            "avgtemp_f": null,
+            "maxwind_mph": 4.9,
+            "totalprecip_in": 0.66,
+            "avghumidity": 92,
+            "daily_chance_of_rain": 100,
+            "daily_chance_of_snow": 0,
             "votes": [
                 {
-                    "vote_id": 900,
-                    "user_id": 222,
-                    "round_id": 92,
+                    "vote_id": 51,
+                    "user_id": 1,
+                    "round_id": 6,
                     "status": "unprocessed",
-                    "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
-                    "latitude": "12.745354201417783",
-                    "longitude": "15.68749978648961",
-                    "weather_stats": null,
-                    "score": null
+                    "latitude": "-15.74",
+                    "longitude": "-54.34",
+                    "score": null,
+                    "location_name": null,
+                    "region": null,
+                    "country": null
                          },
                           ...
                 ]
@@ -122,15 +133,24 @@
         "id": "901",
         "type": "vote",
         "attributes": {
-            "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
-            "lat": "46.8",
-            "lon": "10.3",
-            "weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
-            "score": 1082.19,
-            "status": "processed",
-            "round_id": 92,
-            "user_id": 221,
-            "username": "OutstandingMammoth"
+                "lat": "-15.74",
+                "lon": "-54.34",
+                "score": 23176.78,
+                "status": "processed",
+                "round_id": 1,
+                "user_id": 1,
+                "username": "username1",
+                "location_name": "Alto Coite",
+                "region": "Mato Grosso",
+                "country": "Brazil",
+                "maxtemp_f": 92.5,
+                "mintemp_f": 68.8,
+                "avgtemp_f": null,
+                "maxwind_mph": 13.6,
+                "totalprecip_in": 0.5,
+                "avghumidity": 78,
+                "daily_chance_of_rain": 100,
+                "daily_chance_of_snow": 0
                          }
              }
     }
@@ -151,15 +171,24 @@
         "id": "901",
         "type": "vote",
         "attributes": {
-            "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
-            "lat": "46.8",
-            "lon": "10.3",
-            "weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
-            "score": 1082.19,
-            "status": "processed",
-            "round_id": 92,
-            "user_id": 221,
-            "username": "OutstandingMammoth"
+                "lat": "-15.74",
+                "lon": "-54.34",
+                "score": 23176.78,
+                "status": "processed",
+                "round_id": 1,
+                "user_id": 1,
+                "username": "username1",
+                "location_name": "Alto Coite",
+                "region": "Mato Grosso",
+                "country": "Brazil",
+                "maxtemp_f": 92.5,
+                "mintemp_f": 68.8,
+                "avgtemp_f": null,
+                "maxwind_mph": 13.6,
+                "totalprecip_in": 0.5,
+                "avghumidity": 78,
+                "daily_chance_of_rain": 100,
+                "daily_chance_of_snow": 0
                          }
              }, 
              ...
@@ -183,25 +212,36 @@
       "attributes": {
           "close_date": "2024-01-13",
           "number_of_votes": 12,
-          "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
           "status": "open",
           "game_id": 18,
+          "location_name": "Якутск",
+          "region": "Sakha",
+          "country": "Russia",
+          "maxtemp_f": -9.7,
+          "mintemp_f": -27.5,
+          "avgtemp_f": null,
+          "maxwind_mph": 5.1,
+          "totalprecip_in": 0.0,
+          "avghumidity": 97,
+          "daily_chance_of_rain": 45,
+          "daily_chance_of_snow": 0,
           "votes": [
               {
                   "vote_id": 900,
                   "user_id": 222,
                   "round_id": 92,
                   "status": "unprocessed",
-                  "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
                   "latitude": "12.745354201417783",
                   "longitude": "15.68749978648961",
-                  "weather_stats": null,
-                  "score": null
+                  "score": null,
+                  "location_name": null,
+                  "region": null,
+                  "country": null
                       },
                         ...
               ]
           }
-      }]
+      }
   }
     ```
 
@@ -261,25 +301,36 @@
         "attributes": {
             "close_date": "2024-01-13",
             "number_of_votes": 12,
-            "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
             "status": "open",
             "game_id": 18,
+            "location_name": "Ialibu",
+            "region": "Southern Highlands",
+            "country": "Papua New Guinea",
+            "maxtemp_f": 72.0,
+            "mintemp_f": 58.6,
+            "avgtemp_f": null,
+            "maxwind_mph": 4.9,
+            "totalprecip_in": 0.66,
+            "avghumidity": 92,
+            "daily_chance_of_rain": 100,
+            "daily_chance_of_snow": 0,
             "votes": [
                 {
-                    "vote_id": 900,
-                    "user_id": 222,
-                    "round_id": 92,
+                    "vote_id": 51,
+                    "user_id": 1,
+                    "round_id": 6,
                     "status": "unprocessed",
-                    "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
-                    "latitude": "12.745354201417783",
-                    "longitude": "15.68749978648961",
-                    "weather_stats": null,
-                    "score": null
+                    "latitude": "-15.74",
+                    "longitude": "-54.34",
+                    "score": null,
+                    "location_name": null,
+                    "region": null,
+                    "country": null
                          },
                           ...
                 ]
             }
-        }]
+        }
     }
     ```
 
@@ -297,7 +348,6 @@
         "id": "901",
         "type": "vote",
         "attributes": {
-            "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
             "lat": "46.8",
             "lon": "10.3",
             "weather_stats": null,
@@ -305,7 +355,18 @@
             "status": "unprocessed",
             "round_id": 92,
             "user_id": 221,
-            "username": "OutstandingMammoth"
+            "username": "OutstandingMammoth",
+            "location_name": null,
+            "region": null,
+            "country": null,
+            "maxtemp_f": null,
+            "mintemp_f": null,
+            "avgtemp_f": null,
+            "maxwind_mph": null,
+            "totalprecip_in": null,
+            "avghumidity": null,
+            "daily_chance_of_rain": null,
+            "daily_chance_of_snow": null
                          }
              }
     }
@@ -396,7 +457,7 @@
 
 
      ### 13. Private Game
-* **GET /api/v0/rounds/private_game**
+* **GET /api/v0/games/:id/current_round**
   - Controller: Api::V0::Games::RoundsController#current_round
   - Example Request:
     ```
@@ -411,25 +472,36 @@
         "attributes": {
             "close_date": "2024-01-13",
             "number_of_votes": 12,
-            "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
             "status": "open",
             "game_id": 18,
+            "location_name": "Ialibu",
+            "region": "Southern Highlands",
+            "country": "Papua New Guinea",
+            "maxtemp_f": 72.0,
+            "mintemp_f": 58.6,
+            "avgtemp_f": null,
+            "maxwind_mph": 4.9,
+            "totalprecip_in": 0.66,
+            "avghumidity": 92,
+            "daily_chance_of_rain": 100,
+            "daily_chance_of_snow": 0,
             "votes": [
                 {
-                    "vote_id": 900,
-                    "user_id": 222,
-                    "round_id": 92,
+                    "vote_id": 51,
+                    "user_id": 1,
+                    "round_id": 6,
                     "status": "unprocessed",
-                    "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
-                    "latitude": "12.745354201417783",
-                    "longitude": "15.68749978648961",
-                    "weather_stats": null,
-                    "score": null
+                    "latitude": "-15.74",
+                    "longitude": "-54.34",
+                    "score": null,
+                    "location_name": null,
+                    "region": null,
+                    "country": null
                          },
                           ...
                 ]
             }
-        }]
+        }
     }
     ```
 
@@ -447,7 +519,6 @@
         "id": "901",
         "type": "vote",
         "attributes": {
-            "target_weather_stats": "{\"location\":{\"name\":\"Ialibu\",\"region\":\"Southern Highlands\",\"country\":\"Papua New Guinea\",\"lat\":-6.32,\"lon\":143.96,\"tz_id\":\"Pacific/Port_Moresby\",\"localtime_epoch\":1705081061,\"localtime\":\"2024-01-13 3:37\"},\"weather_data\":{\"maxtemp_c\":19.4,\"maxtemp_f\":66.9,\"mintemp_c\":10.6,\"mintemp_f\":51.1,\"avgtemp_c\":13.9,\"avgtemp_f\":57.1,\"maxwind_mph\":3.1,\"maxwind_kph\":5.0,\"totalprecip_mm\":23.06,\"totalprecip_in\":0.91,\"totalsnow_cm\":0.0,\"avgvis_km\":6.6,\"avgvis_miles\":4.0,\"avghumidity\":95,\"daily_will_it_rain\":1,\"daily_chance_of_rain\":100,\"daily_will_it_snow\":0,\"daily_chance_of_snow\":0,\"condition\":{\"text\":\"Light rain shower\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/353.png\",\"code\":1240},\"uv\":7.0}}",
             "lat": "46.8",
             "lon": "10.3",
             "weather_stats": null,
@@ -455,7 +526,18 @@
             "status": "unprocessed",
             "round_id": 92,
             "user_id": 221,
-            "username": "OutstandingMammoth"
+            "username": "OutstandingMammoth",
+            "location_name": null,
+            "region": null,
+            "country": null,
+            "maxtemp_f": null,
+            "mintemp_f": null,
+            "avgtemp_f": null,
+            "maxwind_mph": null,
+            "totalprecip_in": null,
+            "avghumidity": null,
+            "daily_chance_of_rain": null,
+            "daily_chance_of_snow": null
                          }
              }
     }

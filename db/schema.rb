@@ -31,12 +31,25 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_02_044730) do
   create_table "rounds", force: :cascade do |t|
     t.bigint "game_id", null: false
     t.integer "status", default: 0
-    t.string "target_weather_stats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "close_date"
     t.string "process_date"
     t.integer "game_type"
+    t.string "location_name"
+    t.string "region"
+    t.string "country"
+    t.float "maxtemp_f"
+    t.float "mintemp_f"
+    t.float "avgtemp_f"
+    t.float "maxwind_mph"
+    t.float "totalprecip_in"
+    t.float "avgvis_miles"
+    t.integer "avghumidity"
+    t.integer "daily_chance_of_rain"
+    t.integer "daily_chance_of_snow"
+    t.string "lat"
+    t.string "lon"
     t.index ["game_id"], name: "index_rounds_on_game_id"
   end
 
@@ -71,13 +84,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_02_044730) do
     t.bigint "user_id", null: false
     t.bigint "round_id", null: false
     t.integer "status", default: 0
-    t.string "target_weather_stats"
     t.string "lat"
     t.string "lon"
-    t.string "weather_stats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "score"
+    t.string "location_name"
+    t.string "region"
+    t.string "country"
+    t.float "maxtemp_f"
+    t.float "mintemp_f"
+    t.float "avgtemp_f"
+    t.float "maxwind_mph"
+    t.float "totalprecip_in"
+    t.float "avgvis_miles"
+    t.integer "avghumidity"
+    t.integer "daily_chance_of_rain"
+    t.integer "daily_chance_of_snow"
     t.index ["round_id"], name: "index_votes_on_round_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
   end

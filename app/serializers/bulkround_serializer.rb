@@ -3,9 +3,18 @@ class BulkroundSerializer
 
   attributes  :close_date,
               :number_of_votes,
-              :target_weather_stats,
               :status,
               :game_id,
+              :region,
+              :country,
+              :maxtemp_f,
+              :mintemp_f,
+              :avgtemp_f,
+              :maxwind_mph,
+              :totalprecip_in,
+              :avghumidity,
+              :daily_chance_of_rain,
+              :daily_chance_of_snow,
               :number_of_votes
   #belongs_to :game
   # has_many :votes

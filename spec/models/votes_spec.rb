@@ -11,7 +11,6 @@ RSpec.describe Vote, type: :model do
     it "can calculate a score", :vcr do
       test_data
       vote = Vote.all.first
-      expect(vote.weather_stats).to be nil
       expect(vote.score).to be nil
       weather_data = WeatherFacade.new.weather_data(vote.lat, vote.lon, Date.yesterday.strftime('%F'))
       score = vote.calculate_score(weather_data)
@@ -24,7 +23,6 @@ RSpec.describe Vote, type: :model do
       test_data
       vote = Vote.all.first
       vote_id = vote.id
-      expect(vote.weather_stats).to be nil
       expect(vote.score).to be nil
       expect(vote.unprocessed?).to be true
       expect(vote.processed?).to be false
@@ -33,8 +31,7 @@ RSpec.describe Vote, type: :model do
       vote = Vote.find(vote_id)
       expect(vote.unprocessed?).to be false
       expect(vote.processed?).to be true
-      expect(vote.weather_stats).to be_a(String)
-      expect(JSON.parse(vote.weather_stats, symbolize_names: true)).to be_a(Hash)
+      expect(vote.location_name).to be_a(String)
       expect(vote.score>0).to be true
     end
 

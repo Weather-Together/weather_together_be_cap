@@ -3,9 +3,19 @@ class RoundSerializer
 
   attributes  :close_date,
               :number_of_votes,
-              :target_weather_stats,
               :status,
               :game_id,
+              :location_name,
+              :region,
+              :country,
+              :maxtemp_f,
+              :mintemp_f,
+              :avgtemp_f,
+              :maxwind_mph,
+              :totalprecip_in,
+              :avghumidity,
+              :daily_chance_of_rain,
+              :daily_chance_of_snow,
               :votes
   #belongs_to :game
   # has_many :votes
@@ -22,11 +32,12 @@ class RoundSerializer
         user_id: vote.user_id,
         round_id: vote.round_id,
         status: vote.status,
-        target_weather_stats: vote.target_weather_stats,
         latitude: vote.lat,
         longitude: vote.lon,
-        weather_stats: vote.weather_stats,
-        score: vote.score
+        score: vote.score,
+        location_name: vote.location_name,
+        region: vote.region,
+        country: vote.country
       }
     end
   end

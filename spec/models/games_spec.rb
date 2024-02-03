@@ -21,13 +21,12 @@ RSpec.describe Game, type: :model do
     before(:each) do
       load_test_data
     end
-    it "give current_community_round" do
+    it "give current_community_round", :vcr do
       
       results = Game.current_community_round
-      # binding.pry
-      expect(results).to eq(@round4)
+      expect(results).to eq(@round2)
       expect(results).not_to eq(@round3)
-      expect(results).not_to eq(@round2)
+      expect(results).not_to eq(@round4)
       expect(results).not_to eq(@round1)
     end
 
