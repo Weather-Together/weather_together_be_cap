@@ -21,8 +21,12 @@ class Api::V0::Users::RoundsController < ApplicationController
 
   def daily_vote
     round = Game.current_daily_round
-    user = User.find(params[:user_id])
-    render json: BulkroundSerializer.new(current_round)
+    vote = Vote.create!( lat: params[:lat], 
+                        lon: params[:lon], 
+                        user_id: params[:user_id],
+                        round_id: round.id)
+    vote.process
+    render json: VoteSerializer.new(vote), status: 201
   end
 
   private
