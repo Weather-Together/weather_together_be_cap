@@ -40,11 +40,11 @@ class User < ApplicationRecord
     daily_rounds.average(:score)
   end
 
-  def date_and_score_of_highest_daily_score
-    highest_score_round = rounds.where(game_type: :daily, status: :processed).order(score: :desc).first
+  def date_and_score_of_best_daily_score
+    lowest_score_round = rounds.where(game_type: :daily, status: :processed).order(score: :asc).first
 
-    if highest_score_round
-      { date: highest_score_round.created_at.to_date, score: highest_score_round.score }
+    if lowest_score_round
+      { date: lowest_score_round.created_at.to_date, score: lowest_score_round.score }
     else
       { date: nil, score: nil }
     end
