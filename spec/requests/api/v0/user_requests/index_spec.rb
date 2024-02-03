@@ -5,7 +5,7 @@ RSpec.describe "User Recent Rounds" do
     load_test_data
   end
   
-  it "get request for /users/:user_id/recent_rounds (info: 3 most recents public rounds with votes, vote content, placement in round)" do
+  it "get request for /users/:user_id/recent_rounds (info: 3 most recents public rounds with votes, vote content, placement in round)", :vcr do
     get "/api/v0/users"
 
     expect(response).to be_successful
