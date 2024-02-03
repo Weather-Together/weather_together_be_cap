@@ -14,16 +14,14 @@ class Api::V0::Rounds::VotesController < ApplicationController
                     lat: params[:lat],
                     lon: params[:lon],
                     user_id: params[:user_id],
-                    round_id: params[:round_id]
-                   )
+                    round_id: params[:round_id])
         render json: VoteSerializer.new(vote), status: :ok
       else
         vote = Vote.create(
                            lat: params[:lat],
                            lon: params[:lon],
                            user_id: params[:user_id],
-                           round_id: params[:round_id]
-                          )
+                           round_id: params[:round_id])
         render json: VoteSerializer.new(vote), status: :created
       end
     else
