@@ -35,14 +35,14 @@ RSpec.describe User, type: :model do
   end
 
 
-  describe "#date_and_score_of_highest_daily_score" do
+  describe "#date_and_score_of_best_daily_score" do
     it "returns the date and score of the highest daily score" do
       user = User.new
       highest_score_round = double("round", created_at: Time.now, score: 100)
       
       allow(user).to receive_message_chain(:rounds, :where, :order, :first).and_return(highest_score_round)
 
-      expect(user.date_and_score_of_highest_daily_score).to eq({ date: Time.now.to_date, score: 100 })
+      expect(user.date_and_score_of_best_daily_score).to eq({ date: Time.now.to_date, score: 100 })
     end
 
     it "returns nil if there is no highest score round" do
@@ -50,7 +50,7 @@ RSpec.describe User, type: :model do
 
       allow(user).to receive_message_chain(:rounds, :where, :order, :first).and_return(nil)
 
-      expect(user.date_and_score_of_highest_daily_score).to eq({ date: nil, score: nil })
+      expect(user.date_and_score_of_best_daily_score).to eq({ date: nil, score: nil })
     end
   end
 
@@ -142,23 +142,34 @@ end
 
 
   describe "#last_three_competitive_games_rank" do
-    it "returns the last three competitive games rank" do
-      user = User.new
+  it "returns the last three competitive games rank" do
+    user = User.new
 
-      # Stub the relevant methods and return values
-      rounds_relation = double("ActiveRecord::Relation")
-      allow(user).to receive(:rounds).and_return(rounds_relation)
-      allow(rounds_relation).to receive(:where).and_return(rounds_relation)
-      allow(rounds_relation).to receive(:order).with({ date: :desc }).and_return(rounds_relation)
-      allow(rounds_relation).to receive(:limit).and_return(["round1", "round2", "round3"])
+    # Stub the relevant methods and return values
+    rounds_relation = double("ActiveRecord::Relation")
+    game_relation = double("ActiveRecord::Relation")
+    round_double = double("Round", id: 1) # Stub the id method here
+    votes_relation = double("ActiveRecord::Relation")
 
-      # Call the actual method
-      result = user.last_three_competitive_games_rank
+    allow(user).to receive(:rounds).and_return(rounds_relation)
+    allow(rounds_relation).to receive(:joins).with(:game).and_return(game_relation)
+    allow(game_relation).to receive(:where).and_return(game_relation)
+    allow(game_relation).to receive(:order).with(date: :desc).and_return(game_relation)
+    allow(game_relation).to receive(:limit).and_return([round_double, round_double, round_double])
+    allow(round_double).to receive(:votes).and_return(votes_relation)
+    allow(votes_relation).to receive(:joins).with(:user).and_return(votes_relation)
+    allow(votes_relation).to receive(:where).and_return(votes_relation)
+    allow(votes_relation).to receive(:order).with('votes.score ASC').and_return(votes_relation)
+    allow(votes_relation).to receive(:pluck).with(:user_id).and_return([1, 2, 3])
+    allow(user).to receive(:id).and_return(1)
 
-      # Make assertions
-      expect(result).to eq(["round1", "round2", "round3"])
-    end
+    # Call the actual method
+    result = user.last_three_competitive_games_rank
+
+    # Make assertions
+    expect(result).to eq([{ round_id: 1, user_rank: 1 }, { round_id: 1, user_rank: 1 }, { round_id: 1, user_rank: 1 }])
   end
+end
 
 
   describe "#top_three_finishes_competitive" do

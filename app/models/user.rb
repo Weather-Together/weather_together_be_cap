@@ -77,7 +77,7 @@ class User < ApplicationRecord
     top_5_users = User.joins(rounds: :game)
                       .where('rounds.game_type = ? AND rounds.status = ? AND rounds.process_date IS NOT NULL', Game.game_types[:competitive], Game.statuses[:processed])
                       .group('users.id')
-                      .order('AVG(rounds.score) ASC')
+                      .order('AVG(rounds.score) DESC')
                       .limit(5)
                       .pluck(:username, 'AVG(rounds.score) AS average_score')
     top_5_users
@@ -94,7 +94,7 @@ class User < ApplicationRecord
 
     competitive_rounds = User
                         .joins("INNER JOIN (#{subquery}) AS user_scores ON users.id = user_scores.id")
-                        .where('average_score > ?', rounds.average(:score))
+                        .where('average_score < ?', rounds.average(:score))
                         .count
 
     competitive_rounds + 1
@@ -113,21 +113,37 @@ class User < ApplicationRecord
   end
 
   def top_three_competitive_rounds_by_score
-    competitive_rounds = rounds.where(game_type: :competitive, status: :processed).order(score: :desc).limit(3)
+    competitive_rounds = rounds.where(game_type: :competitive, status: :processed).order(score: :asc).limit(3)
   end
 
   def last_three_competitive_games_rank
-    competitive_rounds = rounds.where(game_type: :competitive, status: :processed).order(date: :desc).limit(3)
+    competitive_rounds = rounds
+      .joins(:game)  # Assuming there's an association between rounds and games
+      .where(games: { game_type: :competitive, status: :processed })
+      .order(date: :desc)
+      .limit(3)
+      
+    user_ranks = competitive_rounds.map do |round|
+      rank_in_round = round
+        .votes
+        .joins(:user)
+        .where(votes: { status: :processed })
+        .order('votes.score ASC')
+        .pluck(:user_id)
+        .index(id)
+
+      { round_id: round.id, user_rank: rank_in_round + 1 }
+    end
+
+    user_ranks
   end
+
 
   def top_three_finishes_competitive
     competitive_rounds = rounds
                         .where(game_type: :competitive, status: :processed)
-                        .order(score: :desc)
+                        .order(score: :asc)
                         .limit(3)
   end
-
-
-
 
 end
