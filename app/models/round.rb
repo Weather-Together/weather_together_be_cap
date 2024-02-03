@@ -22,22 +22,21 @@ class Round < ApplicationRecord
     ongoing_games.each do |game|
       round = Round.find_by(close_date: (Date.today+1).to_s, game_id: game.id)
       unless round 
-        Round.create(target_weather_stats: target_data,
-                    game_id: game.id,
-                    location_name: target_data[:location][:name],
-                    region: target_data[:location][:region],
-                    country: target_data[:location][:country],
-                    # lat: target_data[:location][:lat],
-                    # lon: target_data[:location][:lon],
-                    maxtemp_f: target_data[:weather_data][:maxtemp_f],
-                    mintemp_f: target_data[:weather_data][:mintemp_f],
-                    maxwind_mph: target_data[:weather_data][:maxwind_mph],
-                    totalprecip_in: target_data[:weather_data][:totalprecip_in],
-                    avgvis_miles: target_data[:weather_data][:avgvis_miles],
-                    avghumidity: target_data[:weather_data][:avghumidity],
-                    daily_chance_of_rain: target_data[:weather_data][:daily_chance_of_rain],
-                    daily_chance_of_snow: target_data[:weather_data][:daily_chance_of_snow],
-                    )
+        Round.create(game_id: game.id,
+                     location_name: target_data[:location][:name],
+                     region: target_data[:location][:region],
+                     country: target_data[:location][:country],
+                     lat: target_data[:location][:lat],
+                     lon: target_data[:location][:lon],
+                     maxtemp_f: target_data[:weather_data][:maxtemp_f],
+                     mintemp_f: target_data[:weather_data][:mintemp_f],
+                     maxwind_mph: target_data[:weather_data][:maxwind_mph],
+                     totalprecip_in: target_data[:weather_data][:totalprecip_in],
+                     avgvis_miles: target_data[:weather_data][:avgvis_miles],
+                     avghumidity: target_data[:weather_data][:avghumidity],
+                     daily_chance_of_rain: target_data[:weather_data][:daily_chance_of_rain],
+                     daily_chance_of_snow: target_data[:weather_data][:daily_chance_of_snow],
+                     )
       end
       closing_round = game.rounds.find_by(close_date: Date.today.to_s)
       closing_round.close_round if closing_round

@@ -1,7 +1,4 @@
 class Vote < ApplicationRecord
-  before_save do
-    self.target_weather_stats = round.target_weather_stats
-  end
   belongs_to :user
   belongs_to :round
 
@@ -19,29 +16,26 @@ class Vote < ApplicationRecord
         new_lon = rand(-180.000...180.000)
       end
       new_score = calculate_score(data)
-      update(status: :processed, 
-            score: new_score, 
-            target_weather_stats: data,
-            game_id: game.id,
-            location_name: data[:location][:name],
-            region: data[:location][:region],
-            country: data[:location][:country],
-            # lat: data[:location][:lat],
-            # lon: data[:location][:lon],
-            maxtemp_f: data[:weather_data][:maxtemp_f],
-            mintemp_f: data[:weather_data][:mintemp_f],
-            maxwind_mph: data[:weather_data][:maxwind_mph],
-            totalprecip_in: data[:weather_data][:totalprecip_in],
-            avgvis_miles: data[:weather_data][:avgvis_miles],
-            avghumidity: data[:weather_data][:avghumidity],
-            daily_chance_of_rain: data[:weather_data][:daily_chance_of_rain],
-            daily_chance_of_snow: data[:weather_data][:daily_chance_of_snow],
-      )
+      update(status: :processed,
+             score: new_score,
+             location_name: data[:location][:name],
+             region: data[:location][:region],
+             country: data[:location][:country],
+             lat: data[:location][:lat],
+             lon: data[:location][:lon],
+             maxtemp_f: data[:weather_data][:maxtemp_f],
+             mintemp_f: data[:weather_data][:mintemp_f],
+             maxwind_mph: data[:weather_data][:maxwind_mph],
+             totalprecip_in: data[:weather_data][:totalprecip_in],
+             avgvis_miles: data[:weather_data][:avgvis_miles],
+             avghumidity: data[:weather_data][:avghumidity],
+             daily_chance_of_rain: data[:weather_data][:daily_chance_of_rain],
+             daily_chance_of_snow: data[:weather_data][:daily_chance_of_snow]
+             )
     end
   end
 
   def calculate_score(weather_data)
-    require 'pry'; binding.pry
     guess = weather_data[:weather_data]
     high_temp_diff = (round.maxtemp_f-guess[:maxtemp_f])**2
     low_temp_diff = (round.mintemp_f-guess[:mintemp_f])**2

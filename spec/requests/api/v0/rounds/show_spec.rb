@@ -5,7 +5,7 @@ RSpec.describe "Rounds Show" do
     load_test_data
   end
   
-  it "Get request for /rounds/:round_id/results" do
+  it "Get request for /rounds/:round_id/results", :vcr do
     get "/api/v0/rounds/#{@round1.id}"
 
     expect(response).to be_successful
