@@ -31,6 +31,8 @@ RSpec.describe Round, type: :model do
       lat14 = "14.24" ; lon14 = "40.92" ; data14 = wf.weather_data(lat14, lon14, date)
       lat15 = "22.10" ; lon15 = "-159.53" ; data15 = wf.weather_data(lat15, lon15, date)
       lat16 = "-6.32" ; lon16 = "143.96" ; data16 = wf.weather_data(lat16, lon16, date)
+      
+      public_games
 
       @user1 = User.create!(username: "username1", email: "user1@gmail.com", password: "password1")
       @user2 = User.create!(username: "username2", email: "user2@gmail.com", password: "password2")
@@ -42,10 +44,8 @@ RSpec.describe Round, type: :model do
         Vote.create!(user_id: @user3.id, round_id: round.id, lat: @lat3, lon: @lon3)
       end
 
-      game1 = Game.create!(length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, game_type: 0, results: nil)
-      
       User.all.each do |user|
-        UserGame.create!(user_id: user.id, game_id: game1.id)
+        UserGame.create!(user_id: user.id, game_id: @game1.id)
       end
       
       stub_ref = Date.today

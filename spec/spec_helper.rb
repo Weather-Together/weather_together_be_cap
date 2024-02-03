@@ -14,7 +14,10 @@ require 'webmock/rspec'
 # it.
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-
+def public_games
+  @game1 = Game.create!(length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, game_type: 0, results: nil)
+  @daily_game = Game.create!(length_in_days: 1000000, guess_lead_time: 0, player_cap: 10000, game_type: 2, results: nil)  
+end
 
 def test_data
   date = Date.yesterday.strftime('%F')
@@ -58,6 +61,9 @@ data14 = wf.weather_data(lat14, lon14, date)
 data15 = wf.weather_data(lat15, lon15, date)
 data16 = wf.weather_data(lat16, lon16, date)
 
+@game1 = Game.create!(length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, game_type: 0, results: nil)
+@daily_game = Game.create!(length_in_days: 1000000, guess_lead_time: 0, player_cap: 10000, game_type: 2, results: nil)
+
 @data1 = @data.to_json
 @user1 = User.create!(username: "username1", email: "user1@gmail.com", password: "password1")
 @user2 = User.create!(username: "username2", email: "user2@gmail.com", password: "password2")
@@ -69,12 +75,6 @@ data16 = wf.weather_data(lat16, lon16, date)
 @user8 = User.create!(username: "username8", email: "user8@gmail.com", password: "password8")
 @user9 = User.create!(username: "username9", email: "user9@gmail.com", password: "password9")
 @user10 = User.create!(username: "username10", email: "user10@gmail.com", password: "password10")
-
-@game1 = Game.create!(length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, game_type: 0, results: nil)
-
-User.all.each do |user|
-  UserGame.create!(user_id: user.id, game_id: @game1.id)
-end
 
 
 @round = Round.create!(game_id: @game1.id,

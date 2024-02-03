@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe "Current Private Game Round", :vcr do
   
   it "Can fetch the current round for a private game" do
+    public_games
+
     @user1 = User.create!(username: "username1", email: "user1@gmail.com", password: "password1")
 
     new_game = {

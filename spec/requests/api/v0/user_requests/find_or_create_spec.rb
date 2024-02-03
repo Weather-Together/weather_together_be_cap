@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "User find_or_create" do
   it "Can create an account with email through users/oauth" do
+    public_games
+
     new_acct = {
       "email": "test@gmail.com",
     }
@@ -15,6 +17,8 @@ RSpec.describe "User find_or_create" do
   end
 
   it "Can get that same user_id from the same email" do
+    public_games
+
     new_acct = {
       "email": "test@gmail.com",
     }
