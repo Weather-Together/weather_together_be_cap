@@ -5,11 +5,11 @@ RSpec.describe "User Recent Rounds" do
     test_data
     load_location_coordinates
     new_user = {
-      username: "mbkuhl",
-      email: "kuhlmmb@gmail.com",
-      password: "ThisIsAGoodPassword1!",
-      password_confirmation: "ThisIsAGoodPassword1!"
-    }
+                username: "mbkuhl",
+                email: "kuhlmmb@gmail.com",
+                password: "ThisIsAGoodPassword1!",
+                password_confirmation: "ThisIsAGoodPassword1!"
+               }
 
     post "/api/v0/users", params: new_user.to_json, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
     expect(response).to be_successful
