@@ -22,7 +22,12 @@ Rails.application.routes.draw do
   get "api/v0/turnover", to: 'api/v0/cron#turnover'
   get "api/v0/turnover_confirm", to: 'api/v0/cron#turnover_confirm'
 
-  #rounds and voting
+  #daily rounds and voting
+  get 'api/v0/users/:user_id/rounds/current_daily_round', to: 'api/v0/users/rounds#current_daily_round'
+
+
+
+  #comp rounds and voting
   get 'api/v0/rounds/:id/votes', to: 'api/v0/rounds/votes#index'
   get 'api/v0/rounds/most_recent/results', to: 'api/v0/rounds/votes#results'
   get 'api/v0/rounds/:id/results', to: 'api/v0/rounds/votes#results'

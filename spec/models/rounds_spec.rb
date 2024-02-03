@@ -53,65 +53,66 @@ RSpec.describe Round, type: :model do
       allow(Round).to receive(:generate_target_data).and_return(data11)
       allow(Date).to receive(:today).and_return(stub_ref-5)
       Round.turnover
-      populate_round(Round.all.last)
+      populate_round(Round.where(game_type: 0).last)
 
-      expect(Round.all.count).to eq(1)
-      expect(Round.all.last.open?).to be true
+      expect(Round.all.count).to eq(2)
+      expect(Round.where(game_type: 0).count).to eq(1)
+      expect(Round.where(game_type: 0).last.open?).to be true
 
       #Day 2
       allow(Round).to receive(:generate_target_data).and_return(data12)
       allow(Date).to receive(:today).and_return(stub_ref-4)
       Round.turnover
-      populate_round(Round.all.last)
+      populate_round(Round.where(game_type: 0).last)
 
-      expect(Round.all.count).to eq(2)
-      expect(Round.all.last.open?).to be true
-      expect(Round.all.first.closed?).to be true
-      expect(Round.all.first.open?).to be false
-      expect(Round.all.first.processed?).to be false
-      expect(Round.all.first.votes.first.processed?).to be false
-      expect(Round.all.first.votes.first.unprocessed?).to be true
+      expect(Round.where(game_type: 0).count).to eq(2)
+      expect(Round.where(game_type: 0).last.open?).to be true
+      expect(Round.where(game_type: 0).first.closed?).to be true
+      expect(Round.where(game_type: 0).first.open?).to be false
+      expect(Round.where(game_type: 0).first.processed?).to be false
+      expect(Round.where(game_type: 0).first.votes.first.processed?).to be false
+      expect(Round.where(game_type: 0).first.votes.first.unprocessed?).to be true
 
       #Day 3
       allow(Round).to receive(:generate_target_data).and_return(data13)
       allow(Date).to receive(:today).and_return(stub_ref-3)
       Round.turnover
       Round.turnover
-      populate_round(Round.all.last)
+      populate_round(Round.where(game_type: 0).last)
 
-      expect(Round.all.count).to eq(3)
-      expect(Round.all.first.closed?).to be true
-      expect(Round.all.first.open?).to be false
-      expect(Round.all.first.processed?).to be false
-      expect(Round.where(status: :closed).count).to eq 2
+      expect(Round.where(game_type: 0).count).to eq(3)
+      expect(Round.where(game_type: 0).first.closed?).to be true
+      expect(Round.where(game_type: 0).first.open?).to be false
+      expect(Round.where(game_type: 0).first.processed?).to be false
+      expect(Round.where(status: :closed).count).to eq 4
 
       #Day 4
       allow(Round).to receive(:generate_target_data).and_return(data14)
       allow(Date).to receive(:today).and_return(stub_ref-2)
       Round.turnover
-      populate_round(Round.all.last)
+      populate_round(Round.where(game_type: 0).last)
 
-      expect(Round.all.count).to eq(4)
-      expect(Round.all.first.closed?).to be true
-      expect(Round.all.first.open?).to be false
-      expect(Round.all.first.processed?).to be false
-      expect(Round.all.first.votes.first.score).to be nil
-      expect(Round.where(status: :closed).count).to eq 3
+      expect(Round.where(game_type: 0).count).to eq(4)
+      expect(Round.where(game_type: 0).first.closed?).to be true
+      expect(Round.where(game_type: 0).first.open?).to be false
+      expect(Round.where(game_type: 0).first.processed?).to be false
+      expect(Round.where(game_type: 0).first.votes.first.score).to be nil
+      expect(Round.where(status: :closed).count).to eq 6
 
       #Day 5
       allow(Round).to receive(:generate_target_data).and_return(data15)
       allow(Date).to receive(:today).and_return(stub_ref-1)
       Round.turnover
-      populate_round(Round.all.last)
+      populate_round(Round.where(game_type: 0).last)
 
-      expect(Round.all.count).to eq(5)
-      expect(Round.all.first.closed?).to be false
-      expect(Round.all.first.open?).to be false
-      expect(Round.all.first.processed?).to be true
-      expect(Round.all.first.votes.first.processed?).to be true
-      expect(Round.all.first.votes.first.unprocessed?).to be false
-      expect(Round.all.first.votes.first.score).to be_a Float
-      expect(Round.where(status: :closed).count).to eq 3
+      expect(Round.where(game_type: 0).count).to eq(5)
+      expect(Round.where(game_type: 0).first.closed?).to be false
+      expect(Round.where(game_type: 0).first.open?).to be false
+      expect(Round.where(game_type: 0).first.processed?).to be true
+      expect(Round.where(game_type: 0).first.votes.first.processed?).to be true
+      expect(Round.where(game_type: 0).first.votes.first.unprocessed?).to be false
+      expect(Round.where(game_type: 0).first.votes.first.score).to be_a Float
+      expect(Round.where(status: :closed).count).to eq 7
       expect(Round.where(status: :processed).count).to eq 1
 
       #Day 6
@@ -119,14 +120,14 @@ RSpec.describe Round, type: :model do
       allow(Date).to receive(:today).and_return(stub_ref)
       Round.turnover
 
-      expect(Round.all.count).to eq(6)
-      expect(Round.all.first.closed?).to be false
-      expect(Round.all.first.open?).to be false
-      expect(Round.all.first.processed?).to be true
-      expect(Round.all.first.votes.first.processed?).to be true
-      expect(Round.all.first.votes.first.unprocessed?).to be false
-      expect(Round.all.first.votes.first.score).to be_a Float
-      expect(Round.where(status: :closed).count).to eq 3
+      expect(Round.where(game_type: 0).count).to eq(6)
+      expect(Round.where(game_type: 0).first.closed?).to be false
+      expect(Round.where(game_type: 0).first.open?).to be false
+      expect(Round.where(game_type: 0).first.processed?).to be true
+      expect(Round.where(game_type: 0).first.votes.first.processed?).to be true
+      expect(Round.where(game_type: 0).first.votes.first.unprocessed?).to be false
+      expect(Round.where(game_type: 0).first.votes.first.score).to be_a Float
+      expect(Round.where(status: :closed).count).to eq 8
       expect(Round.where(status: :processed).count).to eq 2
     end
 

@@ -14,6 +14,11 @@ class Api::V0::Users::RoundsController < ApplicationController
       render json: RoundSerializer.new(current_round)
     end
 
+    def current_daily_round
+      current_round = Game.current_daily_round
+      render json: BulkroundSerializer.new(current_round)
+    end
+
   private
 
   def set_user
