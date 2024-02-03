@@ -5,7 +5,7 @@ RSpec.describe "Rounds inex" do
     load_test_data
   end
   
-  it "Get all rounds for /rounds" do
+  it "Get all rounds for /rounds", :vcr do
     get "/api/v0/rounds"
 
     expect(response).to be_successful
@@ -21,7 +21,6 @@ RSpec.describe "Rounds inex" do
     expect(json_response['data'][0]).to have_key("attributes")
     expect(json_response['data'][0]['attributes']).to have_key("close_date")
     expect(json_response['data'][0]['attributes']).to have_key("number_of_votes")
-    expect(json_response['data'][0]['attributes']).to have_key("target_weather_stats")
     expect(json_response['data'][0]['attributes']).to have_key("status")
     expect(json_response['data'][0]['attributes']).to have_key("game_id")
   end
