@@ -24,8 +24,7 @@ class Api::V0::UsersController < ApplicationController
                           username: User.username_generator,
                           password: "AccThruOAuth1",
                           password_confirmation: "AccThruOAuth1",
-                          verification_token: nil
-                         )
+                          verification_token: nil)
     render json: UserSerializer.new(@user)
   end
 
