@@ -8,11 +8,10 @@ class Api::V0::Users::RoundsController < ApplicationController
     end
   end
 
-  
-    def current_community_round
-      current_round = Game.current_community_round
-      render json: RoundSerializer.new(current_round)
-    end
+  def current_community_round
+    current_round = Game.current_community_round
+    render json: RoundSerializer.new(current_round)
+  end
 
   private
 
@@ -23,7 +22,4 @@ class Api::V0::Users::RoundsController < ApplicationController
   def round_params
     params.require(:round).permit(:game_id)
   end
-
 end
-
-

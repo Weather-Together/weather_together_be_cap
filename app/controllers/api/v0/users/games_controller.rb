@@ -1,8 +1,8 @@
 class Api::V0::Users::GamesController < ApplicationController
-
   def create
     admin_user = User.find(params[:id])
     game = Game.create(game_params)
+
     UserGame.create(user_id: admin_user.id, game_id: game.id, invitation: 3)
     missing_accounts = []
     params[:invitees].each do |email|
@@ -15,7 +15,7 @@ class Api::V0::Users::GamesController < ApplicationController
       end
     end
     unless missing_accounts.empty?
-      AdminNotifierMailer.with(admin: admin_user.email, game_name: game.name, missing_accounts: missing_accounts ).notify_email.deliver_now
+      AdminNotifierMailer.with(admin: admin_user.email, game_name: game.name, missing_accounts: missing_accounts).notify_email.deliver_now
     end
     render json: GameSerializer.new(game)
   end
@@ -25,13 +25,13 @@ class Api::V0::Users::GamesController < ApplicationController
     if user_game
       if params[:rsvp] == "accept"
         user_game.update(invitation: 1)
-        render json: { data: { message: "Successfully Accepted Invitation"}}, status: 201
+        render json: {data: {message: "Successfully Accepted Invitation"}}, status: 201
       else
         user_game.destroy
-        render json: { data: { message: "Successfully Deleted Invitation"}}, status: 202
+        render json: {data: {message: "Successfully Deleted Invitation"}}, status: 202
       end
     else
-      render json: { error: { error: "User/game relationship not found"}}, status: 404
+      render json: {error: {error: "User/game relationship not found"}}, status: 404
     end
   end
 
@@ -40,7 +40,7 @@ class Api::V0::Users::GamesController < ApplicationController
     if user_game&.accepted? || user_game&.admin?
       render json: GameSerializer.new(Game.find(params[:game_id]))
     else
-      render json: { data: { error: "User must accept invitation to view game"}}, status: 401
+      render json: {data: {error: "User must accept invitation to view game"}}, status: 401
     end
   end
 
@@ -51,7 +51,7 @@ class Api::V0::Users::GamesController < ApplicationController
       round = game.current_round
       render json: BulkroundSerializer.new(round)
     else
-      render json: { data: { error: "User must accept invitation to view game"}}, status: 401
+      render json: {data: {error: "User must accept invitation to view game"}}, status: 401
     end
   end
 

@@ -19,14 +19,12 @@ class Api::V0::UsersController < ApplicationController
 
   def find_or_create
     @user = User.find_by(email: params[:email], verified: 2)
-    unless @user
-      @user = User.create(email: params[:email], 
-                          verified: 2,
-                          username: User.username_generator, 
-                          password: "AccThruOAuth1", 
-                          password_confirmation: "AccThruOAuth1", 
-                          verification_token: nil)
-    end
+    @user ||= User.create(email: params[:email],
+      verified: 2,
+      username: User.username_generator,
+      password: "AccThruOAuth1",
+      password_confirmation: "AccThruOAuth1",
+      verification_token: nil)
     render json: UserSerializer.new(@user)
   end
 
@@ -34,7 +32,7 @@ class Api::V0::UsersController < ApplicationController
     @user = User.find_by(id: params[:id], verification_token: params[:token])
     if @user
       @user.update!(verified: 1, verification_token: nil)
-      render json: { "message": "Successfully verified user"}, status: :accepted
+      render json: {message: "Successfully verified user"}, status: :accepted
     else
       render json: ErrorSerializer.new(ErrorMessage.new("Email does not match verification token", 422)).error_json, status: :unprocessable_entity
     end

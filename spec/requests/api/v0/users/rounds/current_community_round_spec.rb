@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe "users/rounds API" do
   it "current_community_round", :vcr do

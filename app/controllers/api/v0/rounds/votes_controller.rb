@@ -1,5 +1,4 @@
 class Api::V0::Rounds::VotesController < ApplicationController
-
   def create
     begin
       @user = User.find(params[:user_id])
@@ -8,19 +7,19 @@ class Api::V0::Rounds::VotesController < ApplicationController
       render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).error_json, status: :not_found
     end
     if @round.open?
-      vote = Vote.find_by( user_id: params[:user_id],
-                           round_id: params[:round_id])
+      vote = Vote.find_by(user_id: params[:user_id],
+        round_id: params[:round_id])
       if vote
-        vote.update( lat: params[:lat], 
-                      lon: params[:lon], 
-                      user_id: params[:user_id],
-                      round_id: params[:round_id])
+        vote.update(lat: params[:lat],
+          lon: params[:lon],
+          user_id: params[:user_id],
+          round_id: params[:round_id])
         render json: VoteSerializer.new(vote), status: :ok
       else
-        vote = Vote.create( lat: params[:lat], 
-                            lon: params[:lon], 
-                            user_id: params[:user_id],
-                            round_id: params[:round_id])
+        vote = Vote.create(lat: params[:lat],
+          lon: params[:lon],
+          user_id: params[:user_id],
+          round_id: params[:round_id])
         render json: VoteSerializer.new(vote), status: :created
       end
     else
@@ -31,7 +30,6 @@ class Api::V0::Rounds::VotesController < ApplicationController
   def index
     render json: VoteSerializer.new(Round.find(params[:id]).votes)
   end
-
 
   def results
     if params[:id]

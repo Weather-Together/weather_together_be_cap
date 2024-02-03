@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "User verify_email" do
   it "can verify email with proper token" do
@@ -13,7 +13,7 @@ RSpec.describe "User verify_email" do
     expect(response).to be_successful
     expect(response.status).to eq(202)
     message = JSON.parse(response.body, symbolize_names: true)[:message]
-    
+
     expect(message).to eq("Successfully verified user")
     @user1 = User.find(@user1.id)
 
