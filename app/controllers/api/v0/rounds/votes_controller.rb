@@ -10,16 +10,20 @@ class Api::V0::Rounds::VotesController < ApplicationController
       vote = Vote.find_by(user_id: params[:user_id],
         round_id: params[:round_id])
       if vote
-        vote.update(lat: params[:lat],
-          lon: params[:lon],
-          user_id: params[:user_id],
-          round_id: params[:round_id])
+        vote.update(
+                    lat: params[:lat],
+                    lon: params[:lon],
+                    user_id: params[:user_id],
+                    round_id: params[:round_id]
+                   )
         render json: VoteSerializer.new(vote), status: :ok
       else
-        vote = Vote.create(lat: params[:lat],
-          lon: params[:lon],
-          user_id: params[:user_id],
-          round_id: params[:round_id])
+        vote = Vote.create(
+                           lat: params[:lat],
+                           lon: params[:lon],
+                           user_id: params[:user_id],
+                           round_id: params[:round_id]
+                          )
         render json: VoteSerializer.new(vote), status: :created
       end
     else
