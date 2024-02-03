@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   #daily rounds and voting
   get 'api/v0/users/:user_id/rounds/current_daily_round', to: 'api/v0/users/rounds#current_daily_round'
+  post 'api/v0/users/:user_id/rounds/current_daily_round/vote', to: 'api/v0/users/rounds#daily_vote'
 
 
 
