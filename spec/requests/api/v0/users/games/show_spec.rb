@@ -7,12 +7,12 @@ describe "respond to invite" do
     @user3 = User.create!(username: "username3", email: "user3@gmail.com", password: "password1")
 
     new_game = {
-      name: "Storm Chasers",
-      length_in_days: 145,
-      guess_lead_time: 12,
-      player_cap: 12,
-      invitees: ["user2@gmail.com", "user3@gmail.com"]
-    }
+                name: "Storm Chasers",
+                length_in_days: 145,
+                guess_lead_time: 12,
+                player_cap: 12,
+                invitees: ["user2@gmail.com", "user3@gmail.com"]
+               }
     post "/api/v0/users/#{@user1.id}/games", params: new_game.to_json, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
 
     game_id = game = JSON.parse(response.body, symbolize_names: true)[:data][:id]
@@ -45,12 +45,12 @@ describe "respond to invite" do
     @user3 = User.create!(username: "username3", email: "user3@gmail.com", password: "password1")
 
     new_game = {
-      name: "Storm Chasers",
-      length_in_days: 145,
-      guess_lead_time: 12,
-      player_cap: 12,
-      invitees: ["user2@gmail.com", "user3@gmail.com"]
-    }
+                name: "Storm Chasers",
+                length_in_days: 145,
+                guess_lead_time: 12,
+                player_cap: 12,
+                invitees: ["user2@gmail.com", "user3@gmail.com"]
+               }
     post "/api/v0/users/#{@user1.id}/games", params: new_game.to_json, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
 
     game_id = JSON.parse(response.body, symbolize_names: true)[:data][:id]
