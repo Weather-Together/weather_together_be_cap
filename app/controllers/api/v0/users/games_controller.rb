@@ -37,7 +37,7 @@ class Api::V0::Users::GamesController < ApplicationController
 
   def show
     user_game = UserGame.find_by(user_id: params[:id], game_id: params[:game_id])
-    if user_game.accepted? || user_game.admin?
+    if user_game&.accepted? || user_game&.admin?
       render json: GameSerializer.new(Game.find(params[:game_id]))
     else
       render json: { data: { error: "User must accept invitation to view game"}}, status: 401
