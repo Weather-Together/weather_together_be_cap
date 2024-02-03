@@ -5,6 +5,7 @@ class BulkroundSerializer
               :number_of_votes,
               :status,
               :game_id,
+              :location_name,
               :region,
               :country,
               :maxtemp_f,

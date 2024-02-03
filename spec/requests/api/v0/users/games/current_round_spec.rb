@@ -82,7 +82,14 @@ RSpec.describe "Current Private Game Round", :vcr do
       game = JSON.parse(response.body, symbolize_names: true)[:data]
 
       expect(game[:id].to_i).to be_an Integer
-      expect(game[:id].to_i).to_not eq(0)
-      expect(game[:type]).to eq("game")
+      expect(game[:id].to_i).to eq(@round3.id)
+      expect(game[:type]).to eq("bulkround")
+      expect(game[:attributes][:status]).to eq("open")
+      expect(game[:attributes][:close_date]).to eq(@round3.close_date)
+      expect(game[:attributes][:number_of_votes]).to eq(0)
+  
+      expect(game[:attributes][:location_name]).to eq(@round3.location_name)
+      expect(game[:attributes][:maxtemp_f]).to eq(@round3.maxtemp_f)
+      expect(game[:attributes][:avghumidity]).to eq(@round3.avghumidity)
   end
 end

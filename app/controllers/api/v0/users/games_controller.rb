@@ -44,6 +44,17 @@ class Api::V0::Users::GamesController < ApplicationController
     end
   end
 
+  def current_round
+    user_game = UserGame.find_by(user_id: params[:id], game_id: params[:game_id])
+    if user_game&.accepted? || user_game&.admin?
+      game = Game.find(params[:game_id])
+      round = game.current_round
+      render json: BulkroundSerializer.new(round)
+    else
+      render json: { data: { error: "User must accept invitation to view game"}}, status: 401
+    end
+  end
+
   private
 
   def game_params
