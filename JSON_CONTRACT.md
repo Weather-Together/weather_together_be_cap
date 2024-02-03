@@ -587,15 +587,25 @@
        ### 17. Accept/Decline Invitation for Private Game
 * **PATCH /api/v0/users/:user_id/games/:game_id**
   - Controller: Api::V0::Users::GamesController#create
-  - Example Request:
+  - Example Requests:
     ```
     curl -X PATCH https://weather-together-be.onrender.com/api/v0/users/221/games/92 -d '"rsvp": "accept"
+    curl -X PATCH https://weather-together-be.onrender.com/api/v0/users/221/games/92 -d '"rsvp": "decline"
     ```
   - Example Response:
     
-    Status Code 200 : Successfully accepted or declined
-    Status Code 422 : User has not been invited to game
-    Status Code 404 : User or game not found
+    ```json
+    {
+      data:
+      {
+        message: "Successfully Accepted Invitation"
+      } 
+    }
+    ```
+
+    Status Code 202 : Succesfully Accepted Invitation
+    Status Code 204 : Succesfully Deleted Invitation
+    Status Code 404 : User/game relationship not found
 
 
 ### Recent Rounds
