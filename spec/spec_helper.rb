@@ -54,7 +54,7 @@ def test_data
   lat16 = "-6.32"
   lon16 = "143.96"
   wf = WeatherFacade.new
-  data11 = wf.weather_data(lat11, lon11, date)
+  @data11 = wf.weather_data(lat11, lon11, date)
   data12 = wf.weather_data(lat12, lon12, date)
   data13 = wf.weather_data(lat13, lon13, date)
   data14 = wf.weather_data(lat14, lon14, date)
@@ -78,19 +78,19 @@ def test_data
 
 
   @round = Round.create!(game_id: @game1.id,
-                        location_name: data11[:location][:name],
-                        region: data11[:location][:region],
-                        country: data11[:location][:country],
-                        lat: data11[:location][:lat],
-                        lon: data11[:location][:lon],
-                        maxtemp_f: data11[:weather_data][:maxtemp_f],
-                        mintemp_f: data11[:weather_data][:mintemp_f],
-                        maxwind_mph: data11[:weather_data][:maxwind_mph],
-                        totalprecip_in: data11[:weather_data][:totalprecip_in],
-                        avgvis_miles: data11[:weather_data][:avgvis_miles],
-                        avghumidity: data11[:weather_data][:avghumidity],
-                        daily_chance_of_rain: data11[:weather_data][:daily_chance_of_rain],
-                        daily_chance_of_snow: data11[:weather_data][:daily_chance_of_snow]
+                        location_name: @data11[:location][:name],
+                        region: @data11[:location][:region],
+                        country: @data11[:location][:country],
+                        lat: @data11[:location][:lat],
+                        lon: @data11[:location][:lon],
+                        maxtemp_f: @data11[:weather_data][:maxtemp_f],
+                        mintemp_f: @data11[:weather_data][:mintemp_f],
+                        maxwind_mph: @data11[:weather_data][:maxwind_mph],
+                        totalprecip_in: @data11[:weather_data][:totalprecip_in],
+                        avgvis_miles: @data11[:weather_data][:avgvis_miles],
+                        avghumidity: @data11[:weather_data][:avghumidity],
+                        daily_chance_of_rain: @data11[:weather_data][:daily_chance_of_rain],
+                        daily_chance_of_snow: @data11[:weather_data][:daily_chance_of_snow]
                         )
   @round.update(close_date: (Date.today-4).to_s, process_date: (Date.today-1).to_s)
   @round2 = Round.create!(game_id: @game1.id, 
@@ -170,19 +170,19 @@ def test_data
 
 
   @round7 = Round.create!(game_id: @daily_game.id,
-                        location_name: data11[:location][:name],
-                        region: data11[:location][:region],
-                        country: data11[:location][:country],
-                        lat: data11[:location][:lat],
-                        lon: data11[:location][:lon],
-                        maxtemp_f: data11[:weather_data][:maxtemp_f],
-                        mintemp_f: data11[:weather_data][:mintemp_f],
-                        maxwind_mph: data11[:weather_data][:maxwind_mph],
-                        totalprecip_in: data11[:weather_data][:totalprecip_in],
-                        avgvis_miles: data11[:weather_data][:avgvis_miles],
-                        avghumidity: data11[:weather_data][:avghumidity],
-                        daily_chance_of_rain: data11[:weather_data][:daily_chance_of_rain],
-                        daily_chance_of_snow: data11[:weather_data][:daily_chance_of_snow]
+                        location_name: @data11[:location][:name],
+                        region: @data11[:location][:region],
+                        country: @data11[:location][:country],
+                        lat: @data11[:location][:lat],
+                        lon: @data11[:location][:lon],
+                        maxtemp_f: @data11[:weather_data][:maxtemp_f],
+                        mintemp_f: @data11[:weather_data][:mintemp_f],
+                        maxwind_mph: @data11[:weather_data][:maxwind_mph],
+                        totalprecip_in: @data11[:weather_data][:totalprecip_in],
+                        avgvis_miles: @data11[:weather_data][:avgvis_miles],
+                        avghumidity: @data11[:weather_data][:avghumidity],
+                        daily_chance_of_rain: @data11[:weather_data][:daily_chance_of_rain],
+                        daily_chance_of_snow: @data11[:weather_data][:daily_chance_of_snow]
                       )
   @round7.update(close_date: (Date.today-4).to_s, process_date: (Date.today-1).to_s)
   @round8 = Round.create!(game_id: @daily_game.id, 
