@@ -36,7 +36,7 @@ class Game < ApplicationRecord
   end
 
   def find_close_date
-    (Date.today + length_in_days + 1).to_s
+    (Date.today + length_in_days.to_i + 1).to_s
   end
 
   def current_round
