@@ -70,8 +70,8 @@ class Round < ApplicationRecord
 
   def self.generate_target_data
     wf = WeatherFacade.new
-    data = {:error=>{:code=>1006, :message=>"No matching location found."}}.to_json
-    while JSON.parse(data, symbolize_names: true)[:error]
+    data = {:error=>{:code=>1006, :message=>"No matching location found."}}
+    while data[:error]
       lat = rand(-90.000...90.000)
       lon = rand(-180.000...180.000)
       data = wf.weather_data(lat, lon, Date.yesterday.strftime('%F'))
