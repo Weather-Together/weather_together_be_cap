@@ -4,8 +4,8 @@ class Api::V0::RoundsController < ApplicationController
     render json: RoundSerializer.new(rounds)
   end
 
-  def current_community_round
-    current_round = Game.current_community_round
+  def current_competitive_round
+    current_round = Game.current_competitive_round
     render json: RoundSerializer.new(current_round)
   end
 

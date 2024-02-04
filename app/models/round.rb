@@ -14,7 +14,7 @@ class Round < ApplicationRecord
   has_many :users, through: :votes
 
   enum status: { open: 0, closed: 1, processed: 2 }
-  enum game_type: { community: 0, custom: 1, daily: 2 }
+  enum game_type: { competitive: 0, custom: 1, daily: 2 }
 
   def self.turnover
     target_data = generate_target_data

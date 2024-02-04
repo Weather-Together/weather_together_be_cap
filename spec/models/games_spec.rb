@@ -21,9 +21,9 @@ RSpec.describe Game, type: :model do
     before(:each) do
       test_data
     end
-    it "give current_community_round", :vcr do
+    it "give current_competitive_round", :vcr do
       
-      results = Game.current_community_round
+      results = Game.current_competitive_round
       expect(results).to eq(@round6)
       expect(results).not_to eq(@round3)
       expect(results).not_to eq(@round4)

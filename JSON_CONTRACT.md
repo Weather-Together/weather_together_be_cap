@@ -71,11 +71,11 @@
   ```
 
   ### 4. Daily Round
-* **GET /api/v0/rounds/daily_round**
+* **GET /api/v0/users/:user_id/rounds/current_daily_round**
   - Controller: Api::V0::RoundsController#daily_round
   - Example Request:
     ```
-    curl -X GET https://weather-together-be.onrender.com/api/v0/rounds/daily_round
+    curl -X GET https://weather-together-be.onrender.com/api/v0/users/:user_id/rounds/current_daily_round
     ```
   - Example Response:
     ```json

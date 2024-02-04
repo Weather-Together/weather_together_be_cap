@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   
   # get "api/v0/turnover", :to 'api/v0/cron#turnover_confirm'
   get "api/v0/rounds/recent_rounds", to: 'api/v0/rounds#recent_rounds'
-  get 'api/v0/rounds/current_community_round', to: 'api/v0/rounds#current_community_round'
+  get 'api/v0/rounds/current_competitive_round', to: 'api/v0/rounds#current_competitive_round'
   get "api/v0/turnover", to: 'api/v0/cron#turnover'
   get "api/v0/turnover_confirm", to: 'api/v0/cron#turnover_confirm'
 
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get 'api/v0/rounds/:id/votes', to: 'api/v0/rounds/votes#index'
   get 'api/v0/rounds/most_recent/results', to: 'api/v0/rounds/votes#results'
   get 'api/v0/rounds/:id/results', to: 'api/v0/rounds/votes#results'
-  get 'api/v0/users/:user_id/rounds/current_community_round', to: 'api/v0/users/rounds#current_community_round'
+  get 'api/v0/users/:user_id/rounds/current_competitive_round', to: 'api/v0/users/rounds#current_competitive_round'
   post 'api/v0/users/:user_id/rounds/:round_id/votes/new', to: 'api/v0/rounds/votes#create'
   
   #login
