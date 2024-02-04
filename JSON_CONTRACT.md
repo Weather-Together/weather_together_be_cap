@@ -3,7 +3,7 @@
 
 
 ### 1. New User
-* **GET api/v0/users/create**
+* **POST api/v0/users/create**
  - Controller: Api::V0::UsersController#create
  - Example Request:
   ```json
@@ -71,11 +71,11 @@
   ```
 
   ### 4. Daily Round
-* **GET /api/v0/rounds/daily_round**
+* **GET /api/v0/users/:user_id/rounds/current_daily_round**
   - Controller: Api::V0::RoundsController#daily_round
   - Example Request:
     ```
-    curl -X GET https://weather-together-be.onrender.com/api/v0/rounds/daily_round
+    curl -X GET https://weather-together-be.onrender.com/api/v0/users/:user_id/rounds/current_daily_round
     ```
   - Example Response:
     ```json
@@ -120,11 +120,11 @@
     ```
 
      ### 5. New Vote for a Daily Game
-* **POST /api/v0/users/:user_id/rounds/:round_id/votes/get_result**
-  - Controller: Api::V0::Rounds::VotesController#create
+* **POST /api/v0/users/:user_id/rounds/current_daily_round/vote**
+  - Controller: Api::V0::Users::RoundsController#daily_vote
   - Example Request:
     ```
-    curl -X POST https://weather-together-be.onrender.com/api/v0/users/221/rounds/92/votes/get_result -d '"lat": 46.8, "lon": 10.3'
+    curl -X POST https://weather-together-be.onrender.com/api/v0/users/221/rounds/current_daily_round/vote -d '"lat": 46.8, "lon": 10.3'
     ```
   - Example Response:
     ```json
@@ -588,15 +588,25 @@
        ### 17. Accept/Decline Invitation for Private Game
 * **PATCH /api/v0/users/:user_id/games/:game_id**
   - Controller: Api::V0::Users::GamesController#create
-  - Example Request:
+  - Example Requests:
     ```
     curl -X PATCH https://weather-together-be.onrender.com/api/v0/users/221/games/92 -d '"rsvp": "accept"
+    curl -X PATCH https://weather-together-be.onrender.com/api/v0/users/221/games/92 -d '"rsvp": "decline"
     ```
   - Example Response:
     
-    Status Code 200 : Successfully accepted or declined
-    Status Code 422 : User has not been invited to game
-    Status Code 404 : User or game not found
+    ```json
+    {
+      data:
+      {
+        message: "Successfully Accepted Invitation"
+      } 
+    }
+    ```
+
+    Status Code 202 : Succesfully Accepted Invitation
+    Status Code 204 : Succesfully Deleted Invitation
+    Status Code 404 : User/game relationship not found
 
 
 ### Recent Rounds

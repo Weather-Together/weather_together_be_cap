@@ -20,6 +20,41 @@ class Api::V0::Users::GamesController < ApplicationController
     render json: GameSerializer.new(game)
   end
 
+  def invite_rsvp
+    user_game = UserGame.find_by(user_id: params[:id], game_id: params[:game_id])
+    if user_game
+      if params[:rsvp] == "accept"
+        user_game.update(invitation: 1)
+        render json: { data: { message: "Successfully Accepted Invitation"}}, status: 201
+      else
+        user_game.destroy
+        render json: { data: { message: "Successfully Deleted Invitation"}}, status: 202
+      end
+    else
+      render json: { error: { error: "User/game relationship not found"}}, status: 404
+    end
+  end
+
+  def show
+    user_game = UserGame.find_by(user_id: params[:id], game_id: params[:game_id])
+    if user_game&.accepted? || user_game&.admin?
+      render json: GameSerializer.new(Game.find(params[:game_id]))
+    else
+      render json: { data: { error: "User must accept invitation to view game"}}, status: 401
+    end
+  end
+
+  def current_round
+    user_game = UserGame.find_by(user_id: params[:id], game_id: params[:game_id])
+    if user_game&.accepted? || user_game&.admin?
+      game = Game.find(params[:game_id])
+      round = game.current_round
+      render json: BulkroundSerializer.new(round)
+    else
+      render json: { data: { error: "User must accept invitation to view game"}}, status: 401
+    end
+  end
+
   private
 
   def game_params

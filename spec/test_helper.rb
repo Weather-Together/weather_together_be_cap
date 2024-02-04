@@ -36,6 +36,9 @@ def load_test_data
   data13 = wf.weather_data(lat13, lon13, date)
   data14 = wf.weather_data(lat14, lon14, date)
 
+ # Games
+  @game1 = Game.create!(length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, game_type: 0, results: nil)
+  @daily_game = Game.create!(length_in_days: 1000000, guess_lead_time: 0, player_cap: 10000, game_type: 2, results: nil)
 
   # Users
   @user1 = User.create!(username: "username1", email: "user1@gmail.com", password: "password1")
@@ -49,8 +52,6 @@ def load_test_data
   @user9 = User.create!(username: "username9", email: "user9@gmail.com", password: "password9")
   @user10 = User.create!(username: "username10", email: "user10@gmail.com", password: "password10")
 
-  # Games
-    @game1 = Game.create!(length_in_days: 1000000, guess_lead_time: 3, player_cap: 10000, game_type: 0, results: nil)
   
   # Rounds
 

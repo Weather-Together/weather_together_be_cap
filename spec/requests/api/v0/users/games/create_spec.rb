@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "users/games create" do
   it "current_community_round", :vcr do
-    # test_data
-    # load_location_coordinates
+    public_games
+
     @user1 = User.create!(username: "username1", email: "user1@gmail.com", password: "password1")
     @user2 = User.create!(username: "username2", email: "user2@gmail.com", password: "password1")
 

@@ -19,12 +19,12 @@ RSpec.describe Game, type: :model do
 
   describe "methods" do
     before(:each) do
-      load_test_data
+      test_data
     end
-    it "give current_community_round", :vcr do
+    it "give current_competitive_round", :vcr do
       
-      results = Game.current_community_round
-      expect(results).to eq(@round2)
+      results = Game.current_competitive_round
+      expect(results).to eq(@round6)
       expect(results).not_to eq(@round3)
       expect(results).not_to eq(@round4)
       expect(results).not_to eq(@round1)
