@@ -1,6 +1,13 @@
 class User < ApplicationRecord
   has_secure_password
 
+  after_create do
+    daily_game = Game.daily_game
+    competitive_game = Game.competitive_game
+    UserGame.create!(user_id: id, game_id: daily_game.id, invitation: 1)
+    UserGame.create!(user_id: id, game_id: competitive_game.id, invitation: 1)
+  end
+
   has_many :votes
   has_many :user_games
   has_many :games, through: :user_games

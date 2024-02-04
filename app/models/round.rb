@@ -14,7 +14,7 @@ class Round < ApplicationRecord
   has_many :users, through: :votes
 
   enum status: { open: 0, closed: 1, processed: 2 }
-  enum game_type: { community: 0, custom: 1 }
+  enum game_type: { community: 0, custom: 1, daily: 2 }
 
   def self.turnover
     target_data = generate_target_data
@@ -40,8 +40,10 @@ class Round < ApplicationRecord
       end
       closing_round = game.rounds.find_by(close_date: Date.today.to_s)
       closing_round.close_round if closing_round
-      processing_round = game.rounds.find_by(process_date: Date.today.to_s)
-      processing_round.process_round if processing_round
+      unless game.daily?
+        processing_round = game.rounds.find_by(process_date: Date.today.to_s)
+        processing_round.process_round if processing_round
+      end
     end
     turnover = Turnover.find_by(successful_turnover_date: Date.today.to_s)
     unless turnover

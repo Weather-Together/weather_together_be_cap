@@ -9,10 +9,25 @@ class Api::V0::Users::RoundsController < ApplicationController
   end
 
   
-    def current_community_round
-      current_round = Game.current_community_round
-      render json: RoundSerializer.new(current_round)
-    end
+  def current_community_round
+    current_round = Game.current_community_round
+    render json: RoundSerializer.new(current_round)
+  end
+
+  def current_daily_round
+    current_round = Game.current_daily_round
+    render json: BulkroundSerializer.new(current_round)
+  end
+
+  def daily_vote
+    round = Game.current_daily_round
+    vote = Vote.create!( lat: params[:lat], 
+                        lon: params[:lon], 
+                        user_id: params[:user_id],
+                        round_id: round.id)
+    vote.process
+    render json: VoteSerializer.new(vote), status: 201
+  end
 
   private
 

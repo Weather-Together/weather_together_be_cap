@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe "Current Private Game Round", :vcr do
   
   it "Can fetch the current round for a private game" do
+    public_games
+
     @user1 = User.create!(username: "username1", email: "user1@gmail.com", password: "password1")
 
     new_game = {
@@ -79,17 +81,17 @@ RSpec.describe "Current Private Game Round", :vcr do
       expect(response).to be_successful
       expect(response.status).to eq(200)
   
-      game = JSON.parse(response.body, symbolize_names: true)[:data]
+      round = JSON.parse(response.body, symbolize_names: true)[:data]
 
-      expect(game[:id].to_i).to be_an Integer
-      expect(game[:id].to_i).to eq(@round3.id)
-      expect(game[:type]).to eq("bulkround")
-      expect(game[:attributes][:status]).to eq("open")
-      expect(game[:attributes][:close_date]).to eq(@round3.close_date)
-      expect(game[:attributes][:number_of_votes]).to eq(0)
-  
-      expect(game[:attributes][:location_name]).to eq(@round3.location_name)
-      expect(game[:attributes][:maxtemp_f]).to eq(@round3.maxtemp_f)
-      expect(game[:attributes][:avghumidity]).to eq(@round3.avghumidity)
+      expect(round[:id].to_i).to be_an Integer
+      expect(round[:id].to_i).to eq(@round3.id)
+      expect(round[:type]).to eq("bulkround")
+      expect(round[:attributes][:status]).to eq("open")
+      expect(round[:attributes][:close_date]).to eq(@round3.close_date)
+      expect(round[:attributes][:number_of_votes]).to eq(0)
+
+      expect(round[:attributes][:location_name]).to eq(@round3.location_name)
+      expect(round[:attributes][:maxtemp_f]).to eq(@round3.maxtemp_f)
+      expect(round[:attributes][:avghumidity]).to eq(@round3.avghumidity)
   end
 end
