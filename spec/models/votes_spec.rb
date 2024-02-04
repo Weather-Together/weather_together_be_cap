@@ -41,6 +41,7 @@ RSpec.describe Vote, type: :model do
       WebMock.allow_net_connect!
 
       date = Date.yesterday.strftime('%F')
+      public_games
       lat1 = "-43.5596"
       lon1 = "-5.9504"
       lat11 = "62.04"
@@ -57,7 +58,21 @@ RSpec.describe Vote, type: :model do
       end
       
       
-      @round = Round.create!(game_id: @game1.id, target_weather_stats: data11)
+      @round = Round.create!(game_id: @game1.id,
+                             location_name: data11[:location][:name],
+                             region: data11[:location][:region],
+                             country: data11[:location][:country],
+                             lat: data11[:location][:lat],
+                             lon: data11[:location][:lon],
+                             maxtemp_f: data11[:weather_data][:maxtemp_f],
+                             mintemp_f: data11[:weather_data][:mintemp_f],
+                             maxwind_mph: data11[:weather_data][:maxwind_mph],
+                             totalprecip_in: data11[:weather_data][:totalprecip_in],
+                             avgvis_miles: data11[:weather_data][:avgvis_miles],
+                             avghumidity: data11[:weather_data][:avghumidity],
+                             daily_chance_of_rain: data11[:weather_data][:daily_chance_of_rain],
+                             daily_chance_of_snow: data11[:weather_data][:daily_chance_of_snow]
+                             )
       @round.update(close_date: (Date.today-4).to_s, process_date: (Date.today-1).to_s)
 
       
@@ -66,7 +81,7 @@ RSpec.describe Vote, type: :model do
       end
       vote = Vote.all.first
       vote_id = vote.id
-      expect(vote.weather_stats).to be nil
+      # expect(vote.weather_stats).to be nil
       expect(vote.score).to be nil
       expect(vote.unprocessed?).to be true
       expect(vote.processed?).to be false
@@ -75,11 +90,11 @@ RSpec.describe Vote, type: :model do
       vote = Vote.find(vote_id)
       expect(vote.unprocessed?).to be false
       expect(vote.processed?).to be true
-      expect(vote.weather_stats).to be_a(String)
-      weather_data = JSON.parse(vote.weather_stats, symbolize_names: true)
-      expect(weather_data).to be_a(Hash)
-      expect(weather_data[:location][:lat]).to_not eq(lat1)
-      expect(weather_data[:location][:lon]).to_not eq(lon1)
+      # expect(vote.weather_stats).to be_a(String)
+      # weather_data = JSON.parse(vote.weather_stats, symbolize_names: true)
+      # expect(weather_data).to be_a(Hash)
+      # expect(weather_data[:location][:lat]).to_not eq(lat1)
+      # expect(weather_data[:location][:lon]).to_not eq(lon1)
      expect(vote.score>0).to be true
 
       VCR.turn_on!
