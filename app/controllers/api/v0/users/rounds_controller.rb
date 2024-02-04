@@ -9,8 +9,8 @@ class Api::V0::Users::RoundsController < ApplicationController
   end
 
   
-  def current_community_round
-    current_round = Game.current_community_round
+  def current_competitive_round
+    current_round = Game.current_competitive_round
     render json: RoundSerializer.new(current_round)
   end
 
