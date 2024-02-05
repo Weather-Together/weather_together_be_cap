@@ -111,14 +111,161 @@ def load_test_data
                           daily_chance_of_snow: data14[:weather_data][:daily_chance_of_snow])
 
   # Votes
-  @vote1 = Vote.create!(user_id: @user1.id, round_id: @round1.id, lat: lat1, lon: lon1)
-  @vote2 = Vote.create!(user_id: @user2.id, round_id: @round1.id, lat: lat2, lon: lon2)
-  @vote3 = Vote.create!(user_id: @user3.id, round_id: @round1.id, lat: lat3, lon: lon3)
-  @vote4 = Vote.create!(user_id: @user4.id, round_id: @round1.id, lat: lat4, lon: lon4)
-  @vote5 = Vote.create!(user_id: @user5.id, round_id: @round1.id, lat: lat5, lon: lon5)
-  @vote6 = Vote.create!(user_id: @user6.id, round_id: @round1.id, lat: lat6, lon: lon6)
-  @vote7 = Vote.create!(user_id: @user7.id, round_id: @round1.id, lat: lat7, lon: lon7)
-  @vote8 = Vote.create!(user_id: @user8.id, round_id: @round1.id, lat: lat8, lon: lon8)
-  @vote9 = Vote.create!(user_id: @user9.id, round_id: @round1.id, lat: lat9, lon: lon9)
-  @vote10 = Vote.create!(user_id: @user10.id, round_id: @round1.id, lat: lat10, lon: lon10)
+    @vote1 = Vote.create!(user_id: @user1.id, round_id: @round1.id, lat: lat1, lon: lon1)
+    @vote2 = Vote.create!(user_id: @user2.id, round_id: @round1.id, lat: lat2, lon: lon2)
+    @vote3 = Vote.create!(user_id: @user3.id, round_id: @round1.id, lat: lat3, lon: lon3)
+    @vote4 = Vote.create!(user_id: @user4.id, round_id: @round1.id, lat: lat4, lon: lon4)
+    @vote5 = Vote.create!(user_id: @user5.id, round_id: @round1.id, lat: lat5, lon: lon5)
+    @vote6 = Vote.create!(user_id: @user6.id, round_id: @round1.id, lat: lat6, lon: lon6)
+    @vote7 = Vote.create!(user_id: @user7.id, round_id: @round1.id, lat: lat7, lon: lon7)
+    @vote8 = Vote.create!(user_id: @user8.id, round_id: @round1.id, lat: lat8, lon: lon8)
+    @vote9 = Vote.create!(user_id: @user9.id, round_id: @round1.id, lat: lat9, lon: lon9)
+    @vote10 = Vote.create!(user_id: @user10.id, round_id: @round1.id, lat: lat10, lon: lon10)
+
+    UserGame.create!(user_id: @user1.id, game_id: @game1.id)
+    UserGame.create!(user_id: @user2.id, game_id: @game1.id)
+end
+
+def load_query_test_data 
+  
+  public_games
+  # Create admin user (user1)
+  user1 = User.create!(username: 'user1', email: 'user1@example.com', password: 'password', verified: 1)
+
+  # Create invitee user (user2)
+  user2 = User.create!(username: 'user2', email: 'user2@example.com', password: 'password', verified: 1)
+  # Create rounds for the competitive game
+  (1..4).each do |day|
+    round = Round.create!(
+      game_id: @game1.id,
+      status: 2,
+      close_date: (Date.today + day).to_s,
+      process_date: (Date.today + day + 1).to_s,
+      location_name: 'Competitive Location',
+      region: 'Region',
+      country: 'Country',
+      lat: (34.0522 + rand(-0.01..0.01)).to_s,
+      lon: (-118.2437 + rand(-0.01..0.01)).to_s,
+      maxtemp_f: 75.0,
+      mintemp_f: 60.0,
+      avgtemp_f: 65.0, 
+      maxwind_mph: 10.0,
+      totalprecip_in: 0.1,
+      avgvis_miles: 5.0,
+      avghumidity: 50.0,
+      daily_chance_of_rain: 10,
+      daily_chance_of_snow: 5
+    )
+
+    # Create votes for each user in the round
+    Vote.create!(
+      user_id: user1.id,
+      round_id: round.id,
+      lat: (34.0522 + rand(-0.01..0.01)).to_s,
+      lon: (-118.2437 + rand(-0.01..0.01)).to_s,
+      status: 1,
+      score: rand(1..10000),
+      location_name: 'Vote Location', 
+      region: 'Vote Region', 
+      country: 'Vote Country', 
+      maxtemp_f: 70.0, 
+      mintemp_f: 55.0, 
+      avgtemp_f: 62.5, 
+      maxwind_mph: 8.0, 
+      totalprecip_in: 0.2, 
+      avgvis_miles: 6.0, 
+      avghumidity: 60.0, 
+      daily_chance_of_rain: 15, 
+      daily_chance_of_snow: 0 
+    )
+
+    Vote.create!(
+      user_id: user2.id,
+      round_id: round.id,
+      lat: (40.7128 + rand(-0.01..0.01)).to_s,
+      lon: (-74.0060 + rand(-0.01..0.01)).to_s,
+      status: 1,
+      score: rand(1..10000),
+      location_name: 'Vote Location', 
+      region: 'Vote Region', 
+      country: 'Vote Country', 
+      maxtemp_f: 70.0, 
+      mintemp_f: 55.0, 
+      avgtemp_f: 62.5, 
+      maxwind_mph: 8.0, 
+      totalprecip_in: 0.2, 
+      avgvis_miles: 6.0, 
+      avghumidity: 60.0, 
+      daily_chance_of_rain: 15, 
+      daily_chance_of_snow: 0 
+    )
+  end
+
+
+  # Create rounds for the daily game
+  (1..4).each do |day|
+    round = Round.create!(
+      game_id: @daily_game.id,
+      status: 2,
+      close_date: (Date.today + day).to_s,
+      process_date: (Date.today + day + 1).to_s,
+      location_name: 'Daily Location',
+      region: 'Region',
+      country: 'Country',
+      lat: (37.7749 + rand(-0.01..0.01)).to_s,
+      lon: (-122.4194 + rand(-0.01..0.01)).to_s,
+      maxtemp_f: 70.0,
+      mintemp_f: 55.0,
+      avgtemp_f: 62.5, 
+      maxwind_mph: 8.0,
+      totalprecip_in: 0.2,
+      avgvis_miles: 6.0,
+      avghumidity: 60.0,
+      daily_chance_of_rain: 15,
+      daily_chance_of_snow: 0
+    )
+
+    # Create votes for each user in the round
+    Vote.create!(
+      user_id: user1.id,
+      round_id: round.id,
+      lat: (37.7749 + rand(-0.01..0.01)).to_s,
+      lon: (-122.4194 + rand(-0.01..0.01)).to_s,
+      status: 1,
+      score: rand(1..10000),
+      location_name: 'Vote Location', 
+      region: 'Vote Region', 
+      country: 'Vote Country', 
+      maxtemp_f: 70.0, 
+      mintemp_f: 55.0, 
+      avgtemp_f: 62.5, 
+      maxwind_mph: 8.0, 
+      totalprecip_in: 0.2, 
+      avgvis_miles: 6.0, 
+      avghumidity: 60.0, 
+      daily_chance_of_rain: 15, 
+      daily_chance_of_snow: 0 
+    )
+
+  Vote.create!(
+      user_id: user2.id,
+      round_id: round.id,
+      lat: (37.7749 + rand(-0.01..0.01)).to_s,
+      lon: (-122.4194 + rand(-0.01..0.01)).to_s,
+      status: 1,
+      score: rand(1..10000),
+      location_name: 'Vote Location', 
+      region: 'Vote Region', 
+      country: 'Vote Country', 
+      maxtemp_f: 70.0, 
+      mintemp_f: 55.0, 
+      avgtemp_f: 62.5, 
+      maxwind_mph: 8.0, 
+      totalprecip_in: 0.2, 
+      avgvis_miles: 6.0, 
+      avghumidity: 60.0, 
+      daily_chance_of_rain: 15, 
+      daily_chance_of_snow: 0 
+    )
+  end
 end

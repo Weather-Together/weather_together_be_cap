@@ -1,8 +1,9 @@
 class Vote < ApplicationRecord
   belongs_to :user
   belongs_to :round
-
-  enum status: {unprocessed: 0, processed: 1}
+  has_many :game, through: :round
+  
+  enum status: { unprocessed: 0, processed: 1 }
 
   def process
     unless score

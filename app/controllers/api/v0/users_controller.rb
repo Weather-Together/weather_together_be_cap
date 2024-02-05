@@ -60,6 +60,36 @@ class Api::V0::UsersController < ApplicationController
     render json: RoundSerializer.new(rounds)
   end
 
+  def daily_stats
+    @user = User.find(params[:user_id])
+
+
+    daily_stats = {
+      daily_game_count: @user.daily_game_count,
+      average_score_in_daily_games: @user.average_score_in_daily_games,
+      date_and_score_of_best_daily_score: @user.date_and_score_of_best_daily_score,
+      grade_book_daily_round: @user.grade_book_daily_round
+    }
+
+    render json: { daily_stats: daily_stats }
+  end
+
+  def competitive_stats
+    @user = User.find(params[:user_id])
+
+    competitive_stats = {
+      top_5_competitive_users: User.top_5_competitive_users,
+      user_competitive_rank: @user.user_competitive_rank,
+      competitive_game_count: @user.competitive_game_count,
+      average_score_in_competitive_games: @user.average_score_in_competitive_games,
+      top_three_competitive_rounds_by_score: @user.top_three_competitive_rounds_by_score,
+      last_three_competitive_games_rank: @user.last_three_competitive_games_rank,
+      top_three_finishes_competitive: @user.top_three_finishes_competitive
+    }
+
+    render json: { competitive_stats: competitive_stats }
+  end
+
   private
 
   def user_params

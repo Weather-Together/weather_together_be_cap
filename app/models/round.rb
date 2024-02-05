@@ -77,6 +77,5 @@ class Round < ApplicationRecord
     end
     data
   end
-
   private
 end
