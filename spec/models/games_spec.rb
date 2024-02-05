@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe Game, type: :model do
-  
   describe "relationships" do
     it { should have_many(:user_games) }
     it { should have_many(:rounds) }
@@ -22,13 +21,11 @@ RSpec.describe Game, type: :model do
       test_data
     end
     it "give current_competitive_round", :vcr do
-      
       results = Game.current_competitive_round
       expect(results).to eq(@round6)
       expect(results).not_to eq(@round3)
       expect(results).not_to eq(@round4)
       expect(results).not_to eq(@round1)
     end
-
   end
 end

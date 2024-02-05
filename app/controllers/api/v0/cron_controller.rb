@@ -1,5 +1,4 @@
 class Api::V0::CronController < ApplicationController
-
   def turnover
     Round.turnover
     turnover = Turnover.find_by(successful_turnover_date: Date.today.to_s)
@@ -15,6 +14,4 @@ class Api::V0::CronController < ApplicationController
   def turnover_confirm
     render json: TurnoverSerializer.new(Turnover.all.last)
   end
-
-
 end

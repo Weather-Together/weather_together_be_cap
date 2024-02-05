@@ -1,14 +1,14 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "User find_or_create" do
   it "Can create an account with email through users/oauth" do
     public_games
 
     new_acct = {
-      "email": "test@gmail.com",
+      email: "test@gmail.com"
     }
 
-    post "/api/v0/users/oauth_login", params: new_acct.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    post "/api/v0/users/oauth_login", params: new_acct.to_json, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
 
     expect(response.status).to eq(200)
     message = JSON.parse(response.body, symbolize_names: true)[:data]
@@ -20,15 +20,15 @@ RSpec.describe "User find_or_create" do
     public_games
 
     new_acct = {
-      "email": "test@gmail.com",
+      email: "test@gmail.com"
     }
 
-    post "/api/v0/users/oauth_login", params: new_acct.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
-    
+    post "/api/v0/users/oauth_login", params: new_acct.to_json, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
+
     message = JSON.parse(response.body, symbolize_names: true)[:data]
     user_id = message[:id]
-    post "/api/v0/users/oauth_login", params: new_acct.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
-    
+    post "/api/v0/users/oauth_login", params: new_acct.to_json, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
+
     expect(response.status).to eq(200)
     message = JSON.parse(response.body, symbolize_names: true)[:data]
     expect(message[:attributes][:email]).to eq("test@gmail.com")
