@@ -60,3 +60,4 @@ gem "figaro"
 gem "jsonapi-serializer"
 gem 'capybara'
 gem 'faker'
+gem 'rack-cors'
