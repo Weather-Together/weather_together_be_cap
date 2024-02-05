@@ -41,6 +41,7 @@ lat15 = "22.10"
 lon15 = "-159.53"
 lat16 = "-6.32"
 lon16 = "143.96"
+
 wf = WeatherFacade.new
 data11 = wf.weather_data(lat11, lon11, date)
 data12 = wf.weather_data(lat12, lon12, date)

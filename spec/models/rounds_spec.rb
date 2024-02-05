@@ -9,11 +9,6 @@ RSpec.describe Round, type: :model do
     it { should have_many(:users).through(:votes) }
   end
 
-  describe "validations" do
-    #   it { should validate_presence_of(:status) }
-    #   it { should validate_presence_of(:target_weather_stats) }
-  end
-
   describe "methods" do
     it "can turnover", :vcr do
       date = Date.yesterday.strftime("%F")
@@ -60,6 +55,7 @@ RSpec.describe Round, type: :model do
       end
 
       stub_ref = Date.today
+      
       # Day 1
       allow(Round).to receive(:generate_target_data).and_return(data11)
       allow(Date).to receive(:today).and_return(stub_ref - 5)

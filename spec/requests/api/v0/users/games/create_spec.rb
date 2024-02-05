@@ -8,13 +8,13 @@ describe "users/games create" do
     @user2 = User.create!(username: "username2", email: "user2@gmail.com", password: "password1")
 
     new_game = {
-      name: "Storm Chasers",
-      length_in_days: 145,
-      guess_lead_time: 12,
-      player_cap: 12,
-      invitees: ["email4@gmail.com", "user2@gmail.com",
-        "email3@gmail.com"]
-    }
+                name: "Storm Chasers",
+                length_in_days: 145,
+                guess_lead_time: 12,
+                player_cap: 12,
+                invitees: ["email4@gmail.com", "user2@gmail.com",
+                  "email3@gmail.com"]
+               }
     post "/api/v0/users/#{@user1.id}/games", params: new_game.to_json, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
     expect(response).to be_successful
     expect(response.status).to eq(200)

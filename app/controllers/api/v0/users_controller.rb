@@ -20,11 +20,11 @@ class Api::V0::UsersController < ApplicationController
   def find_or_create
     @user = User.find_by(email: params[:email], verified: 2)
     @user ||= User.create(email: params[:email],
-      verified: 2,
-      username: User.username_generator,
-      password: "AccThruOAuth1",
-      password_confirmation: "AccThruOAuth1",
-      verification_token: nil)
+                          verified: 2,
+                          username: User.username_generator,
+                          password: "AccThruOAuth1",
+                          password_confirmation: "AccThruOAuth1",
+                          verification_token: nil)
     render json: UserSerializer.new(@user)
   end
 
