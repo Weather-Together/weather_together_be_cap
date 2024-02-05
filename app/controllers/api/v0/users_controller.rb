@@ -8,12 +8,12 @@ class Api::V0::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save!
+    begin
+      @user = User.create!(user_params)
       UserMailer.with(user: @user).verification_email.deliver_now
       render json: UserSerializer.new(@user)
-    else
-      render json: @user.errors, status: :unprocessable_entity
+    rescue ActiveRecord::RecordInvalid => exception
+      render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 422)).error_json, status: :unprocessable_entity
     end
   end
 

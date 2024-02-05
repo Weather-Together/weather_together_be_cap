@@ -13,10 +13,22 @@ class Game < ApplicationRecord
   has_many :users, through: :user_games
 
   enum status: {open: 0, closed: 1}
-  enum game_type: {community: 0, custom: 1}
+  enum game_type: {competitive: 0, custom: 1, daily: 2}
 
-  def self.current_community_round
+  def self.current_competitive_round
     Game.find_by(game_type: 0).rounds.order(close_date: :desc).first
+  end
+
+  def self.current_daily_round
+    Game.find_by(game_type: 2).rounds.order(close_date: :desc).first
+  end
+
+  def self.competitive_game
+    Game.find_by(game_type: 0)
+  end
+
+  def self.daily_game
+    Game.find_by(game_type: 2)
   end
 
   def find_start_date

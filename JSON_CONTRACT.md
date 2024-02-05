@@ -3,10 +3,10 @@
 
 
 ### 1. New User
-* **GET api/v0/users/create**
+* **POST api/v0/users/create**
  - Controller: Api::V0::UsersController#create
  - Example Request:
-  ```
+  ```json
   curl -X POST https://weather-together-be.onrender.com/users
 	-d {
       "email": “new@gmail.com",
@@ -17,7 +17,7 @@
 	^ must create unique user
   ```
  - Example Response:
-  ```html
+  ```json
   {
     "data": {
       "id": "229",
@@ -38,7 +38,7 @@
   curl -X GET https://weather-together-be.onrender.com/verify_account
   ```
  - Example Responses:
-  ```html
+  ```json
   	{
 	 "message": "Successfully verified user"
 	}
@@ -57,7 +57,7 @@
   curl -X GET https://weather-together-be.onrender.com/api/v0/users/login -d ‘”email”: “new@email.com” , “password”: “New1!!”’
   ```
  - Example Response:
-  ```html
+  ```json
   {
       "data": {
           "id": "240",
@@ -71,11 +71,11 @@
   ```
 
   ### 4. Daily Round
-* **GET /api/v0/rounds/daily_round**
+* **GET /api/v0/users/:user_id/rounds/current_daily_round**
   - Controller: Api::V0::RoundsController#daily_round
   - Example Request:
     ```
-    curl -X GET https://weather-together-be.onrender.com/api/v0/rounds/daily_round
+    curl -X GET https://weather-together-be.onrender.com/api/v0/users/:user_id/rounds/current_daily_round
     ```
   - Example Response:
     ```json
@@ -120,11 +120,11 @@
     ```
 
      ### 5. New Vote for a Daily Game
-* **POST /api/v0/users/:user_id/rounds/:round_id/votes/get_result**
-  - Controller: Api::V0::Rounds::VotesController#create
+* **POST /api/v0/users/:user_id/rounds/current_daily_round/vote**
+  - Controller: Api::V0::Users::RoundsController#daily_vote
   - Example Request:
     ```
-    curl -X POST https://weather-together-be.onrender.com/api/v0/users/221/rounds/92/votes/get_result -d '"lat": 46.8, "lon": 10.3'
+    curl -X POST https://weather-together-be.onrender.com/api/v0/users/221/rounds/current_daily_round/vote -d '"lat": 46.8, "lon": 10.3'
     ```
   - Example Response:
     ```json
@@ -204,9 +204,9 @@
     curl -X GET https://weather-together-be.onrender.com/api/v0/rounds/most_recent_competitive/votes
     ```
   - Example Response:
-    ```json
-   {
-  "data": {
+    ```json  
+    {
+    "data": {
       "id": "92",
       "type": "round",
       "attributes": {
@@ -241,6 +241,7 @@
                         ...
               ]
           }
+
       }
   }
     ```
@@ -254,7 +255,7 @@
     ```
   - Example Response:
     ```json
-   {
+    {
     "data":[
        {
         "id": "92",

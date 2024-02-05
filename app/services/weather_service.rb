@@ -14,7 +14,7 @@ class WeatherService
     response = conn.get("history.json?key=#{Rails.application.credentials.weather_api[:key]}&q=#{lat},#{lon}&dt=#{date}")
     hash = JSON.parse(response.body, symbolize_names: true)
     if hash[:error]
-      hash.to_json
+      hash
     else
       parsed = {
         location: hash[:location],

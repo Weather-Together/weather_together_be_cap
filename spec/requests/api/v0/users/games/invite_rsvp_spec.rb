@@ -2,6 +2,8 @@ require "rails_helper"
 
 describe "respond to invite" do
   it "can succesfully accept invite", :vcr do
+    public_games
+
     @user1 = User.create!(username: "username1", email: "user1@gmail.com", password: "password1")
     @user2 = User.create!(username: "username2", email: "user2@gmail.com", password: "password1")
     @user3 = User.create!(username: "username3", email: "user3@gmail.com", password: "password1")

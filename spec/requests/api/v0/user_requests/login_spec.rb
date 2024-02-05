@@ -2,6 +2,8 @@ require "rails_helper"
 
 RSpec.describe "User verify_email" do
   it "Can login on a verfied email address" do
+    public_games
+
     @user1 = User.create(username: "username1", email: "user1@gmail.com", password: "password1")
 
     get "/api/v0/users/#{@user1.id}/verify_account/#{@user1.verification_token}"
@@ -21,6 +23,8 @@ RSpec.describe "User verify_email" do
   end
 
   it "Sad-Path Unverified" do
+    public_games
+
     @user1 = User.create(username: "username1", email: "user1@gmail.com", password: "password1")
 
     new_login = {
@@ -37,6 +41,8 @@ RSpec.describe "User verify_email" do
   end
 
   it "Sad-Path Wrong Password" do
+    public_games
+
     @user1 = User.create(username: "username1", email: "user1@gmail.com", password: "password1")
 
     get "/api/v0/users/#{@user1.id}/verify_account/#{@user1.verification_token}"

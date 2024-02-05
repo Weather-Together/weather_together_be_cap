@@ -2,6 +2,8 @@ require "rails_helper"
 
 RSpec.describe "User verify_email" do
   it "can verify email with proper token" do
+    public_games
+
     @user1 = User.create(username: "username1", email: "user1@gmail.com", password: "password1")
 
     expect(@user1.unverified?).to be true
@@ -23,6 +25,8 @@ RSpec.describe "User verify_email" do
   end
 
   it "sad path" do
+    public_games
+
     @user1 = User.create(username: "username1", email: "user1@gmail.com", password: "password1")
     @user2 = User.create(username: "username2", email: "user2@gmail.com", password: "password2")
 
