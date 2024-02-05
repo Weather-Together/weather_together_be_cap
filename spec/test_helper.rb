@@ -129,36 +129,145 @@ def load_test_data
 end
 
 def load_query_test_data 
+  
+  public_games
   # Create admin user (user1)
-  user1 = User.create(username: 'user1', email: 'user1@example.com', password: 'password', verified: 1)
+  user1 = User.create!(username: 'user1', email: 'user1@example.com', password: 'password', verified: 1)
 
   # Create invitee user (user2)
-  user2 = User.create(username: 'user2', email: 'user2@example.com', password: 'password', verified: 1)
-
-  # Create a competitive game
-  competitive_game = Game.create(name: 'Competitive Game', status: 0, game_type: 0)
-
+  user2 = User.create!(username: 'user2', email: 'user2@example.com', password: 'password', verified: 1)
   # Create rounds for the competitive game
   (1..4).each do |day|
-    round = Round.create(game: competitive_game, close_date: (Date.today + day).to_s, process_date: (Date.today + day + 1).to_s, location_name: 'Competitive Location', region: 'Region', country: 'Country', lat: (34.0522 + rand(-0.01..0.01)).to_s, lon: (-118.2437 + rand(-0.01..0.01)).to_s, maxtemp_f: 75.0, mintemp_f: 60.0, maxwind_mph: 10.0, totalprecip_in: 0.1, avgvis_miles: 5.0, avghumidity: 50.0, daily_chance_of_rain: 10, daily_chance_of_snow: 5)
+    round = Round.create!(
+      game_id: @game1.id,
+      status: 2,
+      close_date: (Date.today + day).to_s,
+      process_date: (Date.today + day + 1).to_s,
+      location_name: 'Competitive Location',
+      region: 'Region',
+      country: 'Country',
+      lat: (34.0522 + rand(-0.01..0.01)).to_s,
+      lon: (-118.2437 + rand(-0.01..0.01)).to_s,
+      maxtemp_f: 75.0,
+      mintemp_f: 60.0,
+      avgtemp_f: 65.0, 
+      maxwind_mph: 10.0,
+      totalprecip_in: 0.1,
+      avgvis_miles: 5.0,
+      avghumidity: 50.0,
+      daily_chance_of_rain: 10,
+      daily_chance_of_snow: 5
+    )
 
     # Create votes for each user in the round
-    Vote.create(user: user1, round: round, lat: (34.0522 + rand(-0.01..0.01)).to_s, lon: (-118.2437 + rand(-0.01..0.01)).to_s, status: 0, score: rand(1..100))
-    Vote.create(user: user2, round: round, lat: (40.7128 + rand(-0.01..0.01)).to_s, lon: (-74.0060 + rand(-0.01..0.01)).to_s, status: 0, score: rand(1..100))
+    Vote.create!(
+      user_id: user1.id,
+      round_id: round.id,
+      lat: (34.0522 + rand(-0.01..0.01)).to_s,
+      lon: (-118.2437 + rand(-0.01..0.01)).to_s,
+      status: 1,
+      score: rand(1..10000),
+      location_name: 'Vote Location', 
+      region: 'Vote Region', 
+      country: 'Vote Country', 
+      maxtemp_f: 70.0, 
+      mintemp_f: 55.0, 
+      avgtemp_f: 62.5, 
+      maxwind_mph: 8.0, 
+      totalprecip_in: 0.2, 
+      avgvis_miles: 6.0, 
+      avghumidity: 60.0, 
+      daily_chance_of_rain: 15, 
+      daily_chance_of_snow: 0 
+    )
+
+    Vote.create!(
+      user_id: user2.id,
+      round_id: round.id,
+      lat: (40.7128 + rand(-0.01..0.01)).to_s,
+      lon: (-74.0060 + rand(-0.01..0.01)).to_s,
+      status: 1,
+      score: rand(1..10000),
+      location_name: 'Vote Location', 
+      region: 'Vote Region', 
+      country: 'Vote Country', 
+      maxtemp_f: 70.0, 
+      mintemp_f: 55.0, 
+      avgtemp_f: 62.5, 
+      maxwind_mph: 8.0, 
+      totalprecip_in: 0.2, 
+      avgvis_miles: 6.0, 
+      avghumidity: 60.0, 
+      daily_chance_of_rain: 15, 
+      daily_chance_of_snow: 0 
+    )
   end
 
-  # Create a daily game
-  daily_game = Game.create(name: 'Daily Game', status: 0, game_type: 2)
 
   # Create rounds for the daily game
   (1..4).each do |day|
-    round = Round.create(game: daily_game, close_date: (Date.today + day).to_s, process_date: (Date.today + day + 1).to_s, location_name: 'Daily Location', region: 'Region', country: 'Country', lat: (37.7749 + rand(-0.01..0.01)).to_s, lon: (-122.4194 + rand(-0.01..0.01)).to_s, maxtemp_f: 70.0, mintemp_f: 55.0, maxwind_mph: 8.0, totalprecip_in: 0.2, avgvis_miles: 6.0, avghumidity: 60.0, daily_chance_of_rain: 15, daily_chance_of_snow: 0)
+    round = Round.create!(
+      game_id: @daily_game.id,
+      status: 2,
+      close_date: (Date.today + day).to_s,
+      process_date: (Date.today + day + 1).to_s,
+      location_name: 'Daily Location',
+      region: 'Region',
+      country: 'Country',
+      lat: (37.7749 + rand(-0.01..0.01)).to_s,
+      lon: (-122.4194 + rand(-0.01..0.01)).to_s,
+      maxtemp_f: 70.0,
+      mintemp_f: 55.0,
+      avgtemp_f: 62.5, 
+      maxwind_mph: 8.0,
+      totalprecip_in: 0.2,
+      avgvis_miles: 6.0,
+      avghumidity: 60.0,
+      daily_chance_of_rain: 15,
+      daily_chance_of_snow: 0
+    )
 
     # Create votes for each user in the round
-    Vote.create(user: user1, round: round, lat: (37.7749 + rand(-0.01..0.01)).to_s, lon: (-122.4194 + rand(-0.01..0.01)).to_s, status: 0, score: rand(1..100))
-  end
+    Vote.create!(
+      user_id: user1.id,
+      round_id: round.id,
+      lat: (37.7749 + rand(-0.01..0.01)).to_s,
+      lon: (-122.4194 + rand(-0.01..0.01)).to_s,
+      status: 1,
+      score: rand(1..10000),
+      location_name: 'Vote Location', 
+      region: 'Vote Region', 
+      country: 'Vote Country', 
+      maxtemp_f: 70.0, 
+      mintemp_f: 55.0, 
+      avgtemp_f: 62.5, 
+      maxwind_mph: 8.0, 
+      totalprecip_in: 0.2, 
+      avgvis_miles: 6.0, 
+      avghumidity: 60.0, 
+      daily_chance_of_rain: 15, 
+      daily_chance_of_snow: 0 
+    )
 
-  # Associate games with the user
-  UserGame.create!(user_id: user1.id, game_id: daily_game.id, invitation: 1)
-  UserGame.create!(user_id: user1.id, game_id: competitive_game.id, invitation: 1)
+  Vote.create!(
+      user_id: user2.id,
+      round_id: round.id,
+      lat: (37.7749 + rand(-0.01..0.01)).to_s,
+      lon: (-122.4194 + rand(-0.01..0.01)).to_s,
+      status: 1,
+      score: rand(1..10000),
+      location_name: 'Vote Location', 
+      region: 'Vote Region', 
+      country: 'Vote Country', 
+      maxtemp_f: 70.0, 
+      mintemp_f: 55.0, 
+      avgtemp_f: 62.5, 
+      maxwind_mph: 8.0, 
+      totalprecip_in: 0.2, 
+      avgvis_miles: 6.0, 
+      avghumidity: 60.0, 
+      daily_chance_of_rain: 15, 
+      daily_chance_of_snow: 0 
+    )
+  end
 end

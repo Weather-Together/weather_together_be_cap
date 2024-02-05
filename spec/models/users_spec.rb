@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:email) }
   end
 
-   before(:all) do
+   before(:each) do
     # Load test data
     load_query_test_data
   end
@@ -29,17 +29,17 @@ RSpec.describe User, type: :model do
   describe "#average_score_in_daily_games" do
     it "returns the correct average score in daily games" do
       user = User.find_by(username: 'user1')
-      expect(user.average_score_in_daily_games).to be_a(Float).or be_nil
+      expect(user.average_score_in_daily_games).to be_a(Float)
     end
   end
 
   describe "#date_and_score_of_best_daily_score" do
     it "returns the correct date and score of the best daily score" do
       user = User.find_by(username: 'user1')
-      result = user.date_and_score_of_best_daily_score
+     lowest_score_vote = user.date_and_score_of_best_daily_score
 
-      expect(result[:date]).to be_a(Date).or be_nil
-      expect(result[:score]).to be_a(Float).or be_nil
+      expect(lowest_score_vote[:date]).to be_a(String)
+      expect(lowest_score_vote[:score]).to be_a(Float)
     end
   end
 
@@ -47,7 +47,6 @@ RSpec.describe User, type: :model do
     it "returns the correct grade book for daily rounds" do
       user = User.find_by(username: 'user1')
       result = user.grade_book_daily_round
-
       expect(result).to be_a(Hash)
       expect(result.keys).to match_array(['0.00-500.00', '500.01-1000.00', '1000.01-2000.00', '2000.01-5000.00', '5000.01+'])
     end
@@ -56,11 +55,10 @@ RSpec.describe User, type: :model do
   describe ".top_5_competitive_users" do
     it "returns the top 5 competitive users with average scores" do
       result = User.top_5_competitive_users
-
       expect(result).to be_an(Array)
-      expect(result.length).to eq(5)
+      expect(result.length).to eq(2)
       expect(result[0]).to have_key(:username)
-      expect(result[0]).to have_key(:average_score)
+      expect(result[0]).to have_key(:score)
     end
   end
 
@@ -99,7 +97,7 @@ RSpec.describe User, type: :model do
     it "returns the rank of the user in the last three competitive games" do
       user = User.find_by(username: 'user1')
       result = user.last_three_competitive_games_rank
-
+      
       expect(result).to be_an(Array)
       expect(result.length).to eq(3)
       expect(result[0]).to have_key(:round_id)
@@ -111,8 +109,7 @@ RSpec.describe User, type: :model do
     it "returns the top three finishes in competitive games" do
       user = User.find_by(username: 'user1')
       result = user.top_three_finishes_competitive
-
-      expect(result).to be_an(ActiveRecord::Relation)
+      expect(result).to be_an(Array)
       expect(result.count).to eq(3)
     end
   end

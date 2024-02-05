@@ -11,6 +11,7 @@ class Game < ApplicationRecord
   has_many :rounds
   has_many :user_games
   has_many :users, through: :user_games
+  has_many :votes, through: :rounds
 
   enum status: { open: 0, closed: 1 }
   enum game_type: { competitive: 0, custom: 1, daily: 2 }

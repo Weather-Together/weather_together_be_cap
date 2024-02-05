@@ -39,95 +39,117 @@ class User < ApplicationRecord
 
     #STATS FOR DAILY GAMES
   def daily_game_count
-    games.where(game_type: :daily).count
+     games.find_by(game_type: 2).votes.where(user_id: id).count
   end
 
   def average_score_in_daily_games
-    daily_rounds = rounds.where(game_type: :daily, status: :processed)
-    daily_rounds.average(:score)
+    daily_rounds = rounds.where(game_type: 2)
+    daily_votes = Vote.joins(:round).where(rounds: { id: daily_rounds.pluck(:id) })
+    daily_votes.average(:score)
   end
 
   def date_and_score_of_best_daily_score
-    lowest_score_round = rounds.where(game_type: :daily, status: :processed).order(score: :asc).first
-
-    if lowest_score_round
-      { date: lowest_score_round.created_at.to_date, score: lowest_score_round.score }
-    else
-      { date: nil, score: nil }
-    end
+    lowest_score_vote = Vote.joins(:round).where(rounds: { game_type: 2}).order("votes.score ASC").first
+    {date: lowest_score_vote&.round&.process_date, score: lowest_score_vote&.score}
   end
 
-  def grade_book_daily_round
-    daily_rounds = rounds.where(game_type: :daily, status: :processed)
 
+
+  def grade_book_daily_round
+    daily_votes = votes.joins(:round).where(rounds: { game_type: 2 })
+    
     score_ranges = {
       '0.00-500.00' => (0.00..500.00),
       '500.01-1000.00' => (500.01..1000.00),
       '1000.01-2000.00' => (1000.01..2000.00),
       '2000.01-5000.00' => (2000.01..5000.00),
       '5000.01+' => (5000.01..Float::INFINITY)
-     }
+    }
 
     result = {}
 
     score_ranges.each do |range_label, range|
-      result[range_label] = daily_rounds.where(score: range).count
+      result[range_label] = daily_votes.where(score: range).count
     end
 
     result
   end
 
+
   #STATS FOR COPETITIVE GAMES 
   
-
   def self.top_5_competitive_users
-    top_5_users = User.joins(rounds: :game)
-                      .where('rounds.game_type = ? AND rounds.status = ? AND rounds.process_date IS NOT NULL', Game.game_types[:competitive], Game.statuses[:processed])
-                      .group('users.id')
-                      .order('AVG(rounds.score) DESC')
-                      .limit(5)
-                      .pluck(:username, 'AVG(rounds.score) AS average_score')
-    top_5_users
-  end
+
+    avg_user_score = 
+    User.all.map do |user|
+      {
+        user_id: user.id,
+        username: user.username,
+        score: user.games.find_by(game_type: 0).votes.where(user_id: user.id).average(:score)
+      }
+   end
+   avg_user_score.sort_by { |user| user[:score] }[0..5]
+  #   top_5_users = User.joins(rounds: { votes: :game })
+  #                     .select("users.*, avg(votes.score) as 'average_score'")
+  #                     .where(rounds: { game_type: 0, status: 2})
+  #                     .group('users.id')
+  #                     .order('average_score DESC')
+  #                     .limit(5)
+  #                     .pluck(:username, 'avg(votes.score) as average_score')
+   end
 
 
   def user_competitive_rank
-    subquery = rounds
-                .joins(:game)
-                .where(games: { game_type: :competitive, status: :processed })
-                .group('users.id')
-                .select('users.id', 'AVG(rounds.score) as average_score')
-                .to_sql
 
-    competitive_rounds = User
-                        .joins("INNER JOIN (#{subquery}) AS user_scores ON users.id = user_scores.id")
-                        .where('average_score < ?', rounds.average(:score))
-                        .count
+    avg_user_score = 
+    User.all.map do |user|
+      {
+        user_id: user.id,
+        username: user.username,
+        score: user.games.find_by(game_type: 0).votes.where(user_id: user.id).average(:score)
+      }
+   end
+   avg_user_score.sort_by { |user| user[:score] }.index { |user| user[:user_id] == id } + 1
 
-    competitive_rounds + 1
+    # subquery = rounds
+    #   .joins(:game)
+    #   .where(games: { game_type: 0, status: :processed })
+    #   .group('users.id')
+    #   .select('users.id', 'AVG(rounds.score) as average_score')
+    #   .to_sql
+
+    # competitive_rank = User
+    #   .joins("INNER JOIN (#{subquery}) AS user_scores ON users.id = user_scores.id")
+    #   .joins(:rounds)
+    #   .where(rounds: { game_type: 0, status: :processed })
+    #   .where('user_scores.average_score > ?', votes.average(:score))
+    #   .count
+
+    # competitive_rank + 1
   end
-
-
 
 
   def competitive_game_count
-    games.where(game_type: :competitive).count
+    games.find_by(game_type: 0).votes.where(user_id: id).count
   end
 
   def average_score_in_competitive_games
-    competitive_rounds = rounds.where(game_type: :competitive, status: :processed)
-    competitive_rounds.average(:score)
+    competitive_rounds = rounds.joins(:votes).where(game_type: 0, status: :processed)
+    competitive_rounds.average('votes.score')
   end
 
   def top_three_competitive_rounds_by_score
-    competitive_rounds = rounds.where(game_type: :competitive, status: :processed).order(score: :asc).limit(3)
+    competitive_rounds = rounds
+                          .joins(:votes)
+                          .where(game_type: 0, status: :processed)
+                          .order('votes.score ASC')
+                          .limit(3)
   end
 
   def last_three_competitive_games_rank
     competitive_rounds = rounds
-      .joins(:game)  # Assuming there's an association between rounds and games
-      .where(games: { game_type: :competitive, status: :processed })
-      .order(date: :desc)
+      .where(rounds: { game_type: 0, status: :processed })
+      .order(process_date: :desc)
       .limit(3)
       
     user_ranks = competitive_rounds.map do |round|
@@ -135,7 +157,7 @@ class User < ApplicationRecord
         .votes
         .joins(:user)
         .where(votes: { status: :processed })
-        .order('votes.score ASC')
+        .order(score: :asc)
         .pluck(:user_id)
         .index(id)
 
@@ -147,10 +169,8 @@ class User < ApplicationRecord
 
 
   def top_three_finishes_competitive
-    competitive_rounds = rounds
-                        .where(game_type: :competitive, status: :processed)
-                        .order(score: :asc)
-                        .limit(3)
+    result = votes.joins(:round).where(rounds: { game_type: 0, status: :processed }).order("votes.score ASC").limit(3)
+    result.map { |vote| [vote.round&.process_date, vote.score] }
   end
 
 end

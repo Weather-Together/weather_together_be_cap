@@ -26,6 +26,11 @@ Rails.application.routes.draw do
   get 'api/v0/users/:user_id/rounds/current_daily_round', to: 'api/v0/users/rounds#current_daily_round'
   post 'api/v0/users/:user_id/rounds/current_daily_round/vote', to: 'api/v0/users/rounds#daily_vote'
 
+  #user stats
+  get 'api/v0/users/:user_id/daily_stats', to: 'api/v0/users#daily_stats'
+  get 'api/v0/users/:user_id/competitive_stats', to: 'api/v0/users#competitive_stats'
+
+
 
 
   #comp rounds and voting
