@@ -1,21 +1,6 @@
 Rails.application.routes.draw do
-  # Health check route
-  get "up" => "rails/health#show", as: :rails_health_check
+  get "up" => "rails/health#show", :as => :rails_health_check
 
-
-  # Users routes
-#   resources :users, only: [:new, :create] do
-#     get 'verify_account/:token', to: 'users#verify_account', on: :member, as: :verify_account
-#   end
-#   get 'verification_sent', to: 'users#verification_sent', as: :verification_sent
-
-#   namespace :api do
-#     namespace :v0 do
-#       resources :users, only: [:new, :create]
-
-#     end
-#   end
-  
   # get "api/v0/turnover", :to 'api/v0/cron#turnover_confirm'
   get "api/v0/rounds/recent_rounds", to: 'api/v0/rounds#recent_rounds'
   get 'api/v0/rounds/current_competitive_round', to: 'api/v0/rounds#current_competitive_round'
@@ -29,9 +14,6 @@ Rails.application.routes.draw do
   #user stats
   get 'api/v0/users/:user_id/daily_stats', to: 'api/v0/users#daily_stats'
   get 'api/v0/users/:user_id/competitive_stats', to: 'api/v0/users#competitive_stats'
-
-
-
 
   #comp rounds and voting
   get 'api/v0/rounds/:id/votes', to: 'api/v0/rounds/votes#index'
@@ -58,15 +40,12 @@ Rails.application.routes.draw do
   # API routes
   namespace :api do
     namespace :v0 do
-
       resources :rounds, only: [:show, :index]
 
       resources :users, only: [:new, :create, :index] do
-        resources :rounds, only: [:show], controller: 'users/rounds'
-        get 'recent_rounds', to: 'users#recent_rounds'
+        resources :rounds, only: [:show], controller: "users/rounds"
+        get "recent_rounds", to: "users#recent_rounds"
       end
-
     end
   end
 end
-
