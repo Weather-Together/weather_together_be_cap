@@ -585,7 +585,9 @@
 	}
   ```
 
-       ### 17. Accept/Decline Invitation for Private Game
+
+
+  ### 17. Accept/Decline Invitation for Private Game
 * **PATCH /api/v0/users/:user_id/games/:game_id**
   - Controller: Api::V0::Users::GamesController#create
   - Example Requests:
@@ -605,8 +607,182 @@
     ```
 
     Status Code 202 : Succesfully Accepted Invitation
+
     Status Code 204 : Succesfully Deleted Invitation
+
     Status Code 404 : User/game relationship not found
+
+      ### 18. Daily Game User Stats
+* **GET api/v0/users/:id**
+  - Controller: Api::V0::UsersController#daily_stats
+  - Example Request:
+  ```
+  curl -X GET https://weather-together-be.onrender.com/api/v0/users/240/daily_stats 
+  ```
+  - Example Response:
+  ```json
+  {
+    "daily_stats": {
+        "daily_game_count": 6,
+        "average_score_in_daily_games": null,
+        "date_and_score_of_best_daily_score": {
+            "date": "2024-02-04",
+            "score": null
+        },
+        "grade_book_daily_round": {
+            "0.00-500.00": 0,
+            "500.01-1000.00": 0,
+            "1000.01-2000.00": 0,
+            "2000.01-5000.00": 0,
+            "5000.01+": 0
+        }
+    }
+  }
+  ```
+
+    ### 18. Daily Game User Stats
+* **GET api/v0/users/:id**
+  - Controller: Api::V0::UsersController#competitive_stats
+  - Example Request:
+  ```
+  curl -X GET https://weather-together-be.onrender.com/api/v0/users/240/competitive_stats 
+  ```
+  - Example Response:
+  ```json
+  {
+    "competitive_stats": {
+        "top_5_competitive_users": [
+            {
+                "user_id": 10,
+                "username": "username10",
+                "score": 6277.015
+            },
+            {
+                "user_id": 2,
+                "username": "username2",
+                "score": 12376.275000000001
+            },
+            {
+                "user_id": 4,
+                "username": "username4",
+                "score": 14370.864999999998
+            },
+            {
+                "user_id": 1,
+                "username": "username1",
+                "score": 14681.955
+            },
+            {
+                "user_id": 9,
+                "username": "username9",
+                "score": 15003.634999999998
+            },
+            {
+                "user_id": 5,
+                "username": "username5",
+                "score": 16385.595
+            }
+        ],
+        "user_competitive_rank": 4,
+        "competitive_game_count": 6,
+        "average_score_in_competitive_games": 16854.288,
+        "top_three_competitive_rounds_by_score": [
+            {
+                "id": 2,
+                "game_id": 1,
+                "status": "processed",
+                "created_at": "2024-02-05T21:29:29.245Z",
+                "updated_at": "2024-02-05T21:29:37.643Z",
+                "close_date": "2024-02-02",
+                "process_date": "2024-02-05",
+                "game_type": "competitive",
+                "location_name": "Longyearbyen (Svalbard)",
+                "region": "Sogn og Fjordane",
+                "country": "Norway",
+                "maxtemp_f": 20.3,
+                "mintemp_f": 4.7,
+                "avgtemp_f": null,
+                "maxwind_mph": 13.0,
+                "totalprecip_in": 0.0,
+                "avgvis_miles": 6.0,
+                "avghumidity": 89,
+                "daily_chance_of_rain": 45,
+                "daily_chance_of_snow": 0,
+                "lat": "78.22",
+                "lon": "15.63"
+            },
+            {
+                "id": 2,
+                "game_id": 1,
+                "status": "processed",
+                "created_at": "2024-02-05T21:29:29.245Z",
+                "updated_at": "2024-02-05T21:29:37.643Z",
+                "close_date": "2024-02-02",
+                "process_date": "2024-02-05",
+                "game_type": "competitive",
+                "location_name": "Longyearbyen (Svalbard)",
+                "region": "Sogn og Fjordane",
+                "country": "Norway",
+                "maxtemp_f": 20.3,
+                "mintemp_f": 4.7,
+                "avgtemp_f": null,
+                "maxwind_mph": 13.0,
+                "totalprecip_in": 0.0,
+                "avgvis_miles": 6.0,
+                "avghumidity": 89,
+                "daily_chance_of_rain": 45,
+                "daily_chance_of_snow": 0,
+                "lat": "78.22",
+                "lon": "15.63"
+            },
+            {
+                "id": 2,
+                "game_id": 1,
+                "status": "processed",
+                "created_at": "2024-02-05T21:29:29.245Z",
+                "updated_at": "2024-02-05T21:29:37.643Z",
+                "close_date": "2024-02-02",
+                "process_date": "2024-02-05",
+                "game_type": "competitive",
+                "location_name": "Longyearbyen (Svalbard)",
+                "region": "Sogn og Fjordane",
+                "country": "Norway",
+                "maxtemp_f": 20.3,
+                "mintemp_f": 4.7,
+                "avgtemp_f": null,
+                "maxwind_mph": 13.0,
+                "totalprecip_in": 0.0,
+                "avgvis_miles": 6.0,
+                "avghumidity": 89,
+                "daily_chance_of_rain": 45,
+                "daily_chance_of_snow": 0,
+                "lat": "78.22",
+                "lon": "15.63"
+            }
+        ],
+        "last_three_competitive_games_rank": [
+            {
+                "round_id": 2,
+                "user_rank": 3
+            },
+            {
+                "round_id": 1,
+                "user_rank": 6
+            }
+        ],
+        "top_three_finishes_competitive": [
+            [
+                "2024-02-05",
+                7146.179999999999
+            ],
+            [
+                "2024-02-04",
+                22217.73
+            ]
+        ]
+    }
+  }
+  ```
 
 
 ### Recent Rounds
