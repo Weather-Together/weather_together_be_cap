@@ -640,7 +640,7 @@
   }
   ```
 
-    ### 10. Competitive Game User Stats
+    ### 19. Competitive Game User Stats
 * **GET api/v0/users/:id**
   - Controller: Api::V0::UsersController#competitive_stats
   - Example Request:
