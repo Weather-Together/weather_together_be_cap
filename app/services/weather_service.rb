@@ -1,5 +1,4 @@
 class WeatherService
-
   def test
     lat = "39.9450"
     lon = "-105.8172"
@@ -17,7 +16,7 @@ class WeatherService
     if hash[:error]
       hash
     else
-      parsed = { 
+      parsed = {
         location: hash[:location],
         weather_data: hash[:forecast][:forecastday].first[:day]
       }

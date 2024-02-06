@@ -13,13 +13,12 @@ class User < ApplicationRecord
   has_many :games, through: :user_games
   has_many :rounds, through: :games
 
-
   before_create :generate_verification_token
-  
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
-  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
 
-  enum verified: { unverified: 0, verified: 1, oauth: 2 }
+  validates :username, presence: true, uniqueness: {case_sensitive: false}
+  validates :email, presence: true, uniqueness: {case_sensitive: false}, format: {with: URI::MailTo::EMAIL_REGEXP}
+
+  enum verified: {unverified: 0, verified: 1, oauth: 2}
 
   def generate_verification_token
     self.verification_token = SecureRandom.urlsafe_base64
@@ -27,17 +26,17 @@ class User < ApplicationRecord
 
   def previous_public_rounds
     @recent_rounds = rounds
-                          .where(game_type: 0)
-                          .order(created_at: :desc)
-                          .limit(3)
-                          .includes(:votes)
+      .where(game_type: 0)
+      .order(created_at: :desc)
+      .limit(3)
+      .includes(:votes)
   end
 
   def self.username_generator
     "#{Faker::Adjective.positive.capitalize}#{Faker::Creature::Animal.name.capitalize}"
   end
 
-    #STATS FOR DAILY GAMES
+  # STATS FOR DAILY GAMES
   def daily_game_count
      games.find_by(game_type: 2).votes.where(user_id: id).count
   end
@@ -128,7 +127,6 @@ class User < ApplicationRecord
     # competitive_rank + 1
   end
 
-
   def competitive_game_count
     games.find_by(game_type: 0).votes.where(user_id: id).count
   end
@@ -151,8 +149,8 @@ class User < ApplicationRecord
       .where(rounds: { game_type: 0, status: :processed })
       .order(process_date: :desc)
       .limit(3)
-      
-    user_ranks = competitive_rounds.map do |round|
+
+    competitive_rounds.map do |round|
       rank_in_round = round
         .votes
         .joins(:user)
@@ -161,16 +159,12 @@ class User < ApplicationRecord
         .pluck(:user_id)
         .index(id)
 
-      { round_id: round.id, user_rank: rank_in_round + 1 }
+      {round_id: round.id, user_rank: rank_in_round + 1}
     end
-
-    user_ranks
   end
-
 
   def top_three_finishes_competitive
     result = votes.joins(:round).where(rounds: { game_type: 0, status: :processed }).order("votes.score ASC").limit(3)
     result.map { |vote| [vote.round&.process_date, vote.score] }
   end
-
 end

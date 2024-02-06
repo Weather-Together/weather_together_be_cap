@@ -8,7 +8,6 @@ class Api::V0::Users::RoundsController < ApplicationController
     end
   end
 
-  
   def current_competitive_round
     current_round = Game.current_competitive_round
     render json: RoundSerializer.new(current_round)
@@ -21,10 +20,10 @@ class Api::V0::Users::RoundsController < ApplicationController
 
   def daily_vote
     round = Game.current_daily_round
-    vote = Vote.create!( lat: params[:lat], 
-                        lon: params[:lon], 
-                        user_id: params[:user_id],
-                        round_id: round.id)
+    vote = Vote.create!(lat: params[:lat],
+      lon: params[:lon],
+      user_id: params[:user_id],
+      round_id: round.id)
     vote.process
     render json: VoteSerializer.new(vote), status: 201
   end
@@ -38,7 +37,4 @@ class Api::V0::Users::RoundsController < ApplicationController
   def round_params
     params.require(:round).permit(:game_id)
   end
-
 end
-
-
