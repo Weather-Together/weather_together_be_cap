@@ -284,10 +284,10 @@ namespace :populate_database do
     @round.process_round
     @round2.process_round
 
-    @private_game1 = Game.create!(length_in_days: 151, guess_lead_time: 3, player_cap: 315, game_type: 0, results: nil)
+    @private_game1 = Game.create!(length_in_days: 151, guess_lead_time: 3, player_cap: 315, game_type: 1, results: nil)
 
-    @user_game1 = UserGame.create!(user_id: @user1.id, game_id: @private_game1.id, invitation: accepted)
-    @user_game2 = UserGame.create!(user_id: @user2.id, game_id: @private_game1.id, invitation: accepted)
+    @user_game1 = UserGame.create!(user_id: @user1.id, game_id: @private_game1.id, invitation: :accepted)
+    @user_game2 = UserGame.create!(user_id: @user2.id, game_id: @private_game1.id, invitation: :accepted)
 
     @private_round1 = Round.create!(game_id: @private_game1.id,
       location_name: data11[:location][:name],
