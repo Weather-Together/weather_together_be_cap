@@ -283,5 +283,26 @@ namespace :populate_database do
 
     @round.process_round
     @round2.process_round
+
+    @private_game1 = Game.create!(length_in_days: 151, guess_lead_time: 3, player_cap: 315, game_type: 1, results: nil)
+
+    @user_game1 = UserGame.create!(user_id: @user1.id, game_id: @private_game1.id, invitation: :accepted)
+    @user_game2 = UserGame.create!(user_id: @user2.id, game_id: @private_game1.id, invitation: :accepted)
+
+    @private_round1 = Round.create!(game_id: @private_game1.id,
+      location_name: data11[:location][:name],
+      region: data11[:location][:region],
+      country: data11[:location][:country],
+      lat: data11[:location][:lat],
+      lon: data11[:location][:lon],
+      maxtemp_f: data11[:weather_data][:maxtemp_f],
+      mintemp_f: data11[:weather_data][:mintemp_f],
+      maxwind_mph: data11[:weather_data][:maxwind_mph],
+      totalprecip_in: data11[:weather_data][:totalprecip_in],
+      avgvis_miles: data11[:weather_data][:avgvis_miles],
+      avghumidity: data11[:weather_data][:avghumidity],
+      daily_chance_of_rain: data11[:weather_data][:daily_chance_of_rain],
+      daily_chance_of_snow: data11[:weather_data][:daily_chance_of_snow])
+    @round.update(close_date: (Date.today - 4).to_s, process_date: (Date.today - 1).to_s)
   end
 end
