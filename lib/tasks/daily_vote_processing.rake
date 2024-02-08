@@ -167,6 +167,7 @@ namespace :populate_database do
       avghumidity: data16[:weather_data][:avghumidity],
       daily_chance_of_rain: data16[:weather_data][:daily_chance_of_rain],
       daily_chance_of_snow: data16[:weather_data][:daily_chance_of_snow])
+    @round6.update(close_date: (Date.today+1).to_s, process_date: (Date.today + 4).to_s)
     @round7 = Round.create!(game_id: @daily_game.id,
       location_name: data11[:location][:name],
       region: data11[:location][:region],
@@ -256,6 +257,8 @@ namespace :populate_database do
       avghumidity: data16[:weather_data][:avghumidity],
       daily_chance_of_rain: data16[:weather_data][:daily_chance_of_rain],
       daily_chance_of_snow: data16[:weather_data][:daily_chance_of_snow])
+    @round12.update(close_date: (Date.today+1).to_s, process_date: (Date.today + 4).to_s)
+
 
     Round.all.each do |round|
       Vote.create!(user_id: @user1.id, round_id: round.id, lat: lat1, lon: lon1)

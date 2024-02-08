@@ -17,9 +17,9 @@ class Round < ApplicationRecord
   enum game_type: {competitive: 0, custom: 1, daily: 2}
 
   def self.turnover
-    target_data = generate_target_data
     ongoing_games = Game.where(status: 0)
     ongoing_games.each do |game|
+      target_data = generate_target_data
       round = Round.find_by(close_date: (Date.today + 1).to_s, game_id: game.id)
       unless round
         Round.create(game_id: game.id,
