@@ -598,12 +598,16 @@
   - Example Response:
     
     ```json
-    {
-      data:
-      {
-        message: "Successfully Accepted Invitation"
-      } 
-    }
+  {
+    "data": {
+        "id": "240",
+        "type": "user",
+        "attributes": {
+            "email": “new@gmail.com",
+            "username": “new”
+    		    }
+   		 }
+	}
     ```
 
     Status Code 202 : Succesfully Accepted Invitation
