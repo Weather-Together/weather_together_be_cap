@@ -87,6 +87,7 @@ class User < ApplicationRecord
         score: user.games.find_by(game_type: 0).votes.where(user_id: user.id).average(:score)
       }
    end
+   avg_user_score = avg_user_score.select { |user_hash| user_hash[:score] }
    avg_user_score.sort_by { |user| user[:score] }[0..5]
   #   top_5_users = User.joins(rounds: { votes: :game })
   #                     .select("users.*, avg(votes.score) as 'average_score'")
@@ -108,6 +109,7 @@ class User < ApplicationRecord
         score: user.games.find_by(game_type: 0).votes.where(user_id: user.id).average(:score)
       }
    end
+   avg_user_score = avg_user_score.select { |user_hash| user_hash[:score] }
    avg_user_score.sort_by { |user| user[:score] }.index { |user| user[:user_id] == id } + 1
 
     # subquery = rounds
