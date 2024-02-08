@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   post 'api/v0/users/oauth_login', to: 'api/v0/users#find_or_create'
 
   #private/custom games
+  get 'api/v0/users/:id/games', to: 'api/v0/users/games#index'
   post 'api/v0/users/:id/games', to: 'api/v0/users/games#create'
   get 'api/v0/users/:id/games/:game_id', to: 'api/v0/users/games#show'
   patch 'api/v0/users/:id/games/:game_id', to: 'api/v0/users/games#invite_rsvp'

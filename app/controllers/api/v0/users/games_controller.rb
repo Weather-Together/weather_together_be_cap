@@ -20,6 +20,16 @@ class Api::V0::Users::GamesController < ApplicationController
     render json: GameSerializer.new(game)
   end
 
+  def index
+    begin
+      user = User.find(params[:id])
+      games = UserGame.where(user_id: user.id).map { |user_game| user_game.game }
+      render json: GameSerializer.new(games.select { |game| game.game_type == "custom" })
+    rescue ActiveRecord::RecordNotFound => exception
+      render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).error_json, status: :not_found
+    end
+  end
+
   def invite_rsvp
     user_game = UserGame.find_by(user_id: params[:id], game_id: params[:game_id])
     if user_game
