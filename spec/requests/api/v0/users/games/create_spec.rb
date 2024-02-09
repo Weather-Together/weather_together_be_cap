@@ -18,7 +18,6 @@ describe "users/games create" do
     post "/api/v0/users/#{@user1.id}/games", params: new_game.to_json, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
     expect(response).to be_successful
     expect(response.status).to eq(200)
-
     game = JSON.parse(response.body, symbolize_names: true)[:data]
 
     expect(game).to be_a Hash
