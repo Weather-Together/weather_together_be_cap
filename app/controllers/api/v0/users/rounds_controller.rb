@@ -27,6 +27,7 @@ class Api::V0::Users::RoundsController < ApplicationController
     vote.process
 
     if valid_location?(original_lat, original_lon, vote.lat, vote.lon)
+      vote.get_location_information
       render json: VoteSerializer.new(vote), status: 201
     else
       vote.destroy

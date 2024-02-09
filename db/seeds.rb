@@ -266,7 +266,7 @@ end
 @round.process_round
 @round2.process_round
 
-@private_game1 = Game.create!(length_in_days: 151, guess_lead_time: 3, player_cap: 315, game_type: 1, game_name: "Fun Times", results: nil)
+@private_game1 = Game.create!(length_in_days: 151, guess_lead_time: 3, player_cap: 315, game_type: 1, name: "Fun Times", results: nil)
 
 @user_game1 = UserGame.create!(user_id: @user1.id, game_id: @private_game1.id, invitation: :accepted)
 @user_game2 = UserGame.create!(user_id: @user2.id, game_id: @private_game1.id, invitation: :accepted)
