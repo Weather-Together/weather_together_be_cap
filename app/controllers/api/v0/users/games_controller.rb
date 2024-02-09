@@ -23,8 +23,8 @@ class Api::V0::Users::GamesController < ApplicationController
   def index
     begin
       user = User.find(params[:id])
-      games = UserGame.where(user_id: user.id).map { |user_game| user_game.game }
-      render json: GameSerializer.new(games.select { |game| game.game_type == "custom" })
+      user_games = UserGame.where(user_id: user.id, game_type: 1)
+      render json: UserGameSerializer.new(user_games)
     rescue ActiveRecord::RecordNotFound => exception
       render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).error_json, status: :not_found
     end

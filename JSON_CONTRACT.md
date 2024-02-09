@@ -789,6 +789,54 @@
   ```
 
 
+      ### 20. Private/Custom Gae Index 
+* **GET api/v0/users/:id/games**
+  - Controller: Api::V0::Games::UsersController#index
+  - Example Request:
+  ```
+  curl -X GET https://weather-together-be.onrender.com/api/v0/users/496/games
+  ```
+  - Example Response:
+  ```json
+  {
+    "data": [
+        {
+            "id": "64",
+            "type": "game",
+            "attributes": {
+                "game_type": "custom",
+                "name": "game1",
+                "length_in_days": 151,
+                "guess_lead_time": 3,
+                "player_cap": 315,
+                "status": "open",
+                "start_date": "2024-02-09",
+                "close_date": "2024-07-09",
+                "users": [
+                    {
+                        "id": 496,
+                        "type": "user",
+                        "attributes": {
+                            "email": "user1@gmail.com",
+                            "username": "username1"
+                        }
+                    },
+                    {
+                        "id": 497,
+                        "type": "user",
+                        "attributes": {
+                            "email": "user2@gmail.com",
+                            "username": "username2"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+  }
+  ```
+
+
 ### Recent Rounds
 * **GET /api/v0/rounds/recent_rounds**
   - Controller: Api::V0::RoundsController#recent_rounds

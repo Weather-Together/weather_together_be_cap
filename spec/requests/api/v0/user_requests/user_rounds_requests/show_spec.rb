@@ -11,7 +11,6 @@ RSpec.describe "User Rounds Show" do
     expect(response).to be_successful
 
     json_response = JSON.parse(response.body)
-    # binding.pry
     expect(json_response["data"]["id"]).to eq(@round1.id.to_s)
     expect(json_response["data"]["type"]).to eq("round")
 
