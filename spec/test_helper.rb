@@ -122,8 +122,17 @@ def load_test_data
     @vote9 = Vote.create!(user_id: @user9.id, round_id: @round1.id, lat: lat9, lon: lon9)
     @vote10 = Vote.create!(user_id: @user10.id, round_id: @round1.id, lat: lat10, lon: lon10)
 
-    UserGame.create!(user_id: @user1.id, game_id: @game1.id)
-    UserGame.create!(user_id: @user2.id, game_id: @game1.id)
+    UserGame.create!(user_id: @user1.id, game_id: @game1.id, )
+    UserGame.create!(user_id: @user2.id, game_id: @game1.id, )
+
+        #private game
+
+    @private_game1 = Game.create!(length_in_days: 151, guess_lead_time: 3, player_cap: 315, game_type: 1, name: "game1", results: nil)
+
+    @user_game1 = UserGame.create!(user_id: @user1.id, game_id: @private_game1.id, invitation: :accepted)
+    @user_game2 = UserGame.create!(user_id: @user2.id, game_id: @private_game1.id, invitation: :accepted)
+
+
 end
 
 def load_query_test_data 
