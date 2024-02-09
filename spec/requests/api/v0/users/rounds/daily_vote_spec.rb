@@ -51,7 +51,7 @@ describe "Daily game vote" do
     VCR.turn_on!
     WebMock.disable_net_connect!
     expect(response).to_not be_successful
-    expect(response.status).to eq(400)
+    expect(response.status).to eq(422)
 
     vote1 = JSON.parse(response.body)
 
