@@ -17,7 +17,8 @@ class GameSerializer
         type: "user",
         attributes: {
           email: user.email,
-          username: user.username
+          username: user.username,
+          invited: UserGame.find_by(user_id: user.id, game_id: game.id).invitation
         }
       }
     end
