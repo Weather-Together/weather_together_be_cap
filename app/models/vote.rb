@@ -45,4 +45,9 @@ class Vote < ApplicationRecord
     snow_diff = (round.daily_chance_of_snow - guess[:daily_chance_of_snow])**2
     high_temp_diff + low_temp_diff + humidity_diff + wind_diff + rain_diff + snow_diff
   end
+
+  def get_location_information
+    info = RailsLocationInfoService.get_details(lat, lon) #need to update vote with return once we start receiving correct data
+    update!(image:  info[:images].first, wiki: info[:wiki])
+  end
 end
