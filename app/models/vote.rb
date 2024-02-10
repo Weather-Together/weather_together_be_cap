@@ -48,7 +48,6 @@ class Vote < ApplicationRecord
 
   def get_location_information
     info = LocationInfoService.get_details(lat, lon) #need to update vote with return once we start receiving correct data
-    require 'pry'; binding.pry
-    update!(image: info[:images].first, wiki: info[:wiki])
+    update!(image: info[:images], wiki: info[:wiki])
   end
 end
