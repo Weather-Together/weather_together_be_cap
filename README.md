@@ -7,9 +7,7 @@
 [![Issues][issues-shield]][issues-url]
 
 
-[![Weather Together](https://img.shields.io/badge/Weather%20Together-Visit%20Website-blue?style=for-the-badge)](https://weather-together.onrender.com/)
-
-
+[![Weather Together](https://img.shields.io/badge/Weather%20Together-Visit%20Website-blue?style=for-the-badge)](https://weather-together.github.io/weather1-fe/)
 
 
 
@@ -17,25 +15,32 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Weather-Together/weather_together_be">
+  <a href="https://github.com/Weather-Together/weather_together_be_cap">
     <img src="images/logo_480.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Weather Together</h3>
 
   <p align="center">
-    Weather Together is a game app where a daily set of weather data is displayed to the user (player) from a randomly selected location in the world. Each day the player guesses a location where they think this weather data was collected through an interactive map selector. They are able to keep track of prior guesses as well as track their progress on a leaderboard.
+    Welcome to Weather Together, the captivating game app that brings the world's weather to your fingertips! Each day, users are presented with a set of real-time weather data from a randomly selected location across the globe. Through an engaging interactive map interface, players must use their intuition to guess where this weather snapshot was taken. 
+    <br/>
+    <br/>
+    But the excitement doesn't end there. Weather Together offers a seamless experience with features like tracking previous guesses and monitoring progress on a dynamic leaderboard. For those craving a challenge, dive into Competitive mode where you can test your skills with trickier locations. Alternatively, create a Private Game and invite your closest friends for a personalized and fun-filled experience.
+    <br/>
+    <br/>
+    Join us in exploring the world, one weather forecast at a time, with Weather Together! 
 
-The goal of this app is to provide public education and increase awareness of general global climate trends in a fun and interactive manner.
+***The goal of this app is to provide public education and increase awareness of general global climate trends in a fun and interactive manner.***
+    <br/>
+    <br/>
+    <a href="https://github.com/Weather-Together/weather_together_be_cap"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://github.com/Weather-Together/weather_together_be"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/Weather-Together/weather_together_be">View Demo</a>
+    <a href="https://github.com/Weather-Together/weather_together_be_cap">View Demo</a>
     ·
-    <a href="https://github.com/Weather-Together/weather_together_be/issues">Report Bug</a>
+    <a href="https://github.com/Weather-Together/weather_together_be_cap/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Weather-Together/weather_together_be/issues">Request Feature</a>
+    <a href="https://github.com/Weather-Together/weather_together_be_cap/issues">Request Feature</a>
   </p>
 </div>
 
@@ -71,9 +76,7 @@ The goal of this app is to provide public education and increase awareness of ge
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="images/Map_WT.png" alt="Map" width="400" height="200">
-
-[![Weather Together](https://img.shields.io/badge/Weather%20Together-Visit%20Website-blue?style=for-the-badge)](https://weather-together.onrender.com/)
+[![Weather Together](https://img.shields.io/badge/Weather%20Together-Visit%20Website-blue?style=for-the-badge)](https://weather-together.github.io/weather1-fe/)
 
 ### Built With
 * [![Ruby on Rails][Rails-shield]][Rails-url]
@@ -84,19 +87,20 @@ The goal of this app is to provide public education and increase awareness of ge
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Gems
+* [![capybara][gem-capybara]][gem-capybara-url]
 * [![debug][gem-debug]][gem-debug-url]
-* [![rspec-rails][gem-rspec-rails]][gem-rspec-rails-url]
-* [![simplecov][gem-simplecov]][gem-simplecov-url]
 * [![factory_bot_rails][gem-factory_bot_rails]][gem-factory_bot_rails-url]
 * [![faker][gem-faker]][gem-faker-url]
-* [![pry][gem-pry]][gem-pry-url]
-* [![shoulda-matchers][gem-shoulda-matchers]][gem-shoulda-matchers-url]
 * [![faraday][gem-faraday]][gem-faraday-url]
 * [![figaro][gem-figaro]][gem-figaro-url]
 * [![jsonapi-serializer][gem-jsonapi-serializer]][gem-jsonapi-serializer-url]
-* [![capybara][gem-capybara]][gem-capybara-url]
-* [![webmock][gem-webmock]][gem-webmock-url]
+* [![pry][gem-pry]][gem-pry-url]
+* [![rack-cors][gem-rack-cors]][gem-rack-cors-url] 
+* [![rspec-rails][gem-rspec-rails]][gem-rspec-rails-url]
+* [![shoulda-matchers][gem-shoulda-matchers]][gem-shoulda-matchers-url]
+* [![simplecov][gem-simplecov]][gem-simplecov-url]
 * [![vcr][gem-vcr]][gem-vcr-url]
+* [![webmock][gem-webmock]][gem-webmock-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -107,7 +111,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Database 
 
-<img src="images/schema.png"  width="300" height="800">
+![schema1](https://gist.github.com/assets/132484941/badb5761-c8a9-4125-929e-59bfd3492e08)
+![schema2](https://gist.github.com/assets/132484941/83691480-d148-4706-9f55-737af3d66078)
 
 ### Installation
 
@@ -115,7 +120,7 @@ To get a local copy up and running follow these simple example steps.
 
 2. Clone the repo
    ```sh
-   git clone https://github.com/Weather-Together/weather_together_be.git
+   git clone https://github.com/Weather-Together/weather_together_be_cap.git
    ```
 3. Enter your API
   Terminal
@@ -137,7 +142,6 @@ To get a local copy up and running follow these simple example steps.
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- USAGE EXAMPLES -->
@@ -168,12 +172,12 @@ This portion of the app handles the backend functionality of the game:
 - [X] Statistics
     - [X] Game Results (r^2)
     - [X] Daily Leaderboard
+- [X] Addition of Private Games
 - [ ] Action Cable 
-- [ ] Addition of Private Games
 
 
 
-See the [open issues](https://github.com/Weather-Together/weather_together_be/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/Weather-Together/weather_together_be_cap/pulls) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -330,6 +334,10 @@ See the [open issues](https://github.com/Weather-Together/weather_together_be/is
     }
     ```
 
+
+</br><p align="center"><a href="https://github.com/Weather-Together/weather_together_be_cap/blob/main/JSON_CONTRACT.md"><strong>Additional Endpoints Found Here In JSON Contract</strong></a></p>
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -341,7 +349,7 @@ Organization: Weather Together - WeatherTogether2308@gmail.com
 
 Organization Link: [https://github.com/Weather-Together](https://github.com/Weather-Together)
 
-Project Link: [https://github.com/Weather-Together/weather_together_be](https://github.com/Weather-Together/weather_together_be)
+Project Link: [https://github.com/Weather-Together/weather_together_be_cap](https://github.com/Weather-Together/weather_together_be_cap)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -349,46 +357,54 @@ Project Link: [https://github.com/Weather-Together/weather_together_be](https://
 
 ## Contributors
 
-Michael Kuhlmeier 
- 
-[![LinkedIn][linkedin-shield]][linkedin-url-mk]
-[![GitHub][github-shield-mk]][github-url-mk]
-
-Blaine Kennedy 
+**Blaine Kennedy** 
 
 [![LinkedIn][linkedin-shield]][linkedin-url-bk] 
 [![GitHub][github-shield-bk]][github-url-bk]
 
+**Edward Rodriguez**
 
-John O'Leary 
+[![LinkedIn][linkedin-shield]][linkedin-url-er]
+[![GitHub][github-shield-er]][github-url-er]
+
+**John O'Leary** 
 
 [![LinkedIn][linkedin-shield]][linkedin-url-jo] 
 [![GitHub][github-shield-jo]][github-url-jo]
 
- Sam Tran 
+**Kevin Zolman** 
+
+[![LinkedIn][linkedin-shield]][linkedin-url-kz]
+[![GitHub][github-shield-kz]][github-url-kz]
+
+**Michael Kuhlmeier** 
  
- [![LinkedIn][linkedin-shield]][linkedin-url-st]
- [![GitHub][github-shield-st]][github-url-st]
+[![LinkedIn][linkedin-shield]][linkedin-url-mk]
+[![GitHub][github-shield-mk]][github-url-mk]
 
+**Sam Tran**
+ 
+[![LinkedIn][linkedin-shield]][linkedin-url-st]
+[![GitHub][github-shield-st]][github-url-st]
 
-Kevin Zolman 
+**Tommy Takahashi**
 
-[![LinkedIn][linkedin-shield]][linkedin-url-kz][![GitHub][github-shield-kz]][github-url-kz]
-
+[![LinkedIn][linkedin-shield]][linkedin-url-tt]
+[![GitHub][github-shield-tt]][github-url-tt]
 
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Weather-Together/weather_together_fe.svg?style=for-the-badge
-[contributors-url]: https://github.com/Weather-Together/weather_together_fe/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Weather-Together/weather_together_fe.svg?style=for-the-badge
-[forks-url]: https://github.com/Weather-Together/weather_together_fe/network/members
-[stars-shield]: https://img.shields.io/github/stars/Weather-Together/weather_together_fe.svg?style=for-the-badge
-[stars-url]: https://github.com/Weather-Together/weather_together_fe/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Weather-Together/weather_together_fe.svg?style=for-the-badge
-[issues-url]: https://github.com/Weather-Together/weather_together_fe/issues
+[contributors-shield]: https://img.shields.io/github/contributors/Weather-Together/weather_together_be_cap?style=for-the-badge
+[contributors-url]: https://github.com/Weather-Together/weather_together_be_cap/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Weather-Together/weather_together_be_cap?style=for-the-badge
+[forks-url]: https://github.com/Weather-Together/weather_together_be_cap/network/members
+[stars-shield]: https://img.shields.io/github/stars/Weather-Together/weather_together_be_cap?style=for-the-badge
+[stars-url]: https://github.com/Weather-Together/weather_together_be_cap/stargazers
+[issues-shield]: https://img.shields.io/github/issues-raw/Weather-Together/weather_together_be_cap?style=for-the-badge
+[issues-url]: https://github.com/Weather-Together/weather_together_be_cap/issues
 [license-shield]: https://img.shields.io/github/license/Weather-Together/weather_together_fe.svg?style=for-the-badge
 [license-url]: https://github.com/Weather-Together/weather_together_fe/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
@@ -397,6 +413,8 @@ Kevin Zolman
 [linkedin-url-mk]: https://www.linkedin.com/in/michaelkuhlmeier
 [linkedin-url-bk]: https://www.linkedin.com/in/blaine-kennedy
 [linkedin-url-jo]: https://www.linkedin.com/in/john-clay-oleary
+[linkedin-url-tt]: https://www.linkedin.com/in/tommy-takahashi
+[linkedin-url-er]: https://www.linkedin.com/in/edward-avery-rodriguez
 [product-screenshot]: images/screenshot.png
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
@@ -448,6 +466,8 @@ Kevin Zolman
 [gem-vcr]: https://img.shields.io/badge/vcr-6.2.0-orange?style=flat-square
 [gem-vcr-url]: https://github.com/vcr/vcr
 
+[gem-rack-cors]: https://img.shields.io/gem/v/rack-cors?label=rack-cors
+[gem-rack-cors-url]: https://github.com/cyu/rack-cors
 
 [github-shield-mk]: https://img.shields.io/badge/GitHub-mbkuhl-success?style=for-the-badge&logo=github
 [github-url-mk]: https://github.com/mbkuhl
@@ -463,3 +483,9 @@ Kevin Zolman
 
 [github-shield-bk]: https://img.shields.io/badge/GitHub-bkchilidawg-success?style=for-the-badge&logo=github
 [github-url-bk]: https://github.com/bkchilidawg
+
+[github-shield-tt]: https://img.shields.io/badge/GitHub-ttakahashi1591-success?style=for-the-badge&logo=github
+[github-url-tt]: https://github.com/ttakahashi1591
+
+[github-shield-er]: https://img.shields.io/badge/GitHub-TheAveryRodriguez-success?style=for-the-badge&logo=github
+[github-url-er]: https://github.com/TheAveryRodriguez
