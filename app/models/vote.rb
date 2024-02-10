@@ -47,7 +47,7 @@ class Vote < ApplicationRecord
   end
 
   def get_location_information
-    info = RailsLocationInfoService.get_details(lat, lon) #need to update vote with return once we start receiving correct data
-    update!(image:  info[:images].first, wiki: info[:wiki])
+    info = LocationInfoService.get_details(lat, lon) #need to update vote with return once we start receiving correct data
+    update!(image: info[:images], wiki: info[:wiki])
   end
 end
