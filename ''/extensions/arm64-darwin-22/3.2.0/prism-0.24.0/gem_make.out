@@ -1,0 +1,27 @@
+current directory: /Users/blainekennedy/mod4/projects/weather_together_be_cap/''/gems/prism-0.24.0/ext/prism
+/Users/blainekennedy/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+checking for prism.h in /Users/blainekennedy/mod4/projects/weather_together_be_cap/''/gems/prism-0.24.0/include... no
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/blainekennedy/.rbenv/versions/3.2.2/bin/$(RUBY_BASE_NAME)
+extconf.rb:63:in `<main>': prism.h is required (RuntimeError)
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/blainekennedy/mod4/projects/weather_together_be_cap/''/extensions/arm64-darwin-22/3.2.0/prism-0.24.0/mkmf.log
+
+extconf failed, exit code 1
