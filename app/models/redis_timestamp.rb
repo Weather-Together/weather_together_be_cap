@@ -1,0 +1,3 @@
+class RedisTimestamp < ApplicationRecord
+
+end

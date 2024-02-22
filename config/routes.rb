@@ -39,6 +39,10 @@ Rails.application.routes.draw do
   post 'api/v0/users/:user_id/games/:game_id/vote', to: 'api/v0/users/games#vote'
   post 'api/v0/users/:user_id/games/:game_id/invite', to: 'api/v0/users/games#invite'
 
+  #redis test
+  get 'api/v0/redis_test/long_task', to: 'api/v0/redis_test#long_task'
+  get 'api/v0/redis_test/long_task_confirm', to: 'api/v0/redis_test#long_task_confirm'
+
 
   # API routes
   namespace :api do
