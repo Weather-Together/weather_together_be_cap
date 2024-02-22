@@ -61,3 +61,5 @@ gem "jsonapi-serializer"
 gem 'capybara'
 gem 'faker'
 gem 'rack-cors'
+
+gem "sidekiq", "~> 7.2"

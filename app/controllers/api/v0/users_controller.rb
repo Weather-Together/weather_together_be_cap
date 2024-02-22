@@ -5,6 +5,7 @@ class Api::V0::UsersController < ApplicationController
 
   def index
     render json: UserSerializer.new(User.all)
+    HardJob.perform_async
   end
 
   def create
