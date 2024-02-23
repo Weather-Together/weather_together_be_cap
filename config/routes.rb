@@ -50,7 +50,7 @@ Rails.application.routes.draw do
     namespace :v0 do
       resources :rounds, only: [:show, :index]
 
-      resources :users, only: [:new, :create, :index] do
+      resources :users, only: [:new, :create, :index, :show] do
         resources :rounds, only: [:show], controller: "users/rounds"
         get "recent_rounds", to: "users#recent_rounds"
       end
