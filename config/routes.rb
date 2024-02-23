@@ -1,4 +1,5 @@
 require 'sidekiq/web'
+# require 'sidekiq/cron/web'
 
 Rails.application.routes.draw do
   get "up" => "rails/health#show", :as => :rails_health_check
@@ -54,6 +55,11 @@ Rails.application.routes.draw do
         get "recent_rounds", to: "users#recent_rounds"
       end
     end
+  end
+
+  Sidekiq::Web.use Rack::Auth::Basic do |username, password|
+    ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(username), ::Digest::SHA256.hexdigest(Rails.application.credentials.redis[:username])) &
+      ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(password), ::Digest::SHA256.hexdigest(Rails.application.credentials.redis[:password]))
   end
   mount Sidekiq::Web => '/sidekiq'
 end
