@@ -21,4 +21,18 @@ RSpec.describe "User Show Profile Endpoint" do
       expect(response_data[:attributes][:username]).to eq("username1")
     end
   end
+
+  
+  describe "sad path" do
+    it "returns an error if user does not exist", :vcr do
+      load_test_data
+      
+      user10 = @user10
+
+      get "/api/v0/users/#{user10.id}", headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+    end
+  end
 end
