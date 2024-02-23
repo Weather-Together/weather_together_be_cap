@@ -7,6 +7,11 @@ class Api::V0::UsersController < ApplicationController
     render json: UserSerializer.new(User.all)
   end
 
+  def show
+    user = User.find_by(params[:user_id])
+    render json: UserSerializer.new(user)
+  end
+
   def create
     begin
       @user = User.create!(user_params)
