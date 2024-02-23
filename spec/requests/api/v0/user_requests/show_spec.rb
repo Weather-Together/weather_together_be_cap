@@ -6,7 +6,7 @@ RSpec.describe "User Show Profile Endpoint" do
       load_test_data
       
       user1 = @user1
-require 'pry'; binding.pry
+      
       get "/api/v0/users/#{user1.id}", headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
 
       expect(response).to be_successful
