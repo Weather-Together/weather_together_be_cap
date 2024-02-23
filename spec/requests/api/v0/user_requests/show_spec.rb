@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "User Show Profile Endpoint" do
   describe "happy path" do
     it "supports with GET request for User Show", :vcr do
-      load_test_data
+      test_data
       
       user1 = @user1
 
@@ -22,14 +22,13 @@ RSpec.describe "User Show Profile Endpoint" do
     end
   end
 
-  
   describe "sad path" do
     it "returns an error if user does not exist", :vcr do
-      load_test_data
+      test_data
       
-      user10 = @user10
+      user_id = 11
 
-      get "/api/v0/users/#{user10.id}", headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
+      get "/api/v0/users/#{user_id}", headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)

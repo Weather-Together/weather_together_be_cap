@@ -8,8 +8,12 @@ class Api::V0::UsersController < ApplicationController
   end
 
   def show
-    user = User.find_by(params[:user_id])
-    render json: UserSerializer.new(user)
+    begin
+      user = User.find(params[:id])
+      render json: UserSerializer.new(user)
+    rescue ActiveRecord::RecordNotFound => exception
+      render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).error_json, status: :not_found
+    end
   end
 
   def create
