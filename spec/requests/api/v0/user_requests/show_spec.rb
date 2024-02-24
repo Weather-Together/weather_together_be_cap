@@ -32,6 +32,10 @@ RSpec.describe "User Show Profile Endpoint" do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
+
+      response_data = JSON.parse(response.body, symbolize_names: true)[:errors][0]
+
+      expect(response_data[:detail]).to eq("Couldn't find User with 'id'=11")
     end
   end
 end
