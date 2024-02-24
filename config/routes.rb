@@ -61,5 +61,5 @@ Rails.application.routes.draw do
     ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(username), ::Digest::SHA256.hexdigest(Rails.application.credentials.redis[:username])) &
       ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(password), ::Digest::SHA256.hexdigest(Rails.application.credentials.redis[:password]))
   end
-  mount Sidekiq::Web => '/sidekiq'
+  mount Sidekiq::Web => '/'
 end
