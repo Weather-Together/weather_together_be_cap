@@ -63,3 +63,7 @@ gem 'faker'
 gem 'rack-cors'
 
 gem "sidekiq", "~> 7.2"
+
+gem 'opentelemetry-sdk'
+gem 'opentelemetry-exporter-otlp'
+gem 'opentelemetry-instrumentation-all'
