@@ -73,12 +73,14 @@ class Api::V0::UsersController < ApplicationController
     @user = User.find(params[:user_id])
 
 
-    daily_stats = {
-      daily_game_count: @user.daily_game_count,
-      average_score_in_daily_games: @user.average_score_in_daily_games,
-      date_and_score_of_best_daily_score: @user.date_and_score_of_best_daily_score,
-      grade_book_daily_round: @user.grade_book_daily_round
-    }
+    Rails.cache.fetch("#{@user.id}/user_stats", expires_in: 12.hours) do
+      {
+        daily_game_count: @user.daily_game_count,
+        average_score_in_daily_games: @user.average_score_in_daily_games,
+        date_and_score_of_best_daily_score: @user.date_and_score_of_best_daily_score,
+        grade_book_daily_round: @user.grade_book_daily_round
+      }
+    end
 
     render json: { daily_stats: daily_stats }
   end
