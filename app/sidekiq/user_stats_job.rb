@@ -2,9 +2,10 @@ class UserStatsJob
   include Sidekiq::Job
 
   def perform(user_id)
+    require 'pry'; binding.pry
     @user = User.find(user_id)
 
-    Rails.cache.fetch("#{user_id}/user_stats", expires_in: 12.hours) do
+    Rails.cache.write("user#{user_id}_stats", expires_in: 2.hours) do
       sleep(4)
       {
         daily_game_count: @user.daily_game_count,

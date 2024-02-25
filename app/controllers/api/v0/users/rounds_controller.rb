@@ -28,6 +28,7 @@ class Api::V0::Users::RoundsController < ApplicationController
 
     if valid_location?(original_lat, original_lon, vote.lat, vote.lon)
       vote.get_location_information
+      require 'pry'; binding.pry
       UserStatsJob.perform_async(params[:user_id])
       render json: VoteSerializer.new(vote), status: 201
     else
