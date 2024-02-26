@@ -43,6 +43,8 @@ Rails.application.routes.draw do
   #redis test
   get 'api/v0/redis_test/long_task', to: 'api/v0/redis_test#long_task'
   get 'api/v0/redis_test/long_task_confirm', to: 'api/v0/redis_test#long_task_confirm'
+  get 'api/v0/redis_test/cache_test', to: 'api/v0/redis_test#cache_test'
+  get 'api/v0/redis_test/cache_confirm', to: 'api/v0/redis_test#cache_confirm'
 
 
   # API routes
@@ -61,5 +63,5 @@ Rails.application.routes.draw do
     ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(username), ::Digest::SHA256.hexdigest(Rails.application.credentials.redis[:username])) &
       ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(password), ::Digest::SHA256.hexdigest(Rails.application.credentials.redis[:password]))
   end
-  mount Sidekiq::Web => '/sidekiq'
+  mount Sidekiq::Web => '/'
 end

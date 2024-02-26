@@ -47,7 +47,7 @@ RSpec.describe User, type: :model do
       user = User.find_by(username: 'user1')
       result = user.grade_book_daily_round
       expect(result).to be_a(Hash)
-      expect(result.keys).to match_array(['0.00-500.00', '500.01-1000.00', '1000.01-2000.00', '2000.01-5000.00', '5000.01+'])
+      expect(result.keys).to match_array(['0.00-500.00', '500.01-1000.00', '1000.01-2000.00', '2000.01-5000.00', '5000.01-10000.00', '10000.01+'])
     end
   end
 

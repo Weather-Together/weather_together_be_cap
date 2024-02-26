@@ -62,7 +62,8 @@ class User < ApplicationRecord
       '500.01-1000.00' => (500.01..1000.00),
       '1000.01-2000.00' => (1000.01..2000.00),
       '2000.01-5000.00' => (2000.01..5000.00),
-      '5000.01+' => (5000.01..Float::INFINITY)
+      '5000.01-10000.00' => (5000.01..10000.00),
+      '10000.01+' => (10000.01..Float::INFINITY)
     }
 
     result = {}
@@ -88,7 +89,7 @@ class User < ApplicationRecord
       }
    end
    avg_user_score = avg_user_score.select { |user_hash| user_hash[:score] }
-   avg_user_score.sort_by { |user| user[:score] }[0..5]
+   avg_user_score.sort_by { |user| user[:score] }[0..4]
   #   top_5_users = User.joins(rounds: { votes: :game })
   #                     .select("users.*, avg(votes.score) as 'average_score'")
   #                     .where(rounds: { game_type: 0, status: 2})
@@ -110,7 +111,7 @@ class User < ApplicationRecord
       }
    end
    avg_user_score = avg_user_score.select { |user_hash| user_hash[:score] }
-   avg_user_score.sort_by { |user| user[:score] }.index { |user| user[:user_id] == id } + 1
+   avg_user_score.sort_by { |user| user[:score] }.index { |user| user[:user_id] == id } &.+ 1
 
     # subquery = rounds
     #   .joins(:game)
@@ -161,7 +162,13 @@ class User < ApplicationRecord
         .pluck(:user_id)
         .index(id)
 
-      {round_id: round.id, user_rank: rank_in_round + 1}
+      { round_id: round.id, 
+        user_rank: (rank_in_round &.+ 1),
+        date: round.close_date,
+        total_votes: round.votes.count,
+        score: Vote.find_by(user_id: id, round_id: round.id).score,
+        location: "#{round.region}, #{round.country}"
+      }
     end
   end
 
@@ -169,4 +176,5 @@ class User < ApplicationRecord
     result = votes.joins(:round).where(rounds: { game_type: 0, status: :processed }).order("votes.score ASC").limit(3)
     result.map { |vote| [vote.round&.process_date, vote.score] }
   end
+
 end

@@ -1,5 +1,5 @@
 def load_location_coordinates
-  @date = Date.yesterday.strftime('%F')
+  @date = (Date.today-1).strftime('%F')
 
   #Alto Coite, Brazil
   @lat1 = "-15.74"

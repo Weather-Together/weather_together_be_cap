@@ -11,7 +11,7 @@ RSpec.describe Vote, type: :model do
       test_data
       vote = Vote.all.first
       expect(vote.score).to be nil
-      weather_data = WeatherFacade.new.weather_data(vote.lat, vote.lon, Date.yesterday.strftime("%F"))
+      weather_data = WeatherFacade.new.weather_data(vote.lat, vote.lon, (Date.today-1).strftime('%F'))
       score = vote.calculate_score(weather_data)
       expect(score > 0).to be true
     end
@@ -39,7 +39,7 @@ RSpec.describe Vote, type: :model do
       VCR.turn_off!
       WebMock.allow_net_connect!
 
-      date = Date.yesterday.strftime("%F")
+      date = (Date.today-1).strftime('%F')
       public_games
       lat1 = "-43.5596"
       lon1 = "-5.9504"
