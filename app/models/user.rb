@@ -62,7 +62,8 @@ class User < ApplicationRecord
       '500.01-1000.00' => (500.01..1000.00),
       '1000.01-2000.00' => (1000.01..2000.00),
       '2000.01-5000.00' => (2000.01..5000.00),
-      '5000.01+' => (5000.01..Float::INFINITY)
+      '5000.01-10000.00' => (5000.01..10000.00),
+      '10000.01+' => (10000.01..Float::INFINITY)
     }
 
     result = {}
@@ -161,7 +162,13 @@ class User < ApplicationRecord
         .pluck(:user_id)
         .index(id)
 
-      {round_id: round.id, user_rank: (rank_in_round &.+ 1)}
+      { round_id: round.id, 
+        user_rank: (rank_in_round &.+ 1),
+        date: round.close_date,
+        total_votes: round.votes.count,
+        score: Vote.find_by(user_id: id, round_id: round.id).score,
+        location: "#{round.region}, #{round.country}"
+      }
     end
   end
 
