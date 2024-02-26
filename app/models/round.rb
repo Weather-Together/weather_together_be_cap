@@ -73,7 +73,7 @@ class Round < ApplicationRecord
     while data[:error]
       lat = rand(-90.000...90.000)
       lon = rand(-180.000...180.000)
-      data = wf.weather_data(lat, lon, Date.yesterday.strftime("%F"))
+      data = wf.weather_data(lat, lon, (Date.today-1).strftime('%F'))
     end
     data
   end

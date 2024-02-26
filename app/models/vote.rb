@@ -12,7 +12,7 @@ class Vote < ApplicationRecord
       new_lon = lon
       data = {error: {code: 1006, message: "No matching location found."}}
       while data[:error]
-        data = wf.weather_data(new_lat, new_lon, Date.yesterday.strftime("%F"))
+        data = wf.weather_data(new_lat, new_lon, (Date.today-2).strftime("%F"))
         new_lat = rand(-90.000...90.000)
         new_lon = rand(-180.000...180.000)
       end

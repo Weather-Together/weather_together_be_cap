@@ -16,7 +16,7 @@ RSpec.describe "Current Private Game Round", :vcr do
     post "/api/v0/users/#{@user1.id}/games", params: new_game.to_json, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
     game_id = game = JSON.parse(response.body, symbolize_names: true)[:data][:id]
 
-    date = Date.yesterday.strftime("%F")
+    date = (Date.today-1).strftime('%F')
     lat11 = "62.04"
     lon11 = "129.74"
     lat12 = "78.22"
