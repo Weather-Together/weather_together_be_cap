@@ -169,4 +169,27 @@ class User < ApplicationRecord
     result = votes.joins(:round).where(rounds: { game_type: 0, status: :processed }).order("votes.score ASC").limit(3)
     result.map { |vote| [vote.round&.process_date, vote.score] }
   end
+
+  def cache_test
+    t1 = Time.now
+    sleep(2)
+    t2 = Time.now
+    sleep(2)
+    t3 = Time.now
+    sleep(2)
+    t4 = Time.now
+    sleep(2)
+    stuff =
+    { 
+      t1: t1,
+      t2: t2,
+      t3: t3,
+      t4: t4,
+      user: id
+    }
+    Rails.cache.write("user#{id}_stats", stuff, expires_in: 2.hours)
+    { data: "User #{id}, your timestamps are being created"}
+  end
+
+
 end

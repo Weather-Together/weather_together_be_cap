@@ -11,7 +11,7 @@ class Api::V0::RedisTestController < ApplicationController
   end
 
   def cache_test
-    UserStatsJob.perform_async(params[:user_id])
+    TestJob.perform_async(params[:user_id])
     render json: { data: "User #{params[:user_id]}, your timestamps are being created"}
   end
 

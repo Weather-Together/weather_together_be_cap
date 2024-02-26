@@ -9,4 +9,10 @@ class UserGame < ApplicationRecord
   before_create do 
     self.game_type = game.game_type
   end
+
+
+  def self.cache_confirm
+    daily_stats = Rails.cache.read("user#{12}_stats") || { "message": "No data for user"}
+    { data: daily_stats}
+  end
 end

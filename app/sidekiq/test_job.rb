@@ -1,4 +1,4 @@
-class UserStatsJob
+class TestJob
   include Sidekiq::Job
 
   def perform(user_id)
