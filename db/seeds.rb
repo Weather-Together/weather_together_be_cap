@@ -8,7 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-date = Date.yesterday.strftime("%F")
+date = (Date.today-1).strftime('%F')
 lat1 = "-15.74"
 lon1 = "-54.34"
 lat2 = "36.53"

@@ -169,4 +169,5 @@ class User < ApplicationRecord
     result = votes.joins(:round).where(rounds: { game_type: 0, status: :processed }).order("votes.score ASC").limit(3)
     result.map { |vote| [vote.round&.process_date, vote.score] }
   end
+
 end
