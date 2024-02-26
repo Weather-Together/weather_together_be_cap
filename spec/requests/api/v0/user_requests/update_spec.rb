@@ -6,8 +6,8 @@ RSpec.describe "User Update Profile Endpoint" do
       test_data
 
       user1 = @user1
-require 'pry'; binding.pry
-      patch "/api/v0/users/#{user1.id}", params: {}, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
+
+      patch "/api/v0/users/#{user1.id}", params: {username: "username0"}, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
@@ -18,7 +18,7 @@ require 'pry'; binding.pry
       expect(response_data[:id]).to be_a(String)
 
       expect(response_data[:attributes][:email]).to eq("user1@gmail.com")
-      expect(response_data[:attributes][:username]).to eq("username1")
+      expect(response_data[:attributes][:username]).to eq("username0")
     end
   end
 end
