@@ -32,7 +32,7 @@ RSpec.describe "User Update Profile Endpoint" do
 
       expect(User.exists?(user1_id)).to be_falsey
 
-      patch "/api/v0/users/#{user1.id}?username=username0" #, params: { username: "username0" }, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
+      patch "/api/v0/users/#{user1_id}?username=username0" #, params: { username: "username0" }, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
