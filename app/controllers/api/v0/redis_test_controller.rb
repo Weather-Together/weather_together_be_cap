@@ -11,7 +11,7 @@ class Api::V0::RedisTestController < ApplicationController
   end
 
   def cache_test
-    DumbJob.perform_async(params)
+    DumbJob.perform_async(params[:user_id])
     # t1 = Time.now
     # t2 = Time.now
     # sleep(2)
