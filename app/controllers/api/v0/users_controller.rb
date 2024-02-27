@@ -9,8 +9,8 @@ class Api::V0::UsersController < ApplicationController
 
   def show
     begin
-      user = User.find(params[:id])
-      render json: UserSerializer.new(user)
+      @user = User.find(params[:id])
+      render json: UserSerializer.new(@user)
     rescue ActiveRecord::RecordNotFound => exception
       render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).error_json, status: :not_found
     end
@@ -24,6 +24,22 @@ class Api::V0::UsersController < ApplicationController
       render json: UserSerializer.new(@user)
     rescue ActiveRecord::RecordInvalid => exception
       render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 422)).error_json, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    begin
+      @user = User.find(params[:id])
+      if user_params[:username].blank?
+        render json: ErrorSerializer.new(ErrorMessage.new("Username cannot be blank", 422)).error_json, status: :unprocessable_entity
+      elsif User.exists?(username: user_params[:username].downcase)
+        render json: ErrorSerializer.new(ErrorMessage.new("Username already exists", 422)).error_json, status: :unprocessable_entity
+      else
+        @user.update(user_params)
+        render json: UserSerializer.new(@user)
+      end
+    rescue ActiveRecord::RecordNotFound => exception
+      render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).error_json, status: :not_found
     end
   end
 
