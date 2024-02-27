@@ -10,11 +10,13 @@ class Api::V0::Users::GamesController < ApplicationController
         UserGame.create(user_id: invitee.id, game_id: game.id)
       else
         missing_accounts << email
-        InviteMailer.with(invitee: email, admin: admin_user.username).invite_email.deliver_now
+        InviteMailerJob.perform_async(email, admin_user.username)
+        # InviteMailer.with(invitee: email, admin: admin_user.username).invite_email.deliver_now
       end
     end
     unless missing_accounts.empty?
-      AdminNotifierMailer.with(admin: admin_user.email, game_name: game.name, missing_accounts: missing_accounts).notify_email.deliver_now
+      AdminMailerJob.perform_async(admin_user.email, game.name, missing_accounts)
+      # AdminNotifierMailer.with(admin: admin_user.email, game_name: game.name, missing_accounts: missing_accounts).notify_email.deliver_now
     end
     render json: GameSerializer.new(game)
   end
