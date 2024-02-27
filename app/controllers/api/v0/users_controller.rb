@@ -19,7 +19,8 @@ class Api::V0::UsersController < ApplicationController
   def create
     begin
       @user = User.create!(user_params)
-      UserMailer.with(user: @user).verification_email.deliver_now
+      MailerCreateJob.perform_async(@user.id, @user.email, @user.verification_token)
+      # UserMailer.with(user: @user).verification_email.deliver_now
       render json: UserSerializer.new(@user)
     rescue ActiveRecord::RecordInvalid => exception
       render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 422)).error_json, status: :unprocessable_entity
