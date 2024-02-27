@@ -30,8 +30,14 @@ class Api::V0::UsersController < ApplicationController
   def update
     begin
       @user = User.find(params[:id])
-      @user.update(user_params)
-      render json: UserSerializer.new(@user)
+      if user_params[:username].blank?
+        render json: ErrorSerializer.new(ErrorMessage.new("Username cannot be blank", 422)).error_json, status: :unprocessable_entity
+      elsif User.exists?(username: user_params[:username].downcase)
+        render json: ErrorSerializer.new(ErrorMessage.new("Username already exists", 422)).error_json, status: :unprocessable_entity
+      else
+        @user.update(user_params)
+        render json: UserSerializer.new(@user)
+      end
     rescue ActiveRecord::RecordNotFound => exception
       render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).error_json, status: :not_found
     end

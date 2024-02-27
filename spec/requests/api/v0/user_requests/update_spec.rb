@@ -9,7 +9,7 @@ RSpec.describe "User Update Profile Endpoint" do
 
       expect(user1.username).to eq("username1")
 
-      patch "/api/v0/users/#{user1.id}?username=username0" #, params: { username: "username0" }, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
+      patch "/api/v0/users/#{user1.id}?username=username0" 
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
@@ -32,7 +32,7 @@ RSpec.describe "User Update Profile Endpoint" do
 
       expect(User.exists?(user1_id)).to be_falsey
 
-      patch "/api/v0/users/#{user1_id}?username=username0" #, params: { username: "username0" }, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
+      patch "/api/v0/users/#{user1_id}?username=username0" 
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
@@ -45,11 +45,11 @@ RSpec.describe "User Update Profile Endpoint" do
     it "returns an error if attribute being updated is left blank", :vcr do
       test_data
 
-      user1_id = 11
+      user1 = @user1
 
-      expect(User.exists?(user1_id)).to be_falsey
+      expect(user1.username).to eq("username1")
 
-      patch "/api/v0/users/#{user1_id}?username=" #, params: { username: "username0" }, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
+      patch "/api/v0/users/#{user1.id}?username=" 
 
       expect(response).to_not be_successful
       expect(response.status).to eq(422)
@@ -66,7 +66,7 @@ RSpec.describe "User Update Profile Endpoint" do
 
       expect(user1.username).to eq("username1")
 
-      patch "/api/v0/users/#{user1_id}?username=username1" #, params: { username: "username0" }, headers: {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
+      patch "/api/v0/users/#{user1.id}?username=USERNAME1" 
 
       expect(response).to_not be_successful
       expect(response.status).to eq(422)
