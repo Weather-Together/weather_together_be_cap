@@ -1,23 +1,20 @@
-class TestJob
+class DumbJob
   include Sidekiq::Job
 
-  def perform(user_id)
+  def perform(params)
     t1 = Time.now
-    sleep(2)
     t2 = Time.now
     sleep(2)
     t3 = Time.now
-    sleep(2)
     t4 = Time.now
-    sleep(2)
     stuff =
     { 
       t1: t1,
       t2: t2,
       t3: t3,
       t4: t4,
-      user: user_id
+      user: params[:user_id]
     }
-    Rails.cache.write("user#{user_id}_stats", stuff, expires_in: 2.hours)
+    Rails.cache.write("user#{params[:user_id]}_stats", stuff, expires_in: 2.hours)
   end
 end
