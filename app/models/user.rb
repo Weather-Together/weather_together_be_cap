@@ -166,7 +166,7 @@ class User < ApplicationRecord
         user_rank: (rank_in_round &.+ 1),
         date: round.close_date,
         total_votes: round.votes.count,
-        score: Vote.find_by(user_id: id, round_id: round.id).score,
+        score: Vote.find_by(user_id: id, round_id: round.id)&.score,
         location: "#{round.region}, #{round.country}"
       }
     end

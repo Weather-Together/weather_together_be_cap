@@ -56,13 +56,20 @@ class Api::V0::Users::GamesController < ApplicationController
   end
 
   def current_round
-    user_game = UserGame.find_by(user_id: params[:id], game_id: params[:game_id])
-    if user_game&.accepted? || user_game&.admin?
-      game = Game.find(params[:game_id])
-      round = game.current_round
+    cache_call = Rails.cache.read("current_game#{params[:game_id]}_round#{params[:_id]}")
+    if cache_call
+      round = cache_call
       render json: BulkroundSerializer.new(round)
     else
-      render json: {data: {error: "User must accept invitation to view game"}}, status: 401
+      user_game = UserGame.find_by(user_id: params[:id], game_id: params[:game_id])
+      if user_game&.accepted? || user_game&.admin?
+        game = Game.find(params[:game_id])
+        round = game.current_round
+        Rails.cache.write("current_game#{params[:game_id]}_round#{params[:_id]}", round, expires_in: 2.hours)
+        render json: BulkroundSerializer.new(round)
+      else
+        render json: {data: {error: "User must accept invitation to view game"}}, status: 401
+      end
     end
   end
 
