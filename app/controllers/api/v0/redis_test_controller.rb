@@ -10,6 +10,17 @@ class Api::V0::RedisTestController < ApplicationController
     render json: RedisTimestampSerializer.new(rt)
   end
 
+  def a_task
+    AnotherJob.perform_async
+    render json: { data: "Your timestamps are being created"}
+  end
+
+  def a_task_confirm
+    last = RedisTimestamp.all.count
+    rt = RedisTimestamp.find(last)
+    render json: RedisTimestampSerializer.new(rt)
+  end
+
   def cache_test
     DumbJob.perform_async(params[:user_id])
     # t1 = Time.now

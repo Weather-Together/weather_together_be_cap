@@ -43,6 +43,8 @@ Rails.application.routes.draw do
   #redis test
   get 'api/v0/redis_test/long_task', to: 'api/v0/redis_test#long_task'
   get 'api/v0/redis_test/long_task_confirm', to: 'api/v0/redis_test#long_task_confirm'
+  get 'api/v0/redis_test/a_task', to: 'api/v0/redis_test#a_task'
+  get 'api/v0/redis_test/a_task_confirm', to: 'api/v0/redis_test#a_task_confirm'
   get 'api/v0/redis_test/cache_test', to: 'api/v0/redis_test#cache_test'
   get 'api/v0/redis_test/cache_confirm', to: 'api/v0/redis_test#cache_confirm'
 
