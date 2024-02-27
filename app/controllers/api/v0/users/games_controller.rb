@@ -58,7 +58,6 @@ class Api::V0::Users::GamesController < ApplicationController
   def current_round
     cache_call = Rails.cache.read("current_game#{params[:game_id]}_round#{params[:_id]}")
     if cache_call
-      require 'pry'; binding.pry
       round = cache_call
       render json: BulkroundSerializer.new(round)
     else
