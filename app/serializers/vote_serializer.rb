@@ -17,7 +17,9 @@ class VoteSerializer
              :totalprecip_in,
              :avghumidity,
              :daily_chance_of_rain,
-             :daily_chance_of_snow
+             :daily_chance_of_snow,
+             :image,
+             :wiki
 
   attribute :round_id do |vote|
     vote.round.id
