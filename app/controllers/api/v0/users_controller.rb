@@ -36,6 +36,7 @@ class Api::V0::UsersController < ApplicationController
         render json: ErrorSerializer.new(ErrorMessage.new("Username already exists", 422)).error_json, status: :unprocessable_entity
       else
         @user.update(user_params)
+        UpdateMailerJob.perform_async(@user.id, @user.email, @user.username)
         render json: UserSerializer.new(@user)
       end
     rescue ActiveRecord::RecordNotFound => exception
