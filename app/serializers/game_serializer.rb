@@ -33,8 +33,8 @@ class GameSerializer
         game_id: game.id,
         game_name: game.name,
         rank: user.rank_in_game(game.id),
-        total_overall_score_private_games: user.total_overall_score_private_games,
-        rounds_won_private_games: user.rounds_won_private_games
+        total_overall_score_private_games: user.total_overall_score_private_games(game.id),
+        rounds_won_private_games: user.rounds_won_private_games(game.id)
       }
     end
   end

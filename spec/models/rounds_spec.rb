@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Round, type: :model do
-  let(:game) { create(:game) }  # Assuming you have a factory or setup for creating a valid game
+  let(:game) { create(:game) }  
 
   describe "relationships" do
     it { should have_many(:votes) }
