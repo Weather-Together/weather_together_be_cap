@@ -177,4 +177,58 @@ class User < ApplicationRecord
     result.map { |vote| [vote.round&.process_date, vote.score] }
   end
 
+  #STATS FOR PRIVATE GAMES
+
+  def rank_in_game(game_id)
+    game = Game.find_by(id: game_id)
+    return unless game
+
+    user_rounds_won = rounds_won_private_games(game_id)
+    user_total_score = total_overall_score_private_games(game_id)
+
+    rank = 1
+
+    game.users.each do |user|
+      next if user.id == id
+
+      other_user_rounds_won = user.rounds_won_private_games(game_id)
+      other_user_total_score = user.total_overall_score_private_games(game_id)
+
+      if other_user_rounds_won > user_rounds_won
+        rank += 1
+      elsif other_user_rounds_won == user_rounds_won
+        rank += 1 if other_user_total_score < user_total_score
+      end
+    end
+
+    rank
+  end
+
+  def total_overall_score_private_games(game_id)
+    game = games.find_by(id: game_id)
+    return 0 unless game
+
+    total_score = game.votes.where(user_id: id).sum(:score)
+    total_score.round(2)
+  end
+
+
+  def rounds_won_private_games(game_id)
+    game = games.find_by(id: game_id)
+    return 0 unless game
+
+    user_rounds_won = 0
+
+    game.rounds.each do |round|
+      lowest_score_in_round = round.votes.minimum(:score)
+      user_score_in_round = round.votes.find_by(user_id: id)&.score
+
+      if user_score_in_round && user_score_in_round == lowest_score_in_round
+        user_rounds_won += 1
+      end
+    end
+
+    user_rounds_won
+  end
+
 end
