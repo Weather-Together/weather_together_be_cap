@@ -187,12 +187,17 @@ class User < ApplicationRecord
     rank = games.find_by(id: game_id).votes.where(status: :processed).where("score = ?", 100).count + 1
   end
 
-  def total_overall_score_private_games
-    games.where(game_type: 1).sum { |game| game.votes.where(user_id: id).sum(:score) }
+  def total_overall_score_private_games(game_id)
+    game = games.find_by(id: game_id)
+    return 0 unless game
+
+    game.votes.where(user_id: id).sum(:score)
   end
 
-  def rounds_won_private_games
-    games.where(game_type: 1).joins(:votes).where(votes: { status: :processed }).where("votes.score = ?", 100).count
-  end
+  def rounds_won_private_games(game_id)
+    game = games.find_by(id: game_id)
+    return 0 unless game
 
+    game.votes.where(status: :processed, score: 100).count
+  end
 end
