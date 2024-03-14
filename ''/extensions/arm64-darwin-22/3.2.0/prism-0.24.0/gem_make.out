@@ -1,5 +1,6 @@
 current directory: /Users/blainekennedy/mod4/projects/weather_together_be_cap/''/gems/prism-0.24.0/ext/prism
 /Users/blainekennedy/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+/Users/blainekennedy/.rbenv/versions/3.2.2/bin/ruby: warning: Ruby was built without YJIT support. You may need to install rustc to build Ruby with YJIT.
 checking for prism.h in /Users/blainekennedy/mod4/projects/weather_together_be_cap/''/gems/prism-0.24.0/include... no
 *** extconf.rb failed ***
 Could not create Makefile due to some reason, probably lack of necessary

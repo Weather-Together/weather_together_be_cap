@@ -177,4 +177,22 @@ class User < ApplicationRecord
     result.map { |vote| [vote.round&.process_date, vote.score] }
   end
 
+  #STATS FOR PRIVATE GAMES
+
+  def rank_in_game(game_id)
+    game = Game.find_by(id: game_id)
+    return unless game
+
+    user_rounds_won = games.find_by(id: game_id).votes.where(status: :processed, score: 100).count
+    rank = games.find_by(id: game_id).votes.where(status: :processed).where("score = ?", 100).count + 1
+  end
+
+  def total_overall_score_private_games
+    games.where(game_type: 1).sum { |game| game.votes.where(user_id: id).sum(:score) }
+  end
+
+  def rounds_won_private_games
+    games.where(game_type: 1).joins(:votes).where(votes: { status: :processed }).where("votes.score = ?", 100).count
+  end
+
 end
