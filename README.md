@@ -7,7 +7,7 @@
 [![Issues][issues-shield]][issues-url]
 
 
-[![Weather Together](https://img.shields.io/badge/Weather%20Together-Visit%20Website-blue?style=for-the-badge)](https://weather-together.github.io/weather1-fe/)
+[![WeatherTogether](https://img.shields.io/badge/Weather%20Together-Visit%20Website-blue?style=for-the-badge)](https://weather-together.github.io/weather1-fe/)
 
 
 
@@ -19,16 +19,16 @@
     <img src="images/logo_480.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Weather Together</h3>
+<h3 align="center">WeatherTogether</h3>
 
   <p align="center">
-    Welcome to Weather Together, the captivating game app that brings the world's weather to your fingertips! Each day, users are presented with a set of real-time weather data from a randomly selected location across the globe. Through an engaging interactive map interface, players must use their intuition to guess where this weather snapshot was taken. 
+    Welcome to WeatherTogether, the captivating game app that brings the world's weather to your fingertips! Each day, users are presented with a set of real-time weather data from a randomly selected location across the globe. Through an engaging interactive map interface, players must use their intuition to guess where this weather snapshot was taken. 
     <br/>
     <br/>
-    But the excitement doesn't end there. Weather Together offers a seamless experience with features like tracking previous guesses and monitoring progress on a dynamic leaderboard. For those craving a challenge, dive into Competitive mode where you can test your skills with trickier locations. Alternatively, create a Private Game and invite your closest friends for a personalized and fun-filled experience.
+    But the excitement doesn't end there. WeatherTogether offers a seamless experience with features like tracking previous guesses and monitoring progress on a dynamic leaderboard. For those craving a challenge, dive into Competitive mode where you can test your skills with trickier locations. Alternatively, create a Private Game and invite your closest friends for a personalized and fun-filled experience.
     <br/>
     <br/>
-    Join us in exploring the world, one weather forecast at a time, with Weather Together! 
+    Join us in exploring the world, one weather forecast at a time, with WeatherTogether! 
 
 ***The goal of this app is to provide public education and increase awareness of general global climate trends in a fun and interactive manner.***
     <br/>
@@ -76,7 +76,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Weather Together](https://img.shields.io/badge/Weather%20Together-Visit%20Website-blue?style=for-the-badge)](https://weather-together.github.io/weather1-fe/)
+[![WeatherTogether](https://img.shields.io/badge/Weather%20Together-Visit%20Website-blue?style=for-the-badge)](https://weather-together.github.io/weather1-fe/)
 
 ### Built With
 * [![Ruby on Rails][Rails-shield]][Rails-url]
@@ -345,7 +345,7 @@ See the [open issues](https://github.com/Weather-Together/weather_together_be_ca
 <!-- CONTACT -->
 ## Contact
 
-Organization: Weather Together - WeatherTogether2308@gmail.com
+Organization: WeatherTogether - WeatherTogether2308@gmail.com
 
 Organization Link: [https://github.com/Weather-Together](https://github.com/Weather-Together)
 

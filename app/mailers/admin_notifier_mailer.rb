@@ -5,6 +5,6 @@ class AdminNotifierMailer < ApplicationMailer
     @game_name = params[:game_name]
     @missing_accounts = params[:missing_accounts]
 
-    mail(to: @admin, subject: 'Weather Together - Game invitees without account')
+    mail(to: @admin, subject: 'WeatherTogether - Game invitees without account')
   end
 end

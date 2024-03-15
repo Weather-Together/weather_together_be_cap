@@ -4,6 +4,6 @@ class InviteMailer < ApplicationMailer
     @invitee = params[:invitee]
     @admin = params[:admin]
 
-    mail(to: @invitee, subject: 'You have been invited to play Weather Together')
+    mail(to: @invitee, subject: 'You have been invited to play WeatherTogether')
   end
 end
