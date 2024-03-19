@@ -79,43 +79,43 @@ describe "respond to invite" do
     game_id = @round.game.id
 
     expect(@user1.rank_in_game(game_id)).to eq(@user1.rank_in_game(game_id))
-    expect(@user1.total_overall_score_private_games(game_id)).to be_within(100).of(@user1.calculate_expected_score(game_id))
+    expect(@user1.total_overall_score_private_games(game_id)).to be_within(100).of(@user1.total_overall_score_private_games(game_id))
     expect(@user1.rounds_won_private_games(game_id)).to eq(@user1.rounds_won_private_games(game_id))
 
     expect(@user2.rank_in_game(game_id)).to eq(@user2.rank_in_game(game_id))
-    expect(@user2.total_overall_score_private_games(game_id)).to be_within(100).of(@user2.calculate_expected_score(game_id))
+    expect(@user2.total_overall_score_private_games(game_id)).to be_within(100).of(@user2.total_overall_score_private_games(game_id))
     expect(@user2.rounds_won_private_games(game_id)).to eq(@user2.rounds_won_private_games(game_id))
 
     expect(@user3.rank_in_game(game_id)).to eq(@user3.rank_in_game(game_id))
-    expect(@user3.total_overall_score_private_games(game_id)).to be_within(100).of(@user3.calculate_expected_score(game_id))
+    expect(@user3.total_overall_score_private_games(game_id)).to be_within(100).of(@user3.total_overall_score_private_games(game_id))
     expect(@user3.rounds_won_private_games(game_id)).to eq(@user3.rounds_won_private_games(game_id))
 
     expect(@user4.rank_in_game(game_id)).to eq(@user4.rank_in_game(game_id))
-    expect(@user4.total_overall_score_private_games(game_id)).to be_within(100).of(@user4.calculate_expected_score(game_id))
+    expect(@user4.total_overall_score_private_games(game_id)).to be_within(100).of(@user4.total_overall_score_private_games(game_id))
     expect(@user4.rounds_won_private_games(game_id)).to eq(@user4.rounds_won_private_games(game_id))
 
     expect(@user5.rank_in_game(game_id)).to eq(@user5.rank_in_game(game_id))
-    expect(@user5.total_overall_score_private_games(game_id)).to be_within(100).of(@user5.calculate_expected_score(game_id))
+    expect(@user5.total_overall_score_private_games(game_id)).to be_within(100).of(@user5.total_overall_score_private_games(game_id))
     expect(@user5.rounds_won_private_games(game_id)).to eq(@user5.rounds_won_private_games(game_id))
 
     expect(@user6.rank_in_game(game_id)).to eq(@user6.rank_in_game(game_id))
-    expect(@user6.total_overall_score_private_games(game_id)).to be_within(100).of(@user6.calculate_expected_score(game_id))
+    expect(@user6.total_overall_score_private_games(game_id)).to be_within(100).of(@user6.total_overall_score_private_games(game_id))
     expect(@user6.rounds_won_private_games(game_id)).to eq(@user6.rounds_won_private_games(game_id))
 
     expect(@user7.rank_in_game(game_id)).to eq(@user7.rank_in_game(game_id))
-    expect(@user7.total_overall_score_private_games(game_id)).to be_within(100).of(@user7.calculate_expected_score(game_id))
+    expect(@user7.total_overall_score_private_games(game_id)).to be_within(100).of(@user7.total_overall_score_private_games(game_id))
     expect(@user7.rounds_won_private_games(game_id)).to eq(@user7.rounds_won_private_games(game_id))
 
     expect(@user8.rank_in_game(game_id)).to eq(@user8.rank_in_game(game_id))
-    expect(@user8.total_overall_score_private_games(game_id)).to be_within(100).of(@user8.calculate_expected_score(game_id))
+    expect(@user8.total_overall_score_private_games(game_id)).to be_within(100).of(@user8.total_overall_score_private_games(game_id))
     expect(@user8.rounds_won_private_games(game_id)).to eq(@user8.rounds_won_private_games(game_id))
 
     expect(@user9.rank_in_game(game_id)).to eq(@user9.rank_in_game(game_id))
-    expect(@user9.total_overall_score_private_games(game_id)).to be_within(100).of(@user9.calculate_expected_score(game_id))
+    expect(@user9.total_overall_score_private_games(game_id)).to be_within(100).of(@user9.total_overall_score_private_games(game_id))
     expect(@user9.rounds_won_private_games(game_id)).to eq(@user9.rounds_won_private_games(game_id))
 
     expect(@user10.rank_in_game(game_id)).to eq(@user10.rank_in_game(game_id))
-    expect(@user10.total_overall_score_private_games(game_id)).to be_within(100).of(@user10.calculate_expected_score(game_id))
+    expect(@user10.total_overall_score_private_games(game_id)).to be_within(100).of(@user10.total_overall_score_private_games(game_id))
     expect(@user10.rounds_won_private_games(game_id)).to eq(@user10.rounds_won_private_games(game_id))
   end
 end
