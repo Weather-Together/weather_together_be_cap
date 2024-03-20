@@ -55,7 +55,11 @@ class Round < ApplicationRecord
   end
 
   def process_round
-    votes.each { |vote| vote.process }
+    votes.each { |vote| 
+      vote.process
+      user = vote.user
+      CompetitiveGameScoreMailerJob.perform_async(self.id, user.id, user.email)
+     }
     update(status: 2)
   end
 

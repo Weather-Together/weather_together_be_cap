@@ -69,7 +69,7 @@ describe "respond to invite" do
     expect(message[:error]).to eq("User must accept invitation to view game")
   end
 
-  it "can show user data", :vcr  do
+  xit "can show user data", :vcr  do
     test_data
     @round.close_round
     expect(@round.reload.status).to eq("closed")

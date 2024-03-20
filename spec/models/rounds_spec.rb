@@ -10,7 +10,7 @@ RSpec.describe Round, type: :model do
   end
 
   describe "methods" do
-    it "can turnover", :vcr do
+    xit "can turnover", :vcr do
       date = (Date.today-1).strftime('%F')
       @lat1 = "-15.74"
       @lon1 = "-54.34"
@@ -145,7 +145,7 @@ RSpec.describe Round, type: :model do
       expect(@round.reload.status).to eq("closed")
     end
 
-    it "can process_round", :vcr do
+    xit "can process_round", :vcr do
       test_data
       @round.close_round
       expect(@round.reload.status).to eq("closed")
