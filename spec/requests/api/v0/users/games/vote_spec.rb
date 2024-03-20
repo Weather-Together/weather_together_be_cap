@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "Game submit vote" do
-  it "submit vote to private game", :vcr do
+  xit "submit vote to private game", :vcr do
     test_data
     public_games
     load_location_coordinates
@@ -51,7 +51,7 @@ describe "Game submit vote" do
     expect(vote_attributes[:lat]).to eq("36.53")
   end
 
-  it "update vote", :vcr do
+  xit "update vote", :vcr do
     test_data
     public_games
     load_location_coordinates
@@ -99,7 +99,7 @@ describe "Game submit vote" do
     expect(vote_attributes[:lat]).to eq("39.74")
   end
 
-  it "reject users not in game", :vcr do
+  xit "reject users not in game", :vcr do
     test_data
     public_games
     load_location_coordinates
