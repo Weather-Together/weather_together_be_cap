@@ -1,4 +1,4 @@
-class CompetitiveGameScoreMailerJob < ApplicationJob
+class CompetitiveGameScoreMailerJob
   include Sidekiq::Job
 
   def perform(round_id, user_id, email)
