@@ -68,7 +68,7 @@ class Round < ApplicationRecord
   end
 
   def find_process_date
-    (Date.today + game.guess_lead_time + 1).to_s
+    (Date.today + (game.guess_lead_time || 0) + 1).to_s
   end
 
   def self.generate_target_data
