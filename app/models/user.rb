@@ -131,7 +131,14 @@ class User < ApplicationRecord
   end
 
   def competitive_game_count
-    games.find_by(game_type: 0).votes.where(user_id: id).count
+    competitive_rounds = rounds
+    .where(rounds: { game_type: 0, status: :processed })
+    .order(process_date: :desc)
+    # .limit(3)
+
+    rounds_with_votes = competitive_rounds.select do |round|
+      round.votes.exists?(user_id: id)
+    end.count
   end
 
   def average_score_in_competitive_games
@@ -155,7 +162,7 @@ class User < ApplicationRecord
 
       rounds_with_votes = competitive_rounds.select do |round|
         round.votes.exists?(user_id: id)
-      end
+      end[0..2]
 
     rounds_with_votes.map do |round|
       rank_in_round = round
