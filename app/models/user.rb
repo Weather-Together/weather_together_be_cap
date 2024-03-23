@@ -157,7 +157,7 @@ class User < ApplicationRecord
         round.votes.exists?(user_id: id)
       end[0..2]
 
-    competitive_rounds.map do |round|
+    rounds_with_votes.map do |round|
       rank_in_round = round
         .votes
         .joins(:user)
