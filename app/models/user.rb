@@ -151,7 +151,11 @@ class User < ApplicationRecord
     competitive_rounds = rounds
       .where(rounds: { game_type: 0, status: :processed })
       .order(process_date: :desc)
-      .limit(3)
+      # .limit(3)
+
+      rounds_with_votes = competitive_rounds.select do |round|
+        round.votes.exists?(user_id: id)
+      end[0..2]
 
     competitive_rounds.map do |round|
       rank_in_round = round
