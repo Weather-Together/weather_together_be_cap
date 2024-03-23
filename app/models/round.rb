@@ -58,7 +58,7 @@ class Round < ApplicationRecord
     votes.each { |vote| 
       vote.process
       user = vote.user
-      CompetitiveGameScoreMailerJob.perform_async(self.id, user.id, user.email)
+      # CompetitiveGameScoreMailerJob.perform_async(self.id, user.id, user.email)
      }
     update(status: 2)
   end
