@@ -155,7 +155,7 @@ class User < ApplicationRecord
 
       rounds_with_votes = competitive_rounds.select do |round|
         round.votes.exists?(user_id: id)
-      end[0..2]
+      end
 
     rounds_with_votes.map do |round|
       rank_in_round = round
