@@ -31,6 +31,29 @@ class Api::V0::Users::GamesController < ApplicationController
     end
   end
 
+  def destroy
+    begin
+      #check if user is admin
+      game = Game.find(params[:game_id])
+      if game.game_type != 'custom'
+        render json: {errors: [ { detail: "Cannot delete public games"} ] }
+      else
+        rounds = game.rounds
+        rounds.each do |round|
+          votes = round.votes
+          votes.each { |vote| vote.destroy }
+          round.destroy
+        end
+        user_games = game.user_games
+        user_games.each { |user_game| user_game.destroy }
+        game.destroy
+        render json: GameSerializer.new(game)
+      end
+    rescue ActiveRecord::RecordNotFound => exception
+      render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).error_json, status: :not_found
+    end
+  end
+
   def invite_rsvp
     user_game = UserGame.find_by(user_id: params[:id], game_id: params[:game_id])
     if user_game

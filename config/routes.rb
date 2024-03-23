@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   get 'api/v0/users/:id/games/:game_id/current_round', to: 'api/v0/users/games#current_round'
   post 'api/v0/users/:user_id/games/:game_id/vote', to: 'api/v0/users/games#vote'
   post 'api/v0/users/:user_id/games/:game_id/invite', to: 'api/v0/users/games#invite'
+  delete 'api/v0/users/:user_id/games/:game_id', to: 'api/v0/users/games#destroy'
 
   #redis test
   get 'api/v0/redis_test/long_task', to: 'api/v0/redis_test#long_task'
