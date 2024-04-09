@@ -41,9 +41,8 @@ class Vote < ApplicationRecord
     low_temp_diff = (round.mintemp_f - guess[:mintemp_f])**2
     humidity_diff = (round.avghumidity - guess[:avghumidity])**2
     wind_diff = (round.maxwind_mph - guess[:maxwind_mph])**2
-    rain_diff = (round.daily_chance_of_rain - guess[:daily_chance_of_rain])**2
-    snow_diff = (round.daily_chance_of_snow - guess[:daily_chance_of_snow])**2
-    high_temp_diff + low_temp_diff + humidity_diff + wind_diff + rain_diff + snow_diff
+    rain_diff = (round.totalprecip_in - guess[:totalprecip_in])**2
+    high_temp_diff + low_temp_diff + humidity_diff + wind_diff + rain_diff
   end
 
   def get_location_information
