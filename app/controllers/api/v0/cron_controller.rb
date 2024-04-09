@@ -12,6 +12,10 @@ class Api::V0::CronController < ApplicationController
   end
 
   def turnover_confirm
+    votes = Vote.all
+    votes.each do |vote|
+      vote.calculate_score
+    end
     render json: TurnoverSerializer.new(Turnover.all.last)
   end
 end

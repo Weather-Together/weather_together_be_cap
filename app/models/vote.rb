@@ -16,9 +16,7 @@ class Vote < ApplicationRecord
         new_lat = rand(-90.000...90.000)
         new_lon = rand(-180.000...180.000)
       end
-      new_score = calculate_score(data)
       update(status: :processed,
-            score: new_score,
             location_name: data[:location][:name],
             region: data[:location][:region],
             country: data[:location][:country],
@@ -32,17 +30,19 @@ class Vote < ApplicationRecord
             avghumidity: data[:weather_data][:avghumidity],
             daily_chance_of_rain: data[:weather_data][:daily_chance_of_rain],
             daily_chance_of_snow: data[:weather_data][:daily_chance_of_snow])
+        calculate_score
     end
   end
 
-  def calculate_score(weather_data)
-    guess = weather_data[:weather_data]
-    high_temp_diff = (round.maxtemp_f - guess[:maxtemp_f])**2
-    low_temp_diff = (round.mintemp_f - guess[:mintemp_f])**2
-    humidity_diff = (round.avghumidity - guess[:avghumidity])**2
-    wind_diff = (round.maxwind_mph - guess[:maxwind_mph])**2
-    rain_diff = (round.totalprecip_in - guess[:totalprecip_in])**2
-    high_temp_diff + low_temp_diff + humidity_diff + wind_diff + rain_diff
+  def calculate_score
+    high_temp_diff = (round.maxtemp_f - maxtemp_f)**2
+    low_temp_diff = (round.mintemp_f - mintemp_f)**2
+    humidity_diff = (round.avghumidity - avghumidity)**2
+    wind_diff = (round.maxwind_mph - maxwind_mph)**2
+    rain_diff = (round.totalprecip_in - totalprecip_in)**2
+    score = high_temp_diff + low_temp_diff + humidity_diff + wind_diff + rain_diff
+    update(score: score)
+
   end
 
   def get_location_information

@@ -12,7 +12,8 @@ RSpec.describe Vote, type: :model do
       vote = Vote.all.first
       expect(vote.score).to be nil
       weather_data = WeatherFacade.new.weather_data(vote.lat, vote.lon, (Date.today-1).strftime('%F'))
-      score = vote.calculate_score(weather_data)
+      score = vote.process
+      score = vote.score
       expect(score > 0).to be true
     end
   end
