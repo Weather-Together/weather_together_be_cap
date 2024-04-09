@@ -35,12 +35,12 @@ class Vote < ApplicationRecord
   end
 
   def calculate_score
-    high_temp_diff = (round.maxtemp_f - maxtemp_f)**2
-    low_temp_diff = (round.mintemp_f - mintemp_f)**2
-    humidity_diff = (round.avghumidity - avghumidity)**2
-    wind_diff = (round.maxwind_mph - maxwind_mph)**2
-    rain_diff = (round.totalprecip_in - totalprecip_in)**2
-    score = high_temp_diff + low_temp_diff + humidity_diff + wind_diff + rain_diff
+    high_temp_diff = (round.maxtemp_f &.- maxtemp_f)**2
+    low_temp_diff = (round.mintemp_f &.- mintemp_f)**2
+    humidity_diff = (round.avghumidity &.- avghumidity)**2
+    wind_diff = (round.maxwind_mph &.- maxwind_mph)**2
+    rain_diff = (round.totalprecip_in &.- totalprecip_in)**2
+    score = high_temp_diff &.+ low_temp_diff &.+ humidity_diff &.+ wind_diff &.+ rain_diff
     update(score: score)
 
   end
