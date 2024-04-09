@@ -43,6 +43,8 @@ class Vote < ApplicationRecord
       rain_diff = (round.totalprecip_in &.- totalprecip_in)**2
       score = high_temp_diff &.+ low_temp_diff &.+ humidity_diff &.+ wind_diff &.+ rain_diff
       update(score: score)
+    else
+      update(score: 10001)
     end
   end
 
