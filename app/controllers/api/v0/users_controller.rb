@@ -19,8 +19,8 @@ class Api::V0::UsersController < ApplicationController
   def create
     begin
       @user = User.create!(user_params)
-      MailerCreateJob.perform_async(@user.id, @user.email, @user.verification_token)
-      # UserMailer.with(user: @user).verification_email.deliver_now
+      # MailerCreateJob.perform_async(@user.id, @user.email, @user.verification_token)
+      UserMailer.with(user_id: @user.id, email: @user.email, verification_token: @user.verification_token).verification_email.deliver_now
       render json: UserSerializer.new(@user)
     rescue ActiveRecord::RecordInvalid => exception
       render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 422)).error_json, status: :unprocessable_entity
@@ -36,7 +36,7 @@ class Api::V0::UsersController < ApplicationController
         render json: ErrorSerializer.new(ErrorMessage.new("Username already exists", 422)).error_json, status: :unprocessable_entity
       else
         @user.update(user_params)
-        UpdateMailerJob.perform_async(@user.id, @user.email, @user.username)
+        # UpdateMailerJob.perform_async(@user.id, @user.email, @user.username)
         render json: UserSerializer.new(@user)
       end
     rescue ActiveRecord::RecordNotFound => exception
