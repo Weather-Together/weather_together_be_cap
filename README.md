@@ -36,7 +36,7 @@
     <a href="https://github.com/Weather-Together/weather_together_be_cap"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Weather-Together/weather_together_be_cap">View Demo</a>
+    <a href="https://www.youtube.com/watch?v=dWjINU8V57U&list=PL1Y67f0xPzdNtWcZ3oqFWyGsDgfFNkUnH&index=4">View Demo</a>
     ·
     <a href="https://github.com/Weather-Together/weather_together_be_cap/issues">Report Bug</a>
     ·
