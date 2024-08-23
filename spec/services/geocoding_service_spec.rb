@@ -26,6 +26,8 @@ RSpec.describe "Geocoding API call", :vcr do
 
   it "gets location data from lat lon, multiple locality", :vcr do
     load_location_coordinates
+    sleep(1500)
+
     gs = GeocodingService.new
     data = gs.get_details(@lat4, @lon4)
 
@@ -40,6 +42,8 @@ RSpec.describe "Geocoding API call", :vcr do
 
   it "gets location data from lat lon, another with multiple locality", :vcr do
     load_location_coordinates
+    sleep(1500)
+
     gs = GeocodingService.new
     data = gs.get_details(@lat1, @lon1)
 
@@ -54,6 +58,8 @@ RSpec.describe "Geocoding API call", :vcr do
 
   it "gets location data from lat lon, few address keys", :vcr do
     load_location_coordinates
+    sleep(1500)
+
     gs = GeocodingService.new
     data = gs.get_details(@lat14, @lon14)
 
