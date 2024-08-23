@@ -1,13 +1,11 @@
 require "rails_helper"
 
 RSpec.describe "Geocoding API call", :vcr do
-
   it "#conn, returns a Faraday object" do
     gs = GeocodingService.new
 
     expect(gs.conn).to be_a(Faraday::Connection)
   end
-
 
   # "High" Specificity Keys from API (general high to low order): village, town, city_district, city, county
     # Calling it a locality 
@@ -16,7 +14,7 @@ RSpec.describe "Geocoding API call", :vcr do
     gs = GeocodingService.new
     data = gs.get_details(@lat3, @lon3)
     
-    expect(data).to ba_a (Faraday::Response)
+    expect(data).to be_a(Faraday::Response)
     expect(data).to be_a(Hash)
     expect(data[:Locationlat]).to eq("39.74")
     expect(data[:Locationlon]).to eq("-104.99")
