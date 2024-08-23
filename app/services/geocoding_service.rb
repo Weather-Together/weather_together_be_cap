@@ -3,7 +3,7 @@ class GeocodingService
     Faraday.new(url: "https://geocode.maps.co/")
   end
 
-  def get_details(lat, lon)
+  def get_location(lat, lon)
     response = conn.get("reverse") do |f|
       f.params["lat"] = lat 
       f.params["lon"] = lon

@@ -9,10 +9,10 @@ RSpec.describe "Geocoding API call", :vcr do
 
   # "High" Specificity Keys from API (general high to low order): village, town, city_district, city, county
     # Calling it a locality 
-  it "#get_details(lat, lon), gets location data from lat lon, no region", :vcr do
+  it "#get_location(lat, lon), gets location data from lat lon, no region", :vcr do
     load_location_coordinates
     gs = GeocodingService.new
-    data = gs.get_details(@lat3, @lon3)
+    data = gs.get_location(@lat3, @lon3)
     
     expect(data).to be_a(Hash)
     expect(data[:Locationlat]).to eq("39.74")
@@ -28,7 +28,7 @@ RSpec.describe "Geocoding API call", :vcr do
     sleep(1.5)
 
     gs = GeocodingService.new
-    data = gs.get_details(@lat4, @lon4)
+    data = gs.get_location(@lat4, @lon4)
 
     expect(data).to be_a(Hash)
     expect(data[:Locationlat]).to eq("39.95")
@@ -44,7 +44,7 @@ RSpec.describe "Geocoding API call", :vcr do
     sleep(1.5)
 
     gs = GeocodingService.new
-    data = gs.get_details(@lat1, @lon1)
+    data = gs.get_location(@lat1, @lon1)
 
     expect(data).to be_a(Hash)
     expect(data[:Locationlat]).to eq("-15.74")
@@ -60,7 +60,7 @@ RSpec.describe "Geocoding API call", :vcr do
     sleep(1.5)
 
     gs = GeocodingService.new
-    data = gs.get_details(@lat14, @lon14)
+    data = gs.get_location(@lat14, @lon14)
 
     expect(data).to be_a(Hash)
     expect(data[:Locationlat]).to eq("14.24")
