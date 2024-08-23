@@ -14,7 +14,7 @@ class GeocodingService
     if hash[:error]
       hash
     else
-      parse_data(hash, lat, lon)
+      parse_geo_data(hash, lat, lon)
     end
   end
 
@@ -24,7 +24,7 @@ class GeocodingService
     address[:village] || address[:town] || address[:city_district] || address[:city] || address[:county]
   end
 
-  def parse_data(hash, lat, lon)
+  def parse_geo_data(hash, lat, lon)
     address = hash[:address]
     locality = determine_locality(address)
 
