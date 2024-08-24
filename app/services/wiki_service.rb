@@ -5,6 +5,13 @@ class WikiService
 
   def get_wikipage(titles)
     response = conn.get("?action=query&format=json&prop=info&inprop=url&titles=#{titles}")
-    JSON.parse(response.body, symbolize_names: true)
+    pages = JSON.parse(response.body, symbolize_names: true)[:query][:pages]
+    articlenum = pages.keys.first
+    url = pages[articlenum][:fullurl]
+
+    {
+      articlenum: articlenum.to_s.to_i,
+      url: url,
+    }
   end
 end
