@@ -7,20 +7,20 @@ RSpec.describe "Image API call", :vcr do
     expect(is.conn).to be_a(Faraday::Connection)
   end
 
-  it "#get_image(location), returns image url from location at specific location", :vcr do
-    location_state =  {
-      url: "39.74",
-      specificity: "-104.99",
-      locality: nil,
-      state: "Colorado",
-      region: "Midwest",
-      country: "United States"
-    }
-    ws = WikiService.new
-    data = ws.get_link(location_locality)
+  it "#get_images(search_term), returns image url from location at specific location", :vcr do
+  # location_state =  {
+  #   Locationlat: "39.74",
+  #   Locationlon: "-104.99",
+  #   locality: "Denver",
+  #   state: nil,
+  #   region: nil,
+  #   country: "United States"
+  # }
 
-    expect(data).to be_a(Hash)
-    expect(data[:url]).to eq("https://en.wikipedia.org/wiki/Denver")
-    expect(data[:specificity]).to eq("locality")
+  #   is = ImageService.new
+  #   data = is.get_images(location_state)
+  #   expect(data).to be_a(Hash)
+    facade = LocationInfoFacade.new.combine_location_information("39.74", "-104.99")
+    require 'pry'; binding.pry
   end
 end

@@ -49,7 +49,7 @@ class Vote < ApplicationRecord
   end
 
   def get_location_information
-    info = LocationInfoService.get_details(lat, lon) #need to update vote with return once we start receiving correct data
+    info = LocationInfoFacade.new.combine_location_information(lat, lon) #need to update vote with return once we start receiving correct data
     update!(image: info[:images], wiki: info[:wiki])
   end
 end

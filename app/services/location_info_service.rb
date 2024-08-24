@@ -1,6 +1,4 @@
 class LocationInfoService
-  
-
   def self.conn
     Faraday.new(url: "https://seal-app-7kdpa.ondigitalocean.app/")
   end
