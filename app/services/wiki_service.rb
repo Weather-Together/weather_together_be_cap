@@ -10,9 +10,11 @@ class WikiService
 
     specificity.each do |level|
       unless location[level].nil?
-        page_data = parse_wikipage(location[level])
+        title = location[level]
+        page_data = parse_wikipage(title)
         if valid_article?(page_data)
           return { 
+                    location: title,
                     url: page_data[:url],
                     specificity: level.to_s
                   }

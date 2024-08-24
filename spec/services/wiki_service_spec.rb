@@ -36,6 +36,7 @@ RSpec.describe "Wiki API call", :vcr do
     data = ws.get_link(location_locality)
 
     expect(data).to be_a(Hash)
+    expect(data[:location]).to eq("Denver")
     expect(data[:url]).to eq("https://en.wikipedia.org/wiki/Denver")
     expect(data[:specificity]).to eq("locality")
   end
@@ -53,6 +54,7 @@ RSpec.describe "Wiki API call", :vcr do
     data = ws.get_link(location_state)
 
     expect(data).to be_a(Hash)
+    expect(data[:location]).to eq("Colorado")
     expect(data[:url]).to eq("https://en.wikipedia.org/wiki/Colorado")
     expect(data[:specificity]).to eq("state")
   end
@@ -70,6 +72,7 @@ RSpec.describe "Wiki API call", :vcr do
     data = ws.get_link(location_state)
 
     expect(data).to be_a(Hash)
+    expect(data[:location]).to eq("Midwest")
     expect(data[:url]).to eq("https://en.wikipedia.org/wiki/Midwest")
     expect(data[:specificity]).to eq("region")
   end
@@ -87,6 +90,7 @@ RSpec.describe "Wiki API call", :vcr do
     data = ws.get_link(location_state)
 
     expect(data).to be_a(Hash)
+    expect(data[:location]).to eq("United States")
     expect(data[:url]).to eq("https://en.wikipedia.org/wiki/United_States")
     expect(data[:specificity]).to eq("country")
   end
