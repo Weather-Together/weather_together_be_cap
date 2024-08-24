@@ -31,7 +31,7 @@ RSpec.describe "Wiki API call", :vcr do
   it "#get_link(location), returns a wiki link from location hash, with increasing specificity, locality", :vcr do
     load_location_coordinates
 
-    location_locality = GeocodingService.new.get_location(lat3, @lon3)
+    location_locality = GeocodingService.new.get_location(@lat3, @lon3)
     ws = WikiService.new
     data = ws.get_link(location_locality)
 
@@ -88,6 +88,6 @@ RSpec.describe "Wiki API call", :vcr do
 
     expect(data).to be_a(Hash)
     expect(data[:url]).to eq("https://en.wikipedia.org/wiki/United_States")
-    expect(data[:specificity]).to eq("region")
+    expect(data[:specificity]).to eq("country")
   end
 end

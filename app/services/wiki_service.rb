@@ -3,6 +3,24 @@ class WikiService
     Faraday.new(url: "https://en.wikipedia.org/w/api.php")
   end
 
+  # Looks gross and should be refactored for legibility
+  # Also currently does not handle if there is no location data whatsoever
+  def get_link(location)
+    specificity = [:locality, :state, :region, :country]
+
+    specificity.each do |level|
+      unless location[level].nil?
+        page_data = parse_wikipage(location[level])
+        if valid_article?(page_data)
+          return { 
+                    url: page_data[:url],
+                    specificity: level.to_s
+                  }
+        end
+      end
+    end
+  end
+
   def parse_wikipage(titles)
     response = conn.get("?action=query&format=json&prop=info&inprop=url&titles=#{titles}")
     pages = JSON.parse(response.body, symbolize_names: true)[:query][:pages]
