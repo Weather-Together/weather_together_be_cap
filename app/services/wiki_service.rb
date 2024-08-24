@@ -3,7 +3,7 @@ class WikiService
     Faraday.new(url: "https://en.wikipedia.org/w/api.php")
   end
 
-  # Looks gross and should be refactored for legibility
+  # Looks gross and should be refactored for readability
   # Also currently does not handle if there is no location data whatsoever
   def get_link(location)
     specificity = [:locality, :state, :region, :country]
