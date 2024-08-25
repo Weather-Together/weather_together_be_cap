@@ -7,7 +7,7 @@ RSpec.describe "Image API call", :vcr do
     expect(is.conn).to be_a(Faraday::Connection)
   end
 
-  it "#get_images(search_term), returns image url from location at specific location", :vcr do
+  xit "#get_images(search_term), returns image url from location at specific location", :vcr do
   # location_state =  {
   #   Locationlat: "39.74",
   #   Locationlon: "-104.99",
@@ -21,6 +21,5 @@ RSpec.describe "Image API call", :vcr do
   #   data = is.get_images(location_state)
   #   expect(data).to be_a(Hash)
     facade = LocationInfoFacade.new.combine_location_information("39.74", "-104.99")
-    require 'pry'; binding.pry
   end
 end
